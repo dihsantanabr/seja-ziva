@@ -1,11 +1,11 @@
-import ExtratoLactacao from './pages/ExtratoLactacao';
+import ProductPage from './pages/ProductPage';
 
 
 export const PAGES = {
-    "ExtratoLactacao": ExtratoLactacao,
+    "ProductPage": ProductPage,
 }
 
 export const pagesConfig = {
-    mainPage: "ExtratoLactacao",
+    mainPage: "ProductPage",
     Pages: PAGES,
 };
