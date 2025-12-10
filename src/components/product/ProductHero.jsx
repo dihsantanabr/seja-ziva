@@ -158,7 +158,7 @@ export default function ProductHero() {
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                 </span>
-                <Badge className="bg-red-500 text-white">
+                <Badge className="bg-[#2D5A4A] text-white">
                   -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
                 </Badge>
               </div>
