@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductHero from '../components/product/ProductHero';
+import StoriesSection from '../components/product/StoriesSection';
 import ForWhoSection from '../components/product/ForWhoSection';
 import ResultsSection from '../components/product/ResultsSection';
 import FormulaSection from '../components/product/FormulaSection';
@@ -19,6 +20,9 @@ export default function ProductPage() {
     <div className="min-h-screen bg-white">
       {/* 1. Hero */}
       <ProductHero />
+      
+      {/* Stories Section */}
+      <StoriesSection />
       
       {/* 2. Para quem é */}
       <ForWhoSection />
