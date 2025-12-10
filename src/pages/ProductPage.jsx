@@ -18,11 +18,11 @@ import StickyBuyBar from '../components/product/StickyBuyBar';
 export default function ProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* 1. Hero */}
-      <ProductHero />
-      
       {/* Stories Section */}
       <StoriesSection />
+      
+      {/* 1. Hero */}
+      <ProductHero />
       
       {/* 2. Para quem é */}
       <ForWhoSection />
