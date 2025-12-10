@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import StoriesSection from './StoriesSection';
 
 const productImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68c5b2bb0cdd456c97ee531f/91611728f_Screenshot2025-12-10at095244.png",
@@ -17,6 +18,17 @@ export default function ProductHero() {
   const prices = {
     '30ml': { original: 69.90, current: 59.90 },
     '60ml': { original: 119.90, current: 99.90 }
+  };
+
+  // Calculate delivery dates
+  const today = new Date();
+  const minDeliveryDate = new Date(today);
+  minDeliveryDate.setDate(today.getDate() + 3);
+  const maxDeliveryDate = new Date(today);
+  maxDeliveryDate.setDate(today.getDate() + 9);
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
   };
 
   const nextImage = () => {
@@ -50,6 +62,9 @@ export default function ProductHero() {
           ))}
         </div>
       </div>
+
+      {/* Stories Section */}
+      <StoriesSection />
 
       <div className="max-w-7xl mx-auto px-4 py-8 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
@@ -200,6 +215,21 @@ export default function ProductHero() {
               <Button className="flex-1 h-12 bg-[#2D5A4A] hover:bg-[#234539] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#2D5A4A]/25 transition-all hover:shadow-xl hover:shadow-[#2D5A4A]/30">
                 Comprar Agora
               </Button>
+            </div>
+
+            {/* Delivery Estimate */}
+            <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <Package className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-green-900">
+                    Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
+                  </p>
+                  <p className="text-sm text-green-700 mt-1">
+                    Confirme o prazo antes de finalizar.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Benefits List */}

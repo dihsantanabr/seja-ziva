@@ -93,7 +93,7 @@ export default function StoriesSection() {
   return (
     <>
       {/* Stories Strip */}
-      <div className="bg-white border-b border-gray-200 py-4 sticky top-0 z-40 shadow-sm">
+      <div className="bg-white py-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide justify-center">
             {stories.map((story, index) => (

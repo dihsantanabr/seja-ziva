@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductHero from '../components/product/ProductHero';
-import StoriesSection from '../components/product/StoriesSection';
 import ForWhoSection from '../components/product/ForWhoSection';
 import ResultsSection from '../components/product/ResultsSection';
 import FormulaSection from '../components/product/FormulaSection';
@@ -18,9 +17,6 @@ import StickyBuyBar from '../components/product/StickyBuyBar';
 export default function ProductPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Stories Section */}
-      <StoriesSection />
-      
       {/* 1. Hero */}
       <ProductHero />
       
