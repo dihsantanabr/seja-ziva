@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Droplet, Clock, Calendar, AlertCircle } from 'lucide-react';
+import { Droplet, Clock, Calendar, AlertCircle, Check } from 'lucide-react';
 
 const steps = [
   {
@@ -26,6 +26,53 @@ const steps = [
     title: "Use diariamente",
     description: "Para melhores resultados, use todos os dias",
     icon: Calendar
+  }
+];
+
+const timelineResults = [
+  {
+    period: "7 dias",
+    title: "Primeira Semana",
+    results: [
+      "Redução do inchaço",
+      "Menos dor ao toque",
+      "Sensação de leveza"
+    ],
+    approval: "89%",
+    color: "bg-orange-500"
+  },
+  {
+    period: "14 dias",
+    title: "Segunda Semana",
+    results: [
+      "Edema diminuído",
+      "Circulação melhorada",
+      "Pernas mais leves"
+    ],
+    approval: "94%",
+    color: "bg-orange-500"
+  },
+  {
+    period: "30 dias",
+    title: "Um Mês",
+    results: [
+      "Alívio duradouro",
+      "Menos inflamação",
+      "Mobilidade melhorada"
+    ],
+    approval: "87%",
+    color: "bg-orange-500"
+  },
+  {
+    period: "90 dias",
+    title: "Três Meses",
+    results: [
+      "Controle do lipedema",
+      "Qualidade de vida",
+      "Resultados mantidos"
+    ],
+    approval: "92%",
+    color: "bg-orange-500"
   }
 ];
 
@@ -110,6 +157,52 @@ export default function HowToUseSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Timeline Results */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">
+              Resultados do uso contínuo
+            </h3>
+            <p className="text-gray-600 mt-2">
+              Veja o que esperar em cada fase da jornada
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {timelineResults.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all"
+              >
+                <div className={`${item.color} text-white text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4`}>
+                  {item.period}
+                </div>
+                <h4 className="font-bold text-gray-900 text-lg mb-4">
+                  {item.title}
+                </h4>
+                <ul className="space-y-2 mb-6">
+                  {item.results.map((result, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                      <Check className="w-4 h-4 text-[#2D5A4A] flex-shrink-0 mt-0.5" />
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-gray-100">
+                  <div className="text-3xl font-bold text-[#2D5A4A]">
+                    {item.approval}
+                  </div>
+                  <div className="text-xs text-gray-500">aprovação</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
