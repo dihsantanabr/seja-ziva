@@ -37,24 +37,24 @@ export default function ProductPage() {
       
       {/* 7. Prova social */}
       <TestimonialsSection />
-      
-      {/* 8. FAQ */}
-      <FAQSection />
-      
-      {/* 9. Contraindicações */}
+
+      {/* 8. Contraindicações */}
       <ContraindicationsSection />
-      
-      {/* 10. Comparação */}
+
+      {/* 9. Comparação */}
       <ComparisonSection />
-      
-      {/* 11. Kits recomendados */}
+
+      {/* 10. Kits recomendados */}
       <KitsSection />
-      
-      {/* 12. Garantia + Suporte */}
+
+      {/* 11. Garantia + Suporte */}
       <GuaranteeSection />
-      
-      {/* 13. CTA Final */}
+
+      {/* 12. CTA Final */}
       <FinalCTASection />
+
+      {/* 13. FAQ */}
+      <FAQSection />
       
       {/* Sticky Buy Bar (Mobile) */}
       <StickyBuyBar />
