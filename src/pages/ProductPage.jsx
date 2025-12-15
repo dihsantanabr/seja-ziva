@@ -19,27 +19,39 @@ export default function ProductPage() {
     <div className="min-h-screen bg-white">
       {/* 1. Hero */}
       <ProductHero />
-      
+
       {/* 2. Para quem é */}
-      <ForWhoSection />
-      
+      <div id="para-quem-e">
+        <ForWhoSection />
+      </div>
+
       {/* 3. Resultados esperados */}
-      <ResultsSection />
-      
+      <div id="resultados">
+        <ResultsSection />
+      </div>
+
       {/* 4. Ciência da fórmula */}
-      <FormulaSection />
-      
+      <div id="formula">
+        <FormulaSection />
+      </div>
+
       {/* 5. Como usar */}
-      <HowToUseSection />
-      
+      <div id="como-usar">
+        <HowToUseSection />
+      </div>
+
       {/* 6. Match perfeito - cada dor */}
       <PainMatchSection />
-      
+
       {/* 7. Prova social */}
-      <TestimonialsSection />
+      <div id="depoimentos">
+        <TestimonialsSection />
+      </div>
 
       {/* 8. Contraindicações */}
-      <ContraindicationsSection />
+      <div id="contraindicacoes">
+        <ContraindicationsSection />
+      </div>
 
       {/* 9. Comparação */}
       <ComparisonSection />
