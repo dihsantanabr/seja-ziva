@@ -153,7 +153,7 @@ export default function ProductHero() {
             </div>
 
             {/* Price Box */}
-            <div className="bg-gradient-to-r from-[#F5E6E8] to-[#F9F6F2] rounded-2xl p-6">
+            <div className="bg-white rounded-2xl p-6 border border-gray-100">
               <div className="flex items-baseline gap-3">
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
