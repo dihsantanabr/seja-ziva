@@ -117,7 +117,7 @@ export default function ProductHero() {
                 Mamamais • Toda gota conta
               </p>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Extrato Vegetal Mamamais
+                Extrato Vegetal
                 <span className="block text-[#2D5A4A]">Lactação Induzida</span>
               </h1>
               <p className="mt-3 text-lg text-gray-600">
