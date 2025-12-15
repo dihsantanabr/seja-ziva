@@ -19,10 +19,10 @@ export default function ContraindicationsSection() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Contraindications */}
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-8">
+          <div className="bg-[#F9F6F2] border border-[#2D5A4A]/20 rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-amber-600" />
+              <div className="w-12 h-12 bg-[#2D5A4A]/10 rounded-xl flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-[#2D5A4A]" />
               </div>
               <h3 className="text-xl font-bold text-gray-900">Atenção especial</h3>
             </div>
@@ -36,7 +36,7 @@ export default function ContraindicationsSection() {
                 'Alergias a algum dos ingredientes'
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-gray-700">
-                  <span className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
+                  <span className="w-2 h-2 bg-[#2D5A4A] rounded-full mt-2 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -45,9 +45,9 @@ export default function ContraindicationsSection() {
 
           {/* Safety & Support */}
           <div className="space-y-6">
-            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+            <div className="bg-[#F9F6F2] border border-[#2D5A4A]/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Shield className="w-6 h-6 text-emerald-600" />
+                <Shield className="w-6 h-6 text-[#2D5A4A]" />
                 <h4 className="font-semibold text-gray-900">Qualidade garantida</h4>
               </div>
               <p className="text-gray-600 text-sm">
@@ -56,9 +56,9 @@ export default function ContraindicationsSection() {
               </p>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+            <div className="bg-[#F9F6F2] border border-[#2D5A4A]/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Heart className="w-6 h-6 text-blue-600" />
+                <Heart className="w-6 h-6 text-[#2D5A4A]" />
                 <h4 className="font-semibold text-gray-900">Suporte especializado</h4>
               </div>
               <p className="text-gray-600 text-sm">
@@ -67,9 +67,9 @@ export default function ContraindicationsSection() {
               </p>
             </div>
 
-            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6">
+            <div className="bg-[#F9F6F2] border border-[#2D5A4A]/20 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <RefreshCw className="w-6 h-6 text-purple-600" />
+                <RefreshCw className="w-6 h-6 text-[#2D5A4A]" />
                 <h4 className="font-semibold text-gray-900">Política de troca</h4>
               </div>
               <p className="text-gray-600 text-sm">
