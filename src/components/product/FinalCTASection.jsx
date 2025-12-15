@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function FinalCTASection() {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle email submission
+    console.log('Email submitted:', email);
+  };
+
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-[#2D5A4A] via-[#3d7a64] to-[#2D5A4A]">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -24,16 +33,29 @@ export default function FinalCTASection() {
             Baixe nosso Ebook Completo e entenda como você terá resultados com a indução de lactação
           </p>
 
-          <Button 
-            size="lg"
-            className="bg-white text-[#2D5A4A] hover:bg-gray-100 text-lg px-10 py-7 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group"
-          >
-            <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
-            Baixar Ebook Gratuito
-          </Button>
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Input
+                type="email"
+                placeholder="Seu melhor e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 h-14 px-6 text-lg bg-white/95 border-0 rounded-full focus:ring-2 focus:ring-white placeholder:text-gray-400"
+              />
+              <Button 
+                type="submit"
+                size="lg"
+                className="bg-white text-[#2D5A4A] hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
+              >
+                <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                Baixar Grátis
+              </Button>
+            </div>
+          </form>
 
           <p className="text-white/60 text-sm mt-6">
-            PDF • 100% gratuito • Sem necessidade de cadastro
+            PDF • 100% gratuito • Enviado direto no seu e-mail
           </p>
         </motion.div>
       </div>
