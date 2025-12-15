@@ -194,7 +194,7 @@ export default function ProductHero() {
                   >
                     {size}
                     <span className="block text-xs mt-0.5 opacity-80">
-                      {size === '30ml' ? '~10 dias' : '~20 dias'}
+                      {size === '30ml' ? 'Dura 10 Dias' : 'Dura 20 Dias'}
                     </span>
                   </button>
                 ))}
