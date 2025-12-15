@@ -172,7 +172,10 @@ export default function ProductHero() {
                 ou 3x de R$ {(prices[selectedSize].current / 3).toFixed(2).replace('.', ',')} sem juros
               </p>
               <div className="flex items-center gap-2 mt-3 text-green-700 bg-green-50 px-3 py-2 rounded-lg">
-                <span className="text-lg">💰</span>
+                <div className="relative">
+                  <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
+                  <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
+                </div>
                 <span className="text-sm font-medium">
                   Receba R$ {(prices[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback
                 </span>
