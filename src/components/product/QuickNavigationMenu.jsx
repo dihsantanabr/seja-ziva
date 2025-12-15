@@ -56,11 +56,11 @@ export default function QuickNavigationMenu() {
   };
 
   return (
-    <div className="bg-white border-t border-gray-100 py-8">
+    <div className="bg-white border-t border-gray-100 py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-4">
 
         
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {menuItems.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -70,17 +70,17 @@ export default function QuickNavigationMenu() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => scrollToSection(item.sectionId)}
-                className="group relative bg-gradient-to-br from-[#F9F6F2] to-white hover:from-[#2D5A4A] hover:to-[#3d7a64] border border-gray-200 hover:border-[#2D5A4A] rounded-xl p-4 text-left transition-all duration-300 hover:shadow-lg hover:scale-105"
+                className="group relative bg-gradient-to-br from-[#F9F6F2] to-white active:from-[#2D5A4A] active:to-[#3d7a64] hover:from-[#2D5A4A] hover:to-[#3d7a64] border border-gray-200 hover:border-[#2D5A4A] active:border-[#2D5A4A] rounded-xl p-4 md:p-5 text-left transition-all duration-300 hover:shadow-lg active:shadow-lg hover:scale-105 active:scale-95 touch-manipulation"
               >
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-[#2D5A4A]/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
-                    <Icon className="w-5 h-5 text-[#2D5A4A] group-hover:text-white transition-colors" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-12 h-12 md:w-10 md:h-10 bg-[#2D5A4A]/10 group-hover:bg-white/20 group-active:bg-white/20 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+                    <Icon className="w-6 h-6 md:w-5 md:h-5 text-[#2D5A4A] group-hover:text-white group-active:text-white transition-colors" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 group-hover:text-white text-sm mb-1 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-gray-900 group-hover:text-white group-active:text-white text-sm md:text-base mb-1 transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-gray-600 group-hover:text-white/80 transition-colors">
+                    <p className="text-xs md:text-sm text-gray-600 group-hover:text-white/80 group-active:text-white/80 transition-colors">
                       {item.subtitle}
                     </p>
                   </div>
