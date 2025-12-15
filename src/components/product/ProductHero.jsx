@@ -69,7 +69,7 @@ export default function ProductHero() {
       <div className="max-w-7xl mx-auto px-4 py-8 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Image Gallery */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
               <Badge className="absolute top-4 left-4 z-10 bg-[#2D5A4A] text-white">
                 MAIS VENDIDO
