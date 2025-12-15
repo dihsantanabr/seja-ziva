@@ -58,14 +58,7 @@ export default function QuickNavigationMenu() {
   return (
     <div className="bg-white border-t border-gray-100 py-8">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Navegue pela página
-          </h3>
-          <p className="text-gray-600">
-            Clique no que mais te interessa para saber mais
-          </p>
-        </div>
+
         
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {menuItems.map((item, idx) => {
