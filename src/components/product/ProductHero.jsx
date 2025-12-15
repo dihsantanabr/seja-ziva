@@ -3,7 +3,6 @@ import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Pac
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import StoriesSection from './StoriesSection';
-import MilkCalculator from './MilkCalculator';
 
 const productImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68c5b2bb0cdd456c97ee531f/91611728f_Screenshot2025-12-10at095244.png",
@@ -277,11 +276,6 @@ export default function ProductHero() {
                   {benefit}
                 </div>
               ))}
-            </div>
-
-            {/* Milk Calculator */}
-            <div className="mt-6">
-              <MilkCalculator />
             </div>
             </div>
             </div>
