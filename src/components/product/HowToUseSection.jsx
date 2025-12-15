@@ -34,9 +34,9 @@ const timelineResults = [
     period: "7 dias",
     title: "Primeira Semana",
     results: [
-      "Redução do inchaço",
-      "Menos dor ao toque",
-      "Sensação de leveza"
+      "Peito começa a encher",
+      "Primeiros sinais visíveis",
+      "Mais ejeção do leite"
     ],
     approval: "89%",
     color: "bg-orange-500"
@@ -45,9 +45,9 @@ const timelineResults = [
     period: "14 dias",
     title: "Segunda Semana",
     results: [
-      "Edema diminuído",
-      "Circulação melhorada",
-      "Pernas mais leves"
+      "Produção aumentada",
+      "Menos uso de fórmula",
+      "Bebê mais satisfeito"
     ],
     approval: "94%",
     color: "bg-orange-500"
@@ -56,9 +56,9 @@ const timelineResults = [
     period: "30 dias",
     title: "Um Mês",
     results: [
-      "Alívio duradouro",
-      "Menos inflamação",
-      "Mobilidade melhorada"
+      "Lactação estabelecida",
+      "Produção consistente",
+      "Amamentação facilitada"
     ],
     approval: "87%",
     color: "bg-orange-500"
@@ -67,9 +67,9 @@ const timelineResults = [
     period: "90 dias",
     title: "Três Meses",
     results: [
-      "Controle do lipedema",
-      "Qualidade de vida",
-      "Resultados mantidos"
+      "Produção consolidada",
+      "Amamentação plena",
+      "Vínculo fortalecido"
     ],
     approval: "92%",
     color: "bg-orange-500"
