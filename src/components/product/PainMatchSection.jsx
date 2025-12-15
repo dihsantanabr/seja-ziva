@@ -6,32 +6,32 @@ const matches = [
   {
     pain: "Baixa produção extrema",
     solution: "Aumenta prolactina e ativa resposta do corpo para produção de leite",
-    color: "from-rose-50 to-pink-50",
-    border: "border-rose-200"
+    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
+    border: "border-[#2D5A4A]/20"
   },
   {
     pain: "Bebê abaixo do peso",
     solution: "Favorece aumento de oferta para mais mamadas eficientes",
-    color: "from-amber-50 to-orange-50",
-    border: "border-amber-200"
+    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
+    border: "border-[#2D5A4A]/20"
   },
   {
     pain: "Indução de lactação",
     solution: "Ajuda a iniciar produção mesmo sem parto - ideal para adoção",
-    color: "from-purple-50 to-violet-50",
-    border: "border-purple-200"
+    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
+    border: "border-[#2D5A4A]/20"
   },
   {
     pain: "Relactação",
     solution: "Auxilia na retomada da produção após interrupção",
-    color: "from-blue-50 to-cyan-50",
-    border: "border-blue-200"
+    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
+    border: "border-[#2D5A4A]/20"
   },
   {
     pain: "Redução de fórmula",
     solution: "Mais produção = mais leite materno = menor dependência de fórmula",
-    color: "from-emerald-50 to-green-50",
-    border: "border-emerald-200"
+    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
+    border: "border-[#2D5A4A]/20"
   }
 ];
 
