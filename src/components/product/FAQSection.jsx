@@ -41,10 +41,10 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 lg:py-24 bg-[#F2E8D8]">
+    <section className="py-16 lg:py-24 bg-[#F2E8E2]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
             Tire suas dúvidas
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -67,7 +67,7 @@ export default function FAQSection() {
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition"
               >
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#C9AE7A] flex-shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-[#C9A875] flex-shrink-0" />
                   <span className="font-medium text-gray-900">{faq.question}</span>
                 </div>
                 <ChevronDown

@@ -44,7 +44,7 @@ const comparisons = [
 const ValueCell = ({ value, highlight }) => {
   if (value === true) {
     return (
-      <div className={`flex justify-center ${highlight ? 'text-[#C9AE7A]' : 'text-gray-400'}`}>
+      <div className={`flex justify-center ${highlight ? 'text-[#C9A875]' : 'text-gray-400'}`}>
         <Check className="w-6 h-6" />
       </div>
     );
@@ -57,7 +57,7 @@ const ValueCell = ({ value, highlight }) => {
     );
   }
   return (
-    <span className={`${highlight ? 'text-[#C9AE7A] font-semibold' : 'text-gray-500'}`}>
+    <span className={`${highlight ? 'text-[#C9A875] font-semibold' : 'text-gray-500'}`}>
       {value}
     </span>
   );
@@ -65,10 +65,10 @@ const ValueCell = ({ value, highlight }) => {
 
 export default function ComparisonSection() {
   return (
-    <section className="py-16 lg:py-24 bg-[#F2E8D8]">
+    <section className="py-16 lg:py-24 bg-[#F2E8E2]">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
             Compare e decida
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -93,7 +93,7 @@ export default function ComparisonSection() {
                     Característica
                   </th>
                   <th className="py-5 px-6">
-                    <div className="bg-[#C9AE7A] text-white rounded-xl py-2 px-4 font-semibold">
+                    <div className="bg-[#C9A875] text-white rounded-xl py-2 px-4 font-semibold">
                       Extrato Mamamais
                     </div>
                   </th>
@@ -111,7 +111,7 @@ export default function ComparisonSection() {
                     <td className="py-4 px-6 font-medium text-gray-900">
                       {row.feature}
                     </td>
-                    <td className="py-4 px-6 text-center bg-[#C9AE7A]/5">
+                    <td className="py-4 px-6 text-center bg-[#C9A875]/5">
                       <ValueCell value={row.extrato.value} highlight={row.extrato.highlight} />
                     </td>
                     <td className="py-4 px-6 text-center">

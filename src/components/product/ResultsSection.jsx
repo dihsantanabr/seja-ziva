@@ -30,7 +30,7 @@ export default function ResultsSection() {
     <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-[#F9F6F2]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
             Resultados esperados
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -48,7 +48,7 @@ export default function ResultsSection() {
               transition={{ delay: idx * 0.1 }}
               className="bg-white rounded-2xl p-6 text-center shadow-lg shadow-gray-100 hover:shadow-xl transition-all"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#C9AE7A] to-[#b89a68] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C9A875] to-[#b8976a] rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <result.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-gray-900 text-lg mb-2">
@@ -67,13 +67,13 @@ export default function ResultsSection() {
             Como funciona no seu corpo?
           </h3>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
-            <div className="bg-[#F2E8D8] rounded-2xl p-6 text-center flex-1 max-w-xs">
+            <div className="bg-[#F2E8E2] rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">🌿</div>
               <h4 className="font-semibold text-gray-900 mb-1">Ervas Galactagogas</h4>
               <p className="text-sm text-gray-600">Feno-grego, Cardo Santo e outras ervas</p>
             </div>
             
-            <ArrowRight className="w-8 h-8 text-[#C9AE7A] rotate-90 lg:rotate-0 flex-shrink-0" />
+            <ArrowRight className="w-8 h-8 text-[#FF9133] rotate-90 lg:rotate-0 flex-shrink-0" />
             
             <div className="bg-[#F5E6E8] rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">⚡</div>
@@ -81,9 +81,9 @@ export default function ResultsSection() {
               <p className="text-sm text-gray-600">Aumento natural da prolactina</p>
             </div>
             
-            <ArrowRight className="w-8 h-8 text-[#C9AE7A] rotate-90 lg:rotate-0 flex-shrink-0" />
+            <ArrowRight className="w-8 h-8 text-[#FF9133] rotate-90 lg:rotate-0 flex-shrink-0" />
             
-            <div className="bg-[#C9AE7A]/30 rounded-2xl p-6 text-center flex-1 max-w-xs">
+            <div className="bg-[#C9A875]/30 rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">🍼</div>
               <h4 className="font-semibold text-gray-900 mb-1">Mais Produção</h4>
               <p className="text-sm text-gray-600">Aumento visível na produção de leite</p>

@@ -37,10 +37,10 @@ const herbs = [
 
 export default function FormulaSection() {
   return (
-    <section className="py-16 lg:py-24 bg-[#F2E8D8]">
+    <section className="py-16 lg:py-24 bg-[#F2E8E2]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
             A ciência por trás
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -59,7 +59,7 @@ export default function FormulaSection() {
           className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl mb-12"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-[#C9AE7A] to-[#b89a68] rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-32 h-32 bg-gradient-to-br from-[#C9A875] to-[#b8976a] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-5xl">👩‍⚕️</span>
             </div>
             <div className="text-center lg:text-left">
@@ -72,15 +72,15 @@ export default function FormulaSection() {
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <Award className="w-5 h-5 text-[#C9AE7A]" />
+                  <Award className="w-5 h-5 text-[#C9A875]" />
                   Especialista certificada
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <BookOpen className="w-5 h-5 text-[#C9AE7A]" />
+                  <BookOpen className="w-5 h-5 text-[#C9A875]" />
                   Base científica
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <Shield className="w-5 h-5 text-[#C9AE7A]" />
+                  <Shield className="w-5 h-5 text-[#C9A875]" />
                   Segurança comprovada
                 </div>
               </div>

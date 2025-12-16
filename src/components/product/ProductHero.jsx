@@ -41,7 +41,7 @@ export default function ProductHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#F2E8D8] to-white">
+    <section className="bg-gradient-to-b from-[#F2E8E2] to-white">
       {/* Announcement Bar */}
       <div className="bg-[#22291c] text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
@@ -72,7 +72,7 @@ export default function ProductHero() {
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-[#C9AE7A] text-white">
+              <Badge className="absolute top-4 left-4 z-10 bg-[#C9A875] text-white">
                 MAIS VENDIDO
               </Badge>
               <img
@@ -139,15 +139,15 @@ export default function ProductHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-[#22291c] text-[#22291c] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
                 100% Natural
               </Badge>
-              <Badge variant="outline" className="border-[#22291c] text-[#22291c] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
                 Seguro na Amamentação
               </Badge>
-              <Badge variant="outline" className="border-[#22291c] text-[#22291c] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
                 Fórmula Estudada
               </Badge>
@@ -159,7 +159,7 @@ export default function ProductHero() {
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                 </span>
-                <Badge className="bg-[#C9AE7A] text-white">
+                <Badge className="bg-[#C9A875] text-white">
                   -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
                 </Badge>
               </div>
@@ -192,8 +192,8 @@ export default function ProductHero() {
                     onClick={() => setSelectedSize(size)}
                     className={`px-6 py-3 rounded-xl border-2 font-medium transition-all ${
                       selectedSize === size
-                        ? 'border-[#C9AE7A] bg-[#C9AE7A] text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-[#C9AE7A]'
+                        ? 'border-[#C9A875] bg-[#C9A875] text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-[#C9A875]'
                     }`}
                   >
                     {size}
@@ -222,7 +222,7 @@ export default function ProductHero() {
                   +
                 </button>
               </div>
-              <Button className="flex-1 h-12 bg-[#C9AE7A] hover:bg-[#b89a68] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#C9AE7A]/25 transition-all hover:shadow-xl hover:shadow-[#C9AE7A]/30">
+              <Button className="flex-1 h-12 bg-[#C9A875] hover:bg-[#b8976a] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#C9A875]/25 transition-all hover:shadow-xl hover:shadow-[#C9A875]/30">
                 Comprar Agora
               </Button>
             </div>
@@ -244,23 +244,23 @@ export default function ProductHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Star className="w-5 h-5 text-[#C9AE7A]" />
+              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 text-[#C9A875]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">+ Avaliado</p>
                 <p className="text-xs text-gray-600 mt-1">Esse Produto é muito Avaliado</p>
               </div>
-              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <RefreshCw className="w-5 h-5 text-[#C9AE7A]" />
+              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <RefreshCw className="w-5 h-5 text-[#C9A875]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Satisfação Garantida</p>
                 <p className="text-xs text-gray-600 mt-1">Ou 100% do seu Dinheiro de Volta</p>
               </div>
-              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Tag className="w-5 h-5 text-[#C9AE7A]" />
+              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Tag className="w-5 h-5 text-[#C9A875]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Cupom Desconto</p>
                 <p className="text-xs text-gray-600 mt-1">Use o Cupom: PRIMEIRACOMPRA</p>
@@ -276,7 +276,7 @@ export default function ProductHero() {
                 'Suporte especializado'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-[#C9AE7A]" />
+                  <Check className="w-4 h-4 text-[#C9A875]" />
                   {benefit}
                 </div>
               ))}

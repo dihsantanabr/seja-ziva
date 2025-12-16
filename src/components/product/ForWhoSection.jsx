@@ -40,7 +40,7 @@ export default function ForWhoSection() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
             Esse é o seu caso?
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -59,10 +59,10 @@ export default function ForWhoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-[#F2E8D8] rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group bg-[#F2E8E2] rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-all">
-                <point.icon className="w-7 h-7 text-[#C9AE7A]" />
+                <point.icon className="w-7 h-7 text-[#C9A875]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {point.title}
