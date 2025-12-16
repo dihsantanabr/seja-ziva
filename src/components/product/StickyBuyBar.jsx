@@ -38,7 +38,7 @@ export default function StickyBuyBar() {
                 <span className="text-sm text-gray-400 line-through">R$ 69,90</span>
               </div>
             </div>
-            <Button className="bg-[#2D5A4A] hover:bg-[#234539] text-white px-6 py-5 rounded-xl font-semibold shadow-lg">
+            <Button className="bg-[#FF9133] hover:bg-[#e67f2a] text-white px-6 py-5 rounded-xl font-semibold shadow-lg">
               <ShoppingCart className="w-5 h-5 mr-2" />
               Comprar
             </Button>
