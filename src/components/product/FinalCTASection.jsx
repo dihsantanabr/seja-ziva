@@ -14,7 +14,7 @@ export default function FinalCTASection() {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-[#2D5A4A] via-[#3d7a64] to-[#2D5A4A]">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-[#FF9133] via-[#e67f2a] to-[#FF9133]">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function FinalCTASection() {
               <Button 
                 type="submit"
                 size="lg"
-                className="bg-white text-[#2D5A4A] hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
+                className="bg-white text-[#FF9133] hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
               >
                 <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 Baixar Grátis
