@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, TrendingUp } from 'lucide-react';
+import PhotoReviewsCarousel from './PhotoReviewsCarousel';
 
 const testimonials = [
   {
