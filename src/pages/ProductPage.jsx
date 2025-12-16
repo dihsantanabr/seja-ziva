@@ -13,6 +13,7 @@ import KitsSection from '../components/product/KitsSection';
 import GuaranteeSection from '../components/product/GuaranteeSection';
 import FinalCTASection from '../components/product/FinalCTASection';
 import StickyBuyBar from '../components/product/StickyBuyBar';
+import WhatsAppWidget from '../components/product/WhatsAppWidget';
 
 export default function ProductPage() {
   return (
@@ -70,6 +71,9 @@ export default function ProductPage() {
       
       {/* Sticky Buy Bar (Mobile) */}
       <StickyBuyBar />
+
+      {/* WhatsApp Widget */}
+      <WhatsAppWidget />
 
       {/* Global styles for animations */}
       <style>{`
