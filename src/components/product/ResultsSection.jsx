@@ -73,7 +73,7 @@ export default function ResultsSection() {
               <p className="text-sm text-gray-600">Feno-grego, Cardo Santo e outras ervas</p>
             </div>
             
-            <ArrowRight className="w-8 h-8 text-[#2D5A4A] rotate-90 lg:rotate-0 flex-shrink-0" />
+            <ArrowRight className="w-8 h-8 text-[#FF9133] rotate-90 lg:rotate-0 flex-shrink-0" />
             
             <div className="bg-[#F5E6E8] rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">⚡</div>
