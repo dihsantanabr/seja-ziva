@@ -6,19 +6,19 @@ import StoriesSection from './StoriesSection';
 import QuickNavigationMenu from './QuickNavigationMenu';
 
 const productImages = [
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68c5b2bb0cdd456c97ee531f/91611728f_Screenshot2025-12-10at095244.png",
-  "https://acdn-us.mitiendanube.com/stores/006/300/998/products/extrato-li-8193d9f288744c92ab17544887013079-1024-1024.webp",
-  "https://acdn-us.mitiendanube.com/stores/006/300/998/products/mama-still04164-d6298db2174fc7c46217489767629228-1024-1024.webp"
+  "https://bariessential.com.br/wp-content/uploads/2025/09/3-frascos-bari-essential-atualizado-v2.webp",
+  "https://bariessential.com.br/wp-content/uploads/2025/09/2-frascos-bari-essential-atualizado-v2.webp",
+  "https://bariessential.com.br/wp-content/uploads/2025/07/product_bari-14caps.webp"
 ];
 
 export default function ProductHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('30ml');
+  const [selectedSize, setSelectedSize] = useState('3 frascos');
 
   const prices = {
-    '30ml': { original: 69.90, current: 59.90 },
-    '60ml': { original: 119.90, current: 99.90 }
+    '1 frasco': { original: 147.00, current: 147.00 },
+    '3 frascos': { original: 441.00, current: 264.60 }
   };
 
   // Calculate delivery dates
@@ -41,23 +41,23 @@ export default function ProductHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#F2E8E2] to-white">
+    <section className="bg-gradient-to-b from-orange-50 to-white">
       {/* Announcement Bar */}
-      <div className="bg-[#22291c] text-white py-2.5 overflow-hidden">
+      <div className="bg-[#FF6B35] text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
               <span className="flex items-center gap-2 text-sm">
                 <Truck className="w-4 h-4" />
-                Frete Grátis acima de R$199
+                Frete Grátis para todo Brasil
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Heart className="w-4 h-4" />
-                +60.000 famílias atendidas
+                Até 60% de Desconto
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Shield className="w-4 h-4" />
-                100% Natural e Seguro
+                Fórmula para Bariátricos
               </span>
             </div>
           ))}
@@ -72,8 +72,8 @@ export default function ProductHero() {
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-[#C9A875] text-white">
-                MAIS VENDIDO
+              <Badge className="absolute top-4 left-4 z-10 bg-[#FF6B35] text-white">
+                60% OFF
               </Badge>
               <img
                 src={productImages[selectedImage]}
@@ -101,7 +101,7 @@ export default function ProductHero() {
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
                   className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImage === idx ? 'border-[#2D5A4A] shadow-lg' : 'border-gray-200'
+                    selectedImage === idx ? 'border-[#FF6B35] shadow-lg' : 'border-gray-200'
                   }`}
                 >
                   <img src={img} alt="" className="w-full h-full object-contain bg-white p-2" />
@@ -113,15 +113,15 @@ export default function ProductHero() {
           {/* Product Info */}
           <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-[#22291c] font-medium text-sm uppercase tracking-wider mb-2">
-                Mamamais • Toda gota conta
+              <p className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider mb-2">
+                Polivitamínico
               </p>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Extrato Vegetal
-                <span className="block text-[#22291c]">Lactação Induzida</span>
+                Bari Essential
+                <span className="block text-[#FF6B35]">Alta Absorção</span>
               </h1>
               <p className="mt-2 text-base lg:text-lg text-gray-600">
-                A solução natural e concentrada para induzir sua produção de leite — mesmo nos casos mais difíceis.
+                Polivitamínico de alta absorção para bariátricos, que corrige deficiências nutricionais, recupera energia e fortalece a imunidade.
               </p>
             </div>
 
@@ -139,17 +139,17 @@ export default function ProductHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
-                100% Natural
+                Alta Concentração
               </Badge>
-              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
-                Seguro na Amamentação
+                Minerais Quelados
               </Badge>
-              <Badge variant="outline" className="border-[#C9A875] text-[#C9A875] px-3 py-1.5">
+              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
-                Fórmula Estudada
+                Criado para Bariátricos
               </Badge>
             </div>
 
@@ -159,9 +159,11 @@ export default function ProductHero() {
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                 </span>
-                <Badge className="bg-[#C9A875] text-white">
-                  -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
-                </Badge>
+                {prices[selectedSize].current !== prices[selectedSize].original && (
+                  <Badge className="bg-[#FF6B35] text-white">
+                    -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
+                  </Badge>
+                )}
               </div>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-4xl font-bold text-gray-900">
@@ -177,28 +179,28 @@ export default function ProductHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  Receba R$ {(prices[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback
+                  Em Estoque
                 </span>
               </div>
             </div>
 
             {/* Size Selection */}
             <div>
-              <p className="font-medium text-gray-700 mb-3">Tamanho:</p>
+              <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
               <div className="flex gap-3">
-                {['30ml', '60ml'].map((size) => (
+                {['1 frasco', '3 frascos'].map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`px-6 py-3 rounded-xl border-2 font-medium transition-all ${
                       selectedSize === size
-                        ? 'border-[#C9A875] bg-[#C9A875] text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-[#C9A875]'
+                        ? 'border-[#FF6B35] bg-[#FF6B35] text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-[#FF6B35]'
                     }`}
                   >
                     {size}
                     <span className="block text-xs mt-0.5 opacity-80">
-                      {size === '30ml' ? 'Dura 10 Dias' : 'Dura 20 Dias'}
+                      {size === '1 frasco' ? 'R$ 147,00' : '40% OFF'}
                     </span>
                   </button>
                 ))}
@@ -222,8 +224,8 @@ export default function ProductHero() {
                   +
                 </button>
               </div>
-              <Button className="flex-1 h-12 bg-[#C9A875] hover:bg-[#b8976a] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#C9A875]/25 transition-all hover:shadow-xl hover:shadow-[#C9A875]/30">
-                Comprar Agora
+              <Button className="flex-1 h-12 bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#FF6B35]/25 transition-all hover:shadow-xl hover:shadow-[#FF6B35]/30">
+                Adicionar ao Carrinho
               </Button>
             </div>
 
@@ -233,10 +235,10 @@ export default function ProductHero() {
                 <Package className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-green-900">
-                    Chegará antes do Natal
+                    Frete grátis para todo Brasil
                   </p>
                   <p className="text-sm text-green-700 mt-1">
-                    Confirme o prazo antes de finalizar.
+                    Em até 3x sem juros no cartão.
                   </p>
                 </div>
               </div>
@@ -244,39 +246,39 @@ export default function ProductHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Star className="w-5 h-5 text-[#C9A875]" />
+              <div className="bg-orange-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">+ Avaliado</p>
-                <p className="text-xs text-gray-600 mt-1">Esse Produto é muito Avaliado</p>
+                <p className="font-semibold text-gray-900 text-sm">Alta Concentração</p>
+                <p className="text-xs text-gray-600 mt-1">+20 nutrientes essenciais</p>
               </div>
-              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <RefreshCw className="w-5 h-5 text-[#C9A875]" />
+              <div className="bg-orange-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <RefreshCw className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Satisfação Garantida</p>
-                <p className="text-xs text-gray-600 mt-1">Ou 100% do seu Dinheiro de Volta</p>
+                <p className="font-semibold text-gray-900 text-sm">Minerais Quelados</p>
+                <p className="text-xs text-gray-600 mt-1">Máxima absorção garantida</p>
               </div>
-              <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Tag className="w-5 h-5 text-[#C9A875]" />
+              <div className="bg-orange-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Tag className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Cupom Desconto</p>
-                <p className="text-xs text-gray-600 mt-1">Use o Cupom: PRIMEIRACOMPRA</p>
+                <p className="font-semibold text-gray-900 text-sm">Para Bariátricos</p>
+                <p className="text-xs text-gray-600 mt-1">Fórmula especializada</p>
               </div>
             </div>
 
             {/* Benefits List */}
             <div className="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
               {[
-                'Envio imediato',
-                'Criado por consultora em lactação',
-                'Usado por +60.000 famílias',
-                'Suporte especializado'
+                'Dosagem correta',
+                'Fórmula com +20 componentes',
+                'Resultados prolongados',
+                'Criado para bariátricos'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-[#C9A875]" />
+                  <Check className="w-4 h-4 text-[#FF6B35]" />
                   {benefit}
                 </div>
               ))}
