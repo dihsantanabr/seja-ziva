@@ -6,41 +6,41 @@ const matches = [
   {
     pain: "Baixa produção extrema",
     solution: "Aumenta prolactina e ativa resposta do corpo para produção de leite",
-    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
-    border: "border-[#2D5A4A]/20"
+    color: "from-[#FFC19C]/30 to-[#FFC19C]/20",
+    border: "border-[#FF9133]/20"
   },
   {
     pain: "Bebê abaixo do peso",
     solution: "Favorece aumento de oferta para mais mamadas eficientes",
-    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
-    border: "border-[#2D5A4A]/20"
+    color: "from-[#FFC19C]/30 to-[#FFC19C]/20",
+    border: "border-[#FF9133]/20"
   },
   {
     pain: "Indução de lactação",
     solution: "Ajuda a iniciar produção mesmo sem parto - ideal para adoção",
-    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
-    border: "border-[#2D5A4A]/20"
+    color: "from-[#FFC19C]/30 to-[#FFC19C]/20",
+    border: "border-[#FF9133]/20"
   },
   {
     pain: "Relactação",
     solution: "Auxilia na retomada da produção após interrupção",
-    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
-    border: "border-[#2D5A4A]/20"
+    color: "from-[#FFC19C]/30 to-[#FFC19C]/20",
+    border: "border-[#FF9133]/20"
   },
   {
     pain: "Redução de fórmula",
     solution: "Mais produção = mais leite materno = menor dependência de fórmula",
-    color: "from-[#A8D5BA]/30 to-[#A8D5BA]/20",
-    border: "border-[#2D5A4A]/20"
+    color: "from-[#FFC19C]/30 to-[#FFC19C]/20",
+    border: "border-[#FF9133]/20"
   }
 ];
 
 export default function PainMatchSection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-[#F9F6F2] to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-[#fdefe2] to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#2D5A4A] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#FF9133] font-medium text-sm uppercase tracking-wider">
             Match perfeito
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -64,7 +64,7 @@ export default function PainMatchSection() {
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                 <div className="flex items-center gap-3 lg:w-1/3">
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <Check className="w-5 h-5 text-[#2D5A4A]" />
+                    <Check className="w-5 h-5 text-[#FF9133]" />
                   </div>
                   <h3 className="font-semibold text-gray-900 text-lg">
                     {match.pain}
