@@ -41,9 +41,9 @@ export default function WhatsAppWidget() {
             onClick={handleWhatsAppClick}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-16 h-16 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all group relative"
+            className="w-14 h-14 lg:w-16 lg:h-16 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all group relative"
           >
-            <MessageCircle className="w-8 h-8 text-white fill-white" />
+            <MessageCircle className="w-7 h-7 lg:w-8 lg:h-8 text-white fill-white" />
             
             {/* Ping animation */}
             <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75" />

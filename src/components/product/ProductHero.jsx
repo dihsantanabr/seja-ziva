@@ -67,8 +67,8 @@ export default function ProductHero() {
       {/* Stories Section */}
       <StoriesSection />
 
-      <div className="max-w-7xl mx-auto px-4 py-8 lg:py-12">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+      <div className="max-w-7xl mx-auto px-4 py-6 lg:py-12">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
@@ -111,16 +111,16 @@ export default function ProductHero() {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             <div>
               <p className="text-[#22291c] font-medium text-sm uppercase tracking-wider mb-2">
                 Mamamais • Toda gota conta
               </p>
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Extrato Vegetal
                 <span className="block text-[#22291c]">Lactação Induzida</span>
               </h1>
-              <p className="mt-3 text-lg text-gray-600">
+              <p className="mt-2 text-base lg:text-lg text-gray-600">
                 A solução natural e concentrada para induzir sua produção de leite — mesmo nos casos mais difíceis.
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function ProductHero() {
             </div>
 
             {/* Price Box */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-100">
+            <div className="bg-white rounded-2xl p-4 lg:p-6 border border-gray-100">
               <div className="flex items-baseline gap-3">
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
@@ -243,7 +243,7 @@ export default function ProductHero() {
             </div>
 
             {/* Trust Cards */}
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="bg-[#F2E8E2] rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-[#C9A875]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Star className="w-5 h-5 text-[#C9A875]" />

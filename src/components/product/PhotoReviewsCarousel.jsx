@@ -59,7 +59,7 @@ export default function PhotoReviewsCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl p-6 lg:p-10 shadow-xl"
+              className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center bg-white rounded-2xl p-4 lg:p-10 shadow-xl"
             >
               {/* Image */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
@@ -72,7 +72,7 @@ export default function PhotoReviewsCarousel() {
               </div>
 
               {/* Content */}
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 <div>
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">
                     {photoReviews[currentIndex].name}

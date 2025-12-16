@@ -14,7 +14,7 @@ export default function FinalCTASection() {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-[#C9A875] via-[#b8976a] to-[#C9A875]">
+    <section className="py-12 lg:py-24 bg-gradient-to-br from-[#C9A875] via-[#b8976a] to-[#C9A875]">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function FinalCTASection() {
             <span className="text-white font-medium">Guia Completo</span>
           </div>
 
-          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
             Ainda em dúvidas se é para você?
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
