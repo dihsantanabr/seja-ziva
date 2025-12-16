@@ -115,6 +115,9 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Photo Reviews Carousel */}
+        <PhotoReviewsCarousel />
       </div>
     </section>
   );
