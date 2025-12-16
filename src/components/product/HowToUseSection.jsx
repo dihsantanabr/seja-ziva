@@ -81,7 +81,7 @@ export default function HowToUseSection() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF9133] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
             Modo de uso
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -99,8 +99,8 @@ export default function HowToUseSection() {
               transition={{ delay: idx * 0.1 }}
               className="relative"
             >
-              <div className="bg-[#fdefe2] rounded-2xl p-6 h-full">
-                <div className="w-10 h-10 bg-[#FF9133] rounded-full flex items-center justify-center text-white font-bold mb-4">
+              <div className="bg-[#F2E8D8] rounded-2xl p-6 h-full">
+                <div className="w-10 h-10 bg-[#C9AE7A] rounded-full flex items-center justify-center text-white font-bold mb-4">
                   {step.number}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-lg mb-2">
@@ -111,14 +111,14 @@ export default function HowToUseSection() {
                 </p>
               </div>
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-[#FF9133]/30" />
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-[#C9AE7A]/30" />
               )}
             </motion.div>
           ))}
         </div>
 
         {/* Expectations Card */}
-        <div className="bg-gradient-to-r from-[#FF9133] to-[#e67f2a] rounded-3xl p-8 lg:p-10 text-white">
+        <div className="bg-gradient-to-r from-[#C9AE7A] to-[#b89a68] rounded-3xl p-8 lg:p-10 text-white">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4">
@@ -190,13 +190,13 @@ export default function HowToUseSection() {
                 <ul className="space-y-2 mb-6">
                   {item.results.map((result, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-[#FF9133] flex-shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#C9AE7A] flex-shrink-0 mt-0.5" />
                       <span>{result}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="pt-4 border-t border-gray-100">
-                  <div className="text-3xl font-bold text-[#FF9133]">
+                  <div className="text-3xl font-bold text-[#C9AE7A]">
                     {item.approval}
                   </div>
                   <div className="text-xs text-gray-500">aprovação</div>

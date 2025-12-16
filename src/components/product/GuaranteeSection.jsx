@@ -27,10 +27,10 @@ const guarantees = [
 
 export default function GuaranteeSection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-[#fdefe2] to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-[#F2E8D8] to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF9133] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
             Você não está sozinha
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -48,8 +48,8 @@ export default function GuaranteeSection() {
               transition={{ delay: idx * 0.1 }}
               className="bg-white rounded-2xl p-6 text-center shadow-lg"
             >
-              <div className="w-14 h-14 bg-[#FFC19C]/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <item.icon className="w-7 h-7 text-[#FF9133]" />
+              <div className="w-14 h-14 bg-[#C9AE7A]/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <item.icon className="w-7 h-7 text-[#C9AE7A]" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">
                 {item.title}
@@ -68,7 +68,7 @@ export default function GuaranteeSection() {
           viewport={{ once: true }}
           className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl text-center"
         >
-          <div className="w-20 h-20 bg-[#FF9133] rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-[#C9AE7A] rounded-full flex items-center justify-center mx-auto mb-6">
             <Shield className="w-10 h-10 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -81,7 +81,7 @@ export default function GuaranteeSection() {
           <div className="flex flex-wrap justify-center gap-6">
             {['Troca fácil', 'Suporte WhatsApp', 'Envio seguro', 'Embalagem discreta'].map((item, idx) => (
               <div key={idx} className="flex items-center gap-2 text-gray-700">
-                <Check className="w-5 h-5 text-[#FF9133]" />
+                <Check className="w-5 h-5 text-[#C9AE7A]" />
                 {item}
               </div>
             ))}

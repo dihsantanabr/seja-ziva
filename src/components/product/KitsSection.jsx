@@ -36,7 +36,7 @@ export default function KitsSection() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF9133] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#C9AE7A] font-medium text-sm uppercase tracking-wider">
             Potencialize seus resultados
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -57,8 +57,8 @@ export default function KitsSection() {
               transition={{ delay: idx * 0.1 }}
               className={`relative rounded-3xl p-6 ${
                 kit.popular 
-                  ? 'bg-gradient-to-b from-[#FF9133] to-[#e67f2a] text-white' 
-                  : 'bg-[#fdefe2]'
+                  ? 'bg-gradient-to-b from-[#C9AE7A] to-[#b89a68] text-white' 
+                  : 'bg-[#F2E8D8]'
               }`}
             >
               {kit.popular && (
@@ -99,8 +99,8 @@ export default function KitsSection() {
               <Button 
                 className={`w-full ${
                   kit.popular 
-                    ? 'bg-white text-[#FF9133] hover:bg-gray-100' 
-                    : 'bg-[#FF9133] text-white hover:bg-[#e67f2a]'
+                    ? 'bg-white text-[#C9AE7A] hover:bg-gray-100' 
+                    : 'bg-[#C9AE7A] text-white hover:bg-[#b89a68]'
                 }`}
               >
                 Adicionar Kit

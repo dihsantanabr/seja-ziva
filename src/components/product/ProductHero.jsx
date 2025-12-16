@@ -41,7 +41,7 @@ export default function ProductHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#fdefe2] to-white">
+    <section className="bg-gradient-to-b from-[#F2E8D8] to-white">
       {/* Announcement Bar */}
       <div className="bg-[#22291c] text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
@@ -72,7 +72,7 @@ export default function ProductHero() {
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-[#FF9133] text-white">
+              <Badge className="absolute top-4 left-4 z-10 bg-[#C9AE7A] text-white">
                 MAIS VENDIDO
               </Badge>
               <img
@@ -159,7 +159,7 @@ export default function ProductHero() {
                 <span className="text-gray-400 line-through text-lg">
                   R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                 </span>
-                <Badge className="bg-[#FF9133] text-white">
+                <Badge className="bg-[#C9AE7A] text-white">
                   -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
                 </Badge>
               </div>
@@ -192,8 +192,8 @@ export default function ProductHero() {
                     onClick={() => setSelectedSize(size)}
                     className={`px-6 py-3 rounded-xl border-2 font-medium transition-all ${
                       selectedSize === size
-                        ? 'border-[#FF9133] bg-[#FF9133] text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-[#FF9133]'
+                        ? 'border-[#C9AE7A] bg-[#C9AE7A] text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-[#C9AE7A]'
                     }`}
                   >
                     {size}
@@ -222,7 +222,7 @@ export default function ProductHero() {
                   +
                 </button>
               </div>
-              <Button className="flex-1 h-12 bg-[#FF9133] hover:bg-[#e67f2a] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#FF9133]/25 transition-all hover:shadow-xl hover:shadow-[#FF9133]/30">
+              <Button className="flex-1 h-12 bg-[#C9AE7A] hover:bg-[#b89a68] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#C9AE7A]/25 transition-all hover:shadow-xl hover:shadow-[#C9AE7A]/30">
                 Comprar Agora
               </Button>
             </div>
@@ -244,23 +244,23 @@ export default function ProductHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-[#fdefe2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF9133]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Star className="w-5 h-5 text-[#FF9133]" />
+              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 text-[#C9AE7A]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">+ Avaliado</p>
                 <p className="text-xs text-gray-600 mt-1">Esse Produto é muito Avaliado</p>
               </div>
-              <div className="bg-[#fdefe2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF9133]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <RefreshCw className="w-5 h-5 text-[#FF9133]" />
+              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <RefreshCw className="w-5 h-5 text-[#C9AE7A]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Satisfação Garantida</p>
                 <p className="text-xs text-gray-600 mt-1">Ou 100% do seu Dinheiro de Volta</p>
               </div>
-              <div className="bg-[#fdefe2] rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF9133]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Tag className="w-5 h-5 text-[#FF9133]" />
+              <div className="bg-[#F2E8D8] rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-[#C9AE7A]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Tag className="w-5 h-5 text-[#C9AE7A]" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Cupom Desconto</p>
                 <p className="text-xs text-gray-600 mt-1">Use o Cupom: PRIMEIRACOMPRA</p>
@@ -276,7 +276,7 @@ export default function ProductHero() {
                 'Suporte especializado'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-[#FF9133]" />
+                  <Check className="w-4 h-4 text-[#C9AE7A]" />
                   {benefit}
                 </div>
               ))}
