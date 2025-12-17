@@ -44,7 +44,7 @@ export default function FAQSection() {
     <section className="py-16 lg:py-24 bg-[#F2E8E2]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
             Tire suas dúvidas
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
