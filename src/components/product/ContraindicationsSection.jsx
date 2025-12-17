@@ -45,7 +45,7 @@ export default function ContraindicationsSection() {
 
           {/* Safety & Support */}
           <div className="space-y-6">
-            <div className="bg-orange-50 border border-[#FF6B35]/20 rounded-2xl p-6">
+            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="w-6 h-6 text-purple-600" />
                 <h4 className="font-semibold text-gray-900">Qualidade garantida</h4>
@@ -56,7 +56,7 @@ export default function ContraindicationsSection() {
                 </p>
             </div>
 
-            <div className="bg-orange-50 border border-[#FF6B35]/20 rounded-2xl p-6">
+            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Heart className="w-6 h-6 text-purple-600" />
                 <h4 className="font-semibold text-gray-900">Suporte especializado</h4>
@@ -67,7 +67,7 @@ export default function ContraindicationsSection() {
               </p>
             </div>
 
-            <div className="bg-orange-50 border border-[#FF6B35]/20 rounded-2xl p-6">
+            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
                 <RefreshCw className="w-6 h-6 text-purple-600" />
                 <h4 className="font-semibold text-gray-900">Política de troca</h4>
