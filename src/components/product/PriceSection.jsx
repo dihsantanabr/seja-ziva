@@ -108,8 +108,6 @@ export default function PriceSection() {
               )}
 
               <div className="text-center space-y-4">
-                <Package className={`w-16 h-16 mx-auto ${selectedSize === size ? 'text-[#FF6B35]' : 'text-gray-400'}`} />
-                
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-1">{size}</h3>
                   <p className="text-sm text-gray-500">{details.duration}</p>
