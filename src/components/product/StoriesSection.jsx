@@ -5,62 +5,62 @@ import { motion, AnimatePresence } from 'framer-motion';
 const stories = [
   {
     id: 1,
-    thumb: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=600&fit=crop",
     title: "Depoimentos",
     type: "image"
   },
   {
     id: 2,
-    thumb: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=600&fit=crop",
-    title: "Resultados",
+    thumb: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&h=600&fit=crop",
+    title: "Pele Radiante",
     type: "image"
   },
   {
     id: 3,
-    thumb: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=600&fit=crop",
-    title: "Médicos",
+    thumb: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=600&fit=crop",
+    title: "Antes e Depois",
     type: "image"
   },
   {
     id: 4,
-    thumb: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=600&fit=crop",
     title: "Benefícios",
     type: "image"
   },
   {
     id: 5,
-    thumb: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=400&h=600&fit=crop",
     title: "Como Usar",
     type: "image"
   },
   {
     id: 6,
-    thumb: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=600&fit=crop",
-    title: "Antes e Depois",
+    thumb: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=600&fit=crop",
+    title: "Cabelos Fortes",
     type: "image"
   },
   {
     id: 7,
-    thumb: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=400&h=600&fit=crop",
-    title: "Fórmula",
+    thumb: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&h=600&fit=crop",
+    title: "Fórmula 3 em 1",
     type: "image"
   },
   {
     id: 8,
-    thumb: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=600&fit=crop",
-    title: "Pós-Cirurgia",
+    thumb: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=600&fit=crop",
+    title: "Unhas Saudáveis",
     type: "image"
   },
   {
     id: 9,
-    thumb: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
-    title: "Energia",
+    thumb: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=400&h=600&fit=crop",
+    title: "Rejuvenescimento",
     type: "image"
   },
   {
     id: 10,
-    thumb: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=600&fit=crop",
-    title: "Imunidade",
+    thumb: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=600&fit=crop",
+    title: "Hidratação",
     type: "image"
   }
 ];
@@ -104,7 +104,7 @@ export default function StoriesSection() {
               >
                 <div className="relative">
                   {/* Gradient border */}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 p-[2px]">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-pink-600 p-[2px]">
                     <div className="w-full h-full rounded-full bg-white p-[2px]">
                       <img
                         src={story.thumb}
