@@ -199,6 +199,13 @@ export default function ProductHero() {
                         : 'border-gray-200 text-gray-700 hover:border-[#FF6B35]'
                     }`}
                   >
+                    {size === '3 Unidades' && (
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
+                        <span className="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          Mais Escolhido
+                        </span>
+                      </div>
+                    )}
                     <div className="text-sm font-bold">{size}</div>
                     {prices[size].discount > 0 && (
                       <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/90' : 'text-gray-600'}`}>
