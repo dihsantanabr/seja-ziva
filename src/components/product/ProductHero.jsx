@@ -250,22 +250,19 @@ export default function ProductHero() {
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Star className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Alta Concentração</p>
-                <p className="text-xs text-gray-600 mt-1">+20 nutrientes essenciais</p>
+                <p className="font-semibold text-gray-900 text-sm">Alta concentração de nutrientes</p>
               </div>
               <div className="bg-orange-50 rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <RefreshCw className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Minerais Quelados</p>
-                <p className="text-xs text-gray-600 mt-1">Máxima absorção garantida</p>
+                <p className="font-semibold text-gray-900 text-sm">Rico em minerais quelados (de máxima absorção)</p>
               </div>
               <div className="bg-orange-50 rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Tag className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Para Bariátricos</p>
-                <p className="text-xs text-gray-600 mt-1">Fórmula especializada</p>
+                <p className="font-semibold text-gray-900 text-sm">Crucial para a saúde e nutrição pós-bariátrica</p>
               </div>
             </div>
 
