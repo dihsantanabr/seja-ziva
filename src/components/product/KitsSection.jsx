@@ -6,27 +6,27 @@ import { Badge } from "@/components/ui/badge";
 
 const kits = [
   {
-    name: "Kit Lactação Induzida",
-    description: "Combinação completa para quem está fazendo protocolo de lactação induzida",
-    products: ["Extrato Lactação Induzida", "Buenas Noches", "Banho de Assento"],
-    originalPrice: 179.70,
-    price: 149.90,
+    name: "Kit Recuperação Total",
+    description: "Combinação completa para máxima energia e recuperação nutricional",
+    products: ["3x Bari Essential", "Guia de Alimentação", "Acompanhamento Nutricional"],
+    originalPrice: 441.00,
+    price: 264.60,
     popular: true
   },
   {
-    name: "Kit Aumento de Produção",
-    description: "Para quem quer potencializar a produção de leite",
-    products: ["Extrato Lactação Induzida", "Extrato Amamentação"],
-    originalPrice: 119.80,
-    price: 99.90,
+    name: "Kit Energia Plus",
+    description: "Para quem precisa de energia e disposição no dia a dia",
+    products: ["2x Bari Essential", "Shaker exclusivo"],
+    originalPrice: 294.00,
+    price: 199.90,
     popular: false
   },
   {
-    name: "Kit Relaxamento",
-    description: "Para mães que precisam de calma para a descida do leite",
-    products: ["Extrato Lactação Induzida", "Buenas Noches"],
-    originalPrice: 119.80,
-    price: 99.90,
+    name: "Kit Experimenta",
+    description: "Ideal para começar sua jornada de reposição nutricional",
+    products: ["1x Bari Essential", "Guia de uso"],
+    originalPrice: 147.00,
+    price: 147.00,
     popular: false
   }
 ];
@@ -36,14 +36,14 @@ export default function KitsSection() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#C9A875] font-medium text-sm uppercase tracking-wider">
+          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
             Potencialize seus resultados
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
             Kits Recomendados
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Combine produtos para resultados ainda melhores
+            Escolha o kit ideal para sua jornada de recuperação nutricional
           </p>
         </div>
 
@@ -57,8 +57,8 @@ export default function KitsSection() {
               transition={{ delay: idx * 0.1 }}
               className={`relative rounded-3xl p-6 ${
                 kit.popular 
-                  ? 'bg-gradient-to-b from-[#C9A875] to-[#b8976a] text-white' 
-                  : 'bg-[#F2E8E2]'
+                  ? 'bg-gradient-to-b from-[#FF6B35] to-[#E55A2B] text-white' 
+                  : 'bg-orange-50'
               }`}
             >
               {kit.popular && (
@@ -99,8 +99,8 @@ export default function KitsSection() {
               <Button 
                 className={`w-full ${
                   kit.popular 
-                    ? 'bg-white text-[#C9A875] hover:bg-gray-100' 
-                    : 'bg-[#C9A875] text-white hover:bg-[#b8976a]'
+                    ? 'bg-white text-[#FF6B35] hover:bg-gray-100' 
+                    : 'bg-[#FF6B35] text-white hover:bg-[#E55A2B]'
                 }`}
               >
                 Adicionar Kit
