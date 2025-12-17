@@ -4,36 +4,36 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Preciso mesmo tomar polivitamínico depois da bariátrica?",
-    answer: "Sim! A cirurgia bariátrica reduz drasticamente a absorção de nutrientes. Mesmo com uma alimentação balanceada, é impossível suprir todas as necessidades apenas pela comida. O Bari Essential foi desenvolvido especificamente para corrigir essas deficiências e prevenir problemas graves de saúde."
+    question: "O colágeno realmente funciona? Vou ver resultados?",
+    answer: "Sim! Mais de 50.000 clientes já comprovaram os resultados. Em 7 dias você sentirá a pele mais hidratada, em 30 dias as rugas começam a diminuir e em 90 dias o rejuvenescimento é visível. Nosso colágeno tem 3 tipos (I, II e III) + Ácido Hialurônico para máxima eficácia."
   },
   {
-    question: "Por que não posso usar qualquer polivitamínico comum?",
-    answer: "Os polivitamínicos comuns não têm as dosagens adequadas nem os minerais na forma quelada, essencial para quem fez bariátrica. O Bari Essential possui concentrações até 10x maiores de nutrientes críticos e minerais quelados que garantem absorção máxima mesmo com o intestino reduzido."
+    question: "Por que o Multicolágeno é melhor que outros colágenos?",
+    answer: "A maioria dos colágenos tem apenas 1 tipo. O Multicolágeno tem 3 tipos diferentes (I, II e III) que agem em conjunto na pele, cabelos, unhas e articulações. Além disso, adicionamos Ácido Hialurônico que potencializa a hidratação e os resultados."
   },
   {
-    question: "É muito caro? Vale a pena o investimento?",
-    answer: "Comparado ao custo de tratar deficiências graves (anemia, osteoporose, problemas neurológicos) e a qualidade de vida que você perde, o Bari Essential é um investimento pequeno. Além disso, oferecemos descontos progressivos: quanto mais você compra, mais economiza. O kit de 5 unidades tem 50% de desconto."
+    question: "Tem gosto ruim? Como eu tomo?",
+    answer: "Não! Nosso colágeno tem sabor neutro e dissolve completamente. Você pode misturar em água, café, suco, vitamina ou qualquer bebida. É apenas 1 dosador por dia e não altera o sabor da sua bebida."
   },
   {
-    question: "Quanto tempo vou precisar tomar?",
-    answer: "O uso é para a vida toda após a cirurgia bariátrica. Seu corpo não volta a absorver nutrientes como antes da cirurgia. Mas pense assim: são apenas 2 cápsulas por dia que garantem sua saúde, energia e bem-estar por toda a vida."
+    question: "Quanto tempo preciso tomar para ver resultados?",
+    answer: "Os primeiros resultados aparecem em 7 dias (hidratação). Em 30 dias você verá redução de linhas finas e cabelos mais fortes. Para resultados completos e duradouros, recomendamos usar por pelo menos 90 dias consecutivos."
   },
   {
-    question: "E se eu esquecer de tomar alguns dias?",
-    answer: "É essencial manter a consistência. Quando você para de tomar, as deficiências voltam rapidamente. Os sintomas como fadiga, queda de cabelo e anemia podem retornar em poucas semanas. Por isso criamos uma fórmula de apenas 2 cápsulas ao dia para facilitar a rotina."
+    question: "É seguro? Tem efeitos colaterais?",
+    answer: "Totalmente seguro! Nosso colágeno é hidrolisado, natural e não tem contraindicações para a maioria das pessoas. É um suplemento alimentar aprovado pela ANVISA. Grávidas, lactantes e pessoas com condições médicas devem consultar um médico antes."
   },
   {
-    question: "Vou ter que tomar muitas cápsulas por dia?",
-    answer: "Não! O Bari Essential tem apenas 2 cápsulas por dia, muito mais prático que a maioria dos polivitamínicos que exigem 4-6 cápsulas. Nossa fórmula é super concentrada para facilitar sua rotina."
+    question: "Por que o preço varia tanto? Qual kit devo escolher?",
+    answer: "Quanto mais você compra, maior o desconto. O kit de 3 pacotes + 1 grátis (120 dias) tem 53% OFF e é o mais escolhido porque garante resultados completos com melhor custo-benefício. Além disso, você não fica sem o produto e mantém a constância."
   },
   {
-    question: "Funciona mesmo? Como sei que vou ter resultado?",
-    answer: "Mais de 15.000 pacientes bariátricos já usam o Bari Essential com 96% de aprovação. Em 30 dias você sentirá mais energia, em 60 dias seus exames começarão a normalizar. Temos garantia de satisfação - se não funcionar, devolvemos seu dinheiro."
+    question: "Vou emagrecer ou engordar tomando colágeno?",
+    answer: "Não! O colágeno não engorda nem emagrece. É uma proteína que age na estrutura da pele, cabelos e unhas. Tem apenas 40 calorias por dose e ajuda a manter a firmeza da pele durante processos de emagrecimento."
   },
   {
-    question: "Posso comprar na farmácia ou só pela internet?",
-    answer: "O Bari Essential é um produto exclusivo, não está disponível em farmácias. Vendemos apenas pelo site oficial para garantir a procedência, qualidade e o melhor preço. Oferecemos frete grátis para todo Brasil e entrega rápida."
+    question: "Posso tomar junto com outros suplementos ou remédios?",
+    answer: "Sim! O Multicolágeno pode ser tomado junto com vitaminas, outros suplementos e medicamentos. Não há interações conhecidas. Porém, se você toma medicação contínua, consulte seu médico antes de iniciar qualquer suplementação."
   }
 ];
 
@@ -41,10 +41,10 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-orange-50 to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Tire suas dúvidas
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -60,14 +60,14 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-orange-100"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-purple-100"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-orange-50 transition"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-purple-50 transition"
               >
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-purple-600 flex-shrink-0" />
                   <span className="font-medium text-gray-900">{faq.question}</span>
                 </div>
                 <ChevronDown
