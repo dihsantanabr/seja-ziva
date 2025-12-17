@@ -22,7 +22,7 @@ const kits = [
   {
     name: "Kit Energia e Foco",
     description: "Kit Bari Essential + Mind Fuel + Fit Bari",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eccc1e257_Screenshot2025-12-17at145728.png",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/4d5934e42_image.png",
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   }
