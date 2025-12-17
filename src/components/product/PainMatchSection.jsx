@@ -4,50 +4,50 @@ import { Check } from 'lucide-react';
 
 const matches = [
   {
-    pain: "Fadiga e cansaço extremo",
-    solution: "Repõe vitaminas do complexo B e ferro, combatendo a fadiga pós-bariátrica",
-    color: "from-[#FF6B35]/20 to-[#FF6B35]/10",
-    border: "border-[#FF6B35]/20"
+    pain: "Rugas e linhas de expressão",
+    solution: "Colágeno tipo I e III preenchem rugas de dentro para fora, suavizando linhas de expressão",
+    color: "from-purple-600/20 to-purple-600/10",
+    border: "border-purple-600/20"
   },
   {
-    pain: "Anemia recorrente",
-    solution: "Ferro quelado + vitamina C garantem absorção otimizada e normalização da hemoglobina",
-    color: "from-[#FF6B35]/20 to-[#FF6B35]/10",
-    border: "border-[#FF6B35]/20"
+    pain: "Pele sem viço e opaca",
+    solution: "Ácido Hialurônico + Vitamina C hidratam profundamente e iluminam a pele",
+    color: "from-purple-600/20 to-purple-600/10",
+    border: "border-purple-600/20"
   },
   {
-    pain: "Queda de cabelo e unhas fracas",
-    solution: "Biotina, zinco e vitaminas essenciais fortalecem cabelo, pele e unhas",
-    color: "from-[#FF6B35]/20 to-[#FF6B35]/10",
-    border: "border-[#FF6B35]/20"
+    pain: "Cabelo fraco e quebradiço",
+    solution: "Biotina + colágeno fortalecem os fios, reduzem queda e aumentam volume",
+    color: "from-purple-600/20 to-purple-600/10",
+    border: "border-purple-600/20"
   },
   {
-    pain: "Baixa imunidade",
-    solution: "Vitaminas C, D3 e zinco fortalecem o sistema imunológico naturalmente",
-    color: "from-[#FF6B35]/20 to-[#FF6B35]/10",
-    border: "border-[#FF6B35]/20"
+    pain: "Unhas fracas que quebram",
+    solution: "Colágeno + biotina fortalecem as unhas, evitando descamação e quebra",
+    color: "from-purple-600/20 to-purple-600/10",
+    border: "border-purple-600/20"
   },
   {
-    pain: "Dores musculares e ósseas",
-    solution: "Cálcio + vitamina D3 + magnésio fortalecem ossos e músculos",
-    color: "from-[#FF6B35]/20 to-[#FF6B35]/10",
-    border: "border-[#FF6B35]/20"
+    pain: "Flacidez e perda de firmeza",
+    solution: "3 tipos de colágeno restauram elasticidade e firmeza da pele",
+    color: "from-purple-600/20 to-purple-600/10",
+    border: "border-purple-600/20"
   }
 ];
 
 export default function PainMatchSection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-orange-50 to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Match perfeito
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
             Para cada problema, uma solução
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Entenda exatamente como o Bari Essential atua no seu caso específico
+            Entenda exatamente como o Multicolágeno atua no seu caso específico
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function PainMatchSection() {
               <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                 <div className="flex items-center gap-3 lg:w-1/3">
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <Check className="w-5 h-5 text-[#FF6B35]" />
+                    <Check className="w-5 h-5 text-purple-600" />
                   </div>
                   <h3 className="font-semibold text-gray-900 text-lg">
                     {match.pain}

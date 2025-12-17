@@ -4,47 +4,47 @@ import { motion } from 'framer-motion';
 
 const comparisons = [
   {
-    feature: "Absorção de nutrientes",
-    bari: { value: "Otimizada", highlight: true },
-    comum: { value: "Baixa", highlight: false },
+    feature: "Tipos de colágeno",
+    bari: { value: "3 tipos (I, II, III)", highlight: true },
+    comum: { value: "1 tipo apenas", highlight: false },
+    varios: { value: "2 tipos", highlight: false }
+  },
+  {
+    feature: "Ácido Hialurônico",
+    bari: { value: true, highlight: true },
+    comum: { value: false, highlight: false },
+    varios: { value: "Parcial", highlight: false }
+  },
+  {
+    feature: "Colágeno hidrolisado",
+    bari: { value: true, highlight: true },
+    comum: { value: false, highlight: false },
+    varios: { value: true, highlight: false }
+  },
+  {
+    feature: "Vitamina C + Biotina",
+    bari: { value: true, highlight: true },
+    comum: { value: false, highlight: false },
+    varios: { value: "Parcial", highlight: false }
+  },
+  {
+    feature: "Sabor",
+    bari: { value: "Neutro", highlight: true },
+    comum: { value: "Sabor forte", highlight: false },
     varios: { value: "Variável", highlight: false }
   },
   {
-    feature: "Minerais quelados",
-    bari: { value: true, highlight: true },
-    comum: { value: false, highlight: false },
-    varios: { value: "Parcial", highlight: false }
-  },
-  {
-    feature: "Dosagem para bariátricos",
-    bari: { value: true, highlight: true },
-    comum: { value: false, highlight: false },
-    varios: { value: false, highlight: false }
-  },
-  {
-    feature: "Vitaminas ativas",
-    bari: { value: true, highlight: true },
-    comum: { value: false, highlight: false },
-    varios: { value: "Parcial", highlight: false }
-  },
-  {
-    feature: "Praticidade (cápsulas/dia)",
-    bari: { value: "Apenas 2", highlight: true },
-    comum: { value: "Várias", highlight: false },
-    varios: { value: "Muitas", highlight: false }
-  },
-  {
-    feature: "Fórmula completa +20",
-    bari: { value: true, highlight: true },
-    comum: { value: false, highlight: false },
-    varios: { value: "Incompleta", highlight: false }
+    feature: "Resultados visíveis",
+    bari: { value: "30 dias", highlight: true },
+    comum: { value: "60-90 dias", highlight: false },
+    varios: { value: "Incerto", highlight: false }
   }
 ];
 
 const ValueCell = ({ value, highlight }) => {
   if (value === true) {
     return (
-      <div className={`flex justify-center ${highlight ? 'text-[#FF6B35]' : 'text-gray-400'}`}>
+      <div className={`flex justify-center ${highlight ? 'text-purple-600' : 'text-gray-400'}`}>
         <Check className="w-6 h-6" />
       </div>
     );
@@ -57,7 +57,7 @@ const ValueCell = ({ value, highlight }) => {
     );
   }
   return (
-    <span className={`${highlight ? 'text-[#FF6B35] font-semibold' : 'text-gray-500'}`}>
+    <span className={`${highlight ? 'text-purple-600 font-semibold' : 'text-gray-500'}`}>
       {value}
     </span>
   );
@@ -65,17 +65,17 @@ const ValueCell = ({ value, highlight }) => {
 
 export default function ComparisonSection() {
   return (
-    <section className="py-16 lg:py-24 bg-orange-50">
+    <section className="py-16 lg:py-24 bg-purple-50">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Compare e decida
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Bari Essential vs Polivitamínicos Comuns
+            Multicolágeno vs Colágenos Comuns
           </h2>
           <p className="text-gray-600 mt-4">
-            Entenda por que o Bari Essential é a melhor opção para você
+            Entenda por que o Multicolágeno é a melhor opção para você
           </p>
         </div>
 
@@ -93,15 +93,15 @@ export default function ComparisonSection() {
                     Característica
                   </th>
                   <th className="py-5 px-6">
-                    <div className="bg-[#FF6B35] text-white rounded-xl py-2 px-4 font-semibold">
-                      Bari Essential
+                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl py-2 px-4 font-semibold">
+                      Multicolágeno
                     </div>
                   </th>
                   <th className="py-5 px-6 text-gray-700 font-medium">
-                    Polivitamínico comum
+                    Colágeno comum
                   </th>
                   <th className="py-5 px-6 text-gray-700 font-medium">
-                    Vários separados
+                    Outros colágenos
                   </th>
                 </tr>
               </thead>
@@ -111,7 +111,7 @@ export default function ComparisonSection() {
                     <td className="py-4 px-6 font-medium text-gray-900">
                       {row.feature}
                     </td>
-                    <td className="py-4 px-6 text-center bg-[#FF6B35]/5">
+                    <td className="py-4 px-6 text-center bg-purple-600/5">
                       <ValueCell value={row.bari.value} highlight={row.bari.highlight} />
                     </td>
                     <td className="py-4 px-6 text-center">
