@@ -71,7 +71,7 @@ export default function ProductHero() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
-            <div className="relative aspect-square lg:aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg">
               <Badge className="absolute top-4 left-4 z-10 bg-[#FF6B35] text-white">
                 60% OFF
               </Badge>
