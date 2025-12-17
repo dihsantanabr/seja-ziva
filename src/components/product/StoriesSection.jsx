@@ -6,61 +6,61 @@ const stories = [
   {
     id: 1,
     thumb: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&h=600&fit=crop",
-    title: "Resultados em 7 dias",
+    title: "Depoimentos",
     type: "image"
   },
   {
     id: 2,
     thumb: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=600&fit=crop",
-    title: "Como usar",
+    title: "Resultados",
     type: "image"
   },
   {
     id: 3,
     thumb: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=400&h=600&fit=crop",
-    title: "Depoimentos",
+    title: "Médicos",
     type: "image"
   },
   {
     id: 4,
     thumb: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=600&fit=crop",
-    title: "Lactação induzida",
+    title: "Benefícios",
     type: "image"
   },
   {
     id: 5,
     thumb: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=600&fit=crop",
-    title: "Baixa produção",
+    title: "Como Usar",
     type: "image"
   },
   {
     id: 6,
     thumb: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop",
-    title: "Ganho de peso",
+    title: "Antes e Depois",
     type: "image"
   },
   {
     id: 7,
     thumb: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop",
-    title: "Reduzir fórmula",
+    title: "Fórmula",
     type: "image"
   },
   {
     id: 8,
     thumb: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop",
-    title: "Pós-parto",
+    title: "Pós-Cirurgia",
     type: "image"
   },
   {
     id: 9,
     thumb: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=600&fit=crop",
-    title: "Relactação",
+    title: "Energia",
     type: "image"
   },
   {
     id: 10,
     thumb: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=600&fit=crop",
-    title: "Cesárea",
+    title: "Imunidade",
     type: "image"
   }
 ];
