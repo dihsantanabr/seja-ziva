@@ -4,36 +4,36 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: "É seguro para o bebê?",
-    answer: "Sim! O extrato é feito com ervas tradicionalmente usadas durante a amamentação e é seguro para mães lactantes. As ervas são selecionadas com base em literatura científica e bancos de dados como LactMed."
+    question: "Preciso mesmo tomar polivitamínico depois da bariátrica?",
+    answer: "Sim! A cirurgia bariátrica reduz drasticamente a absorção de nutrientes. Mesmo com uma alimentação balanceada, é impossível suprir todas as necessidades apenas pela comida. O Bari Essential foi desenvolvido especificamente para corrigir essas deficiências e prevenir problemas graves de saúde."
   },
   {
-    question: "É seguro para mães de cesárea?",
-    answer: "Sim, é seguro e inclusive muito recomendado para mães que fizeram cesárea, pois pode ajudar na descida do leite que às vezes demora mais nesses casos."
+    question: "Por que não posso usar qualquer polivitamínico comum?",
+    answer: "Os polivitamínicos comuns não têm as dosagens adequadas nem os minerais na forma quelada, essencial para quem fez bariátrica. O Bari Essential possui concentrações até 10x maiores de nutrientes críticos e minerais quelados que garantem absorção máxima mesmo com o intestino reduzido."
   },
   {
-    question: "Funciona em relactação?",
-    answer: "Sim! O extrato foi formulado pensando também em casos de relactação. As ervas galactagogas ajudam a estimular novamente a produção de leite."
+    question: "É muito caro? Vale a pena o investimento?",
+    answer: "Comparado ao custo de tratar deficiências graves (anemia, osteoporose, problemas neurológicos) e a qualidade de vida que você perde, o Bari Essential é um investimento pequeno. Além disso, oferecemos descontos progressivos: quanto mais você compra, mais economiza. O kit de 5 unidades tem 50% de desconto."
   },
   {
-    question: "Posso usar se estou dando fórmula?",
-    answer: "Claro! Muitas mães usam o extrato enquanto complementam com fórmula, com o objetivo de aumentar a produção de leite materno e reduzir gradualmente a fórmula."
+    question: "Quanto tempo vou precisar tomar?",
+    answer: "O uso é para a vida toda após a cirurgia bariátrica. Seu corpo não volta a absorver nutrientes como antes da cirurgia. Mas pense assim: são apenas 2 cápsulas por dia que garantem sua saúde, energia e bem-estar por toda a vida."
   },
   {
-    question: "Quanto tempo demora para fazer efeito?",
-    answer: "Os primeiros sinais podem aparecer entre 3-7 dias de uso contínuo. Resultados mais expressivos costumam aparecer após 10-14 dias. Cada corpo responde de forma única."
+    question: "E se eu esquecer de tomar alguns dias?",
+    answer: "É essencial manter a consistência. Quando você para de tomar, as deficiências voltam rapidamente. Os sintomas como fadiga, queda de cabelo e anemia podem retornar em poucas semanas. Por isso criamos uma fórmula de apenas 2 cápsulas ao dia para facilitar a rotina."
   },
   {
-    question: "O álcool na composição faz mal?",
-    answer: "Não! São apenas 1ml de solução hidroalcoólica diluída em 50ml de água. Se preferir, pode diluir em água quente para o álcool evaporar completamente."
+    question: "Vou ter que tomar muitas cápsulas por dia?",
+    answer: "Não! O Bari Essential tem apenas 2 cápsulas por dia, muito mais prático que a maioria dos polivitamínicos que exigem 4-6 cápsulas. Nossa fórmula é super concentrada para facilitar sua rotina."
   },
   {
-    question: "Posso usar junto com outros produtos Mamamais?",
-    answer: "Sim! Você pode associar mais de um produto ao mesmo tempo. O importante é seguir a sugestão de uso de cada um deles e manter a consistência."
+    question: "Funciona mesmo? Como sei que vou ter resultado?",
+    answer: "Mais de 15.000 pacientes bariátricos já usam o Bari Essential com 96% de aprovação. Em 30 dias você sentirá mais energia, em 60 dias seus exames começarão a normalizar. Temos garantia de satisfação - se não funcionar, devolvemos seu dinheiro."
   },
   {
-    question: "Tem contraindicações?",
-    answer: "Atenção em casos de úlceras estomacais, sensibilidade gástrica, diabetes, hipoglicemia ou hipo/hipertireoidismo. Não deve ser usado durante a gravidez. Consulte seu médico em caso de dúvidas."
+    question: "Posso comprar na farmácia ou só pela internet?",
+    answer: "O Bari Essential é um produto exclusivo, não está disponível em farmácias. Vendemos apenas pelo site oficial para garantir a procedência, qualidade e o melhor preço. Oferecemos frete grátis para todo Brasil e entrega rápida."
   }
 ];
 
@@ -41,7 +41,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 lg:py-24 bg-[#F2E8E2]">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-orange-50 to-white">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
@@ -60,14 +60,14 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-orange-100"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-orange-50 transition"
               >
                 <div className="flex items-center gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#C9A875] flex-shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-[#FF6B35] flex-shrink-0" />
                   <span className="font-medium text-gray-900">{faq.question}</span>
                 </div>
                 <ChevronDown
