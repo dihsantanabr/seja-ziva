@@ -156,17 +156,17 @@ export default function ProductHero() {
 
             {/* Price Box */}
             <div className="bg-white rounded-2xl p-4 lg:p-6 border border-gray-100">
-              <div className="flex items-baseline gap-3">
-                <span className="text-gray-400 line-through text-lg">
-                  R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
-                </span>
-                {prices[selectedSize].current !== prices[selectedSize].original && (
+              {prices[selectedSize].discount > 0 && (
+                <div className="flex items-baseline gap-3">
+                  <span className="text-gray-400 line-through text-lg">
+                    R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
+                  </span>
                   <Badge className="bg-[#FF6B35] text-white">
-                    -{Math.round((1 - prices[selectedSize].current / prices[selectedSize].original) * 100)}%
+                    -{prices[selectedSize].discount}%
                   </Badge>
-                )}
-              </div>
-              <div className="flex items-baseline gap-2 mt-1">
+                </div>
+              )}
+              <div className={`flex items-baseline gap-2 ${prices[selectedSize].discount > 0 ? 'mt-1' : ''}`}>
                 <span className="text-4xl font-bold text-gray-900">
                   R$ {prices[selectedSize].current.toFixed(2).replace('.', ',')}
                 </span>
