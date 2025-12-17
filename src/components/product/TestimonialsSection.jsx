@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-orange-50 rounded-2xl p-6 text-center border border-orange-100"
+              className="bg-purple-50 rounded-2xl p-6 text-center border border-purple-100"
             >
               <div className="text-3xl lg:text-4xl font-bold text-purple-600 mb-1">
                 {stat.value}
