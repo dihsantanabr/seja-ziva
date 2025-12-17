@@ -5,36 +5,36 @@ import { TrendingUp, Zap, Baby, Activity, ArrowRight } from 'lucide-react';
 const results = [
   {
     icon: TrendingUp,
-    title: "Recupera energia",
-    description: "Combate a fadiga crônica e disposição"
+    title: "Rejuvenesce a pele",
+    description: "Reduz rugas e linhas de expressão"
   },
   {
     icon: Zap,
-    title: "Nutrição profunda",
-    description: "Melhora a absorção de nutrientes"
+    title: "Hidratação profunda",
+    description: "Melhora elasticidade e firmeza"
   },
   {
     icon: Activity,
-    title: "Previne deficiências",
-    description: "Evita anemias e carências nutricionais"
+    title: "Fortalece cabelos",
+    description: "Reduz queda e fortalece os fios"
   },
   {
     icon: Baby,
-    title: "Fortalece imunidade",
-    description: "Deixa o corpo mais saudável diariamente"
+    title: "Unhas mais fortes",
+    description: "Crescimento saudável e resistente"
   }
 ];
 
 export default function ResultsSection() {
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-b from-orange-50 to-orange-100">
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-purple-50 to-pink-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Benefícios
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Tudo que seu corpo precisa nessa nova fase!
+            Beleza e saúde de dentro para fora!
           </h2>
         </div>
 
@@ -46,9 +46,9 @@ export default function ResultsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 text-center shadow-lg shadow-orange-100 hover:shadow-xl transition-all border border-orange-100"
+              className="bg-white rounded-2xl p-6 text-center shadow-lg shadow-purple-100 hover:shadow-xl transition-all border border-purple-100"
               >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <result.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-gray-900 text-lg mb-2">
@@ -62,31 +62,31 @@ export default function ResultsSection() {
         </div>
 
         {/* Mechanism Explanation */}
-        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-orange-200">
+        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-purple-200">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Como funciona no seu corpo?
           </h3>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
-            <div className="bg-orange-50 rounded-2xl p-6 text-center flex-1 max-w-xs border border-orange-100">
-              <div className="text-4xl mb-3">💊</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Vitaminas e Minerais</h4>
-              <p className="text-sm text-gray-600">+20 nutrientes essenciais</p>
+            <div className="bg-purple-50 rounded-2xl p-6 text-center flex-1 max-w-xs border border-purple-100">
+              <div className="text-4xl mb-3">💎</div>
+              <h4 className="font-semibold text-gray-900 mb-1">3 Tipos de Colágeno</h4>
+              <p className="text-sm text-gray-600">Tipos I, II e III</p>
             </div>
 
-            <ArrowRight className="w-8 h-8 text-[#FF6B35] rotate-90 lg:rotate-0 flex-shrink-0" />
+            <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 lg:rotate-0 flex-shrink-0" />
 
-            <div className="bg-orange-100 rounded-2xl p-6 text-center flex-1 max-w-xs border border-orange-200">
-              <div className="text-4xl mb-3">⚡</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Alta Absorção</h4>
-              <p className="text-sm text-gray-600">Minerais quelados otimizados</p>
+            <div className="bg-pink-50 rounded-2xl p-6 text-center flex-1 max-w-xs border border-pink-100">
+              <div className="text-4xl mb-3">💧</div>
+              <h4 className="font-semibold text-gray-900 mb-1">Ácido Hialurônico</h4>
+              <p className="text-sm text-gray-600">Hidratação intensa</p>
             </div>
 
-            <ArrowRight className="w-8 h-8 text-[#FF6B35] rotate-90 lg:rotate-0 flex-shrink-0" />
+            <ArrowRight className="w-8 h-8 text-purple-600 rotate-90 lg:rotate-0 flex-shrink-0" />
 
-            <div className="bg-gradient-to-br from-orange-200 to-orange-300 rounded-2xl p-6 text-center flex-1 max-w-xs">
+            <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">✨</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Energia e Imunidade</h4>
-              <p className="text-sm text-gray-600">Recuperação completa</p>
+              <h4 className="font-semibold text-gray-900 mb-1">Pele Rejuvenescida</h4>
+              <p className="text-sm text-gray-600">Resultados visíveis</p>
             </div>
           </div>
         </div>

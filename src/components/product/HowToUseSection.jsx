@@ -5,26 +5,26 @@ import { Droplet, Clock, Calendar, AlertCircle, Check } from 'lucide-react';
 const steps = [
   {
     number: "1",
-    title: "2 cápsulas por dia",
-    description: "Tome após o café da manhã",
+    title: "10g por dia",
+    description: "1 dosador ao dia",
     icon: Droplet
   },
   {
     number: "2",
-    title: "Após uma refeição",
-    description: "Sempre tome após comer para melhor absorção",
-    icon: "🍽️"
+    title: "Misture em qualquer bebida",
+    description: "Água, suco, café, vitamina - sabor neutro",
+    icon: "🥤"
   },
   {
     number: "3",
-    title: "Com água",
-    description: "Beba bastante água ao tomar",
+    title: "Pode ser frio ou quente",
+    description: "Solúvel em qualquer temperatura",
     icon: Clock
   },
   {
     number: "4",
-    title: "Uso contínuo",
-    description: "Para melhores resultados, use todos os dias",
+    title: "Uso diário",
+    description: "Use todos os dias para resultados visíveis",
     icon: Calendar
   }
 ];
@@ -34,58 +34,58 @@ const timelineResults = [
     period: "7 dias",
     title: "Primeira Semana",
     results: [
-      "Mais disposição no dia a dia",
-      "Melhora no humor",
-      "Menos fadiga"
+      "Pele mais hidratada",
+      "Unhas mais resistentes",
+      "Cabelos com mais brilho"
     ],
-    approval: "89%",
-    color: "bg-orange-500"
+    approval: "91%",
+    color: "bg-purple-500"
   },
   {
     period: "14 dias",
     title: "Segunda Semana",
     results: [
-      "Energia recuperada",
-      "Melhora da imunidade",
-      "Cabelo e unhas mais fortes"
+      "Redução de linhas finas",
+      "Menos queda de cabelo",
+      "Unhas crescendo mais fortes"
     ],
     approval: "94%",
-    color: "bg-orange-500"
+    color: "bg-purple-500"
   },
   {
     period: "30 dias",
     title: "Um Mês",
     results: [
-      "Deficiências corrigidas",
-      "Exames normalizados",
-      "Bem-estar completo"
+      "Pele mais firme e elástica",
+      "Rugas reduzidas",
+      "Cabelos mais volumosos"
     ],
     approval: "96%",
-    color: "bg-orange-500"
+    color: "bg-purple-500"
   },
   {
     period: "90 dias",
     title: "Três Meses",
     results: [
-      "Saúde consolidada",
-      "Ossos fortalecidos",
-      "Imunidade robusta"
+      "Rejuvenescimento visível",
+      "Pele radiante",
+      "Resultados duradouros"
     ],
     approval: "98%",
-    color: "bg-orange-500"
+    color: "bg-purple-500"
   }
 ];
 
 export default function HowToUseSection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-orange-50 to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Modo de uso
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Como tomar o Bari Essential?
+            Como usar o Multicolágeno?
           </h2>
         </div>
 
@@ -99,8 +99,8 @@ export default function HowToUseSection() {
               transition={{ delay: idx * 0.1 }}
               className="relative"
             >
-              <div className="bg-orange-50 rounded-2xl p-6 h-full border border-orange-100">
-                <div className="w-10 h-10 bg-[#FF6B35] rounded-full flex items-center justify-center text-white font-bold mb-4">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 h-full border border-purple-100">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold mb-4">
                   {step.number}
                 </div>
                 <h3 className="font-semibold text-gray-900 text-lg mb-2">
@@ -111,14 +111,14 @@ export default function HowToUseSection() {
                 </p>
               </div>
               {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-[#FF6B35]/30" />
+                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-purple-600/30" />
               )}
             </motion.div>
           ))}
         </div>
 
         {/* Expectations Card */}
-        <div className="bg-gradient-to-r from-[#FF6B35] to-[#E55A2B] rounded-3xl p-8 lg:p-10 text-white">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-8 lg:p-10 text-white">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4">
@@ -129,19 +129,19 @@ export default function HowToUseSection() {
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>Mais energia em <strong>7-14 dias</strong> de uso contínuo</span>
+                  <span>Hidratação visível em <strong>7 dias</strong> de uso contínuo</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>Correção de deficiências em <strong>30-60 dias</strong></span>
+                  <span>Redução de rugas em <strong>30 dias</strong></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>Resultados duradouros com uso contínuo</span>
+                  <span>Rejuvenescimento completo em <strong>90 dias</strong></span>
                 </li>
               </ul>
             </div>
@@ -151,8 +151,8 @@ export default function HowToUseSection() {
                 <div>
                   <h4 className="font-semibold mb-2">Importante saber</h4>
                   <p className="text-sm text-white/90">
-                    A reposição nutricional é um processo gradual. Cada organismo responde de forma única. 
-                    O uso diário e consistente é fundamental para corrigir deficiências e manter a saúde.
+                    O colágeno age de dentro para fora. Cada organismo responde de forma única. 
+                    O uso diário e consistente é fundamental para resultados duradouros e rejuvenescimento visível.
                   </p>
                 </div>
               </div>
@@ -190,13 +190,13 @@ export default function HowToUseSection() {
                 <ul className="space-y-2 mb-6">
                   {item.results.map((result, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                      <Check className="w-4 h-4 text-[#FF6B35] flex-shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-purple-600 flex-shrink-0 mt-0.5" />
                       <span>{result}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="pt-4 border-t border-gray-100">
-                  <div className="text-3xl font-bold text-[#FF6B35]">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                     {item.approval}
                   </div>
                   <div className="text-xs text-gray-500">aprovação</div>
