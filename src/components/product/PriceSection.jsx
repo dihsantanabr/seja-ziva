@@ -177,7 +177,9 @@ export default function PriceSection() {
                 <div className="text-5xl font-bold text-[#FF6B35]">
                   R$ {prices[selectedSize].current.toFixed(2).replace('.', ',')}
                 </div>
-                <p className="text-gray-600 mt-1">Pagamento único</p>
+                <p className="text-gray-600 mt-1">
+                  ou 3x de R$ {(prices[selectedSize].current / 3).toFixed(2).replace('.', ',')} sem juros
+                </p>
               </div>
             </div>
 
