@@ -97,11 +97,11 @@ export default function HowToUseSection() {
             viewport={{ once: true }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="h-80 overflow-hidden">
+            <div className="h-[500px] overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/2a1ef0e9d_Screenshot2025-12-17at183459.png" 
                 alt="Passo 1" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
@@ -121,11 +121,11 @@ export default function HowToUseSection() {
             transition={{ delay: 0.1 }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="h-80 overflow-hidden">
+            <div className="h-[500px] overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/70120addf_Screenshot2025-12-17at183509.png" 
                 alt="Passo 2" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
@@ -145,11 +145,11 @@ export default function HowToUseSection() {
             transition={{ delay: 0.2 }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="h-80 overflow-hidden">
+            <div className="h-[500px] overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f6ccf34bc_Screenshot2025-12-17at183525.png" 
                 alt="Passo 3" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
