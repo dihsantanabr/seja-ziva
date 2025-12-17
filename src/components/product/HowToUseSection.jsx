@@ -97,19 +97,19 @@ export default function HowToUseSection() {
             viewport={{ once: true }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="aspect-square overflow-hidden">
+            <div className="h-80 overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/2a1ef0e9d_Screenshot2025-12-17at183459.png" 
                 alt="Passo 1" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-lg mb-2">
                 1
               </div>
-              <p className="font-medium">
-                Pegue 1 dosador de dentro do seu pacote de Multicolágeno.
+              <p className="font-medium text-sm">
+                Pegue 1 dosador do seu pacote de Multicolágeno.
               </p>
             </div>
           </motion.div>
@@ -121,19 +121,19 @@ export default function HowToUseSection() {
             transition={{ delay: 0.1 }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="aspect-square overflow-hidden">
+            <div className="h-80 overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/70120addf_Screenshot2025-12-17at183509.png" 
                 alt="Passo 2" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-lg mb-2">
                 2
               </div>
-              <p className="font-medium">
-                Misture essa dose em 200ml de água ou na sua receita preferida.
+              <p className="font-medium text-sm">
+                Misture em 200ml de água ou na sua receita preferida.
               </p>
             </div>
           </motion.div>
@@ -145,19 +145,19 @@ export default function HowToUseSection() {
             transition={{ delay: 0.2 }}
             className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
           >
-            <div className="aspect-square overflow-hidden">
+            <div className="h-80 overflow-hidden">
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f6ccf34bc_Screenshot2025-12-17at183525.png" 
                 alt="Passo 3" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-5 text-white">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-lg mb-2">
                 3
               </div>
-              <p className="font-medium">
-                Pronto! Agora é só degustar enquanto aprecia sua refeição e aproveitar todos os benefícios para a sua pele, unhas, cabelos e articulações.
+              <p className="font-medium text-sm">
+                Pronto! Aproveite os benefícios para pele, unhas e cabelos.
               </p>
             </div>
           </motion.div>
