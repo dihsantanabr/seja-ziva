@@ -76,7 +76,7 @@ export default function ForWhoSection() {
 
         <div className="mt-12 text-center">
           <p className="text-lg text-gray-700 bg-orange-100 inline-block px-6 py-3 rounded-full">
-            🧡 Se você se identificou com algum desses casos, <strong>esse produto foi feito para você</strong>
+            🧡 Se você se identificou com algum desses casos, <strong>o Bari Essential foi feito para você</strong>
           </p>
         </div>
       </div>
