@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, TrendingUp } from 'lucide-react';
+import ViralTikTokSection from './ViralTikTokSection';
 
 const testimonials = [
   {
@@ -62,7 +63,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -79,6 +80,9 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Viral TikTok Section */}
+        <ViralTikTokSection />
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
