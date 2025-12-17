@@ -14,11 +14,12 @@ const productImages = [
 export default function ProductHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('3 frascos');
+  const [selectedSize, setSelectedSize] = useState('3 Unidades');
 
   const prices = {
-    '1 frasco': { original: 147.00, current: 147.00 },
-    '3 frascos': { original: 441.00, current: 264.60 }
+    '1 Unidade': { original: 147.00, current: 147.00, discount: 0, badge: 'FRETE GRÁTIS' },
+    '3 Unidades': { original: 441.00, current: 264.60, discount: 40, badge: '40%OFF + FRETE GRÁTIS' },
+    '5 Unidades': { original: 735.00, current: 367.50, discount: 50, badge: '50%OFF + FRETE GRÁTIS' }
   };
 
   // Calculate delivery dates
@@ -187,21 +188,44 @@ export default function ProductHero() {
             {/* Size Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
-              <div className="flex gap-3">
-                {['1 frasco', '3 frascos'].map((size) => (
+              <div className="flex flex-col gap-3">
+                {Object.keys(prices).map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-6 py-3 rounded-xl border-2 font-medium transition-all ${
+                    className={`relative px-6 py-4 rounded-xl border-2 font-medium transition-all text-left ${
                       selectedSize === size
-                        ? 'border-[#FF6B35] bg-[#FF6B35] text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-[#FF6B35]'
+                        ? 'border-[#FF6B35] bg-white'
+                        : 'border-gray-200 bg-white hover:border-[#FF6B35]'
                     }`}
                   >
-                    {size}
-                    <span className="block text-xs mt-0.5 opacity-80">
-                      {size === '1 frasco' ? 'R$ 147,00' : '40% OFF'}
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                          selectedSize === size ? 'border-[#FF6B35]' : 'border-gray-300'
+                        }`}>
+                          {selectedSize === size && (
+                            <div className="w-3 h-3 bg-[#FF6B35] rounded-full" />
+                          )}
+                        </div>
+                        <span className="text-[#FF6B35] font-bold uppercase text-sm">{size}</span>
+                      </div>
+                      <span className="font-bold text-gray-900">R$ {prices[size].current.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                    {prices[size].discount > 0 && (
+                      <div className="absolute -top-2 right-4">
+                        <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                          {prices[size].badge}
+                        </span>
+                      </div>
+                    )}
+                    {prices[size].discount === 0 && (
+                      <div className="absolute -top-2 right-4">
+                        <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                          {prices[size].badge}
+                        </span>
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
