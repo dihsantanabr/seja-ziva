@@ -17,9 +17,9 @@ export default function ProductHero() {
   const [selectedSize, setSelectedSize] = useState('3 Unidades');
 
   const prices = {
-    '1 Unidade': { original: 147.00, current: 147.00, discount: 0, badge: 'FRETE GRÁTIS' },
-    '3 Unidades': { original: 441.00, current: 264.60, discount: 40, badge: '40%OFF + FRETE GRÁTIS' },
-    '5 Unidades': { original: 735.00, current: 367.50, discount: 50, badge: '50%OFF + FRETE GRÁTIS' }
+    '1 Unidade': { original: 147.00, current: 147.00, discount: 0, badge: 'FRETE GRÁTIS', duration: 'Dura 30 Dias' },
+    '3 Unidades': { original: 441.00, current: 264.60, discount: 40, badge: '40%OFF + FRETE GRÁTIS', duration: 'Dura 90 Dias' },
+    '5 Unidades': { original: 735.00, current: 367.50, discount: 50, badge: '50%OFF + FRETE GRÁTIS', duration: 'Dura 150 Dias' }
   };
 
   // Calculate delivery dates
@@ -207,6 +207,9 @@ export default function ProductHero() {
                       </div>
                     )}
                     <div className="text-sm font-bold">{size}</div>
+                    <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
+                      {prices[size].duration}
+                    </div>
                     {prices[size].discount > 0 && (
                       <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/90' : 'text-gray-600'}`}>
                         {prices[size].discount}% OFF
