@@ -5,61 +5,61 @@ import { motion, AnimatePresence } from 'framer-motion';
 const stories = [
   {
     id: 1,
-    thumb: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=600&fit=crop",
     title: "Depoimentos",
     type: "image"
   },
   {
     id: 2,
-    thumb: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=600&fit=crop",
     title: "Resultados",
     type: "image"
   },
   {
     id: 3,
-    thumb: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=600&fit=crop",
     title: "Médicos",
     type: "image"
   },
   {
     id: 4,
-    thumb: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=600&fit=crop",
     title: "Benefícios",
     type: "image"
   },
   {
     id: 5,
-    thumb: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=600&fit=crop",
     title: "Como Usar",
     type: "image"
   },
   {
     id: 6,
-    thumb: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=600&fit=crop",
     title: "Antes e Depois",
     type: "image"
   },
   {
     id: 7,
-    thumb: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=400&h=600&fit=crop",
     title: "Fórmula",
     type: "image"
   },
   {
     id: 8,
-    thumb: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=600&fit=crop",
     title: "Pós-Cirurgia",
     type: "image"
   },
   {
     id: 9,
-    thumb: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
     title: "Energia",
     type: "image"
   },
   {
     id: 10,
-    thumb: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=600&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=600&fit=crop",
     title: "Imunidade",
     type: "image"
   }
