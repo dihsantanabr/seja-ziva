@@ -262,8 +262,7 @@ export default function ProductHero() {
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Tag className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">É sua Primeira Compra?</p>
-                <p className="text-xs text-[#FF6B35] mt-1 font-semibold">Cupom: PRIMEIRACOMPRA</p>
+                <p className="font-semibold text-gray-900 text-sm">Cupom: PRIMEIRACOMPRA</p>
               </div>
             </div>
 
