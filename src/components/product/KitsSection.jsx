@@ -6,27 +6,24 @@ import { Badge } from "@/components/ui/badge";
 
 const kits = [
   {
-    name: "Kit Recuperação Total",
-    description: "Combinação completa para máxima energia e recuperação nutricional",
-    products: ["3x Bari Essential", "Guia de Alimentação", "Acompanhamento Nutricional"],
-    originalPrice: 441.00,
-    price: 264.60,
-    popular: true
-  },
-  {
-    name: "Kit Energia Plus",
-    description: "Para quem precisa de energia e disposição no dia a dia",
-    products: ["2x Bari Essential", "Shaker exclusivo"],
-    originalPrice: 294.00,
-    price: 199.90,
+    name: "Kit Força e Estética",
+    description: "Bari Essential + Root Booster + Slim Tea",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eccc1e257_Screenshot2025-12-17at145728.png",
+    paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   },
   {
-    name: "Kit Experimenta",
-    description: "Ideal para começar sua jornada de reposição nutricional",
-    products: ["1x Bari Essential", "Guia de uso"],
-    originalPrice: 147.00,
-    price: 147.00,
+    name: "Kit Imunidade e Digestão",
+    description: "Kit Bari Essential + Fort Immune + Slim Bari",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eccc1e257_Screenshot2025-12-17at145728.png",
+    paymentInfo: "Em até 3x sem juros no cartão",
+    popular: true
+  },
+  {
+    name: "Kit Energia e Foco",
+    description: "Kit Bari Essential + Mind Fuel + Fit Bari",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eccc1e257_Screenshot2025-12-17at145728.png",
+    paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   }
 ];
@@ -55,11 +52,7 @@ export default function KitsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`relative rounded-3xl p-6 ${
-                kit.popular 
-                  ? 'bg-gradient-to-b from-[#FF6B35] to-[#E55A2B] text-white' 
-                  : 'bg-orange-50'
-              }`}
+              className="relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all border border-orange-100"
             >
               {kit.popular && (
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900">
@@ -67,43 +60,38 @@ export default function KitsSection() {
                   Mais vendido
                 </Badge>
               )}
-              
-              <h3 className={`text-xl font-bold mb-2 ${kit.popular ? 'text-white' : 'text-gray-900'}`}>
-                {kit.name}
-              </h3>
-              <p className={`text-sm mb-4 ${kit.popular ? 'text-white/80' : 'text-gray-600'}`}>
-                {kit.description}
-              </p>
 
-              <div className="space-y-2 mb-6">
-                {kit.products.map((product, pIdx) => (
-                  <div 
-                    key={pIdx} 
-                    className={`flex items-center gap-2 text-sm ${kit.popular ? 'text-white/90' : 'text-gray-700'}`}
-                  >
-                    <Plus className="w-4 h-4" />
-                    {product}
-                  </div>
-                ))}
+              <div className="absolute top-6 right-6">
+                <button className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center hover:bg-orange-100 transition-colors">
+                  <span className="text-[#FF6B35] text-xl">♡</span>
+                </button>
               </div>
-
-              <div className="mb-4">
-                <span className={`text-sm line-through ${kit.popular ? 'text-white/60' : 'text-gray-400'}`}>
-                  R$ {kit.originalPrice.toFixed(2).replace('.', ',')}
-                </span>
-                <div className={`text-3xl font-bold ${kit.popular ? 'text-white' : 'text-gray-900'}`}>
-                  R$ {kit.price.toFixed(2).replace('.', ',')}
+              
+              <div className="mb-6 flex justify-center">
+                <div className="w-48 h-48 bg-orange-50/50 rounded-2xl flex items-center justify-center">
+                  <span className="text-6xl">📦</span>
                 </div>
               </div>
 
+              <div className="text-center mb-4">
+                <Badge className="bg-orange-100 text-[#FF6B35] mb-3">
+                  KITS
+                </Badge>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {kit.name}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4">
+                  {kit.description}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {kit.paymentInfo}
+                </p>
+              </div>
+
               <Button 
-                className={`w-full ${
-                  kit.popular 
-                    ? 'bg-white text-[#FF6B35] hover:bg-gray-100' 
-                    : 'bg-[#FF6B35] text-white hover:bg-[#E55A2B]'
-                }`}
+                className="w-full bg-[#FF6B35] text-white hover:bg-[#E55A2B] font-semibold"
               >
-                Adicionar Kit
+                COMPRAR 🛒
               </Button>
             </motion.div>
           ))}
