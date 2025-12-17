@@ -81,9 +81,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Viral TikTok Section */}
-        <ViralTikTokSection />
-
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, idx) => (
@@ -118,10 +115,14 @@ export default function TestimonialsSection() {
               </div>
             </motion.div>
           ))}
-        </div>
+          </div>
 
+          {/* Viral TikTok Section */}
+          <div className="mt-12">
+          <ViralTikTokSection />
+          </div>
 
-      </div>
-    </section>
+          </div>
+          </section>
   );
 }
