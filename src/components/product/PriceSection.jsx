@@ -50,7 +50,7 @@ export default function PriceSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <Badge className="bg-[#FF6B35] text-white text-sm px-4 py-2 mb-4">
-            🔥 Oferta Exclusiva
+            Oferta Exclusiva
           </Badge>
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
             Escolha seu plano e economize até 50%
@@ -59,6 +59,22 @@ export default function PriceSection() {
             Quanto mais você garante, mais você economiza. Frete grátis para todo Brasil!
           </p>
         </div>
+
+        {/* Product Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <div className="max-w-md mx-auto">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/9539d4095_Screenshot2025-12-17at134320.png"
+              alt="Bari Essential"
+              className="w-full drop-shadow-2xl"
+            />
+          </div>
+        </motion.div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -170,7 +186,7 @@ export default function PriceSection() {
             <Button 
               className="w-full h-16 bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-xl font-bold rounded-2xl shadow-xl shadow-[#FF6B35]/30 transition-all hover:scale-105"
             >
-              🛒 GARANTIR MINHA OFERTA AGORA
+              GARANTIR MINHA OFERTA AGORA
             </Button>
 
             <div className="grid md:grid-cols-3 gap-4 pt-4">
@@ -209,7 +225,7 @@ export default function PriceSection() {
         {/* Trust footer */}
         <div className="text-center mt-8">
           <p className="text-gray-600 text-sm">
-            🔒 Compra 100% segura e protegida • Garantia de 30 dias ou seu dinheiro de volta
+            Compra 100% segura e protegida • Garantia de 30 dias ou seu dinheiro de volta
           </p>
         </div>
       </div>
