@@ -99,10 +99,9 @@ export default function HowToUseSection() {
           >
             <div className="aspect-square overflow-hidden">
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/2a1ef0e9d_Screenshot2025-12-17at183459.png" 
                 alt="Passo 1" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                style={{ objectPosition: '0% 0%', clipPath: 'inset(0 66.6% 50% 0)' }}
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
@@ -124,10 +123,9 @@ export default function HowToUseSection() {
           >
             <div className="aspect-square overflow-hidden">
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/70120addf_Screenshot2025-12-17at183509.png" 
                 alt="Passo 2" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                style={{ objectPosition: '50% 0%', clipPath: 'inset(0 33.3% 50% 33.3%)' }}
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
@@ -149,10 +147,9 @@ export default function HowToUseSection() {
           >
             <div className="aspect-square overflow-hidden">
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f6ccf34bc_Screenshot2025-12-17at183525.png" 
                 alt="Passo 3" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                style={{ objectPosition: '100% 0%', clipPath: 'inset(0 0 50% 66.6%)' }}
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
