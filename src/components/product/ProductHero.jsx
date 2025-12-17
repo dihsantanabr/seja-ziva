@@ -200,17 +200,22 @@ export default function ProductHero() {
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha o sabor:</p>
               <div className="grid grid-cols-3 gap-3 mb-6">
-                {['Blue Ice', 'Frutas Vermelhas', 'Frutas Vermelhas + Blue Ice'].map((flavor) => (
+                {[
+                  { name: 'Blue Ice', icon: '🧊' },
+                  { name: 'Frutas Vermelhas', icon: '🍓' },
+                  { name: 'Frutas Vermelhas + Blue Ice', icon: '🍓🧊' }
+                ].map((flavor) => (
                   <button
-                    key={flavor}
-                    onClick={() => setSelectedFlavor(flavor)}
+                    key={flavor.name}
+                    onClick={() => setSelectedFlavor(flavor.name)}
                     className={`px-4 py-3 rounded-xl border-2 font-medium transition-all text-center text-sm ${
-                      selectedFlavor === flavor
+                      selectedFlavor === flavor.name
                         ? 'border-purple-600 bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                         : 'border-gray-200 text-gray-700 hover:border-purple-600'
                     }`}
                   >
-                    {flavor}
+                    <div className="text-2xl mb-1">{flavor.icon}</div>
+                    {flavor.name}
                   </button>
                 ))}
               </div>
