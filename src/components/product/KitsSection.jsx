@@ -6,26 +6,26 @@ import { Badge } from "@/components/ui/badge";
 
 const kits = [
   {
-    name: "Kit Força e Estética",
-    description: "Bari Essential + Root Booster + Slim Tea",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/ce3b783c3_image.png",
-    price: 299.00,
+    name: "Multicolágeno + Greemy",
+    description: "Beleza completa: colágeno triplo + energia verde",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/5c3c1e82d_Screenshot2025-12-17at185053.png",
+    price: 347.80,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   },
   {
-    name: "Kit Imunidade e Digestão",
-    description: "Kit Bari Essential + Fort Immune + Slim Bari",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eaab8fbfd_image.png",
-    price: 299.00,
+    name: "Multicolágeno + DreamsCoffee",
+    description: "Rejuvenescimento + energia natural do café",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/8536205da_20240930-_Z5F1385.jpg",
+    price: 347.80,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: true
   },
   {
-    name: "Kit Energia e Foco",
-    description: "Kit Bari Essential + Mind Fuel + Fit Bari",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/4d5934e42_image.png",
-    price: 299.00,
+    name: "Combo Completo",
+    description: "Multicolágeno + Greemy + DreamsCoffee",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/068d95157_20241220-_Z5F0911.jpg",
+    price: 527.70,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   }
@@ -33,17 +33,17 @@ const kits = [
 
 export default function KitsSection() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
-            Potencialize seus resultados
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
+            Mix de Produtos
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
             Kits Recomendados
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Escolha o kit ideal para sua jornada de recuperação nutricional
+            Combine produtos e potencialize seus resultados
           </p>
         </div>
 
@@ -55,20 +55,14 @@ export default function KitsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all border border-orange-100"
+              className="relative bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all border border-purple-100"
             >
               {kit.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900">
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
                   <Sparkles className="w-3 h-3 mr-1" />
                   Mais vendido
                 </Badge>
               )}
-
-              <div className="absolute top-6 right-6">
-                <button className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center hover:bg-orange-100 transition-colors">
-                  <span className="text-[#FF6B35] text-xl">♡</span>
-                </button>
-              </div>
               
               <div className="mb-6 flex justify-center">
                 <img 
@@ -79,8 +73,8 @@ export default function KitsSection() {
               </div>
 
               <div className="text-center mb-4">
-                <Badge className="bg-orange-100 text-[#FF6B35] mb-3">
-                  KITS
+                <Badge className="bg-purple-100 text-purple-600 mb-3">
+                  KIT
                 </Badge>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {kit.name}
@@ -88,7 +82,7 @@ export default function KitsSection() {
                 <p className="text-sm text-gray-600 mb-3">
                   {kit.description}
                 </p>
-                <div className="text-3xl font-bold text-[#FF6B35] mb-2">
+                <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">
                   R$ {kit.price.toFixed(2).replace('.', ',')}
                 </div>
                 <p className="text-sm text-gray-500">
@@ -97,7 +91,7 @@ export default function KitsSection() {
               </div>
 
               <Button 
-                className="w-full bg-[#FF6B35] text-white hover:bg-[#E55A2B] font-semibold"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold"
               >
                 COMPRAR 🛒
               </Button>
