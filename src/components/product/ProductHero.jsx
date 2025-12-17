@@ -188,44 +188,21 @@ export default function ProductHero() {
             {/* Size Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
-              <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 {Object.keys(prices).map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`relative px-6 py-4 rounded-xl border-2 font-medium transition-all text-left ${
+                    className={`relative px-4 py-4 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
-                        ? 'border-[#FF6B35] bg-white'
-                        : 'border-gray-200 bg-white hover:border-[#FF6B35]'
+                        ? 'border-[#FF6B35] bg-[#FF6B35] text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-[#FF6B35]'
                     }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                          selectedSize === size ? 'border-[#FF6B35]' : 'border-gray-300'
-                        }`}>
-                          {selectedSize === size && (
-                            <div className="w-3 h-3 bg-[#FF6B35] rounded-full" />
-                          )}
-                        </div>
-                        <span className="text-[#FF6B35] font-bold uppercase text-sm">{size}</span>
-                      </div>
-                      <span className="font-bold text-gray-900">R$ {prices[size].current.toFixed(2).replace('.', ',')}</span>
+                    <div className="text-sm font-bold mb-1">{size}</div>
+                    <div className={`text-xs ${selectedSize === size ? 'text-white/90' : 'text-gray-600'}`}>
+                      {prices[size].discount > 0 ? `${prices[size].discount}% OFF` : 'Frete Grátis'}
                     </div>
-                    {prices[size].discount > 0 && (
-                      <div className="absolute -top-2 right-4">
-                        <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                          {prices[size].badge}
-                        </span>
-                      </div>
-                    )}
-                    {prices[size].discount === 0 && (
-                      <div className="absolute -top-2 right-4">
-                        <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                          {prices[size].badge}
-                        </span>
-                      </div>
-                    )}
                   </button>
                 ))}
               </div>
