@@ -275,10 +275,10 @@ export default function ProductHero() {
             {/* Benefits List */}
             <div className="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
               {[
-                'Dosagem correta',
-                'Fórmula com +20 componentes',
-                'Resultados prolongados',
-                'Criado para bariátricos'
+                'Apenas 2 cápsulas por dia',
+                'Absorção otimizada',
+                'Previne deficiências',
+                'Reduz fadiga e cansaço'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
                   <Check className="w-4 h-4 text-[#FF6B35]" />
