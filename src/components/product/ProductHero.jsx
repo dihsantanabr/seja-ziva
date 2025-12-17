@@ -250,19 +250,20 @@ export default function ProductHero() {
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Star className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Alta concentração de nutrientes</p>
+                <p className="font-semibold text-gray-900 text-sm">Produto muito Avaliado</p>
               </div>
               <div className="bg-orange-50 rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <RefreshCw className="w-5 h-5 text-[#FF6B35]" />
+                  <Shield className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Rico em minerais quelados (de máxima absorção)</p>
+                <p className="font-semibold text-gray-900 text-sm">Garantia de Satisfação</p>
               </div>
               <div className="bg-orange-50 rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
                   <Tag className="w-5 h-5 text-[#FF6B35]" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Crucial para a saúde e nutrição pós-bariátrica</p>
+                <p className="font-semibold text-gray-900 text-sm">É sua Primeira Compra?</p>
+                <p className="text-xs text-[#FF6B35] mt-1 font-semibold">Cupom: PRIMEIRACOMPRA</p>
               </div>
             </div>
 
