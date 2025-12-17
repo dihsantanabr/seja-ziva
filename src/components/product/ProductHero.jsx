@@ -238,7 +238,7 @@ export default function ProductHero() {
                     Frete grátis para todo Brasil
                   </p>
                   <p className="text-sm text-green-700 mt-1">
-                    Em até 3x sem juros no cartão.
+                    Chegará entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                   </p>
                 </div>
               </div>
