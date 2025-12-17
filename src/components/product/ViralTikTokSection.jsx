@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Eye } from 'lucide-react';
+import { Play, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const videos = [
@@ -47,7 +47,7 @@ const videos = [
 ];
 
 export default function ViralTikTokSection() {
-  const [emblaRef] = useEmblaCarousel({ 
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true, 
     align: 'start',
     slidesToScroll: 1,
@@ -55,6 +55,14 @@ export default function ViralTikTokSection() {
   });
   const [viewCount, setViewCount] = useState(0);
   const targetViews = 8500000; // 8.5 milhões
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   useEffect(() => {
     const duration = 3000; // 3 segundos
@@ -115,8 +123,9 @@ export default function ViralTikTokSection() {
         </motion.div>
 
         {/* Videos Carousel */}
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-4">
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
             {videos.map((video, idx) => (
               <div
                 key={idx}
@@ -127,7 +136,7 @@ export default function ViralTikTokSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="relative aspect-[9/16] bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group"
+                  className="relative aspect-[9/16] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group"
                 >
                   <img
                     src={video.thumbnail}
@@ -153,7 +162,22 @@ export default function ViralTikTokSection() {
                 </motion.div>
               </div>
             ))}
+            </div>
           </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+          >
+            <ChevronLeft className="w-6 h-6 text-gray-700" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+          >
+            <ChevronRight className="w-6 h-6 text-gray-700" />
+          </button>
         </div>
       </div>
     </section>
