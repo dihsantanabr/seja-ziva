@@ -14,7 +14,7 @@ export default function FinalCTASection() {
   };
 
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-br from-[#C9A875] via-[#b8976a] to-[#C9A875]">
+    <section className="py-12 lg:py-24 bg-gradient-to-br from-[#FF6B35] via-[#E55A2B] to-[#FF6B35]">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,14 +23,14 @@ export default function FinalCTASection() {
         >
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
             <FileText className="w-5 h-5 text-white" />
-            <span className="text-white font-medium">Guia Completo</span>
+            <span className="text-white font-medium">E-Book Gratuito</span>
           </div>
 
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-            Ainda em dúvidas se é para você?
+            15 Itens Essenciais para a Rotina Pós Bariátrica
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Baixe nosso Ebook Completo e entenda como você terá resultados com a indução de lactação
+            Baixe nosso E-Book gratuito e descubra os itens fundamentais para garantir sua recuperação e qualidade de vida após a cirurgia bariátrica
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -46,7 +46,7 @@ export default function FinalCTASection() {
               <Button 
                 type="submit"
                 size="lg"
-                className="bg-white text-[#C9A875] hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
+                className="bg-white text-[#FF6B35] hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
               >
                 <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 Baixar Grátis
