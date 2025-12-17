@@ -179,7 +179,7 @@ export default function ProductHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  Em Estoque
+                  Receba R$ {(prices[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} de Cashback
                 </span>
               </div>
             </div>
