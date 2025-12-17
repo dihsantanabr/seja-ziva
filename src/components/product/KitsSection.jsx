@@ -63,16 +63,8 @@ export default function KitsSection() {
                   Mais vendido
                 </Badge>
               )}
-              
-              <div className="mb-6 flex justify-center">
-                <img 
-                  src={kit.image} 
-                  alt={kit.name}
-                  className="w-full h-64 object-contain"
-                />
-              </div>
 
-              <div className="text-center mb-4">
+              <div className="text-center mb-4 pt-4">
                 <Badge className="bg-purple-100 text-purple-600 mb-3">
                   KIT
                 </Badge>
