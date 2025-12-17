@@ -6,21 +6,21 @@ import StoriesSection from './StoriesSection';
 import QuickNavigationMenu from './QuickNavigationMenu';
 
 const productImages = [
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/9539d4095_Screenshot2025-12-17at134320.png",
-  "https://bariessential.com.br/wp-content/uploads/2025/07/product_bari-14caps.webp",
-  "https://bariessential.com.br/wp-content/uploads/2025/09/3-frascos-bari-essential-atualizado-v2.webp",
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/b7ab04dac_Screenshot2025-12-17at141954.png"
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/2e60b72f8_20241220-_Z5F0119.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/a59c0929c_20241220-_Z5F0331.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/6234237a1_20241220-_Z5F0623.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f729b64de_20241220-_Z5F0901.jpg"
 ];
 
 export default function ProductHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('3 Unidades');
+  const [selectedSize, setSelectedSize] = useState('2 Pacotes');
 
   const prices = {
-    '1 Unidade': { original: 147.00, current: 147.00, discount: 0, badge: 'FRETE GRÁTIS', duration: 'Dura 30 Dias' },
-    '3 Unidades': { original: 441.00, current: 264.60, discount: 40, badge: '40%OFF + FRETE GRÁTIS', duration: 'Dura 90 Dias' },
-    '5 Unidades': { original: 735.00, current: 367.50, discount: 50, badge: '50%OFF + FRETE GRÁTIS', duration: 'Dura 150 Dias' }
+    '1 Pacote': { original: 249.00, current: 167.90, discount: 33, badge: 'FRETE GRÁTIS', duration: 'Duração 30 dias' },
+    '2 Pacotes': { original: 499.80, current: 277.90, discount: 44, badge: '44%OFF + FRETE GRÁTIS', duration: 'Duração 60 dias' },
+    '3 Pacotes + 1 Grátis': { original: 999.60, current: 467.90, discount: 53, badge: '53%OFF + FRETE GRÁTIS', duration: 'Duração 120 dias' }
   };
 
   // Calculate delivery dates
@@ -43,9 +43,9 @@ export default function ProductHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-orange-50 to-white">
+    <section className="bg-gradient-to-b from-purple-50 to-white">
       {/* Announcement Bar */}
-      <div className="bg-[#FF6B35] text-white py-2.5 overflow-hidden">
+      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
@@ -55,11 +55,11 @@ export default function ProductHero() {
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Heart className="w-4 h-4" />
-                Até 60% de Desconto
+                Até 53% de Desconto
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Shield className="w-4 h-4" />
-                Fórmula para Bariátricos
+                3 Tipos de Colágeno
               </span>
             </div>
           ))}
@@ -74,12 +74,12 @@ export default function ProductHero() {
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             <div className="relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-[#FF6B35] text-white">
-                60% OFF
+              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                53% OFF
               </Badge>
               <img
                 src={productImages[selectedImage]}
-                alt="Extrato Vegetal Mamamais"
+                alt="Multicolágeno"
                 className="w-full h-full object-contain p-8"
               />
               <button
@@ -103,7 +103,7 @@ export default function ProductHero() {
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
                   className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImage === idx ? 'border-[#FF6B35] shadow-lg' : 'border-gray-200'
+                    selectedImage === idx ? 'border-purple-600 shadow-lg' : 'border-gray-200'
                   }`}
                 >
                   <img src={img} alt="" className="w-full h-full object-contain bg-white p-2" />
@@ -115,15 +115,15 @@ export default function ProductHero() {
           {/* Product Info */}
           <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider mb-2">
-                Polivitamínico
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider mb-2">
+                Colágeno Premium
               </p>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Bari Essential
-                <span className="block text-[#FF6B35]">Alta Absorção</span>
+                Multicolágeno
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">3 Tipos + Ácido Hialurônico</span>
               </h1>
               <p className="mt-2 text-base lg:text-lg text-gray-600">
-                Polivitamínico de alta absorção para bariátricos, que corrige deficiências nutricionais, recupera energia e fortalece a imunidade.
+                Fórmula completa com colágeno tipos I, II e III + Ácido Hialurônico que rejuvenesce a pele, fortalece cabelos e unhas.
               </p>
             </div>
 
@@ -141,17 +141,17 @@ export default function ProductHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
+              <Badge variant="outline" className="border-purple-600 text-purple-600 px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
-                Alta Concentração
+                3 Tipos de Colágeno
               </Badge>
-              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
+              <Badge variant="outline" className="border-purple-600 text-purple-600 px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
-                Minerais Quelados
+                Ácido Hialurônico
               </Badge>
-              <Badge variant="outline" className="border-[#FF6B35] text-[#FF6B35] px-3 py-1.5">
+              <Badge variant="outline" className="border-purple-600 text-purple-600 px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
-                Criado para Bariátricos
+                Sabor Neutro
               </Badge>
             </div>
 
@@ -162,7 +162,7 @@ export default function ProductHero() {
                   <span className="text-gray-400 line-through text-lg">
                     R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                   </span>
-                  <Badge className="bg-[#FF6B35] text-white">
+                  <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
                     -{prices[selectedSize].discount}%
                   </Badge>
                 </div>
@@ -187,10 +187,10 @@ export default function ProductHero() {
             </div>
 
             {/* Unit Price Info */}
-            {(selectedSize === '3 Unidades' || selectedSize === '5 Unidades') && (
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-3 text-center">
-                <p className="text-sm font-semibold text-[#FF6B35]">
-                  Cada Unidade sai por R$ {(prices[selectedSize].current / parseInt(selectedSize)).toFixed(2).replace('.', ',')}
+            {(selectedSize === '2 Pacotes' || selectedSize === '3 Pacotes + 1 Grátis') && (
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-3 text-center">
+                <p className="text-sm font-semibold text-purple-700">
+                  Cada Pacote sai por R$ {(prices[selectedSize].current / (selectedSize.includes('Grátis') ? 4 : parseInt(selectedSize))).toFixed(2).replace('.', ',')}
                 </p>
               </div>
             )}
@@ -205,11 +205,11 @@ export default function ProductHero() {
                     onClick={() => setSelectedSize(size)}
                     className={`relative px-4 py-4 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
-                        ? 'border-[#FF6B35] bg-[#FF6B35] text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-[#FF6B35]'
+                        ? 'border-purple-600 bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-purple-600'
                     }`}
                   >
-                    {size === '3 Unidades' && (
+                    {size === '2 Pacotes' && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2">
                         <span className="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                           Mais Escolhido
@@ -231,7 +231,7 @@ export default function ProductHero() {
             </div>
 
             {/* Buy Button */}
-            <Button className="w-full h-12 bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#FF6B35]/25 transition-all hover:shadow-xl hover:shadow-[#FF6B35]/30">
+            <Button className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-purple-600/25 transition-all hover:shadow-xl hover:shadow-purple-600/30">
               Comprar Agora
             </Button>
 
@@ -252,36 +252,36 @@ export default function ProductHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Star className="w-5 h-5 text-[#FF6B35]" />
+              <div className="bg-purple-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-purple-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 text-purple-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Produto muito Avaliado</p>
+                <p className="font-semibold text-gray-900 text-sm">50.000+ Clientes</p>
               </div>
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="w-5 h-5 text-[#FF6B35]" />
+              <div className="bg-purple-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-purple-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Shield className="w-5 h-5 text-purple-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Garantia de Satisfação</p>
+                <p className="font-semibold text-gray-900 text-sm">Garantia 30 Dias</p>
               </div>
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-[#FF6B35]/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Tag className="w-5 h-5 text-[#FF6B35]" />
+              <div className="bg-purple-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-purple-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Tag className="w-5 h-5 text-purple-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Cupom: PRIMEIRACOMPRA</p>
+                <p className="font-semibold text-gray-900 text-sm">Sabor Neutro</p>
               </div>
             </div>
 
             {/* Benefits List */}
             <div className="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
               {[
-                'Apenas 2 cápsulas por dia',
-                'Absorção otimizada',
-                'Previne deficiências',
-                'Reduz fadiga e cansaço'
+                'Sabor neutro',
+                'Hidrata profundamente',
+                'Reduz rugas e linhas',
+                'Fortalece cabelo e unhas'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-[#FF6B35]" />
+                  <Check className="w-4 h-4 text-purple-600" />
                   {benefit}
                 </div>
               ))}
