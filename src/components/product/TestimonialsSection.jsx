@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Quote, TrendingUp } from 'lucide-react';
-import PhotoReviewsCarousel from './PhotoReviewsCarousel';
 
 const testimonials = [
   {
@@ -116,6 +115,46 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Netão Featured Testimonial */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-gradient-to-br from-orange-100 to-orange-50 rounded-3xl p-8 lg:p-12 shadow-2xl border border-orange-200"
+        >
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="lg:w-1/3">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/b029f12f0_Screenshot2025-12-17at145158.png"
+                alt="Netão - Influenciador Digital"
+                className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
+              />
+            </div>
+            <div className="lg:w-2/3">
+              <div className="flex items-center gap-2 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <Quote className="w-12 h-12 text-[#FF6B35]/30 mb-4" />
+              <p className="text-xl lg:text-2xl text-gray-800 font-medium mb-6 italic leading-relaxed">
+                "Após minha cirurgia bariátrica, o Bari Essential foi essencial para minha recuperação! 
+                Ele me ajudou a manter meus níveis de energia altos e prevenir deficiências nutricionais. 
+                É um produto que realmente faz diferença na vida de quem passou pela bariátrica!"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                  N
+                </div>
+                <div>
+                  <p className="font-bold text-gray-900 text-lg">Netão</p>
+                  <p className="text-gray-600">Influenciador Digital e Bariátrico</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
