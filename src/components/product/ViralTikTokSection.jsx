@@ -95,7 +95,7 @@ export default function ViralTikTokSection() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-gradient-to-b from-purple-50 to-white">
+    <section className="py-12 lg:py-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-medium text-sm uppercase tracking-wider">
@@ -123,7 +123,7 @@ export default function ViralTikTokSection() {
         </motion.div>
 
         {/* Videos Carousel */}
-        <div className="relative">
+        <div className="relative px-12 lg:px-16">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-4">
             {videos.map((video, idx) => (
@@ -168,13 +168,13 @@ export default function ViralTikTokSection() {
           {/* Navigation Arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            className="absolute -left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-xl flex items-center justify-center transition-all z-10"
           >
             <ChevronLeft className="w-6 h-6 text-gray-700" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all z-10"
+            className="absolute -right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-xl flex items-center justify-center transition-all z-10"
           >
             <ChevronRight className="w-6 h-6 text-gray-700" />
           </button>
