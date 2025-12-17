@@ -8,7 +8,8 @@ import QuickNavigationMenu from './QuickNavigationMenu';
 const productImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/9539d4095_Screenshot2025-12-17at134320.png",
   "https://bariessential.com.br/wp-content/uploads/2025/07/product_bari-14caps.webp",
-  "https://bariessential.com.br/wp-content/uploads/2025/09/3-frascos-bari-essential-atualizado-v2.webp"
+  "https://bariessential.com.br/wp-content/uploads/2025/09/3-frascos-bari-essential-atualizado-v2.webp",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/b7ab04dac_Screenshot2025-12-17at141954.png"
 ];
 
 export default function ProductHero() {
