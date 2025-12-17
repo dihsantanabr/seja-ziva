@@ -24,7 +24,7 @@ const kits = [
   {
     name: "Combo Completo",
     description: "Multicolágeno + Greemy + DreamsCoffee",
-    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/068d95157_20241220-_Z5F0911.jpg",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/864923f50_20241220-_Z5F09111.jpg",
     price: 527.70,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
