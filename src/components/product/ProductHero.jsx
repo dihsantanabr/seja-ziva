@@ -207,27 +207,10 @@ export default function ProductHero() {
               </div>
             </div>
 
-            {/* Quantity & Buy */}
-            <div className="flex gap-4">
-              <div className="flex items-center border-2 border-gray-200 rounded-xl">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-12 h-12 flex items-center justify-center text-gray-600 hover:bg-gray-50"
-                >
-                  -
-                </button>
-                <span className="w-12 text-center font-semibold">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="w-12 h-12 flex items-center justify-center text-gray-600 hover:bg-gray-50"
-                >
-                  +
-                </button>
-              </div>
-              <Button className="flex-1 h-12 bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#FF6B35]/25 transition-all hover:shadow-xl hover:shadow-[#FF6B35]/30">
-                Adicionar ao Carrinho
-              </Button>
-            </div>
+            {/* Buy Button */}
+            <Button className="w-full h-12 bg-[#FF6B35] hover:bg-[#E55A2B] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#FF6B35]/25 transition-all hover:shadow-xl hover:shadow-[#FF6B35]/30">
+              Comprar Agora
+            </Button>
 
             {/* Delivery Estimate */}
             <div className="bg-green-50 border border-green-200 rounded-xl p-4">
