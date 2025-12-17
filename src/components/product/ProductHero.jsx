@@ -16,6 +16,7 @@ export default function ProductHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('2 Pacotes');
+  const [selectedFlavor, setSelectedFlavor] = useState('Blue Ice');
 
   const prices = {
     '1 Pacote': { original: 249.00, current: 167.90, discount: 33, badge: 'FRETE GRÁTIS', duration: 'Duração 30 dias' },
@@ -194,6 +195,26 @@ export default function ProductHero() {
                 </p>
               </div>
             )}
+
+            {/* Flavor Selection */}
+            <div>
+              <p className="font-medium text-gray-700 mb-3">Escolha o sabor:</p>
+              <div className="grid grid-cols-3 gap-3 mb-6">
+                {['Blue Ice', 'Frutas Vermelhas', 'Frutas Vermelhas + Blue Ice'].map((flavor) => (
+                  <button
+                    key={flavor}
+                    onClick={() => setSelectedFlavor(flavor)}
+                    className={`px-4 py-3 rounded-xl border-2 font-medium transition-all text-center text-sm ${
+                      selectedFlavor === flavor
+                        ? 'border-purple-600 bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-purple-600'
+                    }`}
+                  >
+                    {flavor}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {/* Size Selection */}
             <div>
