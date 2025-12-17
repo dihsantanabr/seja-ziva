@@ -68,9 +68,11 @@ export default function KitsSection() {
               </div>
               
               <div className="mb-6 flex justify-center">
-                <div className="w-48 h-48 bg-orange-50/50 rounded-2xl flex items-center justify-center">
-                  <span className="text-6xl">📦</span>
-                </div>
+                <img 
+                  src={kit.image} 
+                  alt={kit.name}
+                  className="w-full h-64 object-contain"
+                />
               </div>
 
               <div className="text-center mb-4">
