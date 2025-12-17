@@ -9,6 +9,7 @@ const kits = [
     name: "Kit Força e Estética",
     description: "Bari Essential + Root Booster + Slim Tea",
     image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/ce3b783c3_image.png",
+    price: 299.00,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   },
@@ -16,6 +17,7 @@ const kits = [
     name: "Kit Imunidade e Digestão",
     description: "Kit Bari Essential + Fort Immune + Slim Bari",
     image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/eaab8fbfd_image.png",
+    price: 299.00,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: true
   },
@@ -23,6 +25,7 @@ const kits = [
     name: "Kit Energia e Foco",
     description: "Kit Bari Essential + Mind Fuel + Fit Bari",
     image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6941e696a4baa9c466e144f4/4d5934e42_image.png",
+    price: 299.00,
     paymentInfo: "Em até 3x sem juros no cartão",
     popular: false
   }
@@ -82,9 +85,12 @@ export default function KitsSection() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {kit.name}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 mb-3">
                   {kit.description}
                 </p>
+                <div className="text-3xl font-bold text-[#FF6B35] mb-2">
+                  R$ {kit.price.toFixed(2).replace('.', ',')}
+                </div>
                 <p className="text-sm text-gray-500">
                   {kit.paymentInfo}
                 </p>
