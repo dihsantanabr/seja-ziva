@@ -5,47 +5,47 @@ import PhotoReviewsCarousel from './PhotoReviewsCarousel';
 
 const testimonials = [
   {
-    name: "Camila S.",
-    text: "De 10ml na bombinha para 60ml em 10 dias! Não acreditava que seria possível, mas funcionou muito.",
+    name: "Mariana S.",
+    text: "Minha energia voltou! Não sentia mais aquele cansaço extremo. Meus exames normalizaram e estou me sentindo muito melhor.",
     rating: 5,
-    result: "+500% produção"
+    result: "Energia recuperada"
   },
   {
-    name: "Amanda R.",
-    text: "Consegui reduzir a fórmula pela metade. Meu bebê está mamando muito melhor agora.",
+    name: "Carlos R.",
+    text: "Depois da bariátrica estava com anemia severa. Em 2 meses usando o Bari Essential, minha hemoglobina normalizou!",
     rating: 5,
-    result: "-50% fórmula"
+    result: "Anemia corrigida"
   },
   {
-    name: "Patricia M.",
-    text: "Meu bebê finalmente começou a ganhar peso. Estou muito emocionada com os resultados.",
+    name: "Juliana M.",
+    text: "Meu cabelo parou de cair e minhas unhas ficaram muito mais fortes. A diferença é visível!",
     rating: 5,
-    result: "Bebê ganhando peso"
+    result: "Cabelo e unhas"
   },
   {
-    name: "Juliana F.",
-    text: "Estou fazendo lactação induzida e já comecei a ter produção! Incrível esse produto.",
+    name: "Roberto F.",
+    text: "Estava com deficiência de B12 e sentia muita fadiga. Agora tenho disposição para trabalhar e treinar!",
     rating: 5,
-    result: "Lactação induzida"
+    result: "Mais disposição"
   },
   {
     name: "Fernanda L.",
-    text: "Depois da cesárea meu leite demorou a descer. O extrato ajudou muito nesse processo.",
+    text: "Fiz bariátrica há 6 meses e o Bari Essential é essencial na minha rotina. Previne todas as deficiências!",
     rating: 5,
-    result: "Pós-cesárea"
+    result: "Pós-bariátrica"
   },
   {
-    name: "Beatriz A.",
-    text: "Uso junto com outros produtos da Mamamais e os resultados foram ainda melhores!",
+    name: "Patricia A.",
+    text: "Minha imunidade melhorou muito! Antes ficava doente toda hora, agora raramente tenho gripes.",
     rating: 5,
-    result: "Kit completo"
+    result: "Imunidade forte"
   }
 ];
 
 const stats = [
-  { value: "60.000+", label: "Famílias atendidas" },
+  { value: "15.000+", label: "Clientes atendidos" },
   { value: "4.9/5", label: "Avaliação média" },
-  { value: "93%", label: "Recomendam" },
+  { value: "96%", label: "Recomendam" },
   { value: "3.500+", label: "Avaliações reais" }
 ];
 
@@ -55,10 +55,10 @@ export default function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
-            Prova social
+            Depoimentos
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            O que dizem nossas mães
+            O que dizem nossos clientes
           </h2>
         </div>
 

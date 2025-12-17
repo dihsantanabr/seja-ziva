@@ -5,33 +5,33 @@ import { motion } from 'framer-motion';
 const painPoints = [
   {
     icon: Droplets,
-    title: "Baixa produção de leite",
-    description: "Quase nada saindo na bombinha ou ordenha"
+    title: "Fez cirurgia bariátrica",
+    description: "Precisa de reposição completa de nutrientes"
   },
   {
     icon: Scale,
-    title: "Bebê sem ganhar peso",
-    description: "Dificuldade no ganho de peso adequado"
+    title: "Sofre com fadiga crônica",
+    description: "Sente cansaço constante e falta de energia"
   },
   {
     icon: Heart,
-    title: "Lactação induzida",
-    description: "Adoção, relactação ou casais homoafetivos"
+    title: "Tem deficiências nutricionais",
+    description: "Anemia, queda de cabelo, unhas fracas"
   },
   {
     icon: Baby,
-    title: "Uso de fórmula",
-    description: "Deseja reduzir e aumentar o leite materno"
+    title: "Baixa absorção intestinal",
+    description: "Dificuldade em absorver vitaminas e minerais"
   },
   {
     icon: Clock,
-    title: "Peito que não enche",
-    description: "Pouca ejeção ou demora na descida do leite"
+    title: "Imunidade comprometida",
+    description: "Gripes e infecções frequentes"
   },
   {
     icon: Users,
-    title: "Pós-parto difícil",
-    description: "Cesárea, prematuro ou outras dificuldades"
+    title: "Problemas ósseos e musculares",
+    description: "Ossos fracos, dores musculares ou cãibras"
   }
 ];
 
@@ -44,10 +44,10 @@ export default function ForWhoSection() {
             Esse é o seu caso?
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Para quem este extrato foi feito?
+            O polivitamínico ideal para quem passou pela bariátrica!
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Uma opção natural e segura para diferentes jornadas de amamentação
+            Também essencial para qualquer pessoa que precise de reposição completa de vitaminas
           </p>
         </div>
 

@@ -5,23 +5,23 @@ import { TrendingUp, Zap, Baby, Activity, ArrowRight } from 'lucide-react';
 const results = [
   {
     icon: TrendingUp,
-    title: "Estimula a produção",
-    description: "Aumenta naturalmente a produção de leite materno"
+    title: "Recupera energia",
+    description: "Combate a fadiga crônica e disposição"
   },
   {
     icon: Zap,
-    title: "Auxilia na indução",
-    description: "Ideal para lactação induzida e relactação"
+    title: "Nutrição profunda",
+    description: "Melhora a absorção de nutrientes"
   },
   {
     icon: Activity,
-    title: "Melhora a ejeção",
-    description: "Aumenta a descida e ejeção do leite"
+    title: "Previne deficiências",
+    description: "Evita anemias e carências nutricionais"
   },
   {
     icon: Baby,
-    title: "Ajuda o bebê",
-    description: "Contribui para o ganho de peso do bebê"
+    title: "Fortalece imunidade",
+    description: "Deixa o corpo mais saudável diariamente"
   }
 ];
 
@@ -31,10 +31,10 @@ export default function ResultsSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
-            Resultados esperados
+            Benefícios
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            O que este produto faz por você?
+            Tudo que seu corpo precisa nessa nova fase!
           </h2>
         </div>
 

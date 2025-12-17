@@ -5,25 +5,25 @@ import { Droplet, Clock, Calendar, AlertCircle, Check } from 'lucide-react';
 const steps = [
   {
     number: "1",
-    title: "Extraia 1ml",
-    description: "Use a seringa para extrair 1ml do extrato",
+    title: "2 cápsulas por dia",
+    description: "Tome após o café da manhã",
     icon: Droplet
   },
   {
     number: "2",
-    title: "Dilua em 50ml",
-    description: "Dilua em 50ml de água ou líquido de preferência",
-    icon: "💧"
+    title: "Após uma refeição",
+    description: "Sempre tome após comer para melhor absorção",
+    icon: "🍽️"
   },
   {
     number: "3",
-    title: "3x ao dia",
-    description: "Tome como um shot, 3 vezes ao dia",
+    title: "Com água",
+    description: "Beba bastante água ao tomar",
     icon: Clock
   },
   {
     number: "4",
-    title: "Use diariamente",
+    title: "Uso contínuo",
     description: "Para melhores resultados, use todos os dias",
     icon: Calendar
   }
@@ -34,9 +34,9 @@ const timelineResults = [
     period: "7 dias",
     title: "Primeira Semana",
     results: [
-      "Peito começa a encher",
-      "Primeiros sinais visíveis",
-      "Mais ejeção do leite"
+      "Mais disposição no dia a dia",
+      "Melhora no humor",
+      "Menos fadiga"
     ],
     approval: "89%",
     color: "bg-orange-500"
@@ -45,9 +45,9 @@ const timelineResults = [
     period: "14 dias",
     title: "Segunda Semana",
     results: [
-      "Produção aumentada",
-      "Menos uso de fórmula",
-      "Bebê mais satisfeito"
+      "Energia recuperada",
+      "Melhora da imunidade",
+      "Cabelo e unhas mais fortes"
     ],
     approval: "94%",
     color: "bg-orange-500"
@@ -56,22 +56,22 @@ const timelineResults = [
     period: "30 dias",
     title: "Um Mês",
     results: [
-      "Lactação estabelecida",
-      "Produção consistente",
-      "Amamentação facilitada"
+      "Deficiências corrigidas",
+      "Exames normalizados",
+      "Bem-estar completo"
     ],
-    approval: "87%",
+    approval: "96%",
     color: "bg-orange-500"
   },
   {
     period: "90 dias",
     title: "Três Meses",
     results: [
-      "Produção consolidada",
-      "Amamentação plena",
-      "Vínculo fortalecido"
+      "Saúde consolidada",
+      "Ossos fortalecidos",
+      "Imunidade robusta"
     ],
-    approval: "92%",
+    approval: "98%",
     color: "bg-orange-500"
   }
 ];
@@ -85,7 +85,7 @@ export default function HowToUseSection() {
             Modo de uso
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Como usar o extrato?
+            Como tomar o Bari Essential?
           </h2>
         </div>
 
@@ -129,19 +129,19 @@ export default function HowToUseSection() {
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>Primeiros sinais em <strong>3-7 dias</strong> de uso contínuo</span>
+                  <span>Mais energia em <strong>7-14 dias</strong> de uso contínuo</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>Resultados mais expressivos em <strong>10-14 dias</strong></span>
+                  <span>Correção de deficiências em <strong>30-60 dias</strong></span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     ✓
                   </div>
-                  <span>A resposta do corpo varia de pessoa para pessoa</span>
+                  <span>Resultados duradouros com uso contínuo</span>
                 </li>
               </ul>
             </div>
@@ -151,8 +151,8 @@ export default function HowToUseSection() {
                 <div>
                   <h4 className="font-semibold mb-2">Importante saber</h4>
                   <p className="text-sm text-white/90">
-                    É natural, não é milagre instantâneo. Cada corpo responde de forma única. 
-                    O uso diário e consistente é fundamental para os melhores resultados.
+                    A reposição nutricional é um processo gradual. Cada organismo responde de forma única. 
+                    O uso diário e consistente é fundamental para corrigir deficiências e manter a saúde.
                   </p>
                 </div>
               </div>

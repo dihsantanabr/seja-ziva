@@ -4,34 +4,34 @@ import { Award, BookOpen, Shield } from 'lucide-react';
 
 const herbs = [
   {
-    name: "Feno-Grego",
-    benefit: "Galactagogo clássico, aumenta prolactina",
-    emoji: "🌿"
+    name: "Vitaminas Ativas",
+    benefit: "Máxima absorção e eficácia",
+    emoji: "💊"
   },
   {
-    name: "Cardo Santo",
-    benefit: "Estimula produção e qualidade do leite",
-    emoji: "🌸"
+    name: "Minerais Quelados",
+    benefit: "Alta biodisponibilidade",
+    emoji: "⚡"
   },
   {
-    name: "Melissa",
-    benefit: "Efeito calmante, favorece descida",
-    emoji: "🍃"
+    name: "Vitamina B12",
+    benefit: "Energia e bem-estar mental",
+    emoji: "🧠"
   },
   {
-    name: "Funcho",
-    benefit: "Estimula ejeção e reduz cólicas no bebê",
-    emoji: "🌾"
+    name: "Ferro + Vitamina C",
+    benefit: "Previne anemia",
+    emoji: "🩸"
   },
   {
-    name: "Camomila",
-    benefit: "Reduz ansiedade da mãe",
-    emoji: "🌼"
+    name: "Cálcio + Vitamina D3",
+    benefit: "Fortalece ossos e dentes",
+    emoji: "🦴"
   },
   {
-    name: "Capim-Cidreira",
-    benefit: "Relaxante natural para amamentação",
-    emoji: "🌱"
+    name: "+20 Nutrientes",
+    benefit: "Fórmula completa",
+    emoji: "✨"
   }
 ];
 
@@ -41,13 +41,13 @@ export default function FormulaSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
-            A ciência por trás
+            Fórmula
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            O que vai na fórmula deste extrato?
+            Por que o Bari Essential é diferente?
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Uma opção natural e segura, formulada com ervas tradicionais
+            Sistema de nutrição inteligente, feito para quem passou pela bariátrica
           </p>
         </div>
 
@@ -64,11 +64,11 @@ export default function FormulaSection() {
             </div>
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Criado por Consultora em Lactação
+                Desenvolvido para Bariátricos
               </h3>
               <p className="text-gray-600 mb-4">
-                Fórmula desenvolvida por especialista com base em literatura de herbologia e bancos de dados como LactMed. 
-                Mais de 60.000 famílias já confiaram nos produtos Mamamais.
+                Fórmula cientificamente desenvolvida com vitaminas ativas e minerais quelados de alta absorção. 
+                Criado especialmente para atender as necessidades nutricionais após a cirurgia bariátrica.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 text-sm text-gray-700">
