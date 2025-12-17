@@ -89,32 +89,81 @@ export default function HowToUseSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {steps.map((step, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 h-full border border-purple-100">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold mb-4">
-                  {step.number}
-                </div>
-                <h3 className="font-semibold text-gray-900 text-lg mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {step.description}
-                </p>
+        {/* Visual Step-by-Step Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
+          >
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                alt="Passo 1" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: '0% 0%', clipPath: 'inset(0 66.6% 50% 0)' }}
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+                1
               </div>
-              {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-purple-600/30" />
-              )}
-            </motion.div>
-          ))}
+              <p className="font-medium">
+                Pegue 1 dosador de dentro do seu pacote de Multicolágeno.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
+          >
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                alt="Passo 2" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: '50% 0%', clipPath: 'inset(0 33.3% 50% 33.3%)' }}
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+                2
+              </div>
+              <p className="font-medium">
+                Misture essa dose em 200ml de água ou na sua receita preferida.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="relative bg-white rounded-2xl overflow-hidden shadow-lg group hover:shadow-xl transition-all"
+          >
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bb10feaa7_Screenshot2025-12-17at183200.png" 
+                alt="Passo 3" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: '100% 0%', clipPath: 'inset(0 0 50% 66.6%)' }}
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-purple-600 font-bold text-xl mb-3">
+                3
+              </div>
+              <p className="font-medium">
+                Pronto! Agora é só degustar enquanto aprecia sua refeição e aproveitar todos os benefícios para a sua pele, unhas, cabelos e articulações.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Expectations Card */}
