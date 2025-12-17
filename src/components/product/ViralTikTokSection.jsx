@@ -1,27 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Eye } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const videos = [
   {
-    thumbnail: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/8c5a34710_Screenshot2025-12-17at182404.png",
+    thumbnail: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=700&fit=crop",
     views: "2.4M"
   },
   {
-    thumbnail: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/8c5a34710_Screenshot2025-12-17at182404.png",
+    thumbnail: "https://images.unsplash.com/photo-1598966739654-5e9451d83c4b?w=400&h=700&fit=crop",
     views: "1.8M"
   },
   {
-    thumbnail: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/8c5a34710_Screenshot2025-12-17at182404.png",
+    thumbnail: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=700&fit=crop",
     views: "3.1M"
   },
   {
-    thumbnail: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/8c5a34710_Screenshot2025-12-17at182404.png",
+    thumbnail: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=400&h=700&fit=crop",
     views: "1.5M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=700&fit=crop",
+    views: "2.9M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=400&h=700&fit=crop",
+    views: "3.6M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=700&fit=crop",
+    views: "2.2M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=700&fit=crop",
+    views: "1.9M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=700&fit=crop",
+    views: "4.1M"
+  },
+  {
+    thumbnail: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=700&fit=crop",
+    views: "3.3M"
   }
 ];
 
 export default function ViralTikTokSection() {
+  const [emblaRef] = useEmblaCarousel({ 
+    loop: true, 
+    align: 'start',
+    slidesToScroll: 1,
+    containScroll: 'trimSnaps'
+  });
   const [viewCount, setViewCount] = useState(0);
   const targetViews = 8500000; // 8.5 milhões
 
@@ -83,40 +114,46 @@ export default function ViralTikTokSection() {
           </span>
         </motion.div>
 
-        {/* Videos Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {videos.map((video, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative aspect-[9/16] bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group"
-            >
-              <img
-                src={video.thumbnail}
-                alt={`Vídeo viral ${idx + 1}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
-              
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                  <Play className="w-8 h-8 text-white fill-white ml-1" />
-                </div>
-              </div>
+        {/* Videos Carousel */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-4">
+            {videos.map((video, idx) => (
+              <div
+                key={idx}
+                className="flex-[0_0_280px] lg:flex-[0_0_240px]"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="relative aspect-[9/16] bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer group"
+                >
+                  <img
+                    src={video.thumbnail}
+                    alt={`Vídeo viral ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
+                  
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <Play className="w-8 h-8 text-white fill-white ml-1" />
+                    </div>
+                  </div>
 
-              {/* View Count Badge */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-black/70 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-white" />
-                  <span className="text-white font-semibold text-sm">{video.views} views</span>
-                </div>
+                  {/* View Count Badge */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-black/70 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-2">
+                      <Eye className="w-4 h-4 text-white" />
+                      <span className="text-white font-semibold text-sm">{video.views} views</span>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
