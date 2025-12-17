@@ -185,6 +185,15 @@ export default function ProductHero() {
               </div>
             </div>
 
+            {/* Unit Price Info */}
+            {(selectedSize === '3 Unidades' || selectedSize === '5 Unidades') && (
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-3 text-center">
+                <p className="text-sm font-semibold text-[#FF6B35]">
+                  Cada Unidade sai por R$ {(prices[selectedSize].current / parseInt(selectedSize)).toFixed(2).replace('.', ',')}
+                </p>
+              </div>
+            )}
+
             {/* Size Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
