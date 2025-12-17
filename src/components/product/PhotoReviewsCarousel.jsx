@@ -39,19 +39,19 @@ export default function PhotoReviewsCarousel() {
   };
 
   return (
-    <div className="mt-16 bg-gradient-to-br from-[#F2E8D8] to-white rounded-3xl p-8 lg:p-12">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 mb-4">
-          <Heart className="w-5 h-5 text-[#C9AE7A] fill-[#C9AE7A]" />
-          <span className="font-semibold text-gray-900">Momentos reais</span>
+    <div className="mt-8 sm:mt-12 lg:mt-16 bg-gradient-to-br from-[#F2E8D8] to-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12">
+      <div className="text-center mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-3 sm:mb-4">
+          <Heart className="w-4 sm:w-5 h-4 sm:h-5 text-[#C9AE7A] fill-[#C9AE7A]" />
+          <span className="font-semibold text-gray-900 text-sm sm:text-base">Momentos reais</span>
         </div>
-        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 px-4">
           Mães que transformaram suas jornadas
         </h3>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
-        <div className="overflow-hidden rounded-2xl">
+      <div className="relative max-w-5xl mx-auto px-2 sm:px-4">
+        <div className="overflow-hidden rounded-xl sm:rounded-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -59,10 +59,10 @@ export default function PhotoReviewsCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center bg-white rounded-2xl p-4 lg:p-10 shadow-xl"
+              className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 lg:p-10 shadow-xl"
             >
               {/* Image */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-xl sm:rounded-2xl overflow-hidden">
                 <img
                   src={photoReviews[currentIndex].image}
                   alt={photoReviews[currentIndex].name}
@@ -72,31 +72,31 @@ export default function PhotoReviewsCarousel() {
               </div>
 
               {/* Content */}
-              <div className="space-y-4 lg:space-y-6">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                 <div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
                     {photoReviews[currentIndex].name}
                   </h4>
-                  <p className="text-[#C9AE7A] font-medium">
+                  <p className="text-[#C9AE7A] font-medium text-sm sm:text-base">
                     {photoReviews[currentIndex].location}
                   </p>
                 </div>
 
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   "{photoReviews[currentIndex].comment}"
                 </p>
 
                 {/* Rating */}
-                <div className="flex gap-1">
+                <div className="flex gap-0.5 sm:gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-6 h-6 fill-amber-400 text-amber-400" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 sm:w-6 h-5 sm:h-6 fill-amber-400 text-amber-400" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
                   ))}
                 </div>
 
                 {/* Navigation dots */}
-                <div className="flex gap-2 pt-4">
+                <div className="flex gap-2 pt-2 sm:pt-4">
                   {photoReviews.map((_, idx) => (
                     <button
                       key={idx}
@@ -117,15 +117,15 @@ export default function PhotoReviewsCarousel() {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#C9AE7A] hover:text-white transition-all group"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 lg:-translate-x-6 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#C9AE7A] hover:text-white transition-all group active:scale-90"
         >
-          <ChevronLeft className="w-6 h-6 text-[#C9AE7A] group-hover:text-white" />
+          <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6 text-[#C9AE7A] group-hover:text-white" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#C9AE7A] hover:text-white transition-all group"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 lg:translate-x-6 w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-[#C9AE7A] hover:text-white transition-all group active:scale-90"
         >
-          <ChevronRight className="w-6 h-6 text-[#C9AE7A] group-hover:text-white" />
+          <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6 text-[#C9AE7A] group-hover:text-white" />
         </button>
       </div>
     </div>
