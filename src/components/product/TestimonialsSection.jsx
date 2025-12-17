@@ -51,7 +51,7 @@ const stats = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-12 lg:py-24 bg-white">
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-orange-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
@@ -71,9 +71,9 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-[#F2E8E2] rounded-2xl p-6 text-center"
+              className="bg-orange-50 rounded-2xl p-6 text-center border border-orange-100"
             >
-              <div className="text-3xl lg:text-4xl font-bold text-[#C9A875] mb-1">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FF6B35] mb-1">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-600">{stat.label}</div>
@@ -90,25 +90,25 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-gradient-to-br from-[#F2E8E2] to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-orange-100"
             >
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <Quote className="w-8 h-8 text-[#C9A875]/20 mb-2" />
+              <Quote className="w-8 h-8 text-[#FF6B35]/20 mb-2" />
               <p className="text-gray-700 mb-4 italic">
                 "{testimonial.text}"
               </p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#C9A875] rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-[#FF6B35] rounded-full flex items-center justify-center text-white font-semibold">
                     {testimonial.name.charAt(0)}
                   </div>
                   <span className="font-medium text-gray-900">{testimonial.name}</span>
                 </div>
-                <div className="flex items-center gap-1 text-sm text-[#C9A875] font-medium">
+                <div className="flex items-center gap-1 text-sm text-[#FF6B35] font-medium">
                   <TrendingUp className="w-4 h-4" />
                   {testimonial.result}
                 </div>

@@ -37,7 +37,7 @@ const herbs = [
 
 export default function FormulaSection() {
   return (
-    <section className="py-16 lg:py-24 bg-[#F2E8E2]">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-orange-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-[#FF6B35] font-medium text-sm uppercase tracking-wider">
@@ -59,7 +59,7 @@ export default function FormulaSection() {
           className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl mb-12"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-[#C9A875] to-[#b8976a] rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-32 h-32 bg-gradient-to-br from-[#FF6B35] to-[#E55A2B] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-5xl">👩‍⚕️</span>
             </div>
             <div className="text-center lg:text-left">
@@ -72,15 +72,15 @@ export default function FormulaSection() {
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <Award className="w-5 h-5 text-[#C9A875]" />
+                  <Award className="w-5 h-5 text-[#FF6B35]" />
                   Especialista certificada
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <BookOpen className="w-5 h-5 text-[#C9A875]" />
+                  <BookOpen className="w-5 h-5 text-[#FF6B35]" />
                   Base científica
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-700">
-                  <Shield className="w-5 h-5 text-[#C9A875]" />
+                  <Shield className="w-5 h-5 text-[#FF6B35]" />
                   Segurança comprovada
                 </div>
               </div>
@@ -97,9 +97,9 @@ export default function FormulaSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl p-5 text-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+              className="bg-white rounded-2xl p-5 text-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-orange-100"
             >
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-3xl">{herb.emoji}</span>
               </div>
               <h4 className="font-semibold text-gray-900 mb-1">{herb.name}</h4>
