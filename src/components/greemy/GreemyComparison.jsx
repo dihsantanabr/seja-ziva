@@ -3,22 +3,16 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
 const comparisons = [
-  { feature: "22 Superalimentos", greemy: true, regular: false, others: "Poucos" },
+  { feature: "22 Superalimentos Verdes", greemy: true, regular: false, others: "Poucos" },
   { feature: "Spirulina Premium", greemy: true, regular: false, others: "Variável" },
   { feature: "Chlorella Orgânica", greemy: true, regular: false, others: false },
-  { feature: "Wheatgrass (Grama de Trigo)", greemy: true, regular: false, others: "Poucos" },
-  { feature: "Matcha Verde", greemy: true, regular: false, others: false },
+  { feature: "Wheatgrass + Matcha", greemy: true, regular: false, others: "Poucos" },
   { feature: "Energia Natural Duradoura", greemy: true, regular: false, others: "Limitada" },
   { feature: "Sabor Delicioso (Limão e Laranja)", greemy: true, regular: false, others: "Amargo" },
   { feature: "Vitaminas e Minerais Completos", greemy: true, regular: "Parcial", others: "Parcial" },
-  { feature: "Antioxidantes Potentes", greemy: true, regular: false, others: "Limitado" },
-  { feature: "Fibras Prebióticas", greemy: true, regular: false, others: false },
   { feature: "Sem Açúcar Adicionado", greemy: true, regular: false, others: "Variável" },
-  { feature: "Sem Glúten", greemy: true, regular: "Variável", others: "Variável" },
   { feature: "Vegano 100%", greemy: true, regular: false, others: "Variável" },
-  { feature: "Fácil Dissolução em Água", greemy: true, regular: false, others: "Difícil" },
-  { feature: "Sachês Individuais Práticos", greemy: true, regular: false, others: false },
-  { feature: "Testado em Laboratório", greemy: true, regular: "Variável", others: "Variável" }
+  { feature: "Sachês Individuais Práticos", greemy: true, regular: false, others: false }
 ];
 
 const ValueCell = ({ value }) => {
