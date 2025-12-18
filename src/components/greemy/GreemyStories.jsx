@@ -5,60 +5,74 @@ import { motion, AnimatePresence } from 'framer-motion';
 const stories = [
   {
     id: 1,
+    thumb: "https://img.youtube.com/vi/3GVepPRz-Fw/maxresdefault.jpg",
+    title: "Vídeo 1",
+    type: "video",
+    videoUrl: "https://www.youtube.com/embed/3GVepPRz-Fw"
+  },
+  {
+    id: 2,
+    thumb: "https://img.youtube.com/vi/6911rRVzWDQ/maxresdefault.jpg",
+    title: "Vídeo 2",
+    type: "video",
+    videoUrl: "https://www.youtube.com/embed/6911rRVzWDQ"
+  },
+  {
+    id: 3,
     thumb: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&h=600&fit=crop",
     title: "Energia Natural",
     type: "image"
   },
   {
-    id: 2,
+    id: 4,
     thumb: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=600&fit=crop",
     title: "Depoimentos",
     type: "image"
   },
   {
-    id: 3,
+    id: 5,
     thumb: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
     title: "22 Superalimentos",
     type: "image"
   },
   {
-    id: 4,
+    id: 6,
     thumb: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=600&fit=crop",
     title: "Benefícios",
     type: "image"
   },
   {
-    id: 5,
+    id: 7,
     thumb: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=400&h=600&fit=crop",
     title: "Como Usar",
     type: "image"
   },
   {
-    id: 6,
+    id: 8,
     thumb: "https://images.unsplash.com/photo-1594881023712-525caa8fd5a7?w=400&h=600&fit=crop",
     title: "Foco Mental",
     type: "image"
   },
   {
-    id: 7,
+    id: 9,
     thumb: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=600&fit=crop",
     title: "Fórmula Verde",
     type: "image"
   },
   {
-    id: 8,
+    id: 10,
     thumb: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=600&fit=crop",
     title: "Imunidade",
     type: "image"
   },
   {
-    id: 9,
+    id: 11,
     thumb: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&h=600&fit=crop",
     title: "Sabores",
     type: "image"
   },
   {
-    id: 10,
+    id: 12,
     thumb: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=600&fit=crop",
     title: "Vitalidade",
     type: "image"
@@ -194,11 +208,21 @@ export default function GreemyStories() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-md w-full h-[80vh] mx-4"
             >
-              <img
-                src={selectedStory.thumb}
-                alt={selectedStory.title}
-                className="w-full h-full object-cover rounded-2xl"
-              />
+              {selectedStory.type === 'video' ? (
+                <iframe
+                  src={selectedStory.videoUrl}
+                  title={selectedStory.title}
+                  className="w-full h-full rounded-2xl"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <img
+                  src={selectedStory.thumb}
+                  alt={selectedStory.title}
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              )}
               
               {/* Story title overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent rounded-b-2xl">
