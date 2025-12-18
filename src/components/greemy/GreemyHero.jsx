@@ -181,7 +181,7 @@ export default function GreemyHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  Economia de R$ {(prices[selectedSize].original - prices[selectedSize].current).toFixed(2).replace('.', ',')}
+                  Receba de Volta R$ {((prices[selectedSize].original - prices[selectedSize].current) * 0.1).toFixed(2).replace('.', ',')} (10% do valor do produto)
                 </span>
               </div>
             </div>
