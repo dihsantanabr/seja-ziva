@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import GreemyStories from './GreemyStories';
 
 const productImages = [
   "https://greemy.com.br/wp-content/uploads/2025/01/aIMAGEM-1-CAIXA-LIMAO-V-DESK.webp",
@@ -63,6 +64,9 @@ export default function GreemyHero() {
           ))}
         </div>
       </div>
+
+      {/* Stories Section */}
+      <GreemyStories />
 
       <div className="max-w-7xl mx-auto px-4 py-6 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-16">
