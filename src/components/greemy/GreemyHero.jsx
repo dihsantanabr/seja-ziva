@@ -314,6 +314,9 @@ export default function GreemyHero() {
           </div>
         </div>
       </div>
+
+      {/* Quick Navigation Menu */}
+      <GreemyQuickNav />
     </section>
   );
 }
