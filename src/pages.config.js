@@ -1,13 +1,13 @@
 import ProductPage from './pages/ProductPage';
 import LandingPage from './pages/LandingPage';
-import GreemyPage from './pages/GreemyPage';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "ProductPage": ProductPage,
     "LandingPage": LandingPage,
-    "GreemyPage": GreemyPage,
+    "Home": Home,
 }
 
 export const pagesConfig = {
