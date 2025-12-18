@@ -17,10 +17,14 @@ import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 
 export default function GreemyPage() {
-  const [showQuiz, setShowQuiz] = useState(true);
+  const [showQuiz, setShowQuiz] = useState(false);
 
   const handleQuizComplete = () => {
     setShowQuiz(false);
+  };
+
+  const handleOpenQuiz = () => {
+    setShowQuiz(true);
   };
 
   return (
@@ -37,7 +41,7 @@ export default function GreemyPage() {
 
       {/* 2. Para quem é */}
       <div id="para-quem-e">
-        <GreemyForWho />
+        <GreemyForWho onOpenQuiz={handleOpenQuiz} />
       </div>
 
       {/* 3. Resultados esperados */}

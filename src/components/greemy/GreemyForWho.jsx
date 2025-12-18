@@ -1,6 +1,7 @@
 import React from 'react';
 import { Battery, Users, Zap, HeartPulse, Brain, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
 
 const painPoints = [
   {
@@ -35,7 +36,7 @@ const painPoints = [
   }
 ];
 
-export default function GreemyForWho() {
+export default function GreemyForWho({ onOpenQuiz }) {
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-green-50">
       <div className="max-w-6xl mx-auto px-4">
@@ -74,10 +75,17 @@ export default function GreemyForWho() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center space-y-6">
           <p className="text-lg text-gray-700 bg-gradient-to-r from-green-100 to-lime-100 inline-block px-6 py-3 rounded-full">
             💚 Se você se identificou com algum desses casos, <strong>o Greemy foi feito para você</strong>
           </p>
+          
+          <Button 
+            onClick={onOpenQuiz}
+            className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all"
+          >
+            🎯 Descobrir se Greemy é para mim
+          </Button>
         </div>
       </div>
     </section>
