@@ -50,6 +50,7 @@ const stories = [
 export default function GreemyStories() {
   const [selectedStory, setSelectedStory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoAdvance, setAutoAdvance] = useState(true);
 
   const openStory = (index) => {
     setCurrentIndex(index);
@@ -64,6 +65,14 @@ export default function GreemyStories() {
     const nextIndex = (currentIndex + 1) % stories.length;
     setCurrentIndex(nextIndex);
     setSelectedStory(stories[nextIndex]);
+  };
+
+  const handleVideoEnd = () => {
+    if (autoAdvance) {
+      setTimeout(() => {
+        nextStory();
+      }, 500);
+    }
   };
 
   const prevStory = () => {
@@ -178,11 +187,44 @@ export default function GreemyStories() {
             >
               {selectedStory.type === 'video' ? (
                 <iframe
-                  src={selectedStory.videoUrl}
+                  key={currentIndex}
+                  src={`${selectedStory.videoUrl}?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1`}
                   title={selectedStory.title}
                   className="w-full h-full rounded-2xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  onLoad={(e) => {
+                    const iframe = e.target;
+                    let hasEnded = false;
+                    
+                    const checkVideo = setInterval(() => {
+                      try {
+                        if (iframe.contentWindow) {
+                          iframe.contentWindow.postMessage('{"event":"listening"}', '*');
+                        }
+                      } catch (e) {}
+                    }, 1000);
+
+                    const messageHandler = (event) => {
+                      if (event.origin !== 'https://www.youtube.com') return;
+                      
+                      try {
+                        const data = JSON.parse(event.data);
+                        if (data.event === 'onStateChange' && data.info === 0 && !hasEnded) {
+                          hasEnded = true;
+                          handleVideoEnd();
+                          clearInterval(checkVideo);
+                        }
+                      } catch (e) {}
+                    };
+
+                    window.addEventListener('message', messageHandler);
+                    
+                    return () => {
+                      window.removeEventListener('message', messageHandler);
+                      clearInterval(checkVideo);
+                    };
+                  }}
                 />
               ) : (
                 <img
