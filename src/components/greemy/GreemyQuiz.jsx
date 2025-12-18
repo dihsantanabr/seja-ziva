@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Loader2 } from 'lucide-react';
+import { Loader2, X } from 'lucide-react';
 
 const quizSteps = [
   {
@@ -130,7 +130,16 @@ export default function GreemyQuiz({ onComplete }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white flex items-center justify-center p-4">
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-3xl relative">
+        {/* Close Button */}
+        <button
+          onClick={() => onComplete && onComplete()}
+          className="absolute -top-4 right-0 z-10 w-10 h-10 bg-white hover:bg-gray-100 rounded-full shadow-lg flex items-center justify-center transition-all"
+          aria-label="Fechar quiz"
+        >
+          <X className="w-5 h-5 text-gray-700" />
+        </button>
+
         {/* Logo */}
         <div className="text-center mb-8">
           <img 
