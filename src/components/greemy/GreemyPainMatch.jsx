@@ -7,29 +7,29 @@ const painMatches = [
     pain: "Cansaço Extremo",
     solution: "Energia Natural Duradoura",
     ingredient: "22 superalimentos que fornecem energia sustentável sem quedas",
-    color: "from-green-500 to-lime-500",
-    border: "border-green-300"
+    color: "from-green-100 to-emerald-100",
+    border: "border-green-200"
   },
   {
     pain: "Imunidade Baixa",
     solution: "Sistema Imune Fortalecido",
     ingredient: "Vitaminas e antioxidantes que protegem e fortalecem",
-    color: "from-lime-500 to-green-500",
-    border: "border-lime-300"
+    color: "from-emerald-100 to-teal-100",
+    border: "border-emerald-200"
   },
   {
     pain: "Falta de Foco",
     solution: "Clareza Mental",
     ingredient: "Nutrientes que melhoram concentração e cognição",
-    color: "from-green-500 to-lime-500",
-    border: "border-green-300"
+    color: "from-green-50 to-green-100",
+    border: "border-green-200"
   },
   {
     pain: "Digestão Irregular",
     solution: "Saúde Intestinal",
     ingredient: "Fibras e probióticos que regulam o sistema digestivo",
-    color: "from-lime-500 to-green-500",
-    border: "border-lime-300"
+    color: "from-teal-50 to-emerald-100",
+    border: "border-teal-200"
   }
 ];
 
