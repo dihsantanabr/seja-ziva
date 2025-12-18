@@ -35,28 +35,28 @@ const timelineResults = [
     title: "Primeiros sinais",
     results: ["Mais disposição pela manhã", "Melhora na digestão"],
     approval: 87,
-    color: "from-green-100 to-lime-100"
+    color: "from-green-50 to-emerald-50"
   },
   {
     period: "14 dias",
     title: "Energia constante",
     results: ["Energia duradoura", "Menos cansaço", "Foco melhorado"],
     approval: 92,
-    color: "from-green-200 to-lime-200"
+    color: "from-green-100 to-emerald-100"
   },
   {
     period: "30 dias",
     title: "Resultados visíveis",
     results: ["Imunidade fortalecida", "Mais vitalidade", "Pele mais saudável"],
     approval: 96,
-    color: "from-green-300 to-lime-300"
+    color: "from-green-100 to-teal-100"
   },
   {
     period: "90 dias",
     title: "Transformação completa",
     results: ["Energia sustentável", "Saúde intestinal", "Bem-estar total"],
     approval: 98,
-    color: "from-green-400 to-lime-400"
+    color: "from-emerald-100 to-teal-100"
   }
 ];
 
@@ -135,10 +135,10 @@ export default function GreemyHowToUse() {
                 transition={{ delay: idx * 0.1 }}
                 className={`bg-gradient-to-br ${item.color} rounded-2xl p-6 shadow-lg`}
               >
-                <div className="text-green-900 font-bold text-lg mb-2">
+                <div className="text-green-700 font-bold text-lg mb-2">
                   {item.period}
                 </div>
-                <h4 className="text-gray-900 font-semibold mb-3">
+                <h4 className="text-gray-800 font-semibold mb-3">
                   {item.title}
                 </h4>
                 <ul className="space-y-2 mb-4">
@@ -149,8 +149,8 @@ export default function GreemyHowToUse() {
                     </li>
                   ))}
                 </ul>
-                <div className="pt-3 border-t border-green-300">
-                  <p className="text-sm font-semibold text-green-900">
+                <div className="pt-3 border-t border-green-200/50">
+                  <p className="text-sm font-semibold text-green-700">
                     {item.approval}% de aprovação
                   </p>
                 </div>
