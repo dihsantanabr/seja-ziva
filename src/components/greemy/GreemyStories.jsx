@@ -44,66 +44,6 @@ const stories = [
     title: "Vídeo 6",
     type: "video",
     videoUrl: "https://www.youtube.com/embed/1HDEioG6alo"
-  },
-  {
-    id: 7,
-    thumb: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=400&h=600&fit=crop",
-    title: "Energia Natural",
-    type: "image"
-  },
-  {
-    id: 8,
-    thumb: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=600&fit=crop",
-    title: "Depoimentos",
-    type: "image"
-  },
-  {
-    id: 9,
-    thumb: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
-    title: "22 Superalimentos",
-    type: "image"
-  },
-  {
-    id: 10,
-    thumb: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=600&fit=crop",
-    title: "Benefícios",
-    type: "image"
-  },
-  {
-    id: 11,
-    thumb: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=400&h=600&fit=crop",
-    title: "Como Usar",
-    type: "image"
-  },
-  {
-    id: 12,
-    thumb: "https://images.unsplash.com/photo-1594881023712-525caa8fd5a7?w=400&h=600&fit=crop",
-    title: "Foco Mental",
-    type: "image"
-  },
-  {
-    id: 13,
-    thumb: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=600&fit=crop",
-    title: "Fórmula Verde",
-    type: "image"
-  },
-  {
-    id: 14,
-    thumb: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=600&fit=crop",
-    title: "Imunidade",
-    type: "image"
-  },
-  {
-    id: 15,
-    thumb: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&h=600&fit=crop",
-    title: "Sabores",
-    type: "image"
-  },
-  {
-    id: 16,
-    thumb: "https://images.unsplash.com/photo-1595475884562-073c30d45670?w=400&h=600&fit=crop",
-    title: "Vitalidade",
-    type: "image"
   }
 ];
 
