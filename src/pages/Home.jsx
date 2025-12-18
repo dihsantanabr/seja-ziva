@@ -13,7 +13,7 @@ import GreemyGuarantee from '../components/greemy/GreemyGuarantee';
 import GreemyFAQ from '../components/greemy/GreemyFAQ';
 import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
-import { WhatsAppWidget } from '../components/product/WhatsAppWidget';
+import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 
 export default function Home() {
