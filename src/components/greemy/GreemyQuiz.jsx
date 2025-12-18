@@ -140,15 +140,7 @@ export default function GreemyQuiz({ onComplete }) {
           <X className="w-5 h-5 text-gray-700" />
         </button>
 
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <img 
-            src="https://bariessential.com.br/wp-content/uploads/2024/09/cropped-Prancheta-3-1-32x32.png" 
-            alt="Dreams Nutrition"
-            className="h-12 mx-auto mb-2"
-          />
-          <p className="text-sm text-gray-600">Dreams Nutrition</p>
-        </div>
+
 
         <AnimatePresence mode="wait">
           <motion.div
