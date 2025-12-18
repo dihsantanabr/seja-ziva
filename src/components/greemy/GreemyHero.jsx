@@ -3,6 +3,7 @@ import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Pac
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import GreemyStories from './GreemyStories';
+import GreemyQuickNav from './GreemyQuickNav';
 
 const productImages = [
   "https://greemy.com.br/wp-content/uploads/2025/01/aIMAGEM-1-CAIXA-LIMAO-V-DESK.webp",
