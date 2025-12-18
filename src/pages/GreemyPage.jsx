@@ -21,21 +21,19 @@ export default function GreemyPage() {
 
   const handleQuizComplete = () => {
     setShowQuiz(false);
-    // Scroll to hero section
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Quiz Section */}
-      {showQuiz ? (
-        <GreemyQuiz onComplete={handleQuizComplete} />
-      ) : (
-        <>
-          {/* 1. Hero */}
-          <GreemyHero />
+      {/* Quiz Popup */}
+      {showQuiz && (
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm overflow-y-auto">
+          <GreemyQuiz onComplete={handleQuizComplete} />
+        </div>
+      )}
+
+      {/* 1. Hero */}
+      <GreemyHero />
 
       {/* 2. Para quem é */}
       <div id="para-quem-e">
@@ -88,21 +86,19 @@ export default function GreemyPage() {
       {/* Sticky Buy Bar (Mobile) */}
       <GreemyStickyBuyBar />
 
-        {/* WhatsApp Widget */}
-        <WhatsAppWidget />
+      {/* WhatsApp Widget */}
+      <WhatsAppWidget />
 
-        {/* Global styles for animations */}
-        <style>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-marquee {
-            animation: marquee 30s linear infinite;
-          }
-        `}</style>
-        </>
-      )}
+      {/* Global styles for animations */}
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
