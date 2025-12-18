@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import GreemyQuiz from '../components/greemy/GreemyQuiz';
 import GreemyHero from '../components/greemy/GreemyHero';
 import GreemyForWho from '../components/greemy/GreemyForWho';
 import GreemyResults from '../components/greemy/GreemyResults';
@@ -16,10 +17,25 @@ import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 
 export default function GreemyPage() {
+  const [showQuiz, setShowQuiz] = useState(true);
+
+  const handleQuizComplete = () => {
+    setShowQuiz(false);
+    // Scroll to hero section
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* 1. Hero */}
-      <GreemyHero />
+      {/* Quiz Section */}
+      {showQuiz ? (
+        <GreemyQuiz onComplete={handleQuizComplete} />
+      ) : (
+        <>
+          {/* 1. Hero */}
+          <GreemyHero />
 
       {/* 2. Para quem é */}
       <div id="para-quem-e">
@@ -72,19 +88,21 @@ export default function GreemyPage() {
       {/* Sticky Buy Bar (Mobile) */}
       <GreemyStickyBuyBar />
 
-      {/* WhatsApp Widget */}
-      <WhatsAppWidget />
+        {/* WhatsApp Widget */}
+        <WhatsAppWidget />
 
-      {/* Global styles for animations */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
+        {/* Global styles for animations */}
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+        `}</style>
+        </>
+      )}
     </div>
   );
 }
