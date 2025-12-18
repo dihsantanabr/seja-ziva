@@ -80,7 +80,7 @@ export default function LPHero() {
                 'Reduz rugas e linhas de expressão',
                 'Fortalece cabelos e unhas quebradiças',
                 'Melhora a elasticidade da pele',
-                'Sabor neutro - mistura em qualquer bebida'
+                'Sabor Frutas Vermelhas ou Blue Ice - mistura em qualquer bebida'
               ].map((benefit, idx) => (
                 <motion.div
                   key={idx}
