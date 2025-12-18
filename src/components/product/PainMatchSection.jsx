@@ -1,37 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const matches = [
   {
-    pain: "Rugas e linhas de expressão",
-    solution: "Colágeno tipo I e III preenchem rugas de dentro para fora, suavizando linhas de expressão",
-    color: "from-purple-600/20 to-purple-600/10",
-    border: "border-purple-600/20"
+    problem: "Rugas e linhas de expressão",
+    solution: "Colágeno I e III",
+    description: "Preenchem rugas de dentro para fora",
+    emoji: "😔"
   },
   {
-    pain: "Pele sem viço e opaca",
-    solution: "Ácido Hialurônico + Vitamina C hidratam profundamente e iluminam a pele",
-    color: "from-purple-600/20 to-purple-600/10",
-    border: "border-purple-600/20"
+    problem: "Pele sem viço e opaca",
+    solution: "Ácido Hialurônico + Vitamina C",
+    description: "Hidratação profunda e iluminação",
+    emoji: "😟"
   },
   {
-    pain: "Cabelo fraco e quebradiço",
-    solution: "Biotina + colágeno fortalecem os fios, reduzem queda e aumentam volume",
-    color: "from-purple-600/20 to-purple-600/10",
-    border: "border-purple-600/20"
+    problem: "Cabelo fraco e quebradiço",
+    solution: "Biotina + Colágeno",
+    description: "Fortalecimento e redução de queda",
+    emoji: "😣"
   },
   {
-    pain: "Unhas fracas que quebram",
-    solution: "Colágeno + biotina fortalecem as unhas, evitando descamação e quebra",
-    color: "from-purple-600/20 to-purple-600/10",
-    border: "border-purple-600/20"
+    problem: "Unhas fracas que quebram",
+    solution: "Colágeno + Biotina",
+    description: "Crescimento forte e saudável",
+    emoji: "😕"
   },
   {
-    pain: "Flacidez e perda de firmeza",
-    solution: "3 tipos de colágeno restauram elasticidade e firmeza da pele",
-    color: "from-purple-600/20 to-purple-600/10",
-    border: "border-purple-600/20"
+    problem: "Flacidez e perda de firmeza",
+    solution: "3 Tipos de Colágeno",
+    description: "Restauração de elasticidade",
+    emoji: "😰"
   }
 ];
 
@@ -51,28 +51,43 @@ export default function PainMatchSection() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {matches.map((match, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`bg-gradient-to-r ${match.color} rounded-2xl p-6 border ${match.border}`}
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all p-6 border border-purple-100"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center gap-4">
-                <div className="flex items-center gap-3 lg:w-1/3">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
-                    <Check className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-lg">
-                    {match.pain}
+              <div className="grid md:grid-cols-[1fr,auto,1fr] gap-6 items-center">
+                {/* Problema */}
+                <div className="bg-red-50 rounded-xl p-4 text-center">
+                  <div className="text-4xl mb-2">{match.emoji}</div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-1">
+                    Problema
                   </h3>
-                </div>
-                <div className="lg:w-2/3 lg:pl-8 lg:border-l border-gray-200">
                   <p className="text-gray-700">
+                    {match.problem}
+                  </p>
+                </div>
+
+                {/* Arrow */}
+                <div className="flex justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center rotate-0 md:rotate-0">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* Solução */}
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 text-center">
+                  <div className="text-4xl mb-2">✨</div>
+                  <h3 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-lg mb-1">
                     {match.solution}
+                  </h3>
+                  <p className="text-gray-700 text-sm">
+                    {match.description}
                   </p>
                 </div>
               </div>
