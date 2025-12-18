@@ -26,6 +26,24 @@ const testimonials = [
     review: "Excelente! Meu intestino regulou e estou com muito mais energia para treinar.",
     rating: 5,
     result: "Saúde intestinal"
+  },
+  {
+    name: "Juliana Mendes",
+    review: "Sensação de leveza incrível! Acabou aquele inchaço que me incomodava tanto. Recomendo!",
+    rating: 5,
+    result: "Menos inchaço"
+  },
+  {
+    name: "Roberto Alves",
+    review: "Produto de qualidade! Notei melhora na digestão logo na primeira semana.",
+    rating: 5,
+    result: "Digestão melhorada"
+  },
+  {
+    name: "Patricia Lima",
+    review: "Estava sempre cansada, agora tenho energia para tudo. O sabor de laranja é delicioso!",
+    rating: 5,
+    result: "Energia constante"
   }
 ];
 
