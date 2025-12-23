@@ -38,7 +38,7 @@ export default function GreemyResults() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {results.map((result, idx) => (
             <motion.div
               key={idx}
