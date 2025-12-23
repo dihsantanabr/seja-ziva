@@ -67,9 +67,9 @@ export default function GreemyHero() {
   // Calculate delivery dates
   const today = new Date();
   const minDeliveryDate = new Date(today);
-  minDeliveryDate.setDate(today.getDate() + 3);
+  minDeliveryDate.setDate(today.getDate() + 4);
   const maxDeliveryDate = new Date(today);
-  maxDeliveryDate.setDate(today.getDate() + 9);
+  maxDeliveryDate.setDate(today.getDate() + 8);
 
   const formatDate = (date) => {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
