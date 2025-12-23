@@ -83,7 +83,7 @@ export default function GreemyForWho({ onOpenQuiz }) {
           <div className="mt-6">
             <Button 
               onClick={onOpenQuiz}
-              className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-normal lg:whitespace-nowrap h-auto"
             >
               🎯 Descobrir se Greemy é para mim
             </Button>
