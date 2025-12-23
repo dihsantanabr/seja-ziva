@@ -11,7 +11,7 @@ export const useGreemy = () => {
 };
 
 export const GreemyProvider = ({ children }) => {
-  const [selectedSize, setSelectedSize] = useState('2 Caixas');
+  const [selectedSize, setSelectedSize] = useState('1 Caixa');
   const [selectedFlavor, setSelectedFlavor] = useState('Laranja');
 
   const prices = {
