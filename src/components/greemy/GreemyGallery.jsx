@@ -41,7 +41,7 @@ export default function GreemyGallery() {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4 lg:gap-6">
+            <div className="flex gap-6 lg:gap-8">
               {images.map((image, idx) => (
                 <div
                   key={idx}
