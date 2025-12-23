@@ -70,6 +70,7 @@ export default function GreemyStories() {
   const [progress, setProgress] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
   const videoRef = React.useRef(null);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
 
@@ -77,6 +78,7 @@ export default function GreemyStories() {
     setCurrentIndex(index);
     setSelectedStory(stories[index]);
     setProgress(0);
+    setIsVideoLoading(true);
   };
 
   const closeStory = () => {
@@ -89,6 +91,7 @@ export default function GreemyStories() {
     setCurrentIndex(nextIndex);
     setSelectedStory(stories[nextIndex]);
     setProgress(0);
+    setIsVideoLoading(true);
   };
 
   const handleVideoEnd = () => {
@@ -102,6 +105,7 @@ export default function GreemyStories() {
     setCurrentIndex(prevIndex);
     setSelectedStory(stories[prevIndex]);
     setProgress(0);
+    setIsVideoLoading(true);
   };
 
   const handleTimeUpdate = (e) => {
@@ -252,17 +256,28 @@ export default function GreemyStories() {
               className="relative max-w-md w-full h-[80vh] mx-4"
             >
               {selectedStory.type === 'video' ? (
-                <video
-                  ref={videoRef}
-                  key={currentIndex}
-                  src={selectedStory.videoUrl}
-                  className="w-full h-full rounded-2xl object-cover"
-                  autoPlay
-                  playsInline
-                  preload="auto"
-                  onEnded={handleVideoEnd}
-                  onTimeUpdate={handleTimeUpdate}
-                />
+                <>
+                  <video
+                    ref={videoRef}
+                    key={currentIndex}
+                    src={selectedStory.videoUrl}
+                    className="w-full h-full rounded-2xl object-cover"
+                    autoPlay
+                    muted
+                    playsInline
+                    preload="auto"
+                    onLoadedData={() => setIsVideoLoading(false)}
+                    onWaiting={() => setIsVideoLoading(true)}
+                    onPlaying={() => setIsVideoLoading(false)}
+                    onEnded={handleVideoEnd}
+                    onTimeUpdate={handleTimeUpdate}
+                  />
+                  {isVideoLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-2xl">
+                      <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                    </div>
+                  )}
+                </>
                 ) : (
                 <img
                   src={selectedStory.thumb}
