@@ -68,6 +68,7 @@ export default function GreemyStories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const videoRef = React.useRef(null);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
 
@@ -79,6 +80,7 @@ export default function GreemyStories() {
 
   const closeStory = () => {
     setSelectedStory(null);
+    setShowPurchaseModal(false);
   };
 
   const nextStory = () => {
@@ -263,103 +265,139 @@ export default function GreemyStories() {
                 />
               )}
 
-              {/* Purchase Section */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white rounded-b-2xl p-4 space-y-3">
-                {/* Flavor Selection */}
-                <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-2">Escolha o sabor:</p>
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      { name: 'Limão Siciliano', icon: '🍋' },
-                      { name: 'Laranja', icon: '🍊' },
-                      { name: 'Mix (Limão + Laranja)', icon: '🍋🍊' }
-                    ].map((flavor) => (
-                      <button
-                        key={flavor.name}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedFlavor(flavor.name);
-                          if (flavor.name === 'Mix (Limão + Laranja)' && selectedSize === '1 Caixa') {
-                            setSelectedSize('2 Caixas');
-                          }
-                        }}
-                        className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center text-xs ${
-                          selectedFlavor === flavor.name
-                            ? 'border-green-600 bg-green-600 text-white'
-                            : 'border-gray-200 text-gray-700'
-                        }`}
-                      >
-                        {flavor.name === 'Mix (Limão + Laranja)' && (
-                          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
-                            <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
-                              + Vendido
-                            </span>
-                          </div>
-                        )}
-                        <div className="text-lg mb-0.5">{flavor.icon}</div>
-                        <div className="text-[10px] leading-tight">{flavor.name}</div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Size Selection */}
-                <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      { name: '1 Caixa', duration: 'Duração 30 dias', discount: '26% OFF' },
-                      { name: '2 Caixas', duration: 'Duração 60 dias', discount: '41% OFF', badge: '+ Vendido' },
-                      { name: '3 Caixas + 1 Grátis', duration: 'Duração 120 dias', discount: '52% OFF' }
-                    ].map((size) => {
-                      const isDisabled = size.name === '1 Caixa' && selectedFlavor === 'Mix (Limão + Laranja)';
-                      return (
-                        <button
-                          key={size.name}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (!isDisabled) setSelectedSize(size.name);
-                          }}
-                          disabled={isDisabled}
-                          className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center ${
-                            isDisabled 
-                              ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
-                              : selectedSize === size.name
-                              ? 'border-green-600 bg-green-600 text-white'
-                              : 'border-gray-200 text-gray-700'
-                          }`}
-                        >
-                          {size.badge && (
-                            <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
-                              <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
-                                {size.badge}
-                              </span>
-                            </div>
-                          )}
-                          <div className="text-[11px] font-bold leading-tight">{size.name}</div>
-                          <div className={`text-[9px] mt-0.5 ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
-                            {size.duration}
-                          </div>
-                          <div className={`text-[9px] ${selectedSize === size.name ? 'text-white/90' : 'text-green-600'}`}>
-                            {size.discount}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Buy Button */}
-                <Button 
+              {/* Buy Button - Floating */}
+              {!showPurchaseModal && (
+                <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleBuyClick();
+                    setShowPurchaseModal(true);
                   }}
-                  className="w-full bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold rounded-lg"
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-bold px-8 py-3 rounded-full shadow-lg"
                 >
                   Comprar Agora
-                </Button>
-              </div>
+                </motion.button>
+              )}
+
+              {/* Purchase Modal */}
+              <AnimatePresence>
+                {showPurchaseModal && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                    className="absolute bottom-0 left-0 right-0 bg-white rounded-b-2xl p-4 space-y-3 shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {/* Close button for modal */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowPurchaseModal(false);
+                      }}
+                      className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+
+                    {/* Flavor Selection */}
+                    <div>
+                      <p className="text-xs font-semibold text-gray-700 mb-2">Escolha o sabor:</p>
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          { name: 'Limão Siciliano', icon: '🍋' },
+                          { name: 'Laranja', icon: '🍊' },
+                          { name: 'Mix (Limão + Laranja)', icon: '🍋🍊' }
+                        ].map((flavor) => (
+                          <button
+                            key={flavor.name}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedFlavor(flavor.name);
+                              if (flavor.name === 'Mix (Limão + Laranja)' && selectedSize === '1 Caixa') {
+                                setSelectedSize('2 Caixas');
+                              }
+                            }}
+                            className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center text-xs ${
+                              selectedFlavor === flavor.name
+                                ? 'border-green-600 bg-green-600 text-white'
+                                : 'border-gray-200 text-gray-700'
+                            }`}
+                          >
+                            {flavor.name === 'Mix (Limão + Laranja)' && (
+                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
+                                <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                                  + Vendido
+                                </span>
+                              </div>
+                            )}
+                            <div className="text-lg mb-0.5">{flavor.icon}</div>
+                            <div className="text-[10px] leading-tight">{flavor.name}</div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Size Selection */}
+                    <div>
+                      <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
+                      <div className="grid grid-cols-3 gap-2">
+                        {[
+                          { name: '1 Caixa', duration: 'Duração 30 dias', discount: '26% OFF' },
+                          { name: '2 Caixas', duration: 'Duração 60 dias', discount: '41% OFF', badge: '+ Vendido' },
+                          { name: '3 Caixas + 1 Grátis', duration: 'Duração 120 dias', discount: '52% OFF' }
+                        ].map((size) => {
+                          const isDisabled = size.name === '1 Caixa' && selectedFlavor === 'Mix (Limão + Laranja)';
+                          return (
+                            <button
+                              key={size.name}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (!isDisabled) setSelectedSize(size.name);
+                              }}
+                              disabled={isDisabled}
+                              className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center ${
+                                isDisabled 
+                                  ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
+                                  : selectedSize === size.name
+                                  ? 'border-green-600 bg-green-600 text-white'
+                                  : 'border-gray-200 text-gray-700'
+                              }`}
+                            >
+                              {size.badge && (
+                                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
+                                  <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                                    {size.badge}
+                                  </span>
+                                </div>
+                              )}
+                              <div className="text-[11px] font-bold leading-tight">{size.name}</div>
+                              <div className={`text-[9px] mt-0.5 ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
+                                {size.duration}
+                              </div>
+                              <div className={`text-[9px] ${selectedSize === size.name ? 'text-white/90' : 'text-green-600'}`}>
+                                {size.discount}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Buy Button */}
+                    <Button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleBuyClick();
+                      }}
+                      className="w-full bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold rounded-lg"
+                    >
+                      Comprar Agora
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </motion.div>
         )}
