@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const images = [
+const originalImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/b10c68cca_greemy01530.jpg",
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/7c1252bd9_greemy01533.jpg",
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/c3dfce7e4_greemy01541.jpg",
@@ -13,6 +13,15 @@ const images = [
 ];
 
 export default function GreemyGallery() {
+  const [images] = React.useState(() => {
+    const shuffled = [...originalImages];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  });
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     loop: true,
     align: 'center',
@@ -41,11 +50,11 @@ export default function GreemyGallery() {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6 lg:gap-8">
+            <div className="flex">
               {images.map((image, idx) => (
                 <div
                   key={idx}
-                  className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_45%] xl:flex-[0_0_35%]"
+                  className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_45%] xl:flex-[0_0_35%] pl-6 lg:pl-8"
                 >
                   <div className="relative aspect-[3/4] bg-gradient-to-br from-green-600 to-lime-600 rounded-2xl overflow-hidden shadow-xl">
                     <img
