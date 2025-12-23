@@ -1,11 +1,13 @@
-import Home from './pages/Home';
+import ExtratoLactacao from './pages/ExtratoLactacao';
 import GreemyPage from './pages/GreemyPage';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "Home": Home,
+    "ExtratoLactacao": ExtratoLactacao,
     "GreemyPage": GreemyPage,
+    "Home": Home,
 }
 
 export const pagesConfig = {
