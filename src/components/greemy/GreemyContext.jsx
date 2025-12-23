@@ -12,7 +12,7 @@ export const useGreemy = () => {
 
 export const GreemyProvider = ({ children }) => {
   const [selectedSize, setSelectedSize] = useState('2 Caixas');
-  const [selectedFlavor, setSelectedFlavor] = useState('Mix (Limão + Laranja)');
+  const [selectedFlavor, setSelectedFlavor] = useState('Laranja');
 
   const prices = {
     '1 Caixa': { original: 227.00, current: 167.90, discount: 26 },
