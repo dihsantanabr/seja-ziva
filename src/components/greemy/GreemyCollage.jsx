@@ -22,70 +22,24 @@ export default function GreemyCollage() {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden lg:grid grid-cols-12 gap-4 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="col-span-5 row-span-2"
-          >
-            <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={images[0]}
-                alt="Greemy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="col-span-7"
-          >
-            <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={images[1]}
-                alt="Greemy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="col-span-4"
-          >
-            <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={images[2]}
-                alt="Greemy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="col-span-3"
-          >
-            <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={images[3]}
-                alt="Greemy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
+        <div className="hidden lg:grid grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {images.map((image, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+            >
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={image}
+                  alt={`Greemy ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Mobile Grid */}
