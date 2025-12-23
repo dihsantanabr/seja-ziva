@@ -255,7 +255,6 @@ export default function GreemyStories() {
                     src={selectedStory.videoUrl}
                     className="w-full h-full rounded-2xl object-cover"
                     autoPlay
-                    muted
                     playsInline
                     preload="auto"
                     onLoadedData={() => setIsVideoLoading(false)}
