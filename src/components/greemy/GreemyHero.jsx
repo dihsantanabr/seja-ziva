@@ -6,16 +6,57 @@ import GreemyStories from './GreemyStories';
 import GreemyQuickNav from './GreemyQuickNav';
 
 const productImages = [
-  "https://greemy.com.br/wp-content/uploads/2025/01/aIMAGEM-1-CAIXA-LIMAO-V-DESK.webp",
-  "https://greemy.com.br/wp-content/uploads/2025/01/aIMAGEM-1-CAIXA-LARANJA-V-DESK.webp",
-  "https://greemy.com.br/wp-content/uploads/2025/01/IMAGEM-2-CAIXAS-LIMAO-V-DESK.webp",
-  "https://greemy.com.br/wp-content/uploads/2025/01/IMAGEM-2-CAIXAS-LARANJA-V-DESK.webp"
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/3241e2406_greemy01463.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/3a4bffd1d_greemy01464.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/306b7dd93_greemy01465.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/eca409eca_greemy01466.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d64f3f7a0_greemy01467.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/6b81b3b53_greemy01468.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/5a05d7c8e_greemy01469.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/89e1cd01b_greemy01470.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/104b0b8b7_greemy01471.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f5208c881_greemy01472.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/bf7edd9ff_greemy01473.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/e39dc02a4_greemy01474.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/3a1a3eea5_greemy01475.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/1b627cde0_greemy01476.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/7c74c221a_greemy01477.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/37f025e22_greemy01478.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/870e72d6f_greemy01479.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d7747df96_greemy01480.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/a645c088d_greemy01481.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/0c801ff40_greemy01482.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/ab16ebbb0_greemy01483.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d6a4ce0ce_greemy01484.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d2571f294_greemy01485.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f5d0223f3_greemy01486.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d04307962_greemy01487.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/09d5f6cd4_greemy01489.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/77bf11766_greemy01490.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/611c90b22_greemy01491.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/d123bb568_greemy01492.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/81dfc51c1_greemy01493.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/0591585ce_greemy01494.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/5202101b6_greemy01495.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/1317ee5e0_greemy01496.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/67815b5c5_greemy01497.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/1fdf65293_greemy01498.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/6d0fda170_greemy01499.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/f0a618577_greemy01500.jpg"
 ];
 
 export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState('2 Caixas');
   const [selectedFlavor, setSelectedFlavor] = useState('Limão Siciliano');
+
+  // Auto-advance images every 1 second
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setSelectedImage((prev) => (prev + 1) % productImages.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const prices = {
     '1 Caixa': { original: 227.00, current: 167.90, discount: 26, badge: 'FRETE GRÁTIS', duration: 'Duração 30 dias' },
@@ -34,13 +75,7 @@ export default function GreemyHero() {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
   };
 
-  const nextImage = () => {
-    setSelectedImage((prev) => (prev + 1) % productImages.length);
-  };
 
-  const prevImage = () => {
-    setSelectedImage((prev) => (prev - 1 + productImages.length) % productImages.length);
-  };
 
   return (
     <section className="bg-gradient-to-b from-green-50 to-white">
@@ -82,32 +117,18 @@ export default function GreemyHero() {
                 alt="Greemy"
                 className="w-full h-full object-contain p-3"
               />
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition"
-              >
-                <ChevronLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 rounded-full shadow-lg flex items-center justify-center hover:bg-white transition"
-              >
-                <ChevronRight className="w-5 h-5 text-gray-700" />
-              </button>
             </div>
             
-            {/* Thumbnails */}
-            <div className="flex gap-3 justify-center">
-              {productImages.map((img, idx) => (
+            {/* Progress Dots */}
+            <div className="flex gap-2 justify-center">
+              {productImages.slice(0, 10).map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
-                    selectedImage === idx ? 'border-green-600 shadow-lg' : 'border-gray-200'
+                  className={`h-2 rounded-full transition-all ${
+                    selectedImage === idx ? 'w-8 bg-green-600' : 'w-2 bg-gray-300'
                   }`}
-                >
-                  <img src={img} alt="" className="w-full h-full object-contain bg-white p-2" />
-                </button>
+                />
               ))}
             </div>
           </div>
