@@ -38,7 +38,7 @@ export default function GreemyGuarantee() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {guarantees.map((guarantee, idx) => (
             <motion.div
               key={idx}
@@ -46,15 +46,15 @@ export default function GreemyGuarantee() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 text-center shadow-lg border border-green-100 hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl p-4 lg:p-6 text-center shadow-lg border border-green-100 hover:shadow-xl transition-all"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-lime-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <guarantee.icon className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-green-600 to-lime-600 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                <guarantee.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 text-lg mb-2">
+              <h3 className="font-semibold text-gray-900 text-sm lg:text-lg mb-1 lg:mb-2">
                 {guarantee.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs lg:text-sm">
                 {guarantee.description}
               </p>
             </motion.div>
