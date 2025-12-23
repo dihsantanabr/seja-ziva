@@ -31,13 +31,25 @@ export default function Home() {
       )}
 
       <GreemyHero />
-      <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
-      <GreemyResults />
-      <GreemyFormula />
-      <GreemyHowToUse />
+      <div id="para-quem-e">
+        <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
+      </div>
+      <div id="resultados">
+        <GreemyResults />
+      </div>
+      <div id="formula">
+        <GreemyFormula />
+      </div>
+      <div id="como-usar">
+        <GreemyHowToUse />
+      </div>
       <GreemyPainMatch />
-      <GreemyTestimonials />
-      <GreemyContraindications />
+      <div id="depoimentos">
+        <GreemyTestimonials />
+      </div>
+      <div id="contraindicacoes">
+        <GreemyContraindications />
+      </div>
       <GreemyComparison />
       <GreemyKits />
       <GreemyGuarantee />
