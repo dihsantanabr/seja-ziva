@@ -115,16 +115,16 @@ export default function GreemyHero() {
             </h1>
 
             {/* Mobile Stats Bar */}
-            <div className="lg:hidden flex items-center justify-between bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
-              <span className="text-sm font-semibold text-gray-600">+22 MIL VENDIDOS</span>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900">4.9</span>
+            <div className="lg:hidden flex items-center justify-between px-2 py-2">
+              <span className="text-xs font-medium text-gray-500">+22MIL VENDIDOS</span>
+              <div className="flex items-center gap-1.5">
+                <span className="font-semibold text-gray-900 text-sm">4.9</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <span className="text-sm text-gray-500">(4.284)</span>
+                <span className="text-xs text-gray-500">(4.284)</span>
               </div>
             </div>
 
