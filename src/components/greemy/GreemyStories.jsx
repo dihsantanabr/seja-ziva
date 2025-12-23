@@ -265,7 +265,7 @@ export default function GreemyStories() {
                 />
               )}
 
-              {/* Buy Button - Floating */}
+              {/* Buy Button - Bottom Bar */}
               {!showPurchaseModal && (
                 <motion.button
                   initial={{ opacity: 0, y: 20 }}
@@ -274,7 +274,7 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     setShowPurchaseModal(true);
                   }}
-                  className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-bold px-8 py-3 rounded-full shadow-lg"
+                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-bold py-3 rounded-b-2xl shadow-lg"
                 >
                   Comprar Agora
                 </motion.button>
