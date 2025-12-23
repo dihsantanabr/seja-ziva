@@ -5,6 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function GreemyStickyBuyBar() {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('2 Caixas');
+
+  const prices = {
+    '1 Caixa': { original: 227.00, current: 167.90 },
+    '2 Caixas': { original: 454.00, current: 267.90 },
+    '3 Caixas + 1 Grátis': { original: 908.00, current: 437.90 }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
