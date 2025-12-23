@@ -21,8 +21,8 @@ export default function WhatsAppWidget() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = '5511999999999'; // Substituir pelo número real
-    const message = 'Olá! Gostaria de tirar algumas dúvidas sobre o Extrato Mamamais.';
+    const phoneNumber = '5519982905404';
+    const message = 'Olá tenho dúvidas sobre o Greemy';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
