@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Play, Heart, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGreemy } from './GreemyContext';
 import { Button } from "@/components/ui/button";
@@ -69,6 +69,7 @@ export default function GreemyStories() {
   const [autoAdvance, setAutoAdvance] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
   const videoRef = React.useRef(null);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
 
@@ -134,6 +135,12 @@ export default function GreemyStories() {
 
   const handleBuyClick = () => {
     window.location.href = getCheckoutLink();
+  };
+
+  const handleShare = () => {
+    const message = encodeURIComponent('Amiga, olha esse produto que descobri...');
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://wa.me/?text=${message}%20${url}`, '_blank');
   };
 
   return (
@@ -256,15 +263,41 @@ export default function GreemyStories() {
                   onEnded={handleVideoEnd}
                   onTimeUpdate={handleTimeUpdate}
                 />
-              ) : (
+                ) : (
                 <img
                   src={selectedStory.thumb}
                   alt={selectedStory.title}
                   className="w-full h-full object-cover rounded-2xl"
                 />
-              )}
+                )}
 
-              {/* Buy Button - Bottom Bar */}
+                {/* Interactive Icons - Right Side */}
+                <div className="absolute bottom-20 right-4 flex flex-col gap-4 z-10">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLiked(!isLiked);
+                  }}
+                  className="w-12 h-12 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
+                >
+                  <Heart 
+                    className={`w-6 h-6 transition-all ${
+                      isLiked ? 'fill-red-500 text-red-500' : 'text-white'
+                    }`}
+                  />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleShare();
+                  }}
+                  className="w-12 h-12 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
+                >
+                  <Send className="w-6 h-6 text-white" />
+                </button>
+                </div>
+
+                {/* Buy Button - Bottom Bar */}
               {!showPurchaseModal && (
                 <motion.button
                   initial={{ opacity: 0, y: 20 }}
