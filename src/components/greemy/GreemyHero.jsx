@@ -251,12 +251,19 @@ export default function GreemyHero() {
                   <button
                     key={flavor.name}
                     onClick={() => setSelectedFlavor(flavor.name)}
-                    className={`px-4 py-3 rounded-xl border-2 font-medium transition-all text-center text-sm ${
+                    className={`relative px-4 py-3 rounded-xl border-2 font-medium transition-all text-center text-sm ${
                       selectedFlavor === flavor.name
                         ? 'border-green-600 bg-gradient-to-r from-green-600 to-lime-600 text-white'
                         : 'border-gray-200 text-gray-700 hover:border-green-600'
                     }`}
                   >
+                    {flavor.name === 'Mix (Limão + Laranja)' && (
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
+                        <span className="bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          Mais Vendido
+                        </span>
+                      </div>
+                    )}
                     <div className="text-2xl mb-1">{flavor.icon}</div>
                     {flavor.name}
                   </button>
