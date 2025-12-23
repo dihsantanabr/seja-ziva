@@ -47,8 +47,8 @@ const productImages = [
 
 export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedSize, setSelectedSize] = useState('2 Caixas');
-  const [selectedFlavor, setSelectedFlavor] = useState('Limão Siciliano');
+  const [selectedSize, setSelectedSize] = useState('1 Caixa');
+  const [selectedFlavor, setSelectedFlavor] = useState('Mix (Limão + Laranja)');
 
   // Auto-advance images every 1 second
   React.useEffect(() => {
