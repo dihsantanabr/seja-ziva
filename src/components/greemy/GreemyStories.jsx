@@ -162,14 +162,8 @@ export default function GreemyStories() {
                 <div className="relative">
                   {/* Gradient border */}
                   <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 p-[2px]">
-                    <div className="w-full h-full rounded-full bg-white p-[2px] overflow-hidden">
-                      <video
-                        src={story.videoUrl}
-                        className="w-full h-full rounded-full object-cover"
-                        muted
-                        playsInline
-                        preload="none"
-                      />
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-green-600 to-lime-600 overflow-hidden flex items-center justify-center">
+                      <span className="text-2xl lg:text-3xl">🥬</span>
                     </div>
                   </div>
                   {/* Play icon for videos */}
