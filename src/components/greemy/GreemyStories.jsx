@@ -95,7 +95,7 @@ export default function GreemyStories() {
               >
                 <div className="relative">
                   {/* Gradient border */}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-green-600 via-lime-500 to-lime-600 p-[2px]">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-tr from-green-600 via-lime-500 to-lime-600 p-[2px]">
                     <div className="w-full h-full rounded-full bg-white p-[2px]">
                       <img
                         src={story.thumb}
@@ -107,13 +107,13 @@ export default function GreemyStories() {
                   {/* Play icon for videos */}
                   {story.type === 'video' && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center">
-                        <Play className="w-4 h-4 text-gray-800 fill-gray-800 ml-0.5" />
+                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-white/90 rounded-full flex items-center justify-center">
+                        <Play className="w-3 h-3 lg:w-4 lg:h-4 text-gray-800 fill-gray-800 ml-0.5" />
                       </div>
                     </div>
                   )}
                 </div>
-                <p className="text-xs text-gray-700 mt-2 text-center max-w-[80px] truncate">
+                <p className="text-xs text-gray-700 mt-2 text-center max-w-[64px] lg:max-w-[80px] truncate">
                   {story.title}
                 </p>
               </button>
