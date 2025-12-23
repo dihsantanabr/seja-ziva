@@ -123,9 +123,8 @@ export default function GreemyHero() {
             </div>
 
             {/* Mobile Title */}
-            <h1 className="lg:hidden text-xl font-bold text-gray-900 text-center">
-              Greemy
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">22 Superalimentos Verdes</span>
+            <h1 className="lg:hidden text-lg font-bold text-gray-900 text-center">
+              Greemy <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">22 Superalimentos Verdes</span>
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
