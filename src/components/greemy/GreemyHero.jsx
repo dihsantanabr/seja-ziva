@@ -75,7 +75,30 @@ export default function GreemyHero() {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
   };
 
+  const getCheckoutLink = () => {
+    const checkoutMap = {
+      '1 Caixa': {
+        'Laranja': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39',
+        'Limão Siciliano': 'https://checkout.payt.com.br/a98c9dca642830499f63e8749f01f7ec?src=aquisicao&coupon=GREEMY39',
+        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39'
+      },
+      '2 Caixas': {
+        'Laranja': 'https://checkout.payt.com.br/528b0bef28f9ed531353075bfc211b7d/?src=aquisicao&coupon=GREEMY52',
+        'Limão Siciliano': 'https://checkout.payt.com.br/0f04a6e502e38d0ffcac166f92421aeb?src=aquisicao&coupon=GREEMY52',
+        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/37eae21c9cd4e4a1a578ae95a4efa48f?src=aquisicao&coupon=GREEMY52'
+      },
+      '3 Caixas + 1 Grátis': {
+        'Laranja': 'https://checkout.payt.com.br/cad3fbe52f17ce161d687847c744ea9d?src=aquisicao&coupon=GREEMY57',
+        'Limão Siciliano': 'https://checkout.payt.com.br/537982529d72bb012d61180f0351f4da?src=aquisicao&coupon=GREEMY57',
+        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/9f085256f8dcc84f8b32ad555c7673e6?src=aquisicao&coupon=GREEMY57'
+      }
+    };
+    return checkoutMap[selectedSize]?.[selectedFlavor] || checkoutMap['1 Caixa']['Laranja'];
+  };
 
+  const handleBuyClick = () => {
+    window.location.href = getCheckoutLink();
+  };
 
   return (
     <section className="bg-gradient-to-b from-green-50 to-white">
@@ -307,7 +330,10 @@ export default function GreemyHero() {
             </div>
 
             {/* Buy Button */}
-            <Button className="w-full h-12 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-green-600/25 transition-all hover:shadow-xl hover:shadow-green-600/30">
+            <Button 
+              onClick={handleBuyClick}
+              className="w-full h-12 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-green-600/25 transition-all hover:shadow-xl hover:shadow-green-600/30"
+            >
               Comprar Agora
             </Button>
 
