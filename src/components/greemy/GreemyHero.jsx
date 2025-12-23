@@ -109,7 +109,7 @@ export default function GreemyHero() {
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             {/* Mobile Title */}
-            <h1 className="lg:hidden text-2xl font-bold text-gray-900 text-center">
+            <h1 className="lg:hidden text-xl font-bold text-gray-900 text-center">
               Greemy
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">22 Superalimentos Verdes</span>
             </h1>
