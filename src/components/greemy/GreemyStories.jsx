@@ -65,10 +65,13 @@ export default function GreemyStories() {
   const [selectedStory, setSelectedStory] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const videoRef = React.useRef(null);
 
   const openStory = (index) => {
     setCurrentIndex(index);
     setSelectedStory(stories[index]);
+    setProgress(0);
   };
 
   const closeStory = () => {
@@ -79,6 +82,7 @@ export default function GreemyStories() {
     const nextIndex = (currentIndex + 1) % stories.length;
     setCurrentIndex(nextIndex);
     setSelectedStory(stories[nextIndex]);
+    setProgress(0);
   };
 
   const handleVideoEnd = () => {
@@ -93,6 +97,15 @@ export default function GreemyStories() {
     const prevIndex = currentIndex === 0 ? stories.length - 1 : currentIndex - 1;
     setCurrentIndex(prevIndex);
     setSelectedStory(stories[prevIndex]);
+    setProgress(0);
+  };
+
+  const handleTimeUpdate = (e) => {
+    const video = e.target;
+    if (video.duration) {
+      const progressPercent = (video.currentTime / video.duration) * 100;
+      setProgress(progressPercent);
+    }
   };
 
   return (
@@ -153,9 +166,14 @@ export default function GreemyStories() {
                   className="flex-1 h-1 bg-white/30 rounded-full overflow-hidden"
                 >
                   <div
-                    className={`h-full bg-white transition-all duration-300 ${
-                      idx === currentIndex ? 'w-full' : idx < currentIndex ? 'w-full' : 'w-0'
-                    }`}
+                    className="h-full bg-white transition-all duration-100"
+                    style={{
+                      width: idx === currentIndex 
+                        ? `${progress}%` 
+                        : idx < currentIndex 
+                        ? '100%' 
+                        : '0%'
+                    }}
                   />
                 </div>
               ))}
@@ -200,13 +218,14 @@ export default function GreemyStories() {
             >
               {selectedStory.type === 'video' ? (
                 <video
+                  ref={videoRef}
                   key={currentIndex}
                   src={selectedStory.videoUrl}
                   className="w-full h-full rounded-2xl object-cover"
-                  controls
                   autoPlay
                   playsInline
                   onEnded={handleVideoEnd}
+                  onTimeUpdate={handleTimeUpdate}
                 />
               ) : (
                 <img
@@ -215,14 +234,6 @@ export default function GreemyStories() {
                   className="w-full h-full object-cover rounded-2xl"
                 />
               )}
-              
-              {/* Story title overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent rounded-b-2xl">
-                <h3 className="text-white text-xl font-bold">{selectedStory.title}</h3>
-                <p className="text-white/90 text-sm mt-2">
-                  Toque nas laterais para navegar entre os stories
-                </p>
-              </div>
             </motion.div>
           </motion.div>
         )}
