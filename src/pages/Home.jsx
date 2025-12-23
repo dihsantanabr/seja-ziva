@@ -8,7 +8,7 @@ import GreemyPainMatch from '../components/greemy/GreemyPainMatch';
 import GreemyTestimonials from '../components/greemy/GreemyTestimonials';
 import GreemyContraindications from '../components/greemy/GreemyContraindications';
 import GreemyComparison from '../components/greemy/GreemyComparison';
-import GreemyKits from '../components/greemy/GreemyKits';
+
 import GreemyGuarantee from '../components/greemy/GreemyGuarantee';
 import GreemyFAQ from '../components/greemy/GreemyFAQ';
 import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
@@ -51,7 +51,6 @@ export default function Home() {
         <GreemyContraindications />
       </div>
       <GreemyComparison />
-      <GreemyKits />
       <GreemyGuarantee />
       <GreemyFAQ />
       <GreemyFinalCTA />
