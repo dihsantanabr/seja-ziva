@@ -113,9 +113,6 @@ export default function GreemyStories() {
                     </div>
                   )}
                 </div>
-                <p className="text-xs text-gray-700 mt-2 text-center max-w-[64px] lg:max-w-[80px] truncate">
-                  {story.title}
-                </p>
               </button>
             ))}
           </div>
