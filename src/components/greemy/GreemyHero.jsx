@@ -168,15 +168,15 @@ export default function GreemyHero() {
             </div>
 
             {/* Reviews */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 lg:gap-3">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-4 h-4 lg:w-5 lg:h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="font-semibold text-gray-900">4.9</span>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-600">4.284 avaliações reais</span>
+              <span className="font-semibold text-gray-900 text-sm lg:text-base">4.9</span>
+              <span className="text-gray-500 hidden lg:inline">•</span>
+              <span className="text-gray-600 text-sm lg:text-base">4.284 avaliações</span>
             </div>
 
             {/* Trust Badges */}
