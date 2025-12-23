@@ -264,7 +264,13 @@ export default function GreemyHero() {
                 ].map((flavor) => (
                   <button
                     key={flavor.name}
-                    onClick={() => setSelectedFlavor(flavor.name)}
+                    onClick={() => {
+                      setSelectedFlavor(flavor.name);
+                      // Se selecionar Mix e estiver em 1 Caixa, mudar para 2 Caixas
+                      if (flavor.name === 'Mix (Limão + Laranja)' && selectedSize === '1 Caixa') {
+                        setSelectedSize('2 Caixas');
+                      }
+                    }}
                     className={`relative px-4 py-3 rounded-xl border-2 font-medium transition-all text-center text-sm ${
                       selectedFlavor === flavor.name
                         ? 'border-green-600 bg-gradient-to-r from-green-600 to-lime-600 text-white'
@@ -289,12 +295,17 @@ export default function GreemyHero() {
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
               <div className="grid grid-cols-3 gap-3">
-                {Object.keys(pricesWithExtras).map((size) => (
+                {Object.keys(pricesWithExtras).map((size) => {
+                  const isDisabled = size === '1 Caixa' && selectedFlavor === 'Mix (Limão + Laranja)';
+                  return (
                   <button
                     key={size}
-                    onClick={() => setSelectedSize(size)}
+                    onClick={() => !isDisabled && setSelectedSize(size)}
+                    disabled={isDisabled}
                     className={`relative px-4 py-4 rounded-xl border-2 font-medium transition-all text-center ${
-                      selectedSize === size
+                      isDisabled 
+                        ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
+                        : selectedSize === size
                         ? 'border-green-600 bg-gradient-to-r from-green-600 to-lime-600 text-white'
                         : 'border-gray-200 text-gray-700 hover:border-green-600'
                     }`}
@@ -315,9 +326,10 @@ export default function GreemyHero() {
                         {pricesWithExtras[size].discount}% OFF
                       </div>
                     )}
-                  </button>
-                ))}
-              </div>
+                    </button>
+                    );
+                    })}
+                    </div>
 
               {/* Unit Price Info */}
               {(selectedSize === '2 Caixas' || selectedSize === '3 Caixas + 1 Grátis') && (
