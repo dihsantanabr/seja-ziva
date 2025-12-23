@@ -279,16 +279,16 @@ export default function GreemyStories() {
                 )}
 
                 {/* Interactive Icons - Right Side */}
-                <div className="absolute bottom-20 right-4 flex flex-col gap-4 z-10">
+                <div className="absolute bottom-20 right-4 flex flex-col gap-3 z-10">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsLiked(!isLiked);
                   }}
-                  className="w-12 h-12 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
+                  className="w-10 h-10 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
                 >
                   <Heart 
-                    className={`w-6 h-6 transition-all ${
+                    className={`w-5 h-5 transition-all ${
                       isLiked ? 'fill-red-500 text-red-500' : 'text-white'
                     }`}
                   />
@@ -298,9 +298,9 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     handleShare();
                   }}
-                  className="w-12 h-12 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
+                  className="w-10 h-10 bg-black/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-black/50 transition"
                 >
-                  <Send className="w-6 h-6 text-white" />
+                  <Send className="w-5 h-5 text-white" />
                 </button>
                 </div>
 
@@ -326,7 +326,7 @@ export default function GreemyStories() {
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 100 }}
-                    className="absolute bottom-0 left-0 right-0 bg-white rounded-b-2xl p-4 space-y-3 shadow-2xl"
+                    className="absolute bottom-0 left-0 right-0 bg-white rounded-b-2xl p-4 space-y-3 shadow-2xl z-20"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {/* Close button for modal */}
