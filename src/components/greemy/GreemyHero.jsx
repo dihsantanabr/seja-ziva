@@ -114,6 +114,20 @@ export default function GreemyHero() {
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">22 Superalimentos Verdes</span>
             </h1>
 
+            {/* Mobile Stats Bar */}
+            <div className="lg:hidden flex items-center justify-between bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+              <span className="text-sm font-semibold text-gray-600">+22 MIL VENDIDOS</span>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-gray-900">4.9</span>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-500">(4.284)</span>
+              </div>
+            </div>
+
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
               <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-600 to-lime-600 text-white">
                 52% OFF
