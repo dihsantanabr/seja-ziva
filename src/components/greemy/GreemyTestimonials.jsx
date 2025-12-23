@@ -69,15 +69,15 @@ export default function GreemyTestimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-8 text-center shadow-lg border border-green-100"
+              className="bg-white rounded-2xl p-3 lg:p-8 text-center shadow-lg border border-green-100"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-lime-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
+              <div className="w-10 h-10 lg:w-16 lg:h-16 bg-gradient-to-br from-green-600 to-lime-600 rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-4">
+                <stat.icon className="w-5 h-5 lg:w-8 lg:h-8 text-white" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">
+              <div className="text-lg lg:text-3xl font-bold text-gray-900 mb-1 lg:mb-2">
                 {stat.number}
               </div>
-              <p className="text-gray-600">{stat.label}</p>
+              <p className="text-xs lg:text-base text-gray-600">{stat.label}</p>
             </motion.div>
           ))}
         </div>
