@@ -230,15 +230,6 @@ export default function GreemyHero() {
               </div>
             </div>
 
-            {/* Unit Price Info */}
-            {(selectedSize === '2 Caixas' || selectedSize === '3 Caixas + 1 Grátis') && (
-              <div className="bg-green-50 border border-green-200 rounded-xl p-3 text-center">
-                <p className="text-sm font-semibold text-green-700">
-                  Cada Caixa sai por R$ {(prices[selectedSize].current / (selectedSize.includes('Grátis') ? 4 : parseInt(selectedSize))).toFixed(2).replace('.', ',')}
-                </p>
-              </div>
-            )}
-
             {/* Flavor Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha o sabor:</p>
