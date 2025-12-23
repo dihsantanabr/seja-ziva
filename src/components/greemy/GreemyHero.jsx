@@ -193,6 +193,10 @@ export default function GreemyHero() {
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
                 Limão ou Laranja
               </Badge>
+              <Badge variant="outline" className="border-green-600 text-green-600 px-3 py-1.5">
+                <Shield className="w-3.5 h-3.5 mr-1.5" />
+                100% Natural
+              </Badge>
             </div>
 
             {/* Price Box */}
