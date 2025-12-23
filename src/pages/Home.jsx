@@ -15,6 +15,7 @@ import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
+import GreemyGallery from '../components/greemy/GreemyGallery';
 
 export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
@@ -34,6 +35,7 @@ export default function Home() {
       <div id="para-quem-e">
         <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
       </div>
+      <GreemyGallery />
       <div id="resultados">
         <GreemyResults />
       </div>
