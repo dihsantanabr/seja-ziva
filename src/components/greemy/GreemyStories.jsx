@@ -223,9 +223,9 @@ export default function GreemyStories() {
                 e.stopPropagation();
                 prevStory();
               }}
-              className="absolute left-4 z-10 w-12 h-12 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition"
+              className="absolute left-4 z-10 w-6 h-6 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-3 h-3" />
             </button>
 
             <button
@@ -233,9 +233,9 @@ export default function GreemyStories() {
                 e.stopPropagation();
                 nextStory();
               }}
-              className="absolute right-4 z-10 w-12 h-12 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition"
+              className="absolute right-4 z-10 w-6 h-6 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70 transition"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-3 h-3" />
             </button>
 
             {/* Story content */}
