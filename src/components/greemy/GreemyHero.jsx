@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import GreemyStories from './GreemyStories';
 import GreemyQuickNav from './GreemyQuickNav';
+import { useGreemy } from './GreemyContext';
 
 const productImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6943057000397efc6e14db64/3241e2406_greemy01463.jpg",
@@ -47,8 +48,7 @@ const productImages = [
 
 export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedSize, setSelectedSize] = useState('1 Caixa');
-  const [selectedFlavor, setSelectedFlavor] = useState('Mix (Limão + Laranja)');
+  const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
 
   // Auto-advance images every 1 second
   React.useEffect(() => {
@@ -58,10 +58,10 @@ export default function GreemyHero() {
     return () => clearInterval(interval);
   }, []);
 
-  const prices = {
-    '1 Caixa': { original: 227.00, current: 167.90, discount: 26, badge: 'FRETE GRÁTIS', duration: 'Duração 30 dias' },
-    '2 Caixas': { original: 454.00, current: 267.90, discount: 41, badge: '41%OFF + FRETE GRÁTIS', duration: 'Duração 60 dias' },
-    '3 Caixas + 1 Grátis': { original: 908.00, current: 437.90, discount: 52, badge: '52%OFF + FRETE GRÁTIS', duration: 'Duração 120 dias' }
+  const pricesWithExtras = {
+    '1 Caixa': { ...prices['1 Caixa'], badge: 'FRETE GRÁTIS', duration: 'Duração 30 dias' },
+    '2 Caixas': { ...prices['2 Caixas'], badge: '41%OFF + FRETE GRÁTIS', duration: 'Duração 60 dias' },
+    '3 Caixas + 1 Grátis': { ...prices['3 Caixas + 1 Grátis'], badge: '52%OFF + FRETE GRÁTIS', duration: 'Duração 120 dias' }
   };
 
   // Calculate delivery dates
@@ -201,23 +201,23 @@ export default function GreemyHero() {
 
             {/* Price Box */}
             <div className="bg-white rounded-2xl p-4 lg:p-6 border border-gray-100">
-              {prices[selectedSize].discount > 0 && (
+              {pricesWithExtras[selectedSize].discount > 0 && (
                 <div className="flex items-baseline gap-3">
                   <span className="text-gray-400 line-through text-lg">
-                    R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
+                    R$ {pricesWithExtras[selectedSize].original.toFixed(2).replace('.', ',')}
                   </span>
                   <Badge className="bg-gradient-to-r from-green-600 to-lime-600 text-white">
-                    -{prices[selectedSize].discount}%
+                    -{pricesWithExtras[selectedSize].discount}%
                   </Badge>
                 </div>
               )}
-              <div className={`flex items-baseline gap-2 ${prices[selectedSize].discount > 0 ? 'mt-1' : ''}`}>
+              <div className={`flex items-baseline gap-2 ${pricesWithExtras[selectedSize].discount > 0 ? 'mt-1' : ''}`}>
                 <span className="text-4xl font-bold text-gray-900">
-                  R$ {prices[selectedSize].current.toFixed(2).replace('.', ',')}
+                  R$ {pricesWithExtras[selectedSize].current.toFixed(2).replace('.', ',')}
                 </span>
               </div>
               <p className="text-sm text-gray-600 mt-2">
-                ou 12x de R$ {(prices[selectedSize].current / 12).toFixed(2).replace('.', ',')} sem juros
+                ou 12x de R$ {(pricesWithExtras[selectedSize].current / 12).toFixed(2).replace('.', ',')} sem juros
               </p>
               <div className="flex items-center gap-2 mt-3 text-green-700 bg-green-50 px-3 py-2 rounded-lg">
                 <div className="relative">
@@ -225,7 +225,7 @@ export default function GreemyHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  Receba de Volta R$ {((prices[selectedSize].original - prices[selectedSize].current) * 0.1).toFixed(2).replace('.', ',')} em Cashback
+                  Receba de Volta R$ {((pricesWithExtras[selectedSize].original - pricesWithExtras[selectedSize].current) * 0.1).toFixed(2).replace('.', ',')} em Cashback
                 </span>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function GreemyHero() {
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
               <div className="grid grid-cols-3 gap-3">
-                {Object.keys(prices).map((size) => (
+                {Object.keys(pricesWithExtras).map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
@@ -285,11 +285,11 @@ export default function GreemyHero() {
                     )}
                     <div className="text-sm font-bold">{size}</div>
                     <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
-                      {prices[size].duration}
+                      {pricesWithExtras[size].duration}
                     </div>
-                    {prices[size].discount > 0 && (
+                    {pricesWithExtras[size].discount > 0 && (
                       <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/90' : 'text-gray-600'}`}>
-                        {prices[size].discount}% OFF
+                        {pricesWithExtras[size].discount}% OFF
                       </div>
                     )}
                   </button>
@@ -300,7 +300,7 @@ export default function GreemyHero() {
               {(selectedSize === '2 Caixas' || selectedSize === '3 Caixas + 1 Grátis') && (
                 <div className="bg-green-50 border border-green-200 rounded-xl p-3 text-center mt-3">
                   <p className="text-sm font-semibold text-green-700">
-                    Cada Caixa sai por R$ {(prices[selectedSize].current / (selectedSize.includes('Grátis') ? 4 : parseInt(selectedSize))).toFixed(2).replace('.', ',')}
+                    Cada Caixa sai por R$ {(pricesWithExtras[selectedSize].current / (selectedSize.includes('Grátis') ? 4 : parseInt(selectedSize))).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
               )}
