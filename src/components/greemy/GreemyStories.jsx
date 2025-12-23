@@ -92,9 +92,7 @@ export default function GreemyStories() {
 
   const handleVideoEnd = () => {
     if (autoAdvance) {
-      setTimeout(() => {
-        nextStory();
-      }, 500);
+      nextStory();
     }
   };
 
@@ -253,7 +251,9 @@ export default function GreemyStories() {
                   src={selectedStory.videoUrl}
                   className="w-full h-full rounded-2xl object-cover"
                   autoPlay
+                  muted
                   playsInline
+                  preload="auto"
                   onEnded={handleVideoEnd}
                   onTimeUpdate={handleTimeUpdate}
                 />
