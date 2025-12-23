@@ -273,7 +273,7 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     setShowPurchaseModal(true);
                   }}
-                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-bold py-3 rounded-b-2xl shadow-lg border-4 border-orange-500"
+                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 rounded-b-2xl shadow-lg"
                 >
                   Comprar Agora
                 </motion.button>
