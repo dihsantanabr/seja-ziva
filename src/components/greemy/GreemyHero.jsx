@@ -157,7 +157,7 @@ export default function GreemyHero() {
               </div>
               <span className="font-semibold text-gray-900">4.9</span>
               <span className="text-gray-500">•</span>
-              <span className="text-gray-600">5.000+ avaliações reais</span>
+              <span className="text-gray-600">4.284 avaliações reais</span>
             </div>
 
             {/* Trust Badges */}
