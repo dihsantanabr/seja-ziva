@@ -46,6 +46,7 @@ export default function Home() {
       <div id="como-usar">
         <GreemyHowToUse />
       </div>
+      <GreemyCollage />
       <GreemyPainMatch />
       <div id="depoimentos">
         <GreemyTestimonials />
