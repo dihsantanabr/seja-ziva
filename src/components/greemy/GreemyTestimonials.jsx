@@ -83,7 +83,7 @@ export default function GreemyTestimonials() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6">
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={idx}
@@ -91,21 +91,21 @@ export default function GreemyTestimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-green-100"
+              className="bg-white rounded-2xl p-3 lg:p-6 shadow-lg border border-green-100"
             >
-              <div className="flex gap-1 mb-3">
+              <div className="flex gap-1 mb-2 lg:mb-3">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="w-3 h-3 lg:w-5 lg:h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-gray-700 mb-4 italic">
+              <p className="text-xs lg:text-base text-gray-700 mb-3 lg:mb-4 italic">
                 "{testimonial.review}"
               </p>
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div className="flex items-center justify-between pt-3 lg:pt-4 border-t border-gray-100">
                 <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
-                    <Check className="w-4 h-4" />
+                  <p className="text-xs lg:text-base font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-xs lg:text-sm text-green-600 flex items-center gap-1">
+                    <Check className="w-3 h-3 lg:w-4 lg:h-4" />
                     {testimonial.result}
                   </p>
                 </div>
