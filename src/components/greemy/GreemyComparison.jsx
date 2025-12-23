@@ -17,11 +17,11 @@ const comparisons = [
 
 const ValueCell = ({ value }) => {
   if (value === true) {
-    return <Check className="w-6 h-6 text-green-600 mx-auto" />;
+    return <Check className="w-4 h-4 lg:w-6 lg:h-6 text-green-600 mx-auto" />;
   } else if (value === false) {
-    return <X className="w-6 h-6 text-red-400 mx-auto" />;
+    return <X className="w-4 h-4 lg:w-6 lg:h-6 text-red-400 mx-auto" />;
   } else {
-    return <span className="text-gray-600 text-sm">{value}</span>;
+    return <span className="text-gray-600 text-xs lg:text-sm">{value}</span>;
   }
 };
 
