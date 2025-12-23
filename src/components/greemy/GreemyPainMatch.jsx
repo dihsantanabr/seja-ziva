@@ -98,33 +98,47 @@ export default function GreemyPainMatch() {
             </table>
           </div>
 
-          {/* Mobile Cards */}
-          <div className="lg:hidden divide-y divide-gray-100">
-            {painMatches.map((match, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-6"
-              >
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-red-500 text-xs font-semibold mb-1">❌ PROBLEMA</div>
-                    <p className="font-bold text-gray-900">{match.pain}</p>
-                  </div>
-                  <div>
-                    <div className="text-green-600 text-xs font-semibold mb-1">✅ SOLUÇÃO</div>
-                    <p className="font-bold text-green-700">{match.solution}</p>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 text-xs font-semibold mb-1">💡 COMO FUNCIONA</div>
-                    <p className="text-sm text-gray-700">{match.ingredient}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          {/* Mobile Table */}
+          <div className="lg:hidden overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gradient-to-r from-green-600 to-lime-600">
+                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                    ❌ Problema
+                  </th>
+                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                    ✅ Solução
+                  </th>
+                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                    💡 Como Funciona
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {painMatches.map((match, idx) => (
+                  <motion.tr
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className={`border-b border-gray-100 ${
+                      idx % 2 === 0 ? 'bg-green-50/30' : 'bg-white'
+                    }`}
+                  >
+                    <td className="px-3 py-4 font-semibold text-gray-900 text-xs">
+                      {match.pain}
+                    </td>
+                    <td className="px-3 py-4 font-semibold text-green-700 text-xs">
+                      {match.solution}
+                    </td>
+                    <td className="px-3 py-4 text-gray-700 text-xs">
+                      {match.ingredient}
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </motion.div>
       </div>
