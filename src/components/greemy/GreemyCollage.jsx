@@ -51,7 +51,6 @@ export default function GreemyCollage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={idx === 0 ? "col-span-2" : ""}
             >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
                 <img
