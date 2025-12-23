@@ -16,6 +16,7 @@ import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 import GreemyGallery from '../components/greemy/GreemyGallery';
+import GreemyCollage from '../components/greemy/GreemyCollage';
 
 export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
