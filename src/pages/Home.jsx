@@ -17,12 +17,14 @@ import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 import GreemyGallery from '../components/greemy/GreemyGallery';
 import GreemyCollage from '../components/greemy/GreemyCollage';
+import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white">
+    <GreemyProvider>
+      <div className="min-h-screen bg-white">
       {/* Quiz Popup */}
       {showQuiz && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
@@ -76,6 +78,7 @@ export default function Home() {
           animation: marquee 30s linear infinite;
         }
       `}</style>
-    </div>
+      </div>
+    </GreemyProvider>
   );
 }
