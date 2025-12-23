@@ -49,44 +49,84 @@ export default function GreemyPainMatch() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {painMatches.map((match, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`bg-white rounded-3xl p-6 lg:p-8 shadow-xl border-2 ${match.border} hover:shadow-2xl transition-all`}
-            >
-              <div className="flex flex-col lg:flex-row items-center gap-6">
-                {/* Pain */}
-                <div className="flex-1 text-center lg:text-left">
-                  <div className="text-red-500 text-sm font-semibold mb-2">❌ PROBLEMA</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {match.pain}
-                  </h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-green-100"
+        >
+          {/* Desktop Table */}
+          <div className="hidden lg:block overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gradient-to-r from-green-600 to-lime-600">
+                  <th className="px-6 py-4 text-left text-white font-semibold">
+                    ❌ Problema
+                  </th>
+                  <th className="px-6 py-4 text-left text-white font-semibold">
+                    ✅ Solução
+                  </th>
+                  <th className="px-6 py-4 text-left text-white font-semibold">
+                    💡 Como Funciona
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {painMatches.map((match, idx) => (
+                  <motion.tr
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className={`border-b border-gray-100 ${
+                      idx % 2 === 0 ? 'bg-green-50/30' : 'bg-white'
+                    }`}
+                  >
+                    <td className="px-6 py-5 font-semibold text-gray-900">
+                      {match.pain}
+                    </td>
+                    <td className="px-6 py-5 font-semibold text-green-700">
+                      {match.solution}
+                    </td>
+                    <td className="px-6 py-5 text-gray-700">
+                      {match.ingredient}
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="lg:hidden divide-y divide-gray-100">
+            {painMatches.map((match, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6"
+              >
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-red-500 text-xs font-semibold mb-1">❌ PROBLEMA</div>
+                    <p className="font-bold text-gray-900">{match.pain}</p>
+                  </div>
+                  <div>
+                    <div className="text-green-600 text-xs font-semibold mb-1">✅ SOLUÇÃO</div>
+                    <p className="font-bold text-green-700">{match.solution}</p>
+                  </div>
+                  <div>
+                    <div className="text-gray-500 text-xs font-semibold mb-1">💡 COMO FUNCIONA</div>
+                    <p className="text-sm text-gray-700">{match.ingredient}</p>
+                  </div>
                 </div>
-
-                <ArrowRight className={`w-8 h-8 bg-gradient-to-r ${match.color} text-white rounded-full p-1.5 flex-shrink-0 rotate-90 lg:rotate-0`} />
-
-                {/* Solution */}
-                <div className="flex-1 text-center lg:text-right">
-                  <div className="text-green-600 text-sm font-semibold mb-2">✅ SOLUÇÃO</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {match.solution}
-                  </h3>
-                </div>
-              </div>
-
-              <div className={`mt-6 bg-gradient-to-r ${match.color} bg-opacity-10 rounded-xl p-4`}>
-                <p className="text-sm text-gray-700">
-                  <strong className="text-green-700">Como funciona:</strong> {match.ingredient}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
