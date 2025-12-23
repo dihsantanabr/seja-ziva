@@ -6,7 +6,7 @@ import { useGreemy } from './GreemyContext';
 
 export default function GreemyStickyBuyBar() {
   const [isVisible, setIsVisible] = useState(false);
-  const { selectedSize, prices } = useGreemy();
+  const { selectedSize, selectedFlavor, prices } = useGreemy();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +39,7 @@ export default function GreemyStickyBuyBar() {
             
             <div className="flex items-center justify-between gap-3">
               <div className="flex-1">
-                <p className="text-xs font-medium text-gray-600 mb-1">{selectedSize}</p>
+                <p className="text-xs font-medium text-gray-600 mb-1">{selectedSize} - {selectedFlavor}</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-400 line-through">
                     R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
