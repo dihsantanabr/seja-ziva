@@ -61,7 +61,7 @@ export default function GreemyTestimonials() {
         </div>
 
         {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-3 gap-6 mb-16">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
