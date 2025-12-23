@@ -47,20 +47,20 @@ export default function GreemyComparison() {
           viewport={{ once: true }}
           className="bg-white rounded-3xl shadow-xl overflow-hidden border border-green-100"
         >
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[600px]">
+          <div className="lg:overflow-x-auto">
+            <table className="w-full lg:min-w-[600px]">
               <thead>
                 <tr className="bg-gradient-to-r from-green-600 to-lime-600">
-                  <th className="px-3 lg:px-6 py-3 lg:py-4 text-left text-white font-semibold text-xs lg:text-base">
+                  <th className="px-2 lg:px-6 py-2 lg:py-4 text-left text-white font-semibold text-[10px] lg:text-base">
                     Características
                   </th>
-                  <th className="px-2 lg:px-6 py-3 lg:py-4 text-center text-white font-semibold text-xs lg:text-base">
+                  <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
                     Greemy
                   </th>
-                  <th className="px-2 lg:px-6 py-3 lg:py-4 text-center text-white font-semibold text-xs lg:text-base">
-                    Suplementos
+                  <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
+                    Regular
                   </th>
-                  <th className="px-2 lg:px-6 py-3 lg:py-4 text-center text-white font-semibold text-xs lg:text-base">
+                  <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
                     Outros
                   </th>
                 </tr>
@@ -77,16 +77,16 @@ export default function GreemyComparison() {
                       idx % 2 === 0 ? 'bg-green-50/30' : 'bg-white'
                     }`}
                   >
-                    <td className="px-3 lg:px-6 py-3 lg:py-4 font-medium text-gray-900 text-xs lg:text-base">
+                    <td className="px-2 lg:px-6 py-2 lg:py-4 font-medium text-gray-900 text-[10px] lg:text-base">
                       {comp.feature}
                     </td>
-                    <td className="px-2 lg:px-6 py-3 lg:py-4 text-center">
+                    <td className="px-1 lg:px-6 py-2 lg:py-4 text-center">
                       <ValueCell value={comp.greemy} />
                     </td>
-                    <td className="px-2 lg:px-6 py-3 lg:py-4 text-center">
+                    <td className="px-1 lg:px-6 py-2 lg:py-4 text-center">
                       <ValueCell value={comp.regular} />
                     </td>
-                    <td className="px-2 lg:px-6 py-3 lg:py-4 text-center">
+                    <td className="px-1 lg:px-6 py-2 lg:py-4 text-center">
                       <ValueCell value={comp.others} />
                     </td>
                   </motion.tr>
