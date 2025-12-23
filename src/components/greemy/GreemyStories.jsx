@@ -5,45 +5,59 @@ import { motion, AnimatePresence } from 'framer-motion';
 const stories = [
   {
     id: 1,
-    thumb: "https://img.youtube.com/vi/3GVepPRz-Fw/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/8c7e63ef736e4ae99a74ce1fe2e64ac9.mov",
     title: "Vídeo 1",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/3GVepPRz-Fw"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/8c7e63ef736e4ae99a74ce1fe2e64ac9.mov"
   },
   {
     id: 2,
-    thumb: "https://img.youtube.com/vi/6911rRVzWDQ/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/09f47f4a7d3847179df9d5c73a78a958.mov",
     title: "Vídeo 2",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/6911rRVzWDQ"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/09f47f4a7d3847179df9d5c73a78a958.mov"
   },
   {
     id: 3,
-    thumb: "https://img.youtube.com/vi/GguN0iJbUhI/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/a25aedc576a247aeb237240ab5bac844.mov",
     title: "Vídeo 3",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/GguN0iJbUhI"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a25aedc576a247aeb237240ab5bac844.mov"
   },
   {
     id: 4,
-    thumb: "https://img.youtube.com/vi/n4dvDiHPtaE/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/83fec81f2c4e453a8c158658b72a4f05.mov",
     title: "Vídeo 4",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/n4dvDiHPtaE"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/83fec81f2c4e453a8c158658b72a4f05.mov"
   },
   {
     id: 5,
-    thumb: "https://img.youtube.com/vi/fuq2ctWBp2M/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/e1b79f5249a242ceb7af49597b05b453.mov",
     title: "Vídeo 5",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/fuq2ctWBp2M"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e1b79f5249a242ceb7af49597b05b453.mov"
   },
   {
     id: 6,
-    thumb: "https://img.youtube.com/vi/1HDEioG6alo/maxresdefault.jpg",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/7c74cc6c6bd54f1fb2b9ec9d62bc91ee.mov",
     title: "Vídeo 6",
     type: "video",
-    videoUrl: "https://www.youtube.com/embed/1HDEioG6alo"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/7c74cc6c6bd54f1fb2b9ec9d62bc91ee.mov"
+  },
+  {
+    id: 7,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/47cd27d0c8f84e1088ebc3ad5cb69837.mov",
+    title: "Vídeo 7",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/47cd27d0c8f84e1088ebc3ad5cb69837.mov"
+  },
+  {
+    id: 8,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/0b72f612fb324682acd82bb0bdbd222e.mov",
+    title: "Vídeo 8",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/0b72f612fb324682acd82bb0bdbd222e.mov"
   }
 ];
 
@@ -183,45 +197,14 @@ export default function GreemyStories() {
               className="relative max-w-md w-full h-[80vh] mx-4"
             >
               {selectedStory.type === 'video' ? (
-                <iframe
+                <video
                   key={currentIndex}
-                  src={`${selectedStory.videoUrl}?autoplay=1&mute=0&controls=1&rel=0&enablejsapi=1`}
-                  title={selectedStory.title}
-                  className="w-full h-full rounded-2xl"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  onLoad={(e) => {
-                    const iframe = e.target;
-                    let hasEnded = false;
-                    
-                    const checkVideo = setInterval(() => {
-                      try {
-                        if (iframe.contentWindow) {
-                          iframe.contentWindow.postMessage('{"event":"listening"}', '*');
-                        }
-                      } catch (e) {}
-                    }, 1000);
-
-                    const messageHandler = (event) => {
-                      if (event.origin !== 'https://www.youtube.com') return;
-                      
-                      try {
-                        const data = JSON.parse(event.data);
-                        if (data.event === 'onStateChange' && data.info === 0 && !hasEnded) {
-                          hasEnded = true;
-                          handleVideoEnd();
-                          clearInterval(checkVideo);
-                        }
-                      } catch (e) {}
-                    };
-
-                    window.addEventListener('message', messageHandler);
-                    
-                    return () => {
-                      window.removeEventListener('message', messageHandler);
-                      clearInterval(checkVideo);
-                    };
-                  }}
+                  src={selectedStory.videoUrl}
+                  className="w-full h-full rounded-2xl object-cover"
+                  controls
+                  autoPlay
+                  playsInline
+                  onEnded={handleVideoEnd}
                 />
               ) : (
                 <img
