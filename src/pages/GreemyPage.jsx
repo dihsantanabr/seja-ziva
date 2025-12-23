@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GreemyProvider } from '../components/greemy/GreemyContext';
 import GreemyHero from '../components/greemy/GreemyHero';
 import GreemyForWho from '../components/greemy/GreemyForWho';
 import GreemyResults from '../components/greemy/GreemyResults';
@@ -20,6 +21,7 @@ export default function GreemyPage() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
+    <GreemyProvider>
     <div className="min-h-screen bg-white">
       {/* Quiz Popup */}
       {showQuiz && (
@@ -74,5 +76,6 @@ export default function GreemyPage() {
         }
       `}</style>
     </div>
+    </GreemyProvider>
   );
 }
