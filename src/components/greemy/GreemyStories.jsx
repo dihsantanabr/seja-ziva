@@ -168,7 +168,7 @@ export default function GreemyStories() {
                         className="w-full h-full rounded-full object-cover"
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                       />
                     </div>
                   </div>
@@ -256,7 +256,7 @@ export default function GreemyStories() {
                     className="w-full h-full rounded-2xl object-cover"
                     autoPlay
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     onLoadedData={() => setIsVideoLoading(false)}
                     onWaiting={() => setIsVideoLoading(true)}
                     onPlaying={() => setIsVideoLoading(false)}
