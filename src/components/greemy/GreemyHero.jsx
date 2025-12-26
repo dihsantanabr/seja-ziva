@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2 } from 'lucide-react';
+import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import GreemyStories from './GreemyStories';
@@ -299,9 +299,9 @@ export default function GreemyHero() {
               </div>
               <div className="bg-teal-50 rounded-xl p-4 text-center">
                 <div className="w-10 h-10 bg-teal-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Leaf className="w-5 h-5 text-teal-600" />
+                  <Wind className="w-5 h-5 text-teal-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Ozonizado</p>
+                <p className="font-semibold text-gray-900 text-sm">Ação Calmante</p>
               </div>
             </div>
 
