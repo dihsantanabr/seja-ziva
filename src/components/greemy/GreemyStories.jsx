@@ -308,8 +308,8 @@ export default function GreemyStories() {
                       <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
                       <div className="grid grid-cols-2 gap-3">
                         {[
-                          { name: '1 Unidade', duration: 'Dura 30 Dias' },
-                          { name: '3 Unidades', duration: 'Dura 90 Dias', badge: '+ Vendido' }
+                          { name: '1 Unidade', duration: 'Tratamento: 30 Dias' },
+                          { name: '3 Unidades', duration: 'Tratamento: 90 Dias', badge: '+ Vendido' }
                         ].map((size) => (
                           <button
                             key={size.name}
