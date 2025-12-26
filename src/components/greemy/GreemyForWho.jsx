@@ -79,15 +79,6 @@ export default function GreemyForWho({ onOpenQuiz }) {
           <p className="text-lg text-gray-700 bg-gradient-to-r from-teal-100 to-emerald-100 inline-block px-6 py-3 rounded-full">
             💚 Se você se identificou com algum desses casos, <strong>o Óleo Ozonizado foi feito para você</strong>
           </p>
-          
-          <div className="mt-6">
-            <Button 
-              onClick={onOpenQuiz}
-              className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-normal lg:whitespace-nowrap h-auto"
-            >
-              🎯 Descobrir se o Óleo é para mim
-            </Button>
-          </div>
         </div>
       </div>
     </section>
