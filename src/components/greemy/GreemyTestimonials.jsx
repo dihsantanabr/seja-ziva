@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function GreemyTestimonials() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-teal-50 to-white">
+    <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
