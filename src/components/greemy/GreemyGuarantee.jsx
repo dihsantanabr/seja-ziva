@@ -51,12 +51,9 @@ export default function GreemyGuarantee() {
               <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-teal-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
                 <guarantee.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm lg:text-lg mb-1 lg:mb-2">
+              <h3 className="font-semibold text-gray-900 text-sm lg:text-lg">
                 {guarantee.title}
               </h3>
-              <p className="text-gray-600 text-xs lg:text-sm">
-                {guarantee.description}
-              </p>
             </motion.div>
           ))}
         </div>
