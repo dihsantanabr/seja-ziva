@@ -152,7 +152,7 @@ export default function GreemyStories() {
                         className="w-full h-full rounded-full object-cover"
                         muted
                         playsInline
-                        preload="none"
+                        preload="metadata"
                       />
                     </div>
                   </div>
