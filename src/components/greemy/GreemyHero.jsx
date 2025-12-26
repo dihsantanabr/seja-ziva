@@ -229,7 +229,7 @@ export default function GreemyHero() {
                   >
                     {size === '3 Óleos' && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                        <span className="bg-teal-600 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                        <span className="bg-orange-200 text-orange-800 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                           Mais Vendido
                         </span>
                       </div>
