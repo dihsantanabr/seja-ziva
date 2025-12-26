@@ -42,15 +42,11 @@ export default function GreemyVideoCarousel() {
   const videoRefs = useRef([]);
 
   useEffect(() => {
-    // Play current video and pause others
+    // Pause other videos when switching
     videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentIndex) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
+      if (video && index !== currentIndex) {
+        video.pause();
+        video.currentTime = 0;
       }
     });
   }, [currentIndex]);
