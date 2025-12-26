@@ -6,17 +6,17 @@ const guarantees = [
   {
     icon: Shield,
     title: "Garantia de 30 dias",
-    description: "Devolução total se não ficar satisfeito"
+    description: "Devolução total se não ficar satisfeita"
   },
   {
     icon: Truck,
     title: "Frete Grátis",
-    description: "Para todo Brasil em todos os pedidos"
+    description: "Para todo Brasil acima de R$ 200"
   },
   {
     icon: Award,
-    title: "Qualidade Premium",
-    description: "22 superalimentos certificados"
+    title: "100% Natural",
+    description: "Óleo puro de avocado ozonizado"
   },
   {
     icon: RefreshCw,
@@ -27,10 +27,10 @@ const guarantees = [
 
 export default function GreemyGuarantee() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-green-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
             Garantias
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -46,9 +46,9 @@ export default function GreemyGuarantee() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-4 lg:p-6 text-center shadow-lg border border-green-100 hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl p-4 lg:p-6 text-center shadow-lg border border-teal-100 hover:shadow-xl transition-all"
             >
-              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-green-600 to-lime-600 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-teal-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
                 <guarantee.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
               </div>
               <h3 className="font-semibold text-gray-900 text-sm lg:text-lg mb-1 lg:mb-2">
@@ -65,14 +65,14 @@ export default function GreemyGuarantee() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-green-600 to-lime-600 rounded-3xl p-8 text-center text-white"
+          className="mt-12 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl p-8 text-center text-white"
         >
           <h3 className="text-2xl font-bold mb-4">
             💚 Confiança Total em Cada Compra
           </h3>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Milhares de clientes confiam no Greemy para transformar sua energia e vitalidade. 
-            Junte-se a eles e experimente a diferença!
+            Milhares de clientes confiam em nosso Óleo Ozonizado para transformar e regenerar sua pele. 
+            Junte-se a elas e experimente a diferença!
           </p>
         </motion.div>
       </div>
