@@ -308,10 +308,10 @@ export default function GreemyHero() {
             {/* Benefits List */}
             <div className="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
               {[
-                'Hidratação intensa',
-                'Toque sedoso',
-                'Rico em vitaminas',
-                'Rápida absorção'
+                'Anti Envelhecimento Natural',
+                'Manutenção de Manchas',
+                'Recomendado para Cuidados Íntimos',
+                'Controle de Caspas'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
                   <Check className="w-4 h-4 text-teal-600" />
