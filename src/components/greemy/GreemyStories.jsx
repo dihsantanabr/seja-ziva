@@ -118,7 +118,10 @@ export default function GreemyStories() {
   };
 
   const getCheckoutLink = () => {
-    return 'https://www.avozon.com.br/collections/oleo-ozonizado-1/products/oleo-de-avocado-ozonizado-30ml-1';
+    if (selectedSize === '3 Unidades') {
+      return 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
+    }
+    return 'https://seguro.avozon.com.br/r/O0QFN501RQ';
   };
 
   const handleBuyClick = () => {
