@@ -32,6 +32,34 @@ const stories = [
     title: "Antes e Depois",
     type: "video",
     videoUrl: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4"
+  },
+  {
+    id: 5,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4#t=0.1",
+    title: "Depoimento Real",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
+  },
+  {
+    id: 6,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4#t=0.1",
+    title: "Aplicação Correta",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
+  },
+  {
+    id: 7,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4#t=0.1",
+    title: "Transformação",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
+  },
+  {
+    id: 8,
+    thumb: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov#t=0.1",
+    title: "Benefícios",
+    type: "video",
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
   }
 ];
 
