@@ -99,17 +99,17 @@ export default function GreemyPainMatch() {
           </div>
 
           {/* Mobile Table */}
-          <div className="lg:hidden overflow-x-auto">
-            <table className="w-full">
+          <div className="lg:hidden">
+            <table className="w-full table-fixed">
               <thead>
                 <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
-                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                  <th className="w-[28%] px-2 py-3 text-left text-white font-semibold text-[10px] leading-tight">
                     ❌ Problema
                   </th>
-                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                  <th className="w-[22%] px-2 py-3 text-left text-white font-semibold text-[10px] leading-tight">
                     ✅ Solução
                   </th>
-                  <th className="px-3 py-3 text-left text-white font-semibold text-xs">
+                  <th className="w-[50%] px-2 py-3 text-left text-white font-semibold text-[10px] leading-tight">
                     💡 Como Funciona
                   </th>
                 </tr>
@@ -126,13 +126,13 @@ export default function GreemyPainMatch() {
                       idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
                     }`}
                   >
-                    <td className="px-3 py-4 font-semibold text-gray-900 text-xs">
+                    <td className="px-2 py-3 font-semibold text-gray-900 text-[10px] leading-tight">
                       {match.pain}
                     </td>
-                    <td className="px-3 py-4 font-semibold text-teal-700 text-xs">
+                    <td className="px-2 py-3 font-semibold text-teal-700 text-[10px] leading-tight">
                       {match.solution}
                     </td>
-                    <td className="px-3 py-4 text-gray-700 text-xs">
+                    <td className="px-2 py-3 text-gray-700 text-[10px] leading-tight">
                       {match.ingredient}
                     </td>
                   </motion.tr>
