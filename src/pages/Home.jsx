@@ -15,7 +15,6 @@ import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
-import GreemyCollage from '../components/greemy/GreemyCollage';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 export default function Home() {
@@ -46,7 +45,6 @@ export default function Home() {
       <div id="como-usar">
         <GreemyHowToUse />
       </div>
-      <GreemyCollage />
       <GreemyPainMatch />
       <div id="depoimentos">
         <GreemyTestimonials />
