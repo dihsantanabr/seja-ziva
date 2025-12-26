@@ -254,7 +254,7 @@ export default function GreemyHero() {
               {selectedSize === '3 Unidades' && (
                 <div className="mt-4 bg-teal-50 border border-teal-200 rounded-xl p-4 text-center">
                   <p className="text-teal-800 font-semibold">
-                    Cada Caixa sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
+                    Cada Unidade sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
               )}
