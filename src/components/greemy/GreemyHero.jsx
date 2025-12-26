@@ -172,7 +172,7 @@ export default function GreemyHero() {
               </Badge>
               <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
-                Toque Sedoso
+                Alívio de Irritações
               </Badge>
               <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Zap className="w-3.5 h-3.5 mr-1.5" />
