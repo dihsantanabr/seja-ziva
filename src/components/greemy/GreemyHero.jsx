@@ -207,40 +207,31 @@ export default function GreemyHero() {
             {/* Size Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 {Object.keys(pricesWithExtras).map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`relative px-4 py-4 rounded-xl border-2 font-medium transition-all text-center ${
+                    className={`relative px-6 py-5 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
                         ? 'border-teal-600 bg-gradient-to-r from-teal-600 to-emerald-600 text-white'
                         : 'border-gray-200 text-gray-700 hover:border-teal-600'
                     }`}
                   >
-                    {size === '2 Unidades' && (
+                    {size === '3 Óleos' && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2">
                         <span className="bg-teal-600 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                           Mais Vendido
                         </span>
                       </div>
                     )}
-                    <div className="text-sm font-bold">{size}</div>
-                    <div className={`text-xs mt-1 ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
-                      {pricesWithExtras[size].duration}
+                    <div className="text-base font-bold mb-1">{size}</div>
+                    <div className={`text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
+                      {size === '1 Óleo' ? 'Dura 30 Dias' : 'Dura 90 Dias'}
                     </div>
                   </button>
                 ))}
               </div>
-
-              {/* Unit Price Info */}
-              {(selectedSize === '2 Unidades' || selectedSize === '3 Unidades') && (
-                <div className="bg-teal-50 border border-teal-200 rounded-xl p-3 text-center mt-3">
-                  <p className="text-sm font-semibold text-teal-700">
-                    Cada frasco sai por R$ {(pricesWithExtras[selectedSize].current / parseInt(selectedSize)).toFixed(2).replace('.', ',')}
-                  </p>
-                </div>
-              )}
             </div>
 
             {/* Buy Button */}
