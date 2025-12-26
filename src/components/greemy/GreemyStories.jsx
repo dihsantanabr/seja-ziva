@@ -177,7 +177,7 @@ export default function GreemyStories() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#173629] z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-gradient-to-br from-green-600 to-lime-600 z-50 flex items-center justify-center"
             onClick={closeStory}
           >
             {/* Progress bars */}
@@ -303,7 +303,7 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     setShowPurchaseModal(true);
                   }}
-                  className="absolute bottom-0 left-0 right-0 bg-[#173629] hover:bg-[#173629]/90 text-white font-bold py-3 rounded-b-2xl shadow-lg"
+                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-3 rounded-b-2xl shadow-lg"
                 >
                   Comprar Agora
                 </motion.button>
@@ -348,7 +348,7 @@ export default function GreemyStories() {
                             }}
                             className={`relative px-4 py-4 rounded-lg border-2 font-medium transition-all text-center ${
                               selectedSize === size.name
-                                ? 'border-[#173629] bg-[#173629] text-white'
+                                ? 'border-green-600 bg-green-600 text-white'
                                 : 'border-gray-200 text-gray-700'
                             }`}
                           >
@@ -374,7 +374,7 @@ export default function GreemyStories() {
                         e.stopPropagation();
                         handleBuyClick();
                       }}
-                      className="w-full bg-[#173629] hover:bg-[#173629]/90 text-white font-semibold rounded-lg"
+                      className="w-full bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold rounded-lg"
                     >
                       Comprar Agora
                     </Button>
