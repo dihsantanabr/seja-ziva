@@ -142,7 +142,7 @@ export default function GreemyVideoCarousel() {
                       }
                     }}
                     src={video.videoUrl}
-                    className="w-48 h-80 lg:w-64 lg:h-[500px] object-cover"
+                    className="w-56 h-96 lg:w-72 lg:h-[550px] object-cover"
                     playsInline
                     loop
                     preload="metadata"
