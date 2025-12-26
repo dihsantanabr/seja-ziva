@@ -62,7 +62,7 @@ const timelineResults = [
 
 export default function GreemyHowToUse() {
   return (
-    <section className="py-16 lg:py-24" style={{ backgroundColor: '#d4d8dc' }}>
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-green-50">
       <div className="max-w-6xl mx-auto px-4">
         {/* Product Image - Featured */}
         <motion.div
