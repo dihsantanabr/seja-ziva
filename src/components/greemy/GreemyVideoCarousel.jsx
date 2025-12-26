@@ -122,11 +122,11 @@ export default function GreemyVideoCarousel() {
                       }
                     }}
                     src={video.videoUrl}
-                    className="w-48 h-80 object-cover"
+                    className="w-48 h-80 lg:w-64 lg:h-[500px] object-cover"
                     playsInline
-                    muted
                     loop
                     preload="metadata"
+                    controls
                   />
                 </div>
               </motion.div>
