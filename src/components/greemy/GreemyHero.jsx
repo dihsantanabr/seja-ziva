@@ -7,11 +7,10 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
-  "https://www.avozon.com.br/cdn/shop/files/Oleo_de_Avocado_Ozonizado_-_1_unidade.png",
-  "https://www.avozon.com.br/cdn/shop/files/1_1.png",
-  "https://www.avozon.com.br/cdn/shop/files/Segurando_Cartucho.png",
-  "https://www.avozon.com.br/cdn/shop/files/Segurando_Oleo.png",
-  "https://www.avozon.com.br/cdn/shop/files/Oleo_e_cartucho.png"
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/0f6a2443d_CopiadeAvozon2023MidiasSociais-11.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/6ad7a84c7_CopiadeAvozon2023MidiasSociais-21.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/03629e989_CopiadeAvozon2023MidiasSociais-26.jpg",
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/aba70a3e1_CopiadeAvozon2023MidiasSociais-10.jpg"
 ];
 
 export default function GreemyHero() {
@@ -27,13 +26,7 @@ export default function GreemyHero() {
   const currentReviews = baseReviews + (daysDiff * reviewsPerDay);
   const formattedReviews = currentReviews.toLocaleString('pt-BR');
 
-  // Auto-advance images every 1 second
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setSelectedImage((prev) => (prev + 1) % productImages.length);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+
 
   const pricesWithExtras = {
     '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
@@ -109,25 +102,39 @@ export default function GreemyHero() {
               Óleo de Avocado <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Ozonizado 30ml</span>
             </h1>
 
-            <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg group">
               <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-teal-600 to-emerald-600 text-white">
                 Mais Vendido
               </Badge>
               <img
                 src={productImages[selectedImage]}
                 alt="Óleo de Avocado Ozonizado"
-                className="w-full h-full object-contain p-3"
+                className="w-full h-full object-cover"
               />
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={() => setSelectedImage((prev) => prev === 0 ? productImages.length - 1 : prev - 1)}
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-800" />
+              </button>
+              <button
+                onClick={() => setSelectedImage((prev) => (prev + 1) % productImages.length)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-800" />
+              </button>
             </div>
             
             {/* Progress Dots */}
             <div className="flex gap-2 justify-center">
-              {productImages.slice(0, 10).map((_, idx) => (
+              {productImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
                   className={`h-2 rounded-full transition-all ${
-                    selectedImage === idx ? 'w-8 bg-green-600' : 'w-2 bg-gray-300'
+                    selectedImage === idx ? 'w-8 bg-teal-600' : 'w-2 bg-gray-300'
                   }`}
                 />
               ))}
