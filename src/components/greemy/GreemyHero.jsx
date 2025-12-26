@@ -182,7 +182,16 @@ export default function GreemyHero() {
 
             {/* Price Box */}
             <div className="bg-white rounded-2xl p-4 lg:p-6 border border-gray-100">
-
+              {pricesWithExtras[selectedSize].discount > 0 && (
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-lg text-gray-400 line-through">
+                    R$ {pricesWithExtras[selectedSize].original.toFixed(2).replace('.', ',')}
+                  </span>
+                  <Badge className="bg-teal-600 text-white">
+                    {pricesWithExtras[selectedSize].discount}% OFF
+                  </Badge>
+                </div>
+              )}
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-bold text-gray-900">
                   R$ {pricesWithExtras[selectedSize].current.toFixed(2).replace('.', ',')}
