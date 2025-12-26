@@ -139,29 +139,6 @@ export default function LPHero() {
                 className="w-full max-w-lg mx-auto drop-shadow-2xl rounded-2xl"
               />
             </div>
-
-            {/* Floating badges */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute top-10 -left-4 lg:left-0 bg-white rounded-2xl shadow-xl p-4 max-w-[140px]"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-teal-600">98%</div>
-                <div className="text-xs text-gray-600">Recomendam</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute bottom-10 -right-4 lg:right-0 bg-white rounded-2xl shadow-xl p-4 max-w-[140px]"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600">30ml</div>
-                <div className="text-xs text-gray-600">Óleo Puro</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
