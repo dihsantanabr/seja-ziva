@@ -129,9 +129,8 @@ export default function GreemyStories() {
   };
 
   const handleShare = () => {
-    const message = encodeURIComponent('Amiga, olha esse produto que descobri...');
-    const url = encodeURIComponent('https://gremy.com.br/');
-    window.open(`https://wa.me/?text=${message}%20${url}`, '_blank');
+    const message = encodeURIComponent('Olha esse produto que conheci! www.oleoavozon.com.br');
+    window.open(`https://wa.me/?text=${message}`, '_blank');
   };
 
   return (
