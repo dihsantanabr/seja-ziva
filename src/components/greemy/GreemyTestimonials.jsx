@@ -17,7 +17,7 @@ const testimonials = [
     result: "Pele hidratada"
   },
   {
-    name: "Carlos Silva",
+    name: "Carla Silva",
     review: "Usei nas cicatrizes de acne e vi resultados rápidos. Absorção perfeita!",
     rating: 5,
     result: "Cicatrização"
@@ -35,7 +35,7 @@ const testimonials = [
     result: "Pele radiante"
   },
   {
-    name: "Roberto Alves",
+    name: "Roberta Alves",
     review: "Produto de qualidade! Uso diariamente e minha pele está renovada.",
     rating: 5,
     result: "Regeneração"
