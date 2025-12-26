@@ -11,13 +11,13 @@ export const useGreemy = () => {
 };
 
 export const GreemyProvider = ({ children }) => {
-  const [selectedSize, setSelectedSize] = useState('1 Caixa');
-  const [selectedFlavor, setSelectedFlavor] = useState('Laranja');
+  const [selectedSize, setSelectedSize] = useState('1 Unidade');
+  const [selectedFlavor, setSelectedFlavor] = useState('30ml');
 
   const prices = {
-    '1 Caixa': { original: 227.00, current: 167.90, discount: 26 },
-    '2 Caixas': { original: 454.00, current: 267.90, discount: 41 },
-    '3 Caixas + 1 Grátis': { original: 908.00, current: 437.90, discount: 52 }
+    '1 Unidade': { original: 69.00, current: 69.00, discount: 0 },
+    '2 Unidades': { original: 138.00, current: 138.00, discount: 0 },
+    '3 Unidades': { original: 207.00, current: 207.00, discount: 0 }
   };
 
   return (
