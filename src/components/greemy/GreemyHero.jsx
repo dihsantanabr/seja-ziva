@@ -280,10 +280,17 @@ export default function GreemyHero() {
             <div className="bg-teal-50 border border-teal-200 rounded-xl p-4">
               <div className="flex items-start gap-3">
                 <Package className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-teal-900">
-                    Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
-                  </p>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <p className="font-semibold text-teal-900">
+                      Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
+                    </p>
+                    {selectedSize === '3 Unidades' && (
+                      <Badge className="bg-green-600 hover:bg-green-700 text-white">
+                        Receba + Rápido
+                      </Badge>
+                    )}
+                  </div>
                   <p className="text-sm text-teal-700 mt-1">
                     Confirme o prazo final na próxima etapa.
                   </p>
