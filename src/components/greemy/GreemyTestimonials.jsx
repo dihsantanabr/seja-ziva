@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Users, Award, Check } from 'lucide-react';
+import GreemyVideoCarousel from './GreemyVideoCarousel';
 
 const stats = [
   { number: "22.000+", label: "Clientes satisfeitos", icon: Users },
@@ -81,6 +82,9 @@ export default function GreemyTestimonials() {
             </motion.div>
           ))}
         </div>
+
+        {/* Video Carousel */}
+        <GreemyVideoCarousel />
 
         {/* Testimonials */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6">
