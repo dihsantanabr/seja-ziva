@@ -236,7 +236,7 @@ export default function GreemyHero() {
                     )}
                     <div className="text-base font-bold mb-1">{size}</div>
                     <div className={`text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
-                      {size === '1 Óleo' ? 'Dura 30 Dias' : 'Dura 90 Dias'}
+                      {size === '1 Óleo' ? 'Duração: 30 Dias' : 'Duração: 90 Dias'}
                     </div>
                   </button>
                 ))}
