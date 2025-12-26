@@ -40,11 +40,12 @@ export default function GreemyHero() {
     '3 Unidades': { ...prices['3 Unidades'], badge: '90ml total', duration: '3 frascos' }
   };
 
-  // Calculate delivery dates
+  // Calculate delivery dates (faster for 3 units)
+  const daysOffset = selectedSize === '3 Unidades' ? 1 : 0;
   const minDeliveryDate = new Date(today);
-  minDeliveryDate.setDate(today.getDate() + 4);
+  minDeliveryDate.setDate(today.getDate() + 4 - daysOffset);
   const maxDeliveryDate = new Date(today);
-  maxDeliveryDate.setDate(today.getDate() + 8);
+  maxDeliveryDate.setDate(today.getDate() + 8 - daysOffset);
 
   const formatDate = (date) => {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
