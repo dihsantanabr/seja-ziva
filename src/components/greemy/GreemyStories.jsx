@@ -7,59 +7,38 @@ import { Button } from "@/components/ui/button";
 const stories = [
   {
     id: 1,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/8c7e63ef736e4ae99a74ce1fe2e64ac9.mov",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4",
     title: "Vídeo 1",
     type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/8c7e63ef736e4ae99a74ce1fe2e64ac9.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
   },
   {
     id: 2,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/09f47f4a7d3847179df9d5c73a78a958.mov",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/b0b577a86e30452c801d8b28e49a6674.mp4",
     title: "Vídeo 2",
     type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/09f47f4a7d3847179df9d5c73a78a958.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/b0b577a86e30452c801d8b28e49a6674.mp4"
   },
   {
     id: 3,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/a25aedc576a247aeb237240ab5bac844.mov",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4",
     title: "Vídeo 3",
     type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a25aedc576a247aeb237240ab5bac844.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
   },
   {
     id: 4,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/83fec81f2c4e453a8c158658b72a4f05.mov",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov",
     title: "Vídeo 4",
     type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/83fec81f2c4e453a8c158658b72a4f05.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
   },
   {
     id: 5,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/e1b79f5249a242ceb7af49597b05b453.mov",
+    thumb: "https://cdn.shopify.com/videos/c/o/v/41040e057a0646ceb3ce0d16bbea056e.mov",
     title: "Vídeo 5",
     type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e1b79f5249a242ceb7af49597b05b453.mov"
-  },
-  {
-    id: 6,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/7c74cc6c6bd54f1fb2b9ec9d62bc91ee.mov",
-    title: "Vídeo 6",
-    type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/7c74cc6c6bd54f1fb2b9ec9d62bc91ee.mov"
-  },
-  {
-    id: 7,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/47cd27d0c8f84e1088ebc3ad5cb69837.mov",
-    title: "Vídeo 7",
-    type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/47cd27d0c8f84e1088ebc3ad5cb69837.mov"
-  },
-  {
-    id: 8,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/0b72f612fb324682acd82bb0bdbd222e.mov",
-    title: "Vídeo 8",
-    type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/0b72f612fb324682acd82bb0bdbd222e.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/41040e057a0646ceb3ce0d16bbea056e.mov"
   }
 ];
 
