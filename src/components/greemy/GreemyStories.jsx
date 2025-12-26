@@ -13,13 +13,6 @@ const stories = [
     videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
   },
   {
-    id: 2,
-    thumb: "https://cdn.shopify.com/videos/c/o/v/b0b577a86e30452c801d8b28e49a6674.mp4#t=0.1",
-    title: "Vídeo 2",
-    type: "video",
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/b0b577a86e30452c801d8b28e49a6674.mp4"
-  },
-  {
     id: 3,
     thumb: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4#t=0.1",
     title: "Vídeo 3",
