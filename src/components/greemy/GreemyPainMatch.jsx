@@ -4,48 +4,48 @@ import { ArrowRight } from 'lucide-react';
 
 const painMatches = [
   {
-    pain: "Cansaço Extremo",
-    solution: "Energia Natural Duradoura",
-    ingredient: "22 superalimentos que fornecem energia sustentável sem quedas",
-    color: "from-green-100 to-emerald-100",
-    border: "border-green-200"
+    pain: "Pele Ressecada",
+    solution: "Hidratação Profunda",
+    ingredient: "Ômega-9 e vitamina E que nutrem e restauram a hidratação",
+    color: "from-teal-100 to-emerald-100",
+    border: "border-teal-200"
   },
   {
-    pain: "Imunidade Baixa",
-    solution: "Sistema Imune Fortalecido",
-    ingredient: "Vitaminas e antioxidantes que protegem e fortalecem",
+    pain: "Cicatrizes e Marcas",
+    solution: "Regeneração Acelerada",
+    ingredient: "Ozônio que estimula a renovação celular e cicatrização",
     color: "from-emerald-100 to-teal-100",
     border: "border-emerald-200"
   },
   {
-    pain: "Falta de Foco",
-    solution: "Clareza Mental",
-    ingredient: "Nutrientes que melhoram concentração e cognição",
-    color: "from-green-50 to-green-100",
-    border: "border-green-200"
+    pain: "Irritações e Inflamações",
+    solution: "Alívio e Proteção",
+    ingredient: "Fitoesteróis com ação anti-inflamatória e calmante",
+    color: "from-teal-50 to-teal-100",
+    border: "border-teal-200"
   },
   {
-    pain: "Digestão Irregular",
-    solution: "Saúde Intestinal",
-    ingredient: "Fibras e probióticos que regulam o sistema digestivo",
-    color: "from-teal-50 to-emerald-100",
-    border: "border-teal-200"
+    pain: "Envelhecimento Precoce",
+    solution: "Rejuvenescimento Natural",
+    ingredient: "Antioxidantes e carotenoides que combatem radicais livres",
+    color: "from-emerald-50 to-emerald-100",
+    border: "border-emerald-200"
   }
 ];
 
 export default function GreemyPainMatch() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-green-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
             Soluções
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
             Transforme seus desafios em conquistas
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Cada problema tem sua solução no Greemy
+            Cada problema de pele tem sua solução no Óleo Ozonizado
           </p>
         </div>
 
@@ -53,13 +53,13 @@ export default function GreemyPainMatch() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-green-100"
+          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-teal-100"
         >
           {/* Desktop Table */}
           <div className="hidden lg:block overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-green-600 to-lime-600">
+                <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
                   <th className="px-6 py-4 text-left text-white font-semibold">
                     ❌ Problema
                   </th>
@@ -80,13 +80,13 @@ export default function GreemyPainMatch() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     className={`border-b border-gray-100 ${
-                      idx % 2 === 0 ? 'bg-green-50/30' : 'bg-white'
+                      idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
                     }`}
                   >
                     <td className="px-6 py-5 font-semibold text-gray-900">
                       {match.pain}
                     </td>
-                    <td className="px-6 py-5 font-semibold text-green-700">
+                    <td className="px-6 py-5 font-semibold text-teal-700">
                       {match.solution}
                     </td>
                     <td className="px-6 py-5 text-gray-700">
@@ -102,7 +102,7 @@ export default function GreemyPainMatch() {
           <div className="lg:hidden overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-green-600 to-lime-600">
+                <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
                   <th className="px-3 py-3 text-left text-white font-semibold text-xs">
                     ❌ Problema
                   </th>
@@ -123,13 +123,13 @@ export default function GreemyPainMatch() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     className={`border-b border-gray-100 ${
-                      idx % 2 === 0 ? 'bg-green-50/30' : 'bg-white'
+                      idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
                     }`}
                   >
                     <td className="px-3 py-4 font-semibold text-gray-900 text-xs">
                       {match.pain}
                     </td>
-                    <td className="px-3 py-4 font-semibold text-green-700 text-xs">
+                    <td className="px-3 py-4 font-semibold text-teal-700 text-xs">
                       {match.solution}
                     </td>
                     <td className="px-3 py-4 text-gray-700 text-xs">
