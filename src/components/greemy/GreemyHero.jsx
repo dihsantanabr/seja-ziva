@@ -42,7 +42,6 @@ export default function GreemyHero() {
   };
 
   // Calculate delivery dates
-  const today = new Date();
   const minDeliveryDate = new Date(today);
   minDeliveryDate.setDate(today.getDate() + 4);
   const maxDeliveryDate = new Date(today);
