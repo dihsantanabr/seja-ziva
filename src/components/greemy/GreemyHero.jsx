@@ -36,8 +36,8 @@ export default function GreemyHero() {
   }, []);
 
   const pricesWithExtras = {
-    '1 Óleo': { ...prices['1 Óleo'], badge: '30ml', duration: '1 frasco' },
-    '3 Óleos': { ...prices['3 Óleos'], badge: '90ml total', duration: '3 frascos' }
+    '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
+    '3 Unidades': { ...prices['3 Unidades'], badge: '90ml total', duration: '3 frascos' }
   };
 
   // Calculate delivery dates
@@ -206,7 +206,7 @@ export default function GreemyHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-teal-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  {selectedSize === '1 Óleo' 
+                  {selectedSize === '1 Unidade' 
                     ? 'Receba de Volta 10% em Cashback'
                     : `Receba de Volta R$ ${(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback`
                   }
@@ -230,7 +230,7 @@ export default function GreemyHero() {
                         : 'border-gray-200 text-gray-700 hover:border-teal-600'
                     }`}
                   >
-                    {size === '3 Óleos' && (
+                    {size === '3 Unidades' && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2">
                         <span className="bg-orange-200 text-orange-800 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                           Mais Vendido
@@ -239,9 +239,9 @@ export default function GreemyHero() {
                     )}
                     <div className="text-base font-bold mb-1">{size}</div>
                     <div className={`text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
-                      {size === '1 Óleo' ? 'Duração: 30 Dias' : 'Duração: 90 Dias'}
+                      {size === '1 Unidade' ? 'Tratamento: 30 Dias' : 'Tratamento: 90 Dias'}
                     </div>
-                    {size === '3 Óleos' && (
+                    {size === '3 Unidades' && (
                       <div className={`text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-teal-600'}`}>
                         11% OFF
                       </div>
