@@ -58,6 +58,7 @@ export default function GreemyStories() {
     setSelectedStory(stories[index]);
     setProgress(0);
     setIsVideoLoading(true);
+    setSelectedSize('1 Unidade');
   };
 
   const closeStory = () => {
