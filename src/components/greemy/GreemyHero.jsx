@@ -52,9 +52,9 @@ export default function GreemyHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-orange-50 to-white">
+    <section className="bg-gradient-to-b from-teal-50 to-white">
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-orange-600 to-amber-600 text-white py-2.5 overflow-hidden">
+      <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
@@ -98,11 +98,11 @@ export default function GreemyHero() {
 
             {/* Mobile Title */}
             <h1 className="lg:hidden text-lg font-bold text-gray-900 text-center">
-              Óleo de Avocado <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Ozonizado 30ml</span>
+              Óleo de Avocado <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Ozonizado 30ml</span>
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-orange-600 to-amber-600 text-white">
+              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-teal-600 to-emerald-600 text-white">
                 Mais Vendido
               </Badge>
               <img
@@ -129,12 +129,12 @@ export default function GreemyHero() {
           {/* Product Info */}
           <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600 font-medium text-sm uppercase tracking-wider mb-2">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider mb-2">
                 Cuidado Natural da Pele
               </p>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Óleo de Avocado
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Ozonizado 30ml</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Ozonizado 30ml</span>
               </h1>
               <p className="mt-2 text-base lg:text-lg text-gray-600">
                 Hidratação intensa com toque sedoso. Rico em vitaminas e antioxidantes, promove pele saudável, nutrida e com vitalidade natural.
@@ -155,19 +155,19 @@ export default function GreemyHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-orange-600 text-orange-600 px-3 py-1.5">
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
                 100% Natural
               </Badge>
-              <Badge variant="outline" className="border-orange-600 text-orange-600 px-3 py-1.5">
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
                 Hidratação Intensa
               </Badge>
-              <Badge variant="outline" className="border-orange-600 text-orange-600 px-3 py-1.5">
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
                 Toque Sedoso
               </Badge>
-              <Badge variant="outline" className="border-orange-600 text-orange-600 px-3 py-1.5">
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
                 <Zap className="w-3.5 h-3.5 mr-1.5" />
                 Rápida Absorção
               </Badge>
@@ -184,10 +184,10 @@ export default function GreemyHero() {
               <p className="text-sm text-gray-600 mt-2">
                 ou 4x de R$ {(pricesWithExtras[selectedSize].current / 4).toFixed(2).replace('.', ',')} sem juros
               </p>
-              <div className="flex items-center gap-2 mt-3 text-orange-700 bg-orange-50 px-3 py-2 rounded-lg">
+              <div className="flex items-center gap-2 mt-3 text-teal-700 bg-teal-50 px-3 py-2 rounded-lg">
                 <div className="relative">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse" />
-                  <div className="absolute inset-0 w-2 h-2 bg-orange-600 rounded-full animate-ping opacity-75" />
+                  <div className="w-2 h-2 bg-teal-600 rounded-full animate-pulse" />
+                  <div className="absolute inset-0 w-2 h-2 bg-teal-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
                   Receba de Volta R$ {(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback
@@ -207,13 +207,13 @@ export default function GreemyHero() {
                     onClick={() => setSelectedSize(size)}
                     className={`relative px-4 py-4 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
-                        ? 'border-orange-600 bg-gradient-to-r from-orange-600 to-amber-600 text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-orange-600'
+                        ? 'border-teal-600 bg-gradient-to-r from-teal-600 to-emerald-600 text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-teal-600'
                     }`}
                   >
                     {size === '2 Unidades' && (
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                        <span className="bg-green-600 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                        <span className="bg-teal-600 text-white text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                           Mais Vendido
                         </span>
                       </div>
@@ -228,8 +228,8 @@ export default function GreemyHero() {
 
               {/* Unit Price Info */}
               {(selectedSize === '2 Unidades' || selectedSize === '3 Unidades') && (
-                <div className="bg-orange-50 border border-orange-200 rounded-xl p-3 text-center mt-3">
-                  <p className="text-sm font-semibold text-orange-700">
+                <div className="bg-teal-50 border border-teal-200 rounded-xl p-3 text-center mt-3">
+                  <p className="text-sm font-semibold text-teal-700">
                     Cada frasco sai por R$ {(pricesWithExtras[selectedSize].current / parseInt(selectedSize)).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
@@ -239,20 +239,20 @@ export default function GreemyHero() {
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              className="w-full h-12 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-orange-600/25 transition-all hover:shadow-xl hover:shadow-orange-600/30"
+              className="w-full h-12 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-teal-600/25 transition-all hover:shadow-xl hover:shadow-teal-600/30"
             >
               Comprar Agora
             </Button>
 
             {/* Delivery Estimate */}
-            <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
+            <div className="bg-teal-50 border border-teal-200 rounded-xl p-4">
               <div className="flex items-start gap-3">
-                <Package className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                <Package className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-orange-900">
+                  <p className="font-semibold text-teal-900">
                     Frete fixo R$5,99 para todo Brasil
                   </p>
-                  <p className="text-sm text-orange-700 mt-1">
+                  <p className="text-sm text-teal-700 mt-1">
                     Chegará entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                   </p>
                 </div>
@@ -261,21 +261,21 @@ export default function GreemyHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Star className="w-5 h-5 text-orange-600" />
+              <div className="bg-teal-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-teal-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 text-teal-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Mais Vendido</p>
               </div>
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Shield className="w-5 h-5 text-orange-600" />
+              <div className="bg-teal-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-teal-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Shield className="w-5 h-5 text-teal-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">100% Natural</p>
               </div>
-              <div className="bg-orange-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-orange-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Leaf className="w-5 h-5 text-orange-600" />
+              <div className="bg-teal-50 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-teal-600/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Leaf className="w-5 h-5 text-teal-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Ozonizado</p>
               </div>
@@ -290,7 +290,7 @@ export default function GreemyHero() {
                 'Rápida absorção'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-orange-600" />
+                  <Check className="w-4 h-4 text-teal-600" />
                   {benefit}
                 </div>
               ))}
