@@ -8,7 +8,7 @@ const packages = [
   {
     id: 1,
     units: '1 Unidade',
-    duration: '21 Dias de Tratamento',
+    duration: '30ml - 1 frasco',
     price: 'R$ 89,90',
     originalPrice: 'R$ 99,90',
     discount: '10% OFF',
@@ -18,7 +18,7 @@ const packages = [
   {
     id: 3,
     units: '3 Unidades',
-    duration: '63 Dias de Tratamento',
+    duration: '90ml - 3 frascos',
     price: 'R$ 239,70',
     originalPrice: 'R$ 269,70',
     discount: '11% OFF',
@@ -52,7 +52,7 @@ export default function LPPurchaseBoxes() {
               Comece Sua Transformação Hoje
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Milhares de pessoas já eliminaram o inchaço e recuperaram o bem-estar. 
+              Mais de 22 mil pessoas já transformaram sua pele com nosso óleo ozonizado. 
               Escolha o melhor kit para você.
             </p>
           </motion.div>
@@ -106,10 +106,10 @@ export default function LPPurchaseBoxes() {
               {/* Benefits */}
               <div className="space-y-3 mb-6">
                 {[
-                  'Redução do inchaço abdominal',
-                  'Melhora do trânsito intestinal',
-                  'Sensação de leveza diária',
-                  'Fórmula 100% natural'
+                  'Hidratação intensa e duradoura',
+                  'Acelera cicatrização natural',
+                  'Rico em vitaminas e antioxidantes',
+                  '100% natural e ozonizado'
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <Check className="w-5 h-5 text-teal-600 flex-shrink-0" />

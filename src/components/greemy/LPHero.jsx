@@ -58,17 +58,17 @@ export default function LPHero() {
 
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Diga Adeus ao{' '}
+              Transforme Sua Pele com{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">
-                Inchaço Abdominal
+                Óleo Ozonizado
               </span>
-              {' '}em 21 Dias
+              {' '}Natural
             </h1>
 
             <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
-              O suco verde funcional que regula seu intestino, 
-              reduz o inchaço e traz leveza para o seu dia a dia. 
-              <strong className="text-teal-700"> 100% natural, sem açúcar e vegano.</strong>
+              Óleo de avocado ozonizado que hidrata intensamente, acelera a cicatrização 
+              e regenera sua pele naturalmente. 
+              <strong className="text-teal-700"> 100% natural, cruelty-free e vegano.</strong>
             </p>
 
             {/* Trust indicators */}
@@ -86,10 +86,10 @@ export default function LPHero() {
             {/* Benefits list */}
             <div className="space-y-3 mb-8">
               {[
-                'Reduz inchaço e gases em poucos dias',
-                'Melhora o trânsito intestinal naturalmente',
-                'Sensação de leveza e bem-estar diário',
-                'Fórmula 100% natural e vegana'
+                'Hidratação intensa e toque sedoso',
+                'Acelera cicatrização de feridas e irritações',
+                'Rico em vitaminas e antioxidantes',
+                'Estimula produção natural de colágeno'
               ].map((benefit, idx) => (
                 <motion.div
                   key={idx}
@@ -116,7 +116,7 @@ export default function LPHero() {
                 onClick={scrollToPurchase}
                 className="w-full lg:w-auto bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all group"
               >
-                Quero Eliminar o Inchaço Agora
+                Quero Transformar Minha Pele Agora
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <p className="text-sm text-gray-500 mt-3">
@@ -134,9 +134,9 @@ export default function LPHero() {
           >
             <div className="relative z-10">
               <img
-                src="https://cdn.shopify.com/s/files/1/0621/2249/5591/files/1_088bbbfd-6b9e-41ba-8ab9-c38eb46dcf00.png?v=1736467734"
-                alt="Greemy - Suco Verde Funcional"
-                className="w-full max-w-lg mx-auto drop-shadow-2xl"
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/0f6a2443d_CopiadeAvozon2023MidiasSociais-11.jpg"
+                alt="Óleo de Avocado Ozonizado"
+                className="w-full max-w-lg mx-auto drop-shadow-2xl rounded-2xl"
               />
             </div>
 
@@ -158,8 +158,8 @@ export default function LPHero() {
               className="absolute bottom-10 -right-4 lg:right-0 bg-white rounded-2xl shadow-xl p-4 max-w-[140px]"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-600">21</div>
-                <div className="text-xs text-gray-600">Dias de Tratamento</div>
+                <div className="text-3xl font-bold text-emerald-600">30ml</div>
+                <div className="text-xs text-gray-600">Óleo Puro</div>
               </div>
             </motion.div>
           </motion.div>
