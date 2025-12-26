@@ -206,7 +206,10 @@ export default function GreemyHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-teal-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
-                  Receba de Volta R$ {(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback
+                  {selectedSize === '1 Óleo' 
+                    ? 'Receba de Volta 10% em Cashback'
+                    : `Receba de Volta R$ ${(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback`
+                  }
                 </span>
               </div>
             </div>
