@@ -1,54 +1,54 @@
 import React from 'react';
-import { Battery, Users, Zap, HeartPulse, Brain, Sun } from 'lucide-react';
+import { Droplets, Heart, Sparkles, Shield, Wind, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 
 const painPoints = [
   {
-    icon: Battery,
-    title: "Cansaço e fadiga constante",
-    description: "Falta de energia durante o dia"
+    icon: Droplets,
+    title: "Pele seca e desidratada",
+    description: "Sensação de ressecamento constante"
   },
   {
-    icon: Brain,
-    title: "Dificuldade de concentração",
-    description: "Mente cansada e dispersa"
+    icon: Heart,
+    title: "Irritações na pele",
+    description: "Vermelhidão e desconforto"
   },
   {
-    icon: HeartPulse,
-    title: "Imunidade baixa",
-    description: "Defesas do corpo enfraquecidas"
+    icon: Sparkles,
+    title: "Falta de vitalidade",
+    description: "Pele sem brilho e opaca"
   },
   {
-    icon: Zap,
-    title: "Energia instável",
-    description: "Picos e quedas de energia"
+    icon: Shield,
+    title: "Cicatrização lenta",
+    description: "Marcas demoram para desaparecer"
   },
   {
-    icon: Sun,
-    title: "Falta de disposição",
-    description: "Desânimo e preguiça"
+    icon: Wind,
+    title: "Sensibilidade aumentada",
+    description: "Pele reage facilmente"
   },
   {
-    icon: Users,
-    title: "Vida corrida",
-    description: "Busca energia natural e saudável"
+    icon: Star,
+    title: "Busca por cuidado natural",
+    description: "Quer hidratação sem químicos"
   }
 ];
 
 export default function GreemyForWho({ onOpenQuiz }) {
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-green-50">
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
             Esse é o seu caso?
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Energia verde ideal para quem quer viver melhor!
+            Cuidado natural ideal para sua pele!
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Perfeito para quem busca energia natural, saúde e bem-estar
+            Perfeito para quem busca hidratação profunda e tratamento natural
           </p>
         </div>
 
@@ -60,10 +60,10 @@ export default function GreemyForWho({ onOpenQuiz }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-green-100"
+              className="group bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-teal-100"
               >
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-all">
-                <point.icon className="w-7 h-7 text-green-600" />
+                <point.icon className="w-7 h-7 text-teal-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {point.title}
@@ -76,16 +76,16 @@ export default function GreemyForWho({ onOpenQuiz }) {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-700 bg-gradient-to-r from-green-100 to-lime-100 inline-block px-6 py-3 rounded-full">
-            💚 Se você se identificou com algum desses casos, <strong>o Greemy foi feito para você</strong>
+          <p className="text-lg text-gray-700 bg-gradient-to-r from-teal-100 to-emerald-100 inline-block px-6 py-3 rounded-full">
+            💚 Se você se identificou com algum desses casos, <strong>o Óleo Ozonizado foi feito para você</strong>
           </p>
           
           <div className="mt-6">
             <Button 
               onClick={onOpenQuiz}
-              className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-normal lg:whitespace-nowrap h-auto"
+              className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold py-6 px-12 rounded-xl shadow-lg hover:shadow-xl transition-all whitespace-normal lg:whitespace-nowrap h-auto"
             >
-              🎯 Descobrir se Greemy é para mim
+              🎯 Descobrir se o Óleo é para mim
             </Button>
           </div>
         </div>
