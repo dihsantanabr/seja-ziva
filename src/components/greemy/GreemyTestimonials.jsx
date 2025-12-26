@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Users, Award, Check } from 'lucide-react';
+import GreemyStories from './GreemyStories';
 
 const stats = [
   { number: "22.000+", label: "Clientes satisfeitos", icon: Users },
@@ -58,6 +59,11 @@ export default function GreemyTestimonials() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
             O que nossos clientes dizem
           </h2>
+        </div>
+
+        {/* Stories */}
+        <div className="mb-12">
+          <GreemyStories />
         </div>
 
         {/* Stats */}
