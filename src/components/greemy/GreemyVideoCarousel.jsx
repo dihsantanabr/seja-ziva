@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const videos = [
@@ -39,6 +39,8 @@ const videos = [
 
 export default function GreemyVideoCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRefs = useRef([]);
 
   useEffect(() => {
@@ -49,7 +51,29 @@ export default function GreemyVideoCarousel() {
         video.currentTime = 0;
       }
     });
+    setIsPlaying(false);
   }, [currentIndex]);
+
+  const togglePlay = () => {
+    const video = videoRefs.current[currentIndex];
+    if (video) {
+      if (video.paused) {
+        video.play();
+        setIsPlaying(true);
+      } else {
+        video.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRefs.current[currentIndex];
+    if (video) {
+      video.muted = !video.muted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   const nextVideo = () => {
     setCurrentIndex((prev) => (prev + 1) % videos.length);
@@ -110,7 +134,7 @@ export default function GreemyVideoCarousel() {
                 className="flex-shrink-0 relative"
                 style={{ zIndex }}
               >
-                <div className={`rounded-2xl overflow-hidden shadow-xl ${isCenter ? 'ring-4 ring-teal-500' : ''}`}>
+                <div className={`rounded-2xl overflow-hidden shadow-xl relative ${isCenter ? 'ring-4 ring-teal-500' : ''}`}>
                   <video
                     ref={(el) => {
                       if (isCenter) {
@@ -122,8 +146,24 @@ export default function GreemyVideoCarousel() {
                     playsInline
                     loop
                     preload="metadata"
-                    controls
+                    muted={isMuted}
                   />
+                  {isCenter && (
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
+                      <button
+                        onClick={togglePlay}
+                        className="text-white hover:text-teal-400 transition"
+                      >
+                        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                      </button>
+                      <button
+                        onClick={toggleMute}
+                        className="text-white hover:text-teal-400 transition"
+                      >
+                        {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );
