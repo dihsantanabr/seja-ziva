@@ -5,27 +5,35 @@ import { motion } from 'framer-motion';
 const videos = [
   {
     id: 1,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4"
   },
   {
     id: 2,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/eea813e52745445a8305e669b9d9e2cf.mov"
   },
   {
     id: 3,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/82446e001a2c41ec9d224c3b9b440b59.mp4"
   },
   {
     id: 4,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/60b9f5c988dd42728c0dad47567c7a08.mp4"
   },
   {
     id: 5,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/41040e057a0646ceb3ce0d16bbea056e.mov"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
   },
   {
     id: 6,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
+  },
+  {
+    id: 7,
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
+  },
+  {
+    id: 8,
+    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
   }
 ];
 
