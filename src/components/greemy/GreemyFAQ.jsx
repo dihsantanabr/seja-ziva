@@ -4,52 +4,52 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "O que é esse suco verde em pó e para que ele serve?",
-    answer: "Esse tipo de suco verde em pó é um suplemento alimentar funcional pensado para melhorar o conforto intestinal e o bem-estar diário. Ele reúne nutrientes, fibras e verdes selecionados para ajudar a reduzir o inchaço abdominal, melhorar a digestão, auxiliar no trânsito intestinal e trazer uma sensação de leveza ao longo do dia. O Greemy é exatamente esse suco verde em pó funcional da Dreams Nutrition, desenvolvido para cuidar da saúde digestiva de forma prática, em sachês individuais fáceis de usar na rotina."
+    question: "O que é o Óleo de Avocado Ozonizado e para que serve?",
+    answer: "O Óleo de Avocado Ozonizado é um produto natural derivado do abacate enriquecido com ozônio, que potencializa suas propriedades regeneradoras. Ele é rico em ácidos graxos essenciais, vitamina E e ômega-9, atuando na hidratação profunda, cicatrização, regeneração celular e proteção da pele contra o envelhecimento precoce. É ideal para tratar peles secas, sensíveis, cicatrizes, manchas e promover um aspecto saudável e radiante."
   },
   {
-    question: "Como esse suco verde age no intestino e no inchaço abdominal?",
-    answer: "Um suco verde funcional age principalmente combinando fibras e ingredientes com ação digestiva que ajudam a equilibrar o intestino, reduzir gases e facilitar o trânsito intestinal. Isso tende a diminuir a sensação de barriga estufada e o desconforto após as refeições. O Greemy foi formulado para atuar justamente nesse ponto: ele apoia o microbioma intestinal, contribui para um trânsito mais regular e ajuda a reduzir o inchaço abdominal de forma gradual, quando utilizado com constância e aliado a bons hábitos de alimentação e hidratação."
+    question: "Como o óleo ozonizado age na pele?",
+    answer: "O ozônio presente no óleo aumenta a oxigenação celular, estimula a produção de colágeno e elastina, e possui ação anti-inflamatória e antimicrobiana. Combinado com as propriedades nutritivas do óleo de avocado, ele penetra profundamente na pele, promovendo regeneração, cicatrização acelerada, redução de manchas e linhas finas, além de fortalecer a barreira cutânea natural."
   },
   {
-    question: "Para quem esse tipo de suco verde é indicado?",
-    answer: "Esse tipo de suco verde é indicado para pessoas que sentem incômodo com inchaço, digestão lenta, gases em excesso ou irregularidade intestinal, e que querem uma forma prática de consumir fibras, verdes e nutrientes no dia a dia. O Greemy foi pensado especialmente para o público feminino que convive com esses desconfortos com frequência, mas pode ser utilizado por adultos em geral, desde que não haja contraindicação individual e sempre respeitando as orientações de uso presentes na embalagem."
+    question: "Para quem o Óleo de Avocado Ozonizado é indicado?",
+    answer: "O produto é indicado para pessoas que buscam hidratação intensa, tratamento de cicatrizes (incluindo acne), manchas, rugas, pele seca ou sensível, e aquelas que desejam prevenir o envelhecimento precoce. É adequado para todos os tipos de pele, inclusive as mais sensíveis, e pode ser usado tanto no rosto quanto no corpo."
   },
   {
-    question: "Quais são os principais ingredientes e nutrientes presentes nesse suco verde?",
-    answer: "Suco verde funcional geralmente combina fibras, superfoods e nutrientes que apoiam o intestino e o metabolismo. No caso do Greemy, a fórmula inclui ingredientes como superfoods verdes e frutas em pó, fibras como o psyllium e outros compostos funcionais selecionados para auxiliar a digestão, o equilíbrio intestinal e o bem-estar diário. A lista detalhada de ingredientes e a tabela nutricional podem ser consultadas no rótulo e na página oficial do produto Greemy, garantindo transparência sobre tudo o que você está consumindo em cada sachê."
+    question: "Quais são os principais benefícios do Óleo de Avocado Ozonizado?",
+    answer: "Os principais benefícios incluem: hidratação profunda e duradoura, regeneração celular acelerada, ação cicatrizante e anti-inflamatória, redução de manchas e marcas, atenuação de rugas e linhas de expressão, proteção antioxidante contra radicais livres, melhora da elasticidade e firmeza da pele, absorção rápida sem deixar oleosidade excessiva, e adequação para peles sensíveis."
   },
   {
-    question: "Como devo tomar esse suco verde no dia a dia para ter resultado?",
-    answer: "A forma mais comum de uso é dissolver o conteúdo de 1 sachê em cerca de 200 a 250 ml de água, podendo ser em temperatura ambiente, gelada ou morna, e consumir logo em seguida. Muitas pessoas preferem tomar pela manhã ou em um momento fixo do dia para criar rotina. O Greemy foi pensado para ser usado exatamente assim: 1 sachê misturado em água, uma vez ao dia, de forma constante. A regularidade no consumo, aliada a alimentação equilibrada, é o que favorece a percepção de menos inchaço e melhor digestão ao longo do tempo."
+    question: "Como devo usar o Óleo de Avocado Ozonizado?",
+    answer: "Aplique de 2 a 3 gotas do óleo na pele limpa e seca, massageando suavemente até completa absorção. Pode ser usado pela manhã e/ou à noite, no rosto e corpo. Para cicatrizes e manchas, aplique diretamente na área afetada com massagens circulares. O produto pode ser usado sozinho ou misturado ao seu hidratante habitual para potencializar os resultados."
   },
   {
-    question: "Em quanto tempo é possível sentir menos inchaço e melhora na digestão?",
-    answer: "A resposta pode variar de pessoa para pessoa, mas é comum que algumas pessoas percebam uma sensação de leveza e melhora no trânsito intestinal já nos primeiros dias de uso, especialmente quando o intestino estava muito preso ou a digestão muito lenta. Para resultados mais consistentes, é recomendável usar diariamente por algumas semanas. A proposta do Greemy é justamente entregar benefícios que vão se acumulando com o uso regular, ajudando você a notar menos inchaço e digestão mais confortável na rotina."
+    question: "Em quanto tempo posso ver resultados?",
+    answer: "Muitas pessoas percebem a pele mais hidratada e macia já nas primeiras aplicações. Para resultados mais profundos como redução de manchas, cicatrizes e rugas, recomenda-se uso contínuo por pelo menos 4 a 6 semanas. A constância é fundamental para obter os melhores benefícios regeneradores do óleo ozonizado."
   },
   {
-    question: "Esse suco verde contém açúcar, glúten, lactose ou cafeína?",
-    answer: "Muitos sucos verdes funcionais modernos são formulados sem adição de açúcar e sem ingredientes que contenham glúten ou lactose. O Greemy segue essa proposta: ele é um suco verde em pó sem adição de açúcar, sem glúten e sem lactose, e também é livre de cafeína, o que permite o uso em diferentes horários do dia, inclusive por pessoas que evitam estimulantes. Mesmo assim, a recomendação é sempre conferir o rótulo e a descrição oficial do produto para confirmar as informações de composição e alergênicos."
+    question: "O óleo deixa a pele oleosa?",
+    answer: "Não. Apesar de ser um óleo, o produto possui textura leve e absorção rápida, não deixando a pele com aspecto oleoso ou pesado. A fórmula é desenvolvida para penetrar profundamente nas camadas da pele, proporcionando hidratação intensa sem obstruir os poros."
   },
   {
-    question: "Esse suco verde é vegano?",
-    answer: "Alguns sucos verdes em pó são formulados sem ingredientes de origem animal, o que os torna adequados para quem segue uma alimentação vegana. O Greemy se encaixa nessa categoria: é um suco verde funcional sem ingredientes de origem animal, além de ser livre de glúten, lactose e açúcar, atendendo bem a diferentes estilos alimentares. Em caso de dúvida, você pode conferir a lista completa de ingredientes no rótulo ou na página oficial do produto antes de consumir."
+    question: "O Óleo de Avocado Ozonizado é 100% natural?",
+    answer: "Sim, nosso óleo é 100% natural, extraído do abacate e enriquecido com ozônio através de processo tecnológico controlado. Não contém parabenos, sulfatos, fragrâncias artificiais ou ingredientes sintéticos nocivos. É uma opção segura e eficaz para quem busca cuidados naturais com a pele."
   },
   {
-    question: "Existem contraindicações ou cuidados para consumir esse suco verde?",
-    answer: "Mesmo sendo um produto de perfil natural e com foco em fibras e superfoods, é importante respeitar as orientações de uso. De forma geral, sucos verdes funcionais são indicados para adultos e não devem ser consumidos em excesso além da porção recomendada. O Greemy, seguindo as advertências padrão de suplementos, não é indicado para gestantes, lactantes e crianças, e pessoas com condições de saúde específicas ou que usem medicação contínua devem consultar um profissional de saúde antes de incluir o produto na rotina."
+    question: "Existem contraindicações?",
+    answer: "O produto é seguro para uso tópico e adequado para todos os tipos de pele. No entanto, gestantes, lactantes e pessoas com condições dermatológicas específicas devem consultar um médico antes de usar. Recomenda-se fazer um teste de sensibilidade aplicando uma pequena quantidade no antebraço antes do primeiro uso."
   },
   {
-    question: "Posso tomar esse suco verde todos os dias? Posso usar junto com outros suplementos?",
-    answer: "A ideia desse tipo de suco verde funcional é justamente entrar na rotina diária como um aliado constante da digestão e do bem-estar intestinal. Consumir 1 sachê por dia, dentro da dose indicada, costuma ser a forma mais usada e segura para adultos saudáveis. O Greemy foi pensado para uso diário, mas sempre respeitando a recomendação de consumo da embalagem. Ele pode ser associado a outros suplementos de rotina, como multivitamínicos ou colágenos, desde que você não ultrapasse as doses máximas recomendadas de cada produto e, em caso de dúvida, converse com seu médico ou nutricionista."
+    question: "Posso usar o óleo todos os dias?",
+    answer: "Sim, o Óleo de Avocado Ozonizado foi desenvolvido para uso diário. A aplicação regular é recomendada para obter os melhores resultados de hidratação, regeneração e proteção da pele. Pode ser incorporado à sua rotina de skincare matinal e noturna sem problemas."
   },
   {
-    question: "Por que a caixa vem com 21 sachês e não 30?",
-    answer: "A quantidade de sachês por caixa é definida de acordo com a proposta de uso e com a estratégia da marca. No caso do Greemy, a caixa com 21 sachês foi pensada para encaixar em dois modos de uso: você pode fazer um ciclo completo de 21 dias consecutivos para regular a digestão e o intestino, ou usar os sachês de forma estratégica ao longo do mês, nos dias em que sente mais inchaço ou desconforto. Assim, o produto se adapta melhor ao seu ritmo de vida sem obrigar um padrão único de consumo."
+    question: "O produto é aprovado por dermatologistas?",
+    answer: "Sim, nosso Óleo de Avocado Ozonizado é recomendado por dermatologistas e profissionais de saúde da pele. A fórmula combina ciência e natureza, oferecendo benefícios comprovados para diversos tipos de pele e necessidades dermatológicas."
   },
   {
-    question: "Esse suco verde substitui uma refeição ou precisa ser usado junto com alimentação saudável?",
-    answer: "Suco verde funcional não deve ser tratado como substituto de refeição completa. Ele foi feito para complementar sua rotina, trazendo fibras e ingredientes funcionais, mas não substitui o conjunto de nutrientes que você obtém de um prato equilibrado com proteínas, carboidratos de boa qualidade e gorduras saudáveis. O Greemy foi desenvolvido para ser um aliado da sua alimentação: ele ajuda a melhorar a digestão e o conforto intestinal, mas os melhores resultados aparecem quando você também mantém refeições equilibradas, boa hidratação e um estilo de vida saudável."
+    question: "Qual o tamanho do frasco e quanto tempo dura?",
+    answer: "O frasco contém 30ml de produto puro e concentrado. Com o uso diário recomendado de 2 a 3 gotas por aplicação, um frasco dura aproximadamente 30 dias, proporcionando um tratamento completo e eficaz para sua pele."
   }
 ];
 
@@ -57,10 +57,10 @@ export default function GreemyFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-green-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
             FAQ
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -76,17 +76,17 @@ export default function GreemyFAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl shadow-md border border-green-100 overflow-hidden"
+              className="bg-white rounded-2xl shadow-md border border-teal-100 overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-green-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-teal-50 transition-colors"
               >
                 <span className="font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-green-600 flex-shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-teal-600 flex-shrink-0 transition-transform ${
                     openIndex === idx ? 'rotate-180' : ''
                   }`}
                 />
