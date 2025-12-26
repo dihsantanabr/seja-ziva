@@ -96,15 +96,7 @@ export default function GreemyStories() {
   };
 
   const getCheckoutLink = () => {
-    const checkoutMap = {
-      '1 Óleo': {
-        '30ml': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39'
-      },
-      '3 Óleos': {
-        '30ml': 'https://checkout.payt.com.br/cad3fbe52f17ce161d687847c744ea9d?src=aquisicao&coupon=GREEMY57'
-      }
-    };
-    return checkoutMap[selectedSize]?.[selectedFlavor] || checkoutMap['1 Óleo']['30ml'];
+    return 'https://www.avozon.com.br/collections/oleo-ozonizado-1/products/oleo-de-avocado-ozonizado-30ml-1';
   };
 
   const handleBuyClick = () => {
@@ -316,8 +308,8 @@ export default function GreemyStories() {
                       <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
                       <div className="grid grid-cols-2 gap-3">
                         {[
-                          { name: '1 Óleo', duration: 'Dura 30 Dias' },
-                          { name: '3 Óleos', duration: 'Dura 90 Dias', badge: '+ Vendido' }
+                          { name: '1 Unidade', duration: 'Dura 30 Dias' },
+                          { name: '3 Unidades', duration: 'Dura 90 Dias', badge: '+ Vendido' }
                         ].map((size) => (
                           <button
                             key={size.name}
