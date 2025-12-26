@@ -82,24 +82,6 @@ export default function GreemyTestimonials() {
           ))}
         </div>
 
-        {/* Video Testimonial */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="bg-white rounded-3xl p-4 lg:p-6 shadow-xl border border-teal-100">
-            <video
-              src="https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
-              controls
-              playsInline
-              className="w-full rounded-2xl"
-              poster="https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4#t=0.1"
-            />
-          </div>
-        </motion.div>
-
         {/* Testimonials */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6">
           {testimonials.map((testimonial, idx) => (
