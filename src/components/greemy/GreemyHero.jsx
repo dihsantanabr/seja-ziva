@@ -178,6 +178,14 @@ export default function GreemyHero() {
                 <Zap className="w-3.5 h-3.5 mr-1.5" />
                 Rápida Absorção
               </Badge>
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
+                <Heart className="w-3.5 h-3.5 mr-1.5" />
+                Cruelty Free
+              </Badge>
+              <Badge variant="outline" className="border-teal-600 text-teal-600 px-3 py-1.5">
+                <Leaf className="w-3.5 h-3.5 mr-1.5" />
+                Vegano
+              </Badge>
             </div>
 
             {/* Price Box */}
