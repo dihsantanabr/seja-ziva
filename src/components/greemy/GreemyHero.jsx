@@ -18,6 +18,15 @@ export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
 
+  // Calculate dynamic reviews based on date (98 reviews per day)
+  const baseDate = new Date('2025-12-26');
+  const baseReviews = 1473;
+  const reviewsPerDay = 98;
+  const today = new Date();
+  const daysDiff = Math.floor((today - baseDate) / (1000 * 60 * 60 * 24));
+  const currentReviews = baseReviews + (daysDiff * reviewsPerDay);
+  const formattedReviews = currentReviews.toLocaleString('pt-BR');
+
   // Auto-advance images every 1 second
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -92,7 +101,7 @@ export default function GreemyHero() {
                     <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <span className="text-xs text-gray-500">(4.284)</span>
+                <span className="text-xs text-gray-500">({formattedReviews})</span>
               </div>
             </div>
 
@@ -150,7 +159,7 @@ export default function GreemyHero() {
               </div>
               <span className="font-semibold text-gray-900 text-sm lg:text-base">4.9</span>
               <span className="text-gray-500 hidden lg:inline">•</span>
-              <span className="text-gray-600 text-sm lg:text-base">1.473 avaliações</span>
+              <span className="text-gray-600 text-sm lg:text-base">{formattedReviews} avaliações</span>
             </div>
 
             {/* Trust Badges */}
