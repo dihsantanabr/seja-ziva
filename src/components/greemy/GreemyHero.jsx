@@ -238,6 +238,11 @@ export default function GreemyHero() {
                     <div className={`text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
                       {size === '1 Óleo' ? 'Duração: 30 Dias' : 'Duração: 90 Dias'}
                     </div>
+                    {size === '3 Óleos' && (
+                      <div className={`text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-teal-600'}`}>
+                        11% OFF
+                      </div>
+                    )}
                   </button>
                 ))}
               </div>
