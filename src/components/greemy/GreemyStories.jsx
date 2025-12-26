@@ -309,7 +309,7 @@ export default function GreemyStories() {
                       <div className="grid grid-cols-2 gap-3">
                         {[
                           { name: '1 Unidade', duration: 'Tratamento: 30 Dias' },
-                          { name: '3 Unidades', duration: 'Tratamento: 90 Dias', badge: '+ Vendido' }
+                          { name: '3 Unidades', duration: 'Tratamento: 90 Dias', showBadge: true }
                         ].map((size) => (
                           <button
                             key={size.name}
@@ -319,14 +319,14 @@ export default function GreemyStories() {
                             }}
                             className={`relative px-4 py-4 rounded-lg border-2 font-medium transition-all text-center ${
                               selectedSize === size.name
-                                ? 'border-green-600 bg-green-600 text-white'
+                                ? 'border-teal-600 bg-gradient-to-r from-teal-600 to-emerald-600 text-white'
                                 : 'border-gray-200 text-gray-700'
                             }`}
                           >
-                            {size.badge && (
+                            {size.showBadge && (
                               <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                                <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
-                                  {size.badge}
+                                <span className="bg-orange-200 text-orange-800 text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                                  Mais Vendido
                                 </span>
                               </div>
                             )}
@@ -334,6 +334,11 @@ export default function GreemyStories() {
                             <div className={`text-xs ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
                               {size.duration}
                             </div>
+                            {size.showBadge && (
+                              <div className={`text-xs font-bold mt-1 ${selectedSize === size.name ? 'text-white' : 'text-teal-600'}`}>
+                                11% OFF
+                              </div>
+                            )}
                           </button>
                         ))}
                       </div>
