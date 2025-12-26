@@ -11,13 +11,12 @@ export const useGreemy = () => {
 };
 
 export const GreemyProvider = ({ children }) => {
-  const [selectedSize, setSelectedSize] = useState('1 Unidade');
+  const [selectedSize, setSelectedSize] = useState('1 Óleo');
   const [selectedFlavor, setSelectedFlavor] = useState('30ml');
 
   const prices = {
-    '1 Unidade': { original: 69.00, current: 69.00, discount: 0 },
-    '2 Unidades': { original: 138.00, current: 138.00, discount: 0 },
-    '3 Unidades': { original: 207.00, current: 207.00, discount: 0 }
+    '1 Óleo': { original: 69.00, current: 69.00, discount: 0 },
+    '3 Óleos': { original: 207.00, current: 207.00, discount: 0 }
   };
 
   return (

@@ -36,9 +36,8 @@ export default function GreemyHero() {
   }, []);
 
   const pricesWithExtras = {
-    '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
-    '2 Unidades': { ...prices['2 Unidades'], badge: '60ml total', duration: '2 frascos' },
-    '3 Unidades': { ...prices['3 Unidades'], badge: '90ml total', duration: '3 frascos' }
+    '1 Óleo': { ...prices['1 Óleo'], badge: '30ml', duration: '1 frasco' },
+    '3 Óleos': { ...prices['3 Óleos'], badge: '90ml total', duration: '3 frascos' }
   };
 
   // Calculate delivery dates

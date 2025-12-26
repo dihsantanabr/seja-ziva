@@ -118,23 +118,14 @@ export default function GreemyStories() {
 
   const getCheckoutLink = () => {
     const checkoutMap = {
-      '1 Caixa': {
-        'Laranja': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39',
-        'Limão Siciliano': 'https://checkout.payt.com.br/a98c9dca642830499f63e8749f01f7ec?src=aquisicao&coupon=GREEMY39',
-        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39'
+      '1 Óleo': {
+        '30ml': 'https://checkout.payt.com.br/ee91bf192ee17c186a710bcec716322e/?src=aquisicao&coupon=GREEMY39'
       },
-      '2 Caixas': {
-        'Laranja': 'https://checkout.payt.com.br/528b0bef28f9ed531353075bfc211b7d/?src=aquisicao&coupon=GREEMY52',
-        'Limão Siciliano': 'https://checkout.payt.com.br/0f04a6e502e38d0ffcac166f92421aeb?src=aquisicao&coupon=GREEMY52',
-        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/37eae21c9cd4e4a1a578ae95a4efa48f?src=aquisicao&coupon=GREEMY52'
-      },
-      '3 Caixas + 1 Grátis': {
-        'Laranja': 'https://checkout.payt.com.br/cad3fbe52f17ce161d687847c744ea9d?src=aquisicao&coupon=GREEMY57',
-        'Limão Siciliano': 'https://checkout.payt.com.br/537982529d72bb012d61180f0351f4da?src=aquisicao&coupon=GREEMY57',
-        'Mix (Limão + Laranja)': 'https://checkout.payt.com.br/9f085256f8dcc84f8b32ad555c7673e6?src=aquisicao&coupon=GREEMY57'
+      '3 Óleos': {
+        '30ml': 'https://checkout.payt.com.br/cad3fbe52f17ce161d687847c744ea9d?src=aquisicao&coupon=GREEMY57'
       }
     };
-    return checkoutMap[selectedSize]?.[selectedFlavor] || checkoutMap['1 Caixa']['Laranja'];
+    return checkoutMap[selectedSize]?.[selectedFlavor] || checkoutMap['1 Óleo']['30ml'];
   };
 
   const handleBuyClick = () => {
@@ -339,87 +330,44 @@ export default function GreemyStories() {
                       <X className="w-5 h-5" />
                     </button>
 
-                    {/* Flavor Selection */}
-                    <div>
-                      <p className="text-xs font-semibold text-gray-700 mb-2">Escolha o sabor:</p>
-                      <div className="grid grid-cols-3 gap-2">
-                        {[
-                          { name: 'Limão Siciliano', icon: '🍋' },
-                          { name: 'Laranja', icon: '🍊' },
-                          { name: 'Mix (Limão + Laranja)', icon: '🍋🍊' }
-                        ].map((flavor) => (
-                          <button
-                            key={flavor.name}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedFlavor(flavor.name);
-                              if (flavor.name === 'Mix (Limão + Laranja)' && selectedSize === '1 Caixa') {
-                                setSelectedSize('2 Caixas');
-                              }
-                            }}
-                            className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center text-xs ${
-                              selectedFlavor === flavor.name
-                                ? 'border-green-600 bg-green-600 text-white'
-                                : 'border-gray-200 text-gray-700'
-                            }`}
-                          >
-                            {flavor.name === 'Mix (Limão + Laranja)' && (
-                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
-                                <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
-                                  + Vendido
-                                </span>
-                              </div>
-                            )}
-                            <div className="text-lg mb-0.5">{flavor.icon}</div>
-                            <div className="text-[10px] leading-tight">{flavor.name}</div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+
 
                     {/* Size Selection */}
                     <div>
                       <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         {[
-                          { name: '1 Caixa', duration: 'Duração 30 dias', discount: '26% OFF' },
-                          { name: '2 Caixas', duration: 'Duração 60 dias', discount: '41% OFF', badge: '+ Vendido' },
-                          { name: '3 Caixas + 1 Grátis', duration: 'Duração 120 dias', discount: '52% OFF' }
-                        ].map((size) => {
-                          const isDisabled = size.name === '1 Caixa' && selectedFlavor === 'Mix (Limão + Laranja)';
-                          return (
-                            <button
-                              key={size.name}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                if (!isDisabled) setSelectedSize(size.name);
-                              }}
-                              disabled={isDisabled}
-                              className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center ${
-                                isDisabled 
-                                  ? 'border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed'
-                                  : selectedSize === size.name
-                                  ? 'border-green-600 bg-green-600 text-white'
-                                  : 'border-gray-200 text-gray-700'
-                              }`}
-                            >
-                              {size.badge && (
-                                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
-                                  <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
-                                    {size.badge}
-                                  </span>
-                                </div>
-                              )}
-                              <div className="text-[11px] font-bold leading-tight">{size.name}</div>
-                              <div className={`text-[9px] mt-0.5 ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
-                                {size.duration}
+                          { name: '1 Óleo', duration: '1 frasco de 30ml', price: 'R$ 69,00' },
+                          { name: '3 Óleos', duration: '3 frascos de 30ml', price: 'R$ 207,00', badge: '+ Vendido' }
+                        ].map((size) => (
+                          <button
+                            key={size.name}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedSize(size.name);
+                            }}
+                            className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center ${
+                              selectedSize === size.name
+                                ? 'border-green-600 bg-green-600 text-white'
+                                : 'border-gray-200 text-gray-700'
+                            }`}
+                          >
+                            {size.badge && (
+                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
+                                <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                                  {size.badge}
+                                </span>
                               </div>
-                              <div className={`text-[9px] ${selectedSize === size.name ? 'text-white/90' : 'text-green-600'}`}>
-                                {size.discount}
-                              </div>
-                            </button>
-                          );
-                        })}
+                            )}
+                            <div className="text-[11px] font-bold leading-tight">{size.name}</div>
+                            <div className={`text-[9px] mt-0.5 ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
+                              {size.duration}
+                            </div>
+                            <div className={`text-[9px] font-bold ${selectedSize === size.name ? 'text-white/90' : 'text-green-600'}`}>
+                              {size.price}
+                            </div>
+                          </button>
+                        ))}
                       </div>
                     </div>
 
