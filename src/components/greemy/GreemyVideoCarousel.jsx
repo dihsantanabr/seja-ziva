@@ -44,9 +44,9 @@ export default function GreemyVideoCarousel() {
   const videoRefs = useRef([]);
 
   useEffect(() => {
-    // Pause other videos when switching
-    videoRefs.current.forEach((video, index) => {
-      if (video && index !== currentIndex) {
+    // Pause all videos when switching
+    videoRefs.current.forEach((video) => {
+      if (video) {
         video.pause();
         video.currentTime = 0;
       }
