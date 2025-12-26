@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Award, Truck, RefreshCw } from 'lucide-react';
+import { Stethoscope, Truck, ThumbsUp, Leaf } from 'lucide-react';
 
 const guarantees = [
   {
-    icon: Shield,
-    title: "Garantia de 30 dias",
-    description: "Devolução total se não ficar satisfeita"
+    icon: Stethoscope,
+    title: "Recomendado por Médicos",
+    description: "Aprovado por profissionais de saúde"
   },
   {
     icon: Truck,
@@ -14,14 +14,14 @@ const guarantees = [
     description: "Para todo Brasil acima de R$ 200"
   },
   {
-    icon: Award,
-    title: "100% Natural",
-    description: "Óleo puro de avocado ozonizado"
+    icon: ThumbsUp,
+    title: "+ de 98% dos Clientes Recomendam",
+    description: "Satisfação comprovada"
   },
   {
-    icon: RefreshCw,
-    title: "Troca Fácil",
-    description: "Processo simples e rápido"
+    icon: Leaf,
+    title: "100% Natural",
+    description: "Óleo puro de avocado ozonizado"
   }
 ];
 
