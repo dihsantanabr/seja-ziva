@@ -261,8 +261,8 @@ export default function GreemyHero() {
               
               {/* Unit Price Box - Only for 3 Units */}
               {selectedSize === '3 Unidades' && (
-                <div className="mt-4 bg-teal-50 border border-teal-200 rounded-xl p-4 text-center">
-                  <p className="text-teal-800 font-semibold">
+                <div className="mt-3 bg-teal-50 border border-teal-200 rounded-xl p-3 text-center">
+                  <p className="text-teal-800 font-semibold text-sm">
                     Cada Unidade sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
