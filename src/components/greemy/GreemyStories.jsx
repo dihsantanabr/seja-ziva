@@ -335,10 +335,10 @@ export default function GreemyStories() {
                     {/* Size Selection */}
                     <div>
                       <p className="text-xs font-semibold text-gray-700 mb-2">Escolha a quantidade:</p>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-2 gap-3">
                         {[
-                          { name: '1 Óleo', duration: '1 frasco de 30ml', price: 'R$ 69,00' },
-                          { name: '3 Óleos', duration: '3 frascos de 30ml', price: 'R$ 207,00', badge: '+ Vendido' }
+                          { name: '1 Óleo', duration: 'Dura 30 Dias' },
+                          { name: '3 Óleos', duration: 'Dura 90 Dias', badge: '+ Vendido' }
                         ].map((size) => (
                           <button
                             key={size.name}
@@ -346,25 +346,22 @@ export default function GreemyStories() {
                               e.stopPropagation();
                               setSelectedSize(size.name);
                             }}
-                            className={`relative px-2 py-2 rounded-lg border-2 font-medium transition-all text-center ${
+                            className={`relative px-4 py-4 rounded-lg border-2 font-medium transition-all text-center ${
                               selectedSize === size.name
                                 ? 'border-green-600 bg-green-600 text-white'
                                 : 'border-gray-200 text-gray-700'
                             }`}
                           >
                             {size.badge && (
-                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
-                                <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                              <div className="absolute -top-2 left-1/2 -translate-x-1/2">
+                                <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                                   {size.badge}
                                 </span>
                               </div>
                             )}
-                            <div className="text-[11px] font-bold leading-tight">{size.name}</div>
-                            <div className={`text-[9px] mt-0.5 ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
+                            <div className="text-sm font-bold leading-tight mb-1">{size.name}</div>
+                            <div className={`text-xs ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
                               {size.duration}
-                            </div>
-                            <div className={`text-[9px] font-bold ${selectedSize === size.name ? 'text-white/90' : 'text-green-600'}`}>
-                              {size.price}
                             </div>
                           </button>
                         ))}
