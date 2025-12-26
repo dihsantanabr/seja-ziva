@@ -282,10 +282,7 @@ export default function GreemyHero() {
                 <Package className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-teal-900">
-                    Frete fixo R$5,99 para todo Brasil
-                  </p>
-                  <p className="text-sm text-teal-700 mt-1">
-                    Chegará entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
+                    Você receberá seu pedido entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                   </p>
                 </div>
               </div>
