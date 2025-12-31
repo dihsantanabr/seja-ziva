@@ -81,7 +81,8 @@ export default function GrupoVIP() {
               'Quer começar janeiro com mais cuidado e menos exagero',
               'Busca rotinas simples e possíveis',
               'Quer se sentir melhor no dia a dia',
-              'Não quer mais promessas irreais'
+              'Não quer mais promessas irreais',
+              'Deseja fazer parte de uma comunidade de cuidado'
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-3 p-4 bg-teal-50 rounded-xl">
                 <Check className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
