@@ -26,8 +26,13 @@ export default function GrupoVIP() {
       {/* Hero Section */}
       <section className="pt-16 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-6 px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">
-            Acesso Gratuito
+          <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
+            <div className="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">
+              Acesso Gratuito
+            </div>
+            <div className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-bold animate-pulse">
+              🔥 +247 pessoas entraram hoje
+            </div>
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -60,10 +65,11 @@ export default function GrupoVIP() {
             <Button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-14 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg"
+              className="w-full h-14 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              {isSubmitting ? 'Aguarde...' : 'Entrar no Grupo Gratuito'}
+              {isSubmitting ? 'Aguarde...' : '✨ Garantir Minha Vaga Gratuita'}
             </Button>
+            <p className="text-xs text-gray-500 text-center">✓ Sem compromisso • ✓ Cancele quando quiser</p>
           </form>
         </div>
       </section>
@@ -183,12 +189,18 @@ export default function GrupoVIP() {
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              'Finalmente um grupo que não fica empurrando oferta.',
-              'As rotinas são simples e fazem sentido.',
-              'Me ajudou a começar o ano com mais calma.'
-            ].map((quote, idx) => (
+              { quote: 'Finalmente um grupo que não fica empurrando oferta.', name: 'Ana M.' },
+              { quote: 'As rotinas são simples e fazem sentido.', name: 'Carla S.' },
+              { quote: 'Me ajudou a começar o ano com mais calma.', name: 'Juliana R.' }
+            ].map((item, idx) => (
               <div key={idx} className="bg-teal-50 p-6 rounded-2xl">
-                <p className="text-gray-700 italic">"{quote}"</p>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold">
+                    {item.name[0]}
+                  </div>
+                  <span className="font-semibold text-gray-900">{item.name}</span>
+                </div>
+                <p className="text-gray-700 italic">"{item.quote}"</p>
               </div>
             ))}
           </div>
@@ -198,9 +210,14 @@ export default function GrupoVIP() {
       {/* CTA Final */}
       <section className="py-16 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            As vagas são limitadas para manter o grupo organizado
-          </h2>
+          <div className="mb-6">
+            <div className="inline-block px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-4">
+              ⏰ Últimas vagas disponíveis
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+              As vagas são limitadas para manter o grupo organizado
+            </h2>
+          </div>
           
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 bg-white p-8 rounded-2xl shadow-xl">
             <Input
@@ -222,10 +239,11 @@ export default function GrupoVIP() {
             <Button 
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-14 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg"
+              className="w-full h-14 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              {isSubmitting ? 'Aguarde...' : 'Quero Entrar no Grupo Agora'}
+              {isSubmitting ? 'Aguarde...' : '🎁 Sim, Quero Entrar Agora'}
             </Button>
+            <p className="text-xs text-gray-500 text-center">✓ Acesso imediato • ✓ 100% gratuito</p>
           </form>
         </div>
       </section>
