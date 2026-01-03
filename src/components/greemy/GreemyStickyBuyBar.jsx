@@ -17,6 +17,17 @@ export default function GreemyStickyBuyBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const getCheckoutLink = () => {
+    if (selectedSize === '3 Unidades') {
+      return 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
+    }
+    return 'https://seguro.avozon.com.br/r/O0QFN501RQ';
+  };
+
+  const handleBuyClick = () => {
+    window.location.href = getCheckoutLink();
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -49,7 +60,10 @@ export default function GreemyStickyBuyBar() {
                   </span>
                 </div>
               </div>
-              <Button className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold px-6 py-5 shadow-lg active:scale-95 touch-manipulation">
+              <Button 
+                onClick={handleBuyClick}
+                className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold px-6 py-5 shadow-lg active:scale-95 touch-manipulation"
+              >
                 <ShoppingCart className="w-4 h-4 mr-2" />
                 Comprar
               </Button>
