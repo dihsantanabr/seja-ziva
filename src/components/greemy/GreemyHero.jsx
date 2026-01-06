@@ -7,10 +7,10 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/0f6a2443d_CopiadeAvozon2023MidiasSociais-11.jpg",
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/6ad7a84c7_CopiadeAvozon2023MidiasSociais-21.jpg",
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/03629e989_CopiadeAvozon2023MidiasSociais-26.jpg",
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/694ea9ab35ba4900f99f354a/aba70a3e1_CopiadeAvozon2023MidiasSociais-10.jpg"
+  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-3.webp",
+  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-16.webp",
+  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-18.webp",
+  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-6.webp"
 ];
 
 export default function GreemyHero() {
@@ -102,7 +102,7 @@ export default function GreemyHero() {
 
             {/* Mobile Title */}
             <h1 className="lg:hidden text-lg font-bold text-gray-900 text-center">
-              Óleo de Avocado <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Ozonizado 30ml</span>
+              Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">+ Ácido Hialurônico</span>
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg group">
@@ -111,7 +111,7 @@ export default function GreemyHero() {
               </Badge>
               <img
                 src={productImages[selectedImage]}
-                alt="Óleo de Avocado Ozonizado"
+                alt="Colágeno Verisol® + Ácido Hialurônico"
                 className="w-full h-full object-cover"
               />
 
@@ -151,11 +151,11 @@ export default function GreemyHero() {
                 Cuidado Natural da Pele
               </p>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Óleo de Avocado
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Ozonizado 30ml</span>
+                Colágeno Verisol®
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">+ Ácido Hialurônico</span>
               </h1>
               <p className="mt-2 text-base lg:text-lg text-gray-600">
-                Hidratação intensa com toque sedoso. Rico em vitaminas e antioxidantes, promove pele saudável, nutrida e com vitalidade natural.
+                Beleza que começa de dentro. Reduz rugas, aumenta firmeza e hidrata profundamente sua pele em até 4 semanas.
               </p>
             </div>
 
