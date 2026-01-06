@@ -53,7 +53,7 @@ export default function GreemyHero() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-teal-50 to-white">
+    <section className="bg-white">
       {/* Announcement Bar */}
       <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
