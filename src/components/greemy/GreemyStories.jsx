@@ -278,7 +278,7 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     setShowPurchaseModal(true);
                   }}
-                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 rounded-b-2xl shadow-lg"
+                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 rounded-b-3xl shadow-lg"
                 >
                   Comprar Agora
                 </motion.button>
@@ -291,7 +291,8 @@ export default function GreemyStories() {
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 100 }}
-                    className="absolute bottom-0 left-0 right-0 bg-white rounded-b-2xl p-4 space-y-3 shadow-2xl z-20"
+                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                    className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg rounded-3xl p-4 space-y-3 shadow-2xl z-20"
                     onClick={(e) => e.stopPropagation()}
                   >
                     {/* Close button for modal */}
