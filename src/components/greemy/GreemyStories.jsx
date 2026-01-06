@@ -323,7 +323,7 @@ export default function GreemyStories() {
                             }}
                             className={`relative px-4 py-4 rounded-lg border-2 font-medium transition-all text-center ${
                               selectedSize === size.name
-                                ? 'border-teal-600 bg-gradient-to-r from-teal-600 to-emerald-600 text-white'
+                                ? 'border-pink-600 bg-gradient-to-r from-pink-400 to-pink-600 text-white'
                                 : 'border-gray-200 text-gray-700'
                             }`}
                           >
@@ -339,7 +339,7 @@ export default function GreemyStories() {
                               {size.duration}
                             </div>
                             {size.showBadge && (
-                              <div className={`text-xs font-bold mt-1 ${selectedSize === size.name ? 'text-white' : 'text-teal-600'}`}>
+                              <div className={`text-xs font-bold mt-1 ${selectedSize === size.name ? 'text-white' : 'text-pink-600'}`}>
                                 11% OFF
                               </div>
                             )}
