@@ -354,7 +354,7 @@ export default function GreemyStories() {
                         e.stopPropagation();
                         handleBuyClick();
                       }}
-                      className="w-full bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold rounded-lg"
+                      className="w-full bg-gradient-to-r from-pink-400 to-pink-600 hover:from-pink-500 hover:to-pink-700 text-white font-semibold rounded-lg"
                     >
                       Comprar Agora
                     </Button>
