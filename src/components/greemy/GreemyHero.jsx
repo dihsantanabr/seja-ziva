@@ -7,10 +7,7 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
-  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-3.webp",
-  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-16.webp",
-  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-18.webp",
-  "https://www.renovabe.com.br/upload/produto/full/renova-be-col-geno-verisol-com-cido-hialur-nico-frutado-1-pote-cranberry-6.webp"
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/66b1713a7_br-11134207-7qukw-lfsqn9uymlmma5.jpeg"
 ];
 
 export default function GreemyHero() {
@@ -105,42 +102,15 @@ export default function GreemyHero() {
               Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">+ Ácido Hialurônico</span>
             </h1>
 
-            <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg group">
+            <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
               <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-teal-600 to-emerald-600 text-white">
                 Mais Vendido
               </Badge>
               <img
-                src={productImages[selectedImage]}
+                src={productImages[0]}
                 alt="Colágeno Verisol® + Ácido Hialurônico"
                 className="w-full h-full object-cover"
               />
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={() => setSelectedImage((prev) => prev === 0 ? productImages.length - 1 : prev - 1)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-800" />
-              </button>
-              <button
-                onClick={() => setSelectedImage((prev) => (prev + 1) % productImages.length)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-800" />
-              </button>
-            </div>
-            
-            {/* Progress Dots */}
-            <div className="flex gap-2 justify-center">
-              {productImages.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedImage(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    selectedImage === idx ? 'w-8 bg-teal-600' : 'w-2 bg-gray-300'
-                  }`}
-                />
-              ))}
             </div>
           </div>
 
