@@ -17,7 +17,7 @@ import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 
-export default function GreemyPage() {
+export default function Colageno() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
