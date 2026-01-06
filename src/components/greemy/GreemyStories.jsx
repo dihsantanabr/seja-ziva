@@ -7,59 +7,38 @@ import { Button } from "@/components/ui/button";
 const stories = [
     {
       id: 1,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4#t=0",
-      title: "Depoimento Real",
+      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-19.11.47.mp4#t=0",
+      title: "História 1",
       type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
+      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-19.11.47.mp4"
     },
     {
       id: 2,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4#t=0",
-      title: "Aplicação Correta",
+      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.16.mp4#t=0",
+      title: "História 2",
       type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
+      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.16.mp4"
     },
     {
       id: 3,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4#t=0",
-      title: "Transformação",
+      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.37.mp4_20251212T113522119Z#t=0",
+      title: "História 3",
       type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
+      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.37.mp4_20251212T113522119Z"
     },
     {
       id: 4,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov#t=0",
-      title: "Benefícios",
+      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.48.16.mp4_20251212T113556728Z#t=0",
+      title: "História 4",
       type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
+      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.48.16.mp4_20251212T113556728Z"
     },
     {
       id: 5,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/60b9f5c988dd42728c0dad47567c7a08.mp4#t=0",
-      title: "Hidratação Profunda",
+      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.46.04.mp4_20251212T113652349Z#t=0",
+      title: "História 5",
       type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/60b9f5c988dd42728c0dad47567c7a08.mp4"
-    },
-    {
-      id: 6,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/82446e001a2c41ec9d224c3b9b440b59.mp4#t=0",
-      title: "Resultados Visíveis",
-      type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/82446e001a2c41ec9d224c3b9b440b59.mp4"
-    },
-    {
-      id: 7,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/eea813e52745445a8305e669b9d9e2cf.mov#t=0",
-      title: "Pele Regenerada",
-      type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/eea813e52745445a8305e669b9d9e2cf.mov"
-    },
-    {
-      id: 8,
-      thumb: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4#t=0",
-      title: "Antes e Depois",
-      type: "video",
-      videoUrl: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4"
+      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.46.04.mp4_20251212T113652349Z"
     }
   ];
 
