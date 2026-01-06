@@ -108,7 +108,7 @@ export default function GreemyStories() {
   };
 
   const handleShare = () => {
-    const message = encodeURIComponent('Olha esse produto que conheci! www.oleoavozon.com.br');
+    const message = encodeURIComponent('Amiga, olha esse colágeno! Tem cupom desconto aqui: CUPOM');
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
 
@@ -278,7 +278,7 @@ export default function GreemyStories() {
                     e.stopPropagation();
                     setShowPurchaseModal(true);
                   }}
-                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-orange-300 to-orange-400 hover:from-orange-400 hover:to-orange-500 text-white font-bold py-3 rounded-b-2xl shadow-lg"
+                  className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 rounded-b-2xl shadow-lg"
                 >
                   Comprar Agora
                 </motion.button>
