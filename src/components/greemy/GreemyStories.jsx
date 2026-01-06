@@ -152,7 +152,7 @@ export default function GreemyStories() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center"
-            style={{ backgroundColor: '#f5e6e8' }}
+            style={{ backgroundColor: '#000000' }}
             onClick={closeStory}
           >
             {/* Progress bars */}
