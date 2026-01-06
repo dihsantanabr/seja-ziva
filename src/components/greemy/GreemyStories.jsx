@@ -108,7 +108,7 @@ export default function GreemyStories() {
   };
 
   const handleShare = () => {
-    const message = encodeURIComponent('Amiga, olha esse colágeno! Tem cupom desconto aqui: CUPOM');
+    const message = encodeURIComponent('Amiga, olha esse colágeno! Tem cupom desconto aqui: CUPOM https://www.renovabe.com.br/renova-be-colageno-1-pote.html?srsltid=AfmBOoqJS2lfaw-sb3O4hVxhOOIesRrRu84JHjfxbUz63csRmk2B-qXi');
     window.open(`https://wa.me/?text=${message}`, '_blank');
   };
 
