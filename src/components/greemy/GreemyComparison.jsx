@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
 const comparisons = [
-  { feature: "Óleo Ozonizado de Alta Concentração", greemy: true, regular: false, others: "Baixa" },
-  { feature: "100% Natural e Puro", greemy: true, regular: false, others: "Variável" },
+  { feature: "Colágeno Verisol® Patenteado", greemy: true, regular: false, others: "Genérico" },
+  { feature: "Ácido Hialurônico Combinado", greemy: true, regular: false, others: "Variável" },
+  { feature: "Reduz Rugas Comprovado", greemy: true, regular: "Limitado", others: "Parcial" },
+  { feature: "Aumenta Firmeza da Pele", greemy: true, regular: false, others: "Moderado" },
   { feature: "Hidratação Profunda", greemy: true, regular: "Superficial", others: "Moderada" },
-  { feature: "Ação Regeneradora e Cicatrizante", greemy: true, regular: false, others: "Limitada" },
-  { feature: "Rico em Ômega-9 e Vitamina E", greemy: true, regular: false, others: "Parcial" },
-  { feature: "Absorção Rápida Sem Oleosidade", greemy: true, regular: false, others: false },
-  { feature: "Anti-inflamatório Natural", greemy: true, regular: false, others: "Variável" },
-  { feature: "Combate Radicais Livres", greemy: true, regular: "Parcial", others: "Parcial" },
-  { feature: "Seguro Para Peles Sensíveis", greemy: true, regular: false, others: "Variável" },
-  { feature: "Resultados Visíveis em Poucos Dias", greemy: true, regular: false, others: "Semanas" }
+  { feature: "Estimula Colágeno Natural", greemy: true, regular: false, others: "Limitado" },
+  { feature: "Peptídeos Bioativos", greemy: true, regular: false, others: "Variável" },
+  { feature: "Vitamina C Incluída", greemy: true, regular: false, others: "Parcial" },
+  { feature: "Resultados em 4 Semanas", greemy: true, regular: false, others: "8-12 Semanas" },
+  { feature: "Absorção Otimizada", greemy: true, regular: "Baixa", others: "Variável" }
 ];
 
 const ValueCell = ({ value }) => {
@@ -27,17 +27,17 @@ const ValueCell = ({ value }) => {
 
 export default function GreemyComparison() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
             Comparativo
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Por que escolher nosso Óleo Ozonizado?
+            Por que escolher nosso Colágeno Verisol®?
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Veja como nos destacamos dos óleos comuns
+            Veja como nos destacamos de outros colágenos
           </p>
         </div>
 
@@ -45,23 +45,23 @@ export default function GreemyComparison() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-teal-100"
+          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-pink-100"
         >
           <div className="lg:overflow-x-auto">
             <table className="w-full lg:min-w-[600px]">
               <thead>
-                <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
+                <tr className="bg-gradient-to-r from-pink-400 to-pink-500">
                   <th className="px-2 lg:px-6 py-2 lg:py-4 text-left text-white font-semibold text-[10px] lg:text-base">
                     Características
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Nosso Óleo
+                    Nosso Colágeno
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Óleo Regular
+                    Colágeno Comum
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Outros Óleos
+                    Outros Colágenos
                   </th>
                 </tr>
               </thead>
@@ -74,7 +74,7 @@ export default function GreemyComparison() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     className={`border-b border-gray-100 ${
-                      idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
+                      idx % 2 === 0 ? 'bg-pink-50/30' : 'bg-white'
                     }`}
                   >
                     <td className="px-2 lg:px-6 py-2 lg:py-4 font-medium text-gray-900 text-[10px] lg:text-base">
