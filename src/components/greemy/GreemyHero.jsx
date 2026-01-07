@@ -3,7 +3,7 @@ import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Pac
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from 'react-router-dom';
-import { createPageUrl } from './utils';
+import { createPageUrl } from '@/utils';
 import GreemyStories from './GreemyStories';
 import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
