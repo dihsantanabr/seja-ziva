@@ -4,48 +4,48 @@ import { ArrowRight } from 'lucide-react';
 
 const painMatches = [
   {
-    pain: "Pele Ressecada",
+    pain: "Rugas e Linhas",
+    solution: "Redução Visível",
+    ingredient: "Colágeno Verisol® com peptídeos bioativos que suavizam rugas",
+    color: "from-pink-100 to-rose-100",
+    border: "border-pink-200"
+  },
+  {
+    pain: "Perda de Firmeza",
+    solution: "Elasticidade Renovada",
+    ingredient: "Peptídeos que aumentam elasticidade e firmeza da pele",
+    color: "from-rose-100 to-pink-100",
+    border: "border-rose-200"
+  },
+  {
+    pain: "Falta de Hidratação",
     solution: "Hidratação Profunda",
-    ingredient: "Ômega-9 e vitamina E que nutrem e restauram a hidratação",
-    color: "from-teal-100 to-emerald-100",
-    border: "border-teal-200"
+    ingredient: "Ácido Hialurônico que retém água e hidrata intensamente",
+    color: "from-pink-50 to-pink-100",
+    border: "border-pink-200"
   },
   {
-    pain: "Cicatrizes e Marcas",
-    solution: "Regeneração Acelerada",
-    ingredient: "Ozônio que estimula a renovação celular e cicatrização",
-    color: "from-emerald-100 to-teal-100",
-    border: "border-emerald-200"
-  },
-  {
-    pain: "Irritações e Inflamações",
-    solution: "Alívio e Proteção",
-    ingredient: "Fitoesteróis com ação anti-inflamatória e calmante",
-    color: "from-teal-50 to-teal-100",
-    border: "border-teal-200"
-  },
-  {
-    pain: "Envelhecimento Precoce",
-    solution: "Rejuvenescimento Natural",
-    ingredient: "Antioxidantes e carotenoides que combatem radicais livres",
-    color: "from-emerald-50 to-emerald-100",
-    border: "border-emerald-200"
+    pain: "Colágeno Reduzido",
+    solution: "Estimulação Natural",
+    ingredient: "Vitamina C que estimula produção de colágeno endógeno",
+    color: "from-rose-50 to-rose-100",
+    border: "border-rose-200"
   }
 ];
 
 export default function GreemyPainMatch() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
             Soluções
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Transforme seus desafios em conquistas
+            Transforme seus desafios em beleza
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Cada problema de pele tem sua solução no Óleo Ozonizado
+            Cada preocupação tem sua solução no Colágeno Verisol®
           </p>
         </div>
 
@@ -53,13 +53,13 @@ export default function GreemyPainMatch() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-teal-100"
+          className="bg-white rounded-3xl shadow-xl overflow-hidden border border-pink-100"
         >
           {/* Desktop Table */}
           <div className="hidden lg:block overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
+                <tr className="bg-gradient-to-r from-pink-400 to-pink-500">
                   <th className="px-6 py-4 text-left text-white font-semibold">
                     ❌ Problema
                   </th>
@@ -80,13 +80,13 @@ export default function GreemyPainMatch() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     className={`border-b border-gray-100 ${
-                      idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
+                      idx % 2 === 0 ? 'bg-pink-50/30' : 'bg-white'
                     }`}
                   >
                     <td className="px-6 py-5 font-semibold text-gray-900">
                       {match.pain}
                     </td>
-                    <td className="px-6 py-5 font-semibold text-teal-700">
+                    <td className="px-6 py-5 font-semibold text-pink-600">
                       {match.solution}
                     </td>
                     <td className="px-6 py-5 text-gray-700">
@@ -102,7 +102,7 @@ export default function GreemyPainMatch() {
           <div className="lg:hidden">
             <table className="w-full table-fixed">
               <thead>
-                <tr className="bg-gradient-to-r from-teal-600 to-emerald-600">
+                <tr className="bg-gradient-to-r from-pink-400 to-pink-500">
                   <th className="w-[28%] px-2 py-3 text-left text-white font-semibold text-[10px] leading-tight">
                     ❌ Problema
                   </th>
@@ -123,13 +123,13 @@ export default function GreemyPainMatch() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     className={`border-b border-gray-100 ${
-                      idx % 2 === 0 ? 'bg-teal-50/30' : 'bg-white'
+                      idx % 2 === 0 ? 'bg-pink-50/30' : 'bg-white'
                     }`}
                   >
                     <td className="px-2 py-3 font-semibold text-gray-900 text-[10px] leading-tight">
                       {match.pain}
                     </td>
-                    <td className="px-2 py-3 font-semibold text-teal-700 text-[10px] leading-tight">
+                    <td className="px-2 py-3 font-semibold text-pink-600 text-[10px] leading-tight">
                       {match.solution}
                     </td>
                     <td className="px-2 py-3 text-gray-700 text-[10px] leading-tight">
