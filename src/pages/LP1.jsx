@@ -31,7 +31,7 @@ export default function LP1() {
         </div>
       )}
 
-      <GreemyHero />
+      <LPTextHero />
       <div id="para-quem-e">
         <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
       </div>
