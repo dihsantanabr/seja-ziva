@@ -31,6 +31,16 @@ const flavors = [
   { id: 'chocolate', name: 'Chocolate', emoji: '🍫', hasLactose: true, code: 'OY9KOFHD8D' }
 ];
 
+// Mapa de códigos para garantir consistência
+const FLAVOR_CODES = {
+  'cranberry': '6J3KDTF80E',
+  'tropical': 'GAA70WUDT7',
+  'limao': 'OY7JZG4UE9',
+  'pink-lemonade': 'Q7TJA8P8X6',
+  'tangerina': '4JF2A26WUQ',
+  'chocolate': 'OY9KOFHD8D'
+};
+
 export default function GreemyPurchaseSelector() {
   const { selectedSize, setSelectedSize, selectedFlavors, setSelectedFlavors, prices } = useGreemy();
   
@@ -83,14 +93,14 @@ export default function GreemyPurchaseSelector() {
       flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
     });
 
-    // Gerar a string de produtos no formato CODIGO:QUANTIDADE
+    // Gerar a string de produtos no formato CODIGO:QUANTIDADE usando o mapa de códigos
     const productParts = [];
     Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
-      const flavor = flavors.find(f => f.id === flavorId);
-      if (flavor && flavor.code) {
-        productParts.push(`${flavor.code}:${quantity}`);
+      const code = FLAVOR_CODES[flavorId];
+      if (code) {
+        productParts.push(`${code}:${quantity}`);
       } else {
-        console.error('Sabor não encontrado:', flavorId);
+        console.error('Código não encontrado para sabor:', flavorId);
       }
     });
 
@@ -104,18 +114,16 @@ export default function GreemyPurchaseSelector() {
     const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
     
-    console.log('=== DEBUG CHECKOUT ===');
+    console.log('=== DEBUG CHECKOUT SELECTOR ===');
     console.log('Tamanho selecionado:', selectedSize);
-    console.log('Sabores selecionados:', selectedFlavors);
+    console.log('Sabores selecionados (array):', selectedFlavors);
     console.log('Contagem de sabores:', flavorCounts);
     console.log('Códigos gerados:', productParts);
     console.log('URL final:', checkoutUrl);
-    console.log('====================');
+    console.log('==============================');
     
-    // Redirecionar
-    setTimeout(() => {
-      window.location.href = checkoutUrl;
-    }, 100);
+    // Redirecionar imediatamente
+    window.location.href = checkoutUrl;
   };
 
   return (
