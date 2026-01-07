@@ -70,12 +70,6 @@ export default function LinkBio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-pink-50">
-      {/* Logo/Brand */}
-      <div className="pt-6 sm:pt-8 pb-3 sm:pb-4 text-center px-4">
-        <h1 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
-          Dreams Nutrition
-        </h1>
-      </div>
 
       {/* SESSÃO 1: Captura de E-mail */}
       {!emailCaptured && (
@@ -214,9 +208,6 @@ export default function LinkBio() {
 
             {/* Brand */}
             <div className="text-center">
-              <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600 mb-2">
-                Dreams Nutrition
-              </p>
               <p className="text-sm text-gray-600">
                 Beleza que começa de dentro
               </p>
