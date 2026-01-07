@@ -149,7 +149,7 @@ export default function GreemyHero() {
             </div>
 
             {/* Mobile Title */}
-            <h1 className="lg:hidden text-lg font-bold text-gray-900 text-center">
+            <h1 className="lg:hidden text-base font-bold text-gray-900 text-center px-2">
               Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">+ Ácido Hialurônico</span>
             </h1>
 
@@ -169,14 +169,14 @@ export default function GreemyHero() {
           {/* Product Info */}
           <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-sm uppercase tracking-wider mb-2">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-xs lg:text-sm uppercase tracking-wider mb-2">
                 Cuidado Natural da Pele
               </p>
-              <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Colágeno Verisol®
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
               </h1>
-              <p className="mt-2 text-base lg:text-lg text-gray-600">
+              <p className="mt-2 text-sm lg:text-lg text-gray-600">
                 Beleza que começa de dentro. Reduz rugas, aumenta firmeza e hidrata profundamente sua pele em até 4 semanas.
               </p>
             </div>
@@ -195,61 +195,61 @@ export default function GreemyHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Star className="w-3.5 h-3.5 mr-1.5" />
-                Colágeno Verisol®
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Star className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Colágeno Verisol®</span>
               </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Sparkles className="w-3.5 h-3.5 mr-1.5" />
-                Ácido Hialurônico
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Sparkles className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Ácido Hialurônico</span>
               </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Heart className="w-3.5 h-3.5 mr-1.5" />
-                Reduz Rugas
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Heart className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Reduz Rugas</span>
               </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Zap className="w-3.5 h-3.5 mr-1.5" />
-                Aumenta Firmeza
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Zap className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Aumenta Firmeza</span>
               </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Shield className="w-3.5 h-3.5 mr-1.5" />
-                Hidrata Profundamente
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Shield className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Hidrata Profundamente</span>
               </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Leaf className="w-3.5 h-3.5 mr-1.5" />
-                Resultados em 4 Semanas
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Leaf className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Resultados em 4 Semanas</span>
               </Badge>
             </div>
 
             {/* Price Box */}
-            <div className="bg-white rounded-2xl p-4 lg:p-6 border border-gray-100">
+            <div className="bg-white rounded-2xl p-3 lg:p-6 border border-gray-100">
               {pricesWithExtras[selectedSize].discount > 0 && (
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-lg text-gray-400 line-through">
+                <div className="flex items-center gap-1.5 lg:gap-2 mb-2 flex-wrap">
+                  <span className="text-sm lg:text-lg text-gray-400 line-through">
                     R$ {pricesWithExtras[selectedSize].original.toFixed(2).replace('.', ',')}
                   </span>
-                  <Badge className="bg-pink-600 text-white">
+                  <Badge className="bg-pink-600 text-white text-xs whitespace-nowrap">
                     {pricesWithExtras[selectedSize].discount}% OFF
                   </Badge>
-                  <Badge className="bg-pink-600 text-white">
+                  <Badge className="bg-pink-600 text-white text-xs whitespace-nowrap">
                     Frete Grátis
                   </Badge>
                 </div>
               )}
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-gray-900">
+                <span className="text-2xl lg:text-4xl font-bold text-gray-900">
                   R$ {pricesWithExtras[selectedSize].current.toFixed(2).replace('.', ',')}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-xs lg:text-sm text-gray-600 mt-2">
                 ou 6x de R$ {(pricesWithExtras[selectedSize].current / 6).toFixed(2).replace('.', ',')} sem juros
               </p>
-              <div className="flex items-center gap-2 mt-3 text-green-800 bg-green-100 px-3 py-2 rounded-lg">
-                <div className="relative">
+              <div className="flex items-center gap-2 mt-3 text-green-800 bg-green-100 px-2 lg:px-3 py-2 rounded-lg">
+                <div className="relative flex-shrink-0">
                   <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
-                <span className="text-sm font-medium">
+                <span className="text-xs lg:text-sm font-medium">
                   {selectedSize === '1 Unidade' 
                     ? 'Receba de Volta 10% em Cashback'
                     : `Receba de Volta R$ ${(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback`
@@ -259,14 +259,14 @@ export default function GreemyHero() {
               </div>
 
               {/* Size Selection */}
-            <div>
-              <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
-              <div className="grid grid-cols-2 gap-4">
+              <div>
+              <p className="font-medium text-gray-700 mb-3 text-sm lg:text-base">Escolha a quantidade:</p>
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 {Object.keys(pricesWithExtras).map((size) => (
                   <button
                     key={size}
                     onClick={() => handleSizeChange(size)}
-                    className={`relative px-6 py-5 rounded-xl border-2 font-medium transition-all text-center ${
+                    className={`relative px-3 py-4 lg:px-6 lg:py-5 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
                         ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white'
                         : 'border-gray-200 text-gray-700 hover:border-pink-500'
@@ -294,8 +294,8 @@ export default function GreemyHero() {
               
               {/* Unit Price Box - Only for 3 Units */}
               {selectedSize === '3 Unidades' && (
-                <div className="mt-3 bg-green-100 border border-green-300 rounded-xl p-3 text-center">
-                  <p className="text-green-800 font-semibold text-sm">
+                <div className="mt-3 bg-green-100 border border-green-300 rounded-xl p-2 lg:p-3 text-center">
+                  <p className="text-green-800 font-semibold text-xs lg:text-sm">
                     Cada Unidade sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
@@ -305,10 +305,10 @@ export default function GreemyHero() {
             {/* Flavor Selection */}
             <div>
               <div className="flex items-center justify-between mb-3">
-                <p className="font-medium text-gray-700">
+                <p className="font-medium text-gray-700 text-sm lg:text-base">
                   {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
                 </p>
-                <span className="text-sm text-pink-600 font-medium">
+                <span className="text-xs lg:text-sm text-pink-600 font-medium whitespace-nowrap">
                   {selectedFlavors.length}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
                 </span>
               </div>
@@ -324,31 +324,31 @@ export default function GreemyHero() {
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
                       disabled={isDisabled}
-                      className={`relative p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
+                      className={`relative p-3 lg:p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
                           : isDisabled
                           ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
                           : 'border-gray-200 hover:border-pink-300 text-gray-700'
                       }`}
-                    >
+                      >
                       {count > 0 && (
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                        <div className="absolute -top-2 -right-2 w-5 h-5 lg:w-6 lg:h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold">
                           {count}
                         </div>
                       )}
                       {flavor.hasLactose && (
                         <div className="absolute -top-2 -left-2">
-                          <Badge className="bg-amber-600 text-white text-xs">Contém Lactose</Badge>
+                          <Badge className="bg-amber-600 text-white text-[9px] lg:text-xs whitespace-nowrap px-1 lg:px-2">Lactose</Badge>
                         </div>
                       )}
                       {flavor.mostChosen && (
                         <div className="absolute -top-2 -left-2">
-                          <Badge className="bg-green-600 text-white text-xs">+ Escolhido</Badge>
+                          <Badge className="bg-green-600 text-white text-[9px] lg:text-xs whitespace-nowrap px-1 lg:px-2">+ Escolhido</Badge>
                         </div>
                       )}
-                      <div className="text-3xl mb-2">{flavor.emoji}</div>
-                      <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
+                      <div className="text-2xl lg:text-3xl mb-1 lg:mb-2">{flavor.emoji}</div>
+                      <div className={`text-xs lg:text-sm font-semibold break-words ${count > 0 ? 'text-white' : ''}`}>
                         {flavor.name}
                       </div>
                     </button>
@@ -368,30 +368,30 @@ export default function GreemyHero() {
             <Button 
               onClick={handleBuyClick}
               disabled={selectedFlavors.length < maxFlavors}
-              className="w-full h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {selectedFlavors.length < maxFlavors
-                ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''} para continuar`
+                ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
                 : 'Comprar Agora'
               }
             </Button>
 
             {/* Delivery Estimate */}
-            <div className="bg-green-100 border border-green-300 rounded-xl p-4">
-              <div className="flex items-start gap-3">
-                <Package className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 flex-wrap">
+            <div className="bg-green-100 border border-green-300 rounded-xl p-3 lg:p-4">
+              <div className="flex items-start gap-2 lg:gap-3">
+                <Package className="w-4 h-4 lg:w-5 lg:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 lg:gap-2 flex-wrap">
                     <p className="font-semibold text-green-900 text-xs lg:text-base">
                       Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                     </p>
                     {selectedSize === '3 Unidades' && (
-                      <Badge className="bg-green-600 hover:bg-green-700 text-white">
+                      <Badge className="bg-green-600 hover:bg-green-700 text-white text-[10px] lg:text-xs whitespace-nowrap">
                         Receba + Rápido
                       </Badge>
                     )}
                   </div>
-                  <p className="text-sm text-green-700 mt-1">
+                  <p className="text-xs lg:text-sm text-green-700 mt-1">
                     Confirme o prazo final na próxima etapa.
                   </p>
                 </div>
@@ -399,38 +399,38 @@ export default function GreemyHero() {
             </div>
 
             {/* Trust Cards */}
-            <div className="grid grid-cols-3 gap-3">
-              <div className="bg-pink-100 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Zap className="w-5 h-5 text-pink-600" />
+            <div className="grid grid-cols-3 gap-2 lg:gap-3">
+              <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
+                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
+                  <Zap className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Transformação</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Transformação</p>
               </div>
-              <div className="bg-pink-100 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Flower2 className="w-5 h-5 text-pink-600" />
+              <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
+                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
+                  <Flower2 className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Estimula Colágeno</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Estimula Colágeno</p>
               </div>
-              <div className="bg-pink-100 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Wind className="w-5 h-5 text-pink-600" />
+              <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
+                <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
+                  <Wind className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-sm">Ação Calmante</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Ação Calmante</p>
               </div>
             </div>
 
             {/* Benefits List */}
-            <div className="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-3 pt-4 border-t border-gray-100">
               {[
                 'Anti Envelhecimento Natural',
                 'Manutenção de Manchas',
                 'Recomendado para Cuidados Íntimos',
                 'Controle de Caspas'
               ].map((benefit, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-pink-600" />
-                  {benefit}
+                <div key={idx} className="flex items-center gap-2 text-xs lg:text-sm text-gray-600">
+                  <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-pink-600 flex-shrink-0" />
+                  <span className="break-words">{benefit}</span>
                 </div>
               ))}
             </div>
