@@ -32,6 +32,13 @@ const stories = [
       title: "História 4",
       type: "video",
       videoUrl: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4"
+    },
+    {
+      id: 5,
+      thumb: "https://cdn.shopify.com/videos/c/vp/4dde27f93fec43fc832e51409e92d929/4dde27f93fec43fc832e51409e92d929.HD-720p-4.5Mbps-65676652.mp4#t=0",
+      title: "História 5",
+      type: "video",
+      videoUrl: "https://cdn.shopify.com/videos/c/vp/4dde27f93fec43fc832e51409e92d929/4dde27f93fec43fc832e51409e92d929.HD-720p-4.5Mbps-65676652.mp4"
     }
   ];
 
