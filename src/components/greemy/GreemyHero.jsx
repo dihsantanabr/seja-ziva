@@ -67,16 +67,27 @@ export default function GreemyHero() {
 
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
+    const totalSelected = selectedFlavors.length;
     
-    // Se já está selecionado e clicou novamente, remove um
-    if (count > 0) {
-      const indexToRemove = selectedFlavors.findIndex(f => f === flavorId);
-      const newFlavors = [...selectedFlavors];
-      newFlavors.splice(indexToRemove, 1);
-      setSelectedFlavors(newFlavors);
-    } else if (selectedFlavors.length < maxFlavors) {
-      // Se não está selecionado e tem espaço, adiciona
-      setSelectedFlavors([...selectedFlavors, flavorId]);
+    if (selectedSize === '1 Unidade') {
+      // Para 1 unidade: toggle simples
+      if (count > 0) {
+        setSelectedFlavors([]);
+      } else {
+        setSelectedFlavors([flavorId]);
+      }
+    } else {
+      // Para 3 unidades: permite adicionar múltiplos do mesmo sabor
+      if (totalSelected < maxFlavors) {
+        // Se tem espaço, adiciona mais um deste sabor
+        setSelectedFlavors([...selectedFlavors, flavorId]);
+      } else if (count > 0) {
+        // Se já está no limite total, mas este sabor está selecionado, remove um
+        const indexToRemove = selectedFlavors.findIndex(f => f === flavorId);
+        const newFlavors = [...selectedFlavors];
+        newFlavors.splice(indexToRemove, 1);
+        setSelectedFlavors(newFlavors);
+      }
     }
   };
 
@@ -334,7 +345,7 @@ export default function GreemyHero() {
               <p className="text-xs text-gray-500 mt-2 text-center">
                 {selectedSize === '1 Unidade' 
                   ? 'Clique no sabor desejado (clique novamente para desselecionar)'
-                  : 'Clique nos sabores (clique novamente no mesmo para desselecionar)'
+                  : 'Clique para adicionar sabores (pode escolher múltiplos do mesmo)'
                 }
               </p>
             </div>
