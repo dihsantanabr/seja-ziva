@@ -13,7 +13,7 @@ export default function GreemyFinalCTA() {
   };
 
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
+    <section className="py-12 lg:py-24 pb-32 lg:pb-24 bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
