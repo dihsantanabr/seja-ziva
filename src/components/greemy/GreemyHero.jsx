@@ -55,7 +55,7 @@ export default function GreemyHero() {
   return (
     <section className="bg-white">
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white py-2.5 overflow-hidden">
+      <div className="bg-gradient-to-r from-pink-400 to-pink-600 text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
@@ -65,11 +65,11 @@ export default function GreemyHero() {
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Leaf className="w-4 h-4" />
-                100% Natural Ozonizado
+                Colágeno Verisol® + Ácido Hialurônico
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Heart className="w-4 h-4" />
-                Hidratação intensa
+                Reduz rugas em até 4 semanas
               </span>
             </div>
           ))}
