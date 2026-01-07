@@ -150,7 +150,7 @@ export default function GreemyHero() {
 
             {/* Mobile Title */}
             <h1 className="lg:hidden text-base font-bold text-gray-900 text-center px-2">
-              Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">+ Ácido Hialurônico</span>
+              Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
