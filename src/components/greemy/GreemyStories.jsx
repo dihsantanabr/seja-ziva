@@ -129,7 +129,7 @@ export default function GreemyStories() {
                   <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 p-[2px]">
                     <div className="w-full h-full rounded-full bg-white p-[2px] overflow-hidden">
                       <video
-                        src={story.videoUrl}
+                        src={story.thumb}
                         className="w-full h-full rounded-full object-cover"
                         muted
                         playsInline
