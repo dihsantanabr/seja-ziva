@@ -4,52 +4,52 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "O que é o Óleo de Avocado Ozonizado e para que serve?",
-    answer: "O Óleo de Avocado Ozonizado é um produto natural derivado do abacate enriquecido com ozônio, que potencializa suas propriedades regeneradoras. Ele é rico em ácidos graxos essenciais, vitamina E e ômega-9, atuando na hidratação profunda, cicatrização, regeneração celular e proteção da pele contra o envelhecimento precoce. É ideal para tratar peles secas, sensíveis, cicatrizes, manchas e promover um aspecto saudável e radiante."
+    question: "O que é o Colágeno Verisol® + Ácido Hialurônico e para que serve?",
+    answer: "É um suplemento de beleza que combina Colágeno Verisol® (peptídeos bioativos patenteados) com Ácido Hialurônico. Essa fórmula atua de dentro para fora na redução de rugas, aumento da firmeza e hidratação profunda da pele. É ideal para quem busca prevenir e reverter sinais de envelhecimento, melhorando a aparência geral da pele em 4 semanas."
   },
   {
-    question: "Como o óleo ozonizado age na pele?",
-    answer: "O ozônio presente no óleo aumenta a oxigenação celular, estimula a produção de colágeno e elastina, e possui ação anti-inflamatória e antimicrobiana. Combinado com as propriedades nutritivas do óleo de avocado, ele penetra profundamente na pele, promovendo regeneração, cicatrização acelerada, redução de manchas e linhas finas, além de fortalecer a barreira cutânea natural."
+    question: "Como o Colágeno Verisol® age na pele?",
+    answer: "O Verisol® contém peptídeos bioativos específicos que estimulam a produção natural de colágeno, elastina e ácido hialurônico nas camadas profundas da pele. Isso melhora a estrutura cutânea, aumenta a firmeza, reduz rugas e linhas de expressão, além de hidratar profundamente. Estudos clínicos comprovam redução visível de rugas em até 4 semanas."
   },
   {
-    question: "Para quem o Óleo de Avocado Ozonizado é indicado?",
-    answer: "O produto é indicado para pessoas que buscam hidratação intensa, tratamento de cicatrizes (incluindo acne), manchas, rugas, pele seca ou sensível, e aquelas que desejam prevenir o envelhecimento precoce. É adequado para todos os tipos de pele, inclusive as mais sensíveis, e pode ser usado tanto no rosto quanto no corpo."
+    question: "Para quem o Colágeno Verisol® é indicado?",
+    answer: "Indicado para mulheres e homens a partir dos 25 anos que desejam prevenir ou tratar sinais de envelhecimento como rugas, perda de firmeza e hidratação. É especialmente eficaz para peles maduras, ressecadas ou que perderam elasticidade. Também beneficia cabelos e unhas, tornando-os mais fortes e saudáveis."
   },
   {
-    question: "Quais são os principais benefícios do Óleo de Avocado Ozonizado?",
-    answer: "Os principais benefícios incluem: hidratação profunda e duradoura, regeneração celular acelerada, ação cicatrizante e anti-inflamatória, redução de manchas e marcas, atenuação de rugas e linhas de expressão, proteção antioxidante contra radicais livres, melhora da elasticidade e firmeza da pele, absorção rápida sem deixar oleosidade excessiva, e adequação para peles sensíveis."
+    question: "Quais são os principais benefícios do Colágeno Verisol®?",
+    answer: "Reduz rugas e linhas de expressão em até 20% após 4 semanas; aumenta a firmeza e elasticidade da pele; promove hidratação profunda e duradoura; estimula a produção natural de colágeno; melhora a textura e o brilho da pele; fortalece cabelos e unhas; possui absorção otimizada de peptídeos bioativos; resultados cientificamente comprovados."
   },
   {
-    question: "Como devo usar o Óleo de Avocado Ozonizado?",
-    answer: "Aplique de 2 a 3 gotas do óleo na pele limpa e seca, massageando suavemente até completa absorção. Pode ser usado pela manhã e/ou à noite, no rosto e corpo. Para cicatrizes e manchas, aplique diretamente na área afetada com massagens circulares. O produto pode ser usado sozinho ou misturado ao seu hidratante habitual para potencializar os resultados."
+    question: "Como devo tomar o Colágeno Verisol®?",
+    answer: "Recomenda-se tomar 1 dose (10g) por dia, diluída em 200ml de água, suco ou bebida de sua preferência. Pode ser consumido em qualquer horário, preferencialmente pela manhã ou antes de dormir. Para melhores resultados, mantenha o uso contínuo por pelo menos 3 meses. Não precisa refrigeração após aberto."
   },
   {
     question: "Em quanto tempo posso ver resultados?",
-    answer: "Muitas pessoas percebem a pele mais hidratada e macia já nas primeiras aplicações. Para resultados mais profundos como redução de manchas, cicatrizes e rugas, recomenda-se uso contínuo por pelo menos 4 a 6 semanas. A constância é fundamental para obter os melhores benefícios regeneradores do óleo ozonizado."
+    answer: "Estudos clínicos mostram que os primeiros resultados aparecem em 4 semanas de uso contínuo, com redução visível de rugas e aumento da hidratação. A firmeza e elasticidade melhoram progressivamente, com resultados mais expressivos entre 8 e 12 semanas. A constância é fundamental para maximizar os benefícios."
   },
   {
-    question: "O óleo deixa a pele oleosa?",
-    answer: "Não. Apesar de ser um óleo, o produto possui textura leve e absorção rápida, não deixando a pele com aspecto oleoso ou pesado. A fórmula é desenvolvida para penetrar profundamente nas camadas da pele, proporcionando hidratação intensa sem obstruir os poros."
+    question: "O colágeno tem sabor ou deixa gosto ruim?",
+    answer: "Nosso Colágeno Verisol® é neutro e inodoro, dissolve-se facilmente em qualquer líquido sem alterar o sabor. Não deixa gosto residual desagradável e pode ser misturado a água, sucos, vitaminas, café ou chás sem interferir no paladar da bebida."
   },
   {
-    question: "O Óleo de Avocado Ozonizado é 100% natural?",
-    answer: "Sim, nosso óleo é 100% natural, extraído do abacate e enriquecido com ozônio através de processo tecnológico controlado. Não contém parabenos, sulfatos, fragrâncias artificiais ou ingredientes sintéticos nocivos. É uma opção segura e eficaz para quem busca cuidados naturais com a pele."
+    question: "É um produto natural e seguro?",
+    answer: "Sim, nosso colágeno é de origem bovina, hidrolisado (alta absorção), sem conservantes artificiais, glúten, lactose ou açúcar. O Verisol® é uma tecnologia patenteada e clinicamente testada, aprovada por dermatologistas e segura para consumo diário. Seguimos rigorosos padrões de qualidade e pureza."
   },
   {
     question: "Existem contraindicações?",
-    answer: "O produto é seguro para uso tópico e adequado para todos os tipos de pele. No entanto, gestantes, lactantes e pessoas com condições dermatológicas específicas devem consultar um médico antes de usar. Recomenda-se fazer um teste de sensibilidade aplicando uma pequena quantidade no antebraço antes do primeiro uso."
+    answer: "O produto é seguro para adultos saudáveis. Gestantes, lactantes, crianças e pessoas com condições médicas específicas ou alergias a proteínas bovinas devem consultar um médico antes de usar. Não exceda a dose diária recomendada. Não é um medicamento e não substitui alimentação equilibrada."
   },
   {
-    question: "Posso usar o óleo todos os dias?",
-    answer: "Sim, o Óleo de Avocado Ozonizado foi desenvolvido para uso diário. A aplicação regular é recomendada para obter os melhores resultados de hidratação, regeneração e proteção da pele. Pode ser incorporado à sua rotina de skincare matinal e noturna sem problemas."
+    question: "Posso tomar colágeno todos os dias?",
+    answer: "Sim, o Colágeno Verisol® foi desenvolvido para uso diário contínuo. A ingestão regular é essencial para manter os níveis adequados de colágeno no organismo e sustentar os benefícios para pele, cabelos e unhas. É recomendado incorporá-lo à sua rotina de autocuidado."
   },
   {
     question: "O produto é aprovado por dermatologistas?",
-    answer: "Sim, nosso Óleo de Avocado Ozonizado é recomendado por dermatologistas e profissionais de saúde da pele. A fórmula combina ciência e natureza, oferecendo benefícios comprovados para diversos tipos de pele e necessidades dermatológicas."
+    answer: "Sim, o Colágeno Verisol® é amplamente recomendado por dermatologistas e profissionais de saúde. É sustentado por mais de 15 estudos clínicos que comprovam sua eficácia na redução de rugas, aumento de firmeza e melhora da hidratação da pele."
   },
   {
-    question: "Qual o tamanho do frasco e quanto tempo dura?",
-    answer: "O frasco contém 30ml de produto puro e concentrado. Com o uso diário recomendado de 2 a 3 gotas por aplicação, um frasco dura aproximadamente 30 dias, proporcionando um tratamento completo e eficaz para sua pele."
+    question: "Qual o tamanho da embalagem e quanto tempo dura?",
+    answer: "Cada pote contém 300g de colágeno puro, equivalente a 30 doses de 10g. Com o uso diário recomendado, um pote dura exatamente 1 mês, proporcionando um tratamento completo e eficaz para sua beleza de dentro para fora."
   }
 ];
 
@@ -57,10 +57,10 @@ export default function GreemyFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-teal-50">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
             FAQ
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -76,17 +76,17 @@ export default function GreemyFAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl shadow-md border border-teal-100 overflow-hidden"
+              className="bg-white rounded-2xl shadow-md border border-pink-100 overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-teal-50 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-pink-50 transition-colors"
               >
                 <span className="font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-teal-600 flex-shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-pink-600 flex-shrink-0 transition-transform ${
                     openIndex === idx ? 'rotate-180' : ''
                   }`}
                 />
