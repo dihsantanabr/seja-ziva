@@ -306,7 +306,7 @@ export default function GreemyHero() {
               </div>
 
               {/* Flavor Options */}
-              <div className="flex gap-2 overflow-x-auto pb-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
                   const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
@@ -316,7 +316,7 @@ export default function GreemyHero() {
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
                       disabled={isDisabled}
-                      className={`relative flex-shrink-0 px-4 py-3 rounded-xl border-2 transition-all active:scale-95 flex items-center gap-2 ${
+                      className={`relative p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
                           : isDisabled
@@ -329,8 +329,8 @@ export default function GreemyHero() {
                           {count}
                         </div>
                       )}
-                      <div className="text-2xl">{flavor.emoji}</div>
-                      <div className={`text-sm font-semibold whitespace-nowrap ${count > 0 ? 'text-white' : ''}`}>
+                      <div className="text-3xl mb-2">{flavor.emoji}</div>
+                      <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
                         {flavor.name}
                       </div>
                     </button>
