@@ -159,7 +159,7 @@ export default function GreemyHero() {
               <img
                 src={productImages[0]}
                 alt="Colágeno Verisol® + Ácido Hialurônico"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="eager"
               />
             </div>
