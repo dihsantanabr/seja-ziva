@@ -137,7 +137,7 @@ export default function ProductHero() {
               </div>
               <span className="font-semibold text-gray-900">4.9</span>
               <span className="text-gray-500">•</span>
-              <span className="text-gray-600">3.500+ avaliações reais</span>
+              <span className="text-gray-600">238.917 avaliações reais</span>
             </div>
 
             {/* Trust Badges */}
