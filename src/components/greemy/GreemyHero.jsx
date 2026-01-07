@@ -248,11 +248,18 @@ export default function GreemyHero() {
                   }
                 </span>
               </div>
-            </div>
+              </div>
 
+              {/* Unit Price Info - Only for 3 Units */}
+              {selectedSize === '3 Unidades' && (
+              <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 text-center">
+                <p className="text-pink-800 font-semibold text-sm">
+                  Cada Colágeno sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
+                </p>
+              </div>
+              )}
 
-
-            {/* Size Selection */}
+              {/* Size Selection */}
             <div>
               <p className="font-medium text-gray-700 mb-3">Escolha a quantidade:</p>
               <div className="grid grid-cols-2 gap-4">
