@@ -27,8 +27,7 @@ export default function GreemyHero() {
 
   // Fixed number of reviews
   const formattedReviews = '238.917';
-
-
+  const today = new Date();
 
   const pricesWithExtras = {
     '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
