@@ -55,12 +55,12 @@ export default function GreemyStories() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
 
   const flavors = [
-    { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500' },
+    { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true },
     { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
     { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
     { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
     { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' },
-    { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600' }
+    { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true }
   ];
 
   const getFlavorCount = (flavorId) => {
@@ -363,7 +363,7 @@ export default function GreemyStories() {
                             }`}
                           >
                             {size.showBadge && (
-                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2">
+                              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                                 <span className="bg-orange-200 text-orange-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
                                   + Vendido
                                 </span>
@@ -419,6 +419,20 @@ export default function GreemyStories() {
                               {count > 0 && (
                                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-pink-600 text-white rounded-full flex items-center justify-center text-[9px] font-bold">
                                   {count}
+                                </div>
+                              )}
+                              {flavor.mostChosen && (
+                                <div className="absolute -top-1.5 -left-1">
+                                  <span className="bg-green-500 text-white text-[8px] font-bold px-1 py-0.5 rounded-full whitespace-nowrap">
+                                    + Escolhido
+                                  </span>
+                                </div>
+                              )}
+                              {flavor.hasLactose && (
+                                <div className="absolute -top-1.5 -left-1">
+                                  <span className="bg-amber-500 text-white text-[8px] font-bold px-1 py-0.5 rounded-full whitespace-nowrap">
+                                    Lactose
+                                  </span>
                                 </div>
                               )}
                               <div className="text-lg mb-0.5">{flavor.emoji}</div>
