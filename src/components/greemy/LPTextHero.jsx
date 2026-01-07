@@ -34,10 +34,7 @@ export default function LPTextHero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
           >
-            Transforme Sua Pele em{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
-              Apenas 4 Semanas
-            </span>
+            Sua pele perdeu firmeza e isso está te incomodando?
           </motion.h1>
 
           {/* Subtitle */}
@@ -47,8 +44,8 @@ export default function LPTextHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg lg:text-2xl text-gray-600 max-w-3xl mx-auto"
           >
-            Colágeno Verisol® + Ácido Hialurônico: A combinação perfeita para reduzir rugas, 
-            aumentar firmeza e hidratar profundamente sua pele
+            Com o tempo, a produção natural de colágeno diminui e a pele pode perder sustentação.
+            A escolha certa ajuda a cuidar da firmeza de dentro para fora.
           </motion.p>
 
           {/* Reviews */}
@@ -138,7 +135,7 @@ export default function LPTextHero() {
               }}
               className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
             >
-              Começar Minha Transformação
+              👉 Descubra o colágeno ideal para sua pele
             </button>
             <p className="text-sm text-gray-500 mt-3">✨ Frete Grátis + 10% Cashback</p>
           </motion.div>
