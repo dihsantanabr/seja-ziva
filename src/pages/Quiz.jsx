@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Sparkles, Check } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Sparkles, Check, Star, Clock, Users, Heart, Zap, Shield } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -173,12 +173,76 @@ export default function Quiz() {
       benefits.push("Fortalece cabelos e unhas");
     }
 
+    // Benefícios secundários personalizados
+    const secondaryBenefits = [
+      { icon: "💪", title: "Fortalece unhas quebradiças", desc: "Unhas mais fortes e resistentes" },
+      { icon: "💇‍♀️", title: "Reduz queda de cabelo", desc: "Fios mais saudáveis e volumosos" },
+      { icon: "🦴", title: "Fortalece ossos e articulações", desc: "Mais mobilidade e conforto" }
+    ];
+
+    // Rotina personalizada baseada nas respostas
+    let morningRoutine = "";
+    let whenToTake = "";
+    
+    if (routine === "organizada") {
+      morningRoutine = "Misture 1 dose (10g) em 200ml de água ou suco pela manhã";
+      whenToTake = "Recomendamos tomar sempre no mesmo horário para criar o hábito";
+    } else if (routine === "esquece") {
+      morningRoutine = "Deixe o pote em local visível e tome ao acordar";
+      whenToTake = "Configure um alarme diário no celular para não esquecer";
+    } else if (routine === "pratico") {
+      morningRoutine = "Dissolve rapidamente - apenas 30 segundos do seu dia";
+      whenToTake = "Pode ser tomado com café, vitamina ou água, como preferir";
+    } else {
+      morningRoutine = "Comece misturando 1 dose em 200ml de água pela manhã";
+      whenToTake = "Os primeiros resultados aparecem em 4 semanas de uso contínuo";
+    }
+
+    // Depoimentos relevantes baseados no objetivo
+    const testimonials = [];
+    
+    if (goal === "firmeza" || answers[2]?.includes("flacidez")) {
+      testimonials.push({
+        name: "Ana Paula, 42 anos",
+        text: "Em 6 semanas minha pele ficou visivelmente mais firme. Até meu marido percebeu!",
+        rating: 5
+      });
+    }
+    
+    if (goal === "hidratacao" || skinType === "seca") {
+      testimonials.push({
+        name: "Mariana Silva, 35 anos",
+        text: "Minha pele era super ressecada. Hoje está hidratada e com brilho natural!",
+        rating: 5
+      });
+    }
+    
+    if (goal === "envelhecimento" || answers[2]?.includes("linhas")) {
+      testimonials.push({
+        name: "Claudia Mendes, 48 anos",
+        text: "As linhas ao redor dos olhos diminuíram muito. Estou impressionada com o resultado!",
+        rating: 5
+      });
+    }
+    
+    if (testimonials.length < 2) {
+      testimonials.push({
+        name: "Juliana Costa, 38 anos",
+        text: "Além da pele, minhas unhas pararam de quebrar e meu cabelo está mais forte!",
+        rating: 5
+      });
+    }
+
     return {
       skinTypeText,
       goalText,
       flavorText,
       benefits,
-      routine
+      routine,
+      secondaryBenefits,
+      morningRoutine,
+      whenToTake,
+      testimonials
     };
   };
 
@@ -191,10 +255,11 @@ export default function Quiz() {
     
     return (
       <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-6">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="bg-white rounded-3xl shadow-2xl p-6 lg:p-10"
           >
             <div className="text-center mb-8">
@@ -209,6 +274,7 @@ export default function Quiz() {
               </p>
             </div>
 
+            {/* Product Recommendation */}
             <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 mb-6">
               <Badge className="bg-pink-600 text-white mb-3">Recomendado para você</Badge>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -258,6 +324,173 @@ export default function Quiz() {
             <p className="text-center text-sm text-gray-500 mt-4">
               ✓ Frete Grátis • ✓ 10% Cashback • ✓ Resultados em 4 Semanas
             </p>
+          </motion.div>
+
+          {/* Secondary Benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-3xl shadow-xl p-6 lg:p-8"
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                💎 Benefícios que vão além da pele
+              </h3>
+              <p className="text-gray-600">
+                O colágeno age em todo seu corpo, não apenas na pele
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              {result.secondaryBenefits.map((benefit, idx) => (
+                <div key={idx} className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5 text-center">
+                  <div className="text-4xl mb-3">{benefit.icon}</div>
+                  <h4 className="font-semibold text-gray-900 mb-1">{benefit.title}</h4>
+                  <p className="text-sm text-gray-600">{benefit.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Personalized Routine */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-3xl shadow-xl p-6 lg:p-8"
+          >
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Clock className="w-8 h-8 text-pink-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                🗓️ Sua rotina personalizada
+              </h3>
+              <p className="text-gray-600">
+                Baseado no seu perfil, veja como usar para obter os melhores resultados
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Como tomar</h4>
+                    <p className="text-gray-700">{result.morningRoutine}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Dica para sua rotina</h4>
+                    <p className="text-gray-700">{result.whenToTake}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Expectativa de resultados</h4>
+                    <p className="text-gray-700">
+                      <span className="font-semibold text-pink-700">4 semanas:</span> Pele mais hidratada e luminosa<br/>
+                      <span className="font-semibold text-pink-700">8 semanas:</span> Redução visível de linhas finas<br/>
+                      <span className="font-semibold text-pink-700">12 semanas:</span> Firmeza e elasticidade melhoradas
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Testimonials */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="bg-white rounded-3xl shadow-xl p-6 lg:p-8"
+          >
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-100 to-rose-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Users className="w-8 h-8 text-pink-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                ⭐ Pessoas com objetivos como o seu amaram
+              </h3>
+              <p className="text-gray-600">
+                Veja o que quem já está usando tem a dizer
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {result.testimonials.map((testimonial, idx) => (
+                <div key={idx} className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-5">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-3 italic">"{testimonial.text}"</p>
+                  <p className="text-sm font-semibold text-pink-700">{testimonial.name}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 bg-pink-100 border-l-4 border-pink-600 rounded-r-xl p-4">
+              <p className="text-sm text-pink-900">
+                <span className="font-semibold">✨ Mais de 117 mil pessoas</span> já transformaram sua pele com nosso colágeno
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Final CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-gradient-to-br from-pink-500 to-pink-600 rounded-3xl shadow-xl p-6 lg:p-8 text-center text-white"
+          >
+            <Heart className="w-12 h-12 mx-auto mb-4" />
+            <h3 className="text-2xl lg:text-3xl font-bold mb-3">
+              Pronta para transformar sua pele?
+            </h3>
+            <p className="text-lg mb-6 text-white/90">
+              Comece sua jornada hoje e veja resultados em 4 semanas
+            </p>
+            
+            <Button 
+              onClick={handleCheckout}
+              className="w-full lg:w-auto lg:px-12 h-14 bg-white text-pink-600 hover:bg-gray-100 text-lg font-bold rounded-xl shadow-lg"
+            >
+              Garantir Meu Colágeno Agora
+            </Button>
+
+            <div className="flex items-center justify-center gap-6 mt-6 text-sm">
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                <span>Frete Grátis</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                <span>10% Cashback</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                <span>Resultados Comprovados</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
