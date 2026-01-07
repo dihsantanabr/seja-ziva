@@ -236,10 +236,10 @@ export default function GreemyHero() {
               <p className="text-sm text-gray-600 mt-2">
                 ou 4x de R$ {(pricesWithExtras[selectedSize].current / 4).toFixed(2).replace('.', ',')} sem juros
               </p>
-              <div className="flex items-center gap-2 mt-3 text-pink-800 bg-pink-100 px-3 py-2 rounded-lg">
+              <div className="flex items-center gap-2 mt-3 text-green-800 bg-green-100 px-3 py-2 rounded-lg">
                 <div className="relative">
-                  <div className="w-2 h-2 bg-pink-600 rounded-full animate-pulse" />
-                  <div className="absolute inset-0 w-2 h-2 bg-pink-600 rounded-full animate-ping opacity-75" />
+                  <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
+                  <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
                   {selectedSize === '1 Unidade' 
@@ -252,11 +252,11 @@ export default function GreemyHero() {
 
               {/* Unit Price Info - Only for 3 Units */}
               {selectedSize === '3 Unidades' && (
-              <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 text-center">
-                <p className="text-pink-800 font-semibold text-sm">
-                  Cada Colágeno sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
-                </p>
-              </div>
+                <div className="bg-green-100 border border-green-300 rounded-xl p-3 text-center">
+                  <p className="text-green-800 font-semibold text-sm">
+                    Cada Colágeno sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
+                  </p>
+                </div>
               )}
 
               {/* Size Selection */}
