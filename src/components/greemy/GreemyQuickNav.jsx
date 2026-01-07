@@ -8,42 +8,42 @@ const menuItems = [
     subtitle: 'Veja se o produto atende seu caso',
     icon: Target,
     sectionId: 'para-quem-e',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   },
   {
     title: 'O que esse produto faz',
     subtitle: 'Resultados esperados',
     icon: Sparkles,
     sectionId: 'resultados',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   },
   {
     title: 'A ciência por trás',
     subtitle: 'Conheça a fórmula',
     icon: FlaskConical,
     sectionId: 'formula',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   },
   {
     title: 'Como e quando usar',
     subtitle: 'Modo de uso e resultados',
     icon: Clock,
     sectionId: 'como-usar',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   },
   {
     title: 'Depoimentos reais',
     subtitle: 'Veja quem já usou',
     icon: Heart,
     sectionId: 'depoimentos',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   },
   {
     title: 'Segurança e garantia',
     subtitle: 'Transparência total',
     icon: Shield,
     sectionId: 'contraindicacoes',
-    color: 'from-green-600 to-lime-600'
+    color: 'from-pink-400 to-pink-500'
   }
 ];
 
@@ -56,7 +56,7 @@ export default function GreemyQuickNav() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-white to-green-50 border-t border-green-100 py-6 md:py-8">
+    <div className="bg-gradient-to-b from-white to-pink-50 border-t border-pink-100 py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {menuItems.map((item, idx) => {
@@ -68,11 +68,11 @@ export default function GreemyQuickNav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 onClick={() => scrollToSection(item.sectionId)}
-                className="group relative bg-gradient-to-br from-green-50 to-white active:from-green-600 active:to-lime-600 hover:from-green-600 hover:to-lime-600 border border-green-200 hover:border-green-600 active:border-green-600 rounded-xl p-4 md:p-5 text-left transition-all duration-300 hover:shadow-lg active:shadow-lg hover:scale-105 active:scale-95 touch-manipulation"
+                className="group relative bg-gradient-to-br from-pink-50 to-white active:from-pink-400 active:to-pink-500 hover:from-pink-400 hover:to-pink-500 border border-pink-200 hover:border-pink-400 active:border-pink-400 rounded-xl p-4 md:p-5 text-left transition-all duration-300 hover:shadow-lg active:shadow-lg hover:scale-105 active:scale-95 touch-manipulation"
               >
                 <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-12 h-12 md:w-10 md:h-10 bg-green-600/10 group-hover:bg-white/20 group-active:bg-white/20 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
-                    <Icon className="w-6 h-6 md:w-5 md:h-5 text-green-600 group-hover:text-white group-active:text-white transition-colors" />
+                  <div className="w-12 h-12 md:w-10 md:h-10 bg-pink-400/10 group-hover:bg-white/20 group-active:bg-white/20 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+                    <Icon className="w-6 h-6 md:w-5 md:h-5 text-pink-500 group-hover:text-white group-active:text-white transition-colors" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 group-hover:text-white group-active:text-white text-sm md:text-base mb-1 transition-colors">
