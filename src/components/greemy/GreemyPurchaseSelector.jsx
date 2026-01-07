@@ -78,6 +78,13 @@ export default function GreemyPurchaseSelector() {
   return (
     <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-4xl mx-auto px-4">
+        {/* Título Principal */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+            Escolha seu Colágeno
+          </h2>
+        </div>
+
         {/* Escolha a quantidade */}
         <div className="mb-8">
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
@@ -181,7 +188,19 @@ export default function GreemyPurchaseSelector() {
         <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-pink-100">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <div className="text-gray-500 text-xs mb-1">Valor total:</div>
+              {prices[selectedSize]?.discount > 0 && (
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="text-sm text-gray-400 line-through">
+                    R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
+                  </span>
+                  <Badge className="bg-pink-600 text-white text-xs">
+                    {prices[selectedSize].discount}% OFF
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white text-xs">
+                    Frete Grátis
+                  </Badge>
+                </div>
+              )}
               <div className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
                 R$ {currentPrice.toFixed(2).replace('.', ',')}
               </div>
