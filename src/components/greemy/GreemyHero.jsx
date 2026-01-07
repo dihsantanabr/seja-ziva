@@ -273,7 +273,7 @@ export default function GreemyHero() {
                     </div>
                     {size === '3 Unidades' && (
                       <div className={`text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-pink-500'}`}>
-                        11% OFF
+                        43% OFF
                       </div>
                     )}
                   </button>
