@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Sparkles, Check, Star, Clock, Users, Heart, Zap, Shield } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Sparkles, Check, Star, Clock, Users, Heart, Zap, Shield, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { useNavigate } from 'react-router-dom';
 
 const questions = [
   {
@@ -77,9 +88,26 @@ export default function Quiz() {
   const [answers, setAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
   const [direction, setDirection] = useState(1);
+  const [showExitDialog, setShowExitDialog] = useState(false);
+  const navigate = useNavigate();
 
   const question = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
+
+  // Prevent accidental exit
+  useEffect(() => {
+    if (showResult) return;
+
+    const handleBeforeUnload = (e) => {
+      if (Object.keys(answers).length > 0) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [answers, showResult]);
 
   const handleAnswer = (optionId) => {
     const questionId = question.id;
@@ -124,6 +152,27 @@ export default function Quiz() {
       setDirection(-1);
       setCurrentQuestion(currentQuestion - 1);
     }
+  };
+
+  const goToQuestion = (index) => {
+    if (index < currentQuestion) {
+      setDirection(-1);
+    } else {
+      setDirection(1);
+    }
+    setCurrentQuestion(index);
+  };
+
+  const handleExit = () => {
+    if (Object.keys(answers).length > 0 && !showResult) {
+      setShowExitDialog(true);
+    } else {
+      navigate(-1);
+    }
+  };
+
+  const confirmExit = () => {
+    navigate(-1);
   };
 
   const isSelected = (optionId) => {
@@ -500,6 +549,18 @@ export default function Quiz() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
       <div className="max-w-2xl mx-auto">
+        {/* Exit Button */}
+        <div className="flex justify-end mb-4">
+          <Button
+            onClick={handleExit}
+            variant="ghost"
+            size="icon"
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <X className="w-5 h-5" />
+          </Button>
+        </div>
+
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
@@ -518,6 +579,35 @@ export default function Quiz() {
               transition={{ duration: 0.3 }}
             />
           </div>
+        </div>
+
+        {/* Question History Navigation */}
+        <div className="mb-6 flex flex-wrap gap-2 justify-center">
+          {questions.map((q, idx) => {
+            const isAnswered = answers[q.id] && answers[q.id].length > 0;
+            const isCurrent = idx === currentQuestion;
+            
+            return (
+              <button
+                key={idx}
+                onClick={() => goToQuestion(idx)}
+                disabled={idx > currentQuestion}
+                className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
+                  isCurrent
+                    ? 'bg-pink-600 text-white scale-110 ring-4 ring-pink-200'
+                    : isAnswered
+                    ? 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                }`}
+              >
+                {isAnswered && !isCurrent ? (
+                  <Check className="w-5 h-5" />
+                ) : (
+                  idx + 1
+                )}
+              </button>
+            );
+          })}
         </div>
 
         <AnimatePresence mode="wait">
@@ -600,6 +690,27 @@ export default function Quiz() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* Exit Confirmation Dialog */}
+        <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Deseja sair do quiz?</AlertDialogTitle>
+              <AlertDialogDescription>
+                Você perderá todas as suas respostas se sair agora. Tem certeza que deseja continuar?
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Continuar Quiz</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={confirmExit}
+                className="bg-red-600 hover:bg-red-700"
+              >
+                Sair e Perder Respostas
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </div>
   );
