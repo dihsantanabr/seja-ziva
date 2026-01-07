@@ -44,25 +44,27 @@ export default function GreemyStickyBuyBar() {
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                 ))}
-                <span className="text-xs text-gray-600 ml-1">(4.284 avaliações)</span>
+                <span className="text-xs text-gray-600 ml-1">(238.917 avaliações)</span>
               </div>
             </div>
             
             <div className="flex items-center justify-between gap-3">
               <div className="flex-1">
-                <p className="text-xs font-medium text-gray-600 mb-1">{selectedSize} - {selectedFlavor}</p>
+                <p className="text-xs font-medium text-gray-600 mb-1">
+                  {selectedSize === '1 Unidade' ? 'Rotina Inicial' : 'Rotina Completa'} - {selectedFlavor}
+                </p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-400 line-through">
                     R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
                   </span>
-                  <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600">
+                  <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
                     R$ {prices[selectedSize].current.toFixed(2).replace('.', ',')}
                   </span>
                 </div>
               </div>
               <Button 
                 onClick={handleBuyClick}
-                className="bg-gradient-to-r from-green-600 to-lime-600 hover:from-green-700 hover:to-lime-700 text-white font-semibold px-6 py-5 shadow-lg active:scale-95 touch-manipulation"
+                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-6 py-5 shadow-lg active:scale-95 touch-manipulation"
               >
                 <ShoppingCart className="w-4 h-4 mr-2" />
                 Comprar
