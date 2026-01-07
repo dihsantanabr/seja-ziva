@@ -89,7 +89,7 @@ export default function GreemyFormula() {
         </motion.div>
 
         {/* Ingredients Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4 px-4 lg:px-0">
           {ingredients.map((ingredient, idx) => (
             <motion.div
               key={idx}
@@ -97,7 +97,7 @@ export default function GreemyFormula() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-2xl p-5 text-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-pink-100"
+              className="bg-white rounded-2xl p-4 lg:p-5 text-center shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-pink-100"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-pink-50 to-rose-50 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-3xl">{ingredient.emoji}</span>

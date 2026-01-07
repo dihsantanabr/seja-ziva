@@ -38,7 +38,7 @@ export default function GreemyGuarantee() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 lg:px-0">
           {guarantees.map((guarantee, idx) => (
             <motion.div
               key={idx}
@@ -46,7 +46,7 @@ export default function GreemyGuarantee() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-4 lg:p-6 text-center shadow-lg border border-pink-100 hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl p-5 lg:p-6 text-center shadow-lg border border-pink-100 hover:shadow-xl transition-all"
             >
               <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
                 <guarantee.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />

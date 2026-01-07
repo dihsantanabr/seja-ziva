@@ -88,7 +88,7 @@ export default function GreemyHowToUse() {
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16 px-4 lg:px-0">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -96,7 +96,7 @@ export default function GreemyHowToUse() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100"
+              className="bg-white rounded-2xl p-5 lg:p-6 shadow-lg border border-pink-100"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
@@ -139,7 +139,7 @@ export default function GreemyHowToUse() {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Linha do tempo dos resultados
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-0">
             {timelineResults.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -147,7 +147,7 @@ export default function GreemyHowToUse() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`bg-gradient-to-br ${item.color} rounded-2xl p-6 shadow-lg`}
+                className={`bg-gradient-to-br ${item.color} rounded-2xl p-5 lg:p-6 shadow-lg`}
               >
                 <div className="text-pink-700 font-bold text-lg mb-2">
                   {item.period}

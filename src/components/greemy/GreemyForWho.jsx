@@ -52,7 +52,7 @@ export default function GreemyForWho({ onOpenQuiz }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 px-4 lg:px-0">
           {painPoints.map((point, idx) => (
             <motion.div
               key={idx}
@@ -60,7 +60,7 @@ export default function GreemyForWho({ onOpenQuiz }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-pink-100"
+              className="group bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-5 lg:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-pink-100"
               >
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-all">
                 <point.icon className="w-7 h-7 text-pink-500" />

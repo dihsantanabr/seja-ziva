@@ -38,7 +38,7 @@ export default function GreemyResults() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16 px-4 lg:px-0">
           {results.map((result, idx) => (
             <motion.div
               key={idx}
@@ -46,7 +46,7 @@ export default function GreemyResults() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-2xl p-6 text-center shadow-lg shadow-pink-100 hover:shadow-xl transition-all border border-pink-100"
+              className="bg-white rounded-2xl p-5 lg:p-6 text-center shadow-lg shadow-pink-100 hover:shadow-xl transition-all border border-pink-100"
               >
               <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <result.icon className="w-8 h-8 text-white" />
