@@ -115,6 +115,15 @@ export default function Quiz() {
     
     if (question.type === "single") {
       setAnswers({ ...answers, [questionId]: [optionId] });
+      // Auto-advance for single choice questions
+      setTimeout(() => {
+        if (currentQuestion < questions.length - 1) {
+          setDirection(1);
+          setCurrentQuestion(currentQuestion + 1);
+        } else {
+          setShowResult(true);
+        }
+      }, 300);
     } else {
       const currentAnswers = answers[questionId] || [];
       
