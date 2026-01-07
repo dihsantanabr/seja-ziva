@@ -46,17 +46,9 @@ export default function GreemyStickyBuyBar() {
 
   const handleBuyClick = () => {
     const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
-    
-    // Se não houver sabores selecionados, scroll até o seletor
-    if (!selectedFlavors || selectedFlavors.length === 0) {
-      const purchaseSection = document.querySelector('#escolha-seu-colageno');
-      if (purchaseSection) {
-        purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      return;
-    }
 
-    if (selectedFlavors.length !== maxFlavors) {
+    // Se não houver sabores selecionados ou quantidade incorreta, scroll até o seletor
+    if (!selectedFlavors || selectedFlavors.length === 0 || selectedFlavors.length !== maxFlavors) {
       const purchaseSection = document.querySelector('#escolha-seu-colageno');
       if (purchaseSection) {
         purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -82,15 +74,18 @@ export default function GreemyStickyBuyBar() {
     });
 
     if (productParts.length === 0) {
-      alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
       console.error('Nenhum código de produto gerado');
+      const purchaseSection = document.querySelector('#escolha-seu-colageno');
+      if (purchaseSection) {
+        purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       return;
     }
 
     // Montar a URL final
     const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
-    
+
     console.log('=== DEBUG CHECKOUT STICKY ===');
     console.log('Tamanho selecionado:', selectedSize);
     console.log('Sabores selecionados (array):', selectedFlavors);
@@ -98,7 +93,7 @@ export default function GreemyStickyBuyBar() {
     console.log('Códigos gerados:', productParts);
     console.log('URL final:', checkoutUrl);
     console.log('============================');
-    
+
     // Redirecionar imediatamente
     window.location.href = checkoutUrl;
   };
