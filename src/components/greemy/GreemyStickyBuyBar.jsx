@@ -20,12 +20,27 @@ export default function GreemyStickyBuyBar() {
   const { selectedSize, selectedFlavors, prices } = useGreemy();
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrolled = window.scrollY > 200;
-      setIsVisible(scrolled && !isDismissed);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrolledEnough = currentScrollY > 200;
+          const scrollingUp = currentScrollY < lastScrollY;
+          
+          // Show on scroll up, hide on scroll down (when not dismissed)
+          setIsVisible(scrolledEnough && scrollingUp && !isDismissed);
+          
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isDismissed]);
 
@@ -99,10 +114,10 @@ export default function GreemyStickyBuyBar() {
         >
           <button
             onClick={() => setIsDismissed(true)}
-            className="absolute top-2 right-2 p-1 text-gray-400 hover:text-gray-600 active:scale-95"
+            className="absolute top-2 right-2 p-2 text-gray-400 hover:text-gray-600 active:scale-95 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Fechar"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
           <div className="px-4 py-3 flex flex-col gap-2">
             <div className="flex items-center justify-between">
@@ -131,9 +146,9 @@ export default function GreemyStickyBuyBar() {
               </div>
               <Button 
                 onClick={handleBuyClick}
-                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-6 py-5 shadow-lg active:scale-95 touch-manipulation"
+                className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-8 py-6 shadow-lg active:scale-95 touch-manipulation min-h-[52px] min-w-[120px]"
               >
-                <ShoppingCart className="w-4 h-4 mr-2" />
+                <ShoppingCart className="w-5 h-5 mr-2" />
                 Comprar
               </Button>
             </div>

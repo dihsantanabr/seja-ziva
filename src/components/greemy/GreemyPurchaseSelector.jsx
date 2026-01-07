@@ -141,7 +141,7 @@ export default function GreemyPurchaseSelector() {
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
             Escolha a quantidade:
           </h3>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             {sizes.map((size) => (
               <button
                 key={size.id}
@@ -199,7 +199,7 @@ export default function GreemyPurchaseSelector() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
             {flavors.map((flavor) => {
               const count = getFlavorCount(flavor.id);
               const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
@@ -241,7 +241,7 @@ export default function GreemyPurchaseSelector() {
             })}
           </div>
 
-          <p className="text-center text-gray-500 text-xs">
+          <p className="text-center text-gray-500 text-sm py-2">
             {selectedSize === '1 Unidade' 
               ? 'Clique no sabor desejado (clique novamente para desselecionar)'
               : 'Clique para adicionar sabores (pode escolher múltiplos do mesmo)'
