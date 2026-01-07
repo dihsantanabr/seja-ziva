@@ -128,17 +128,25 @@ export default function QuizCRM() {
     const prizeIndex = Math.floor(Math.random() * prizes.length);
     const prize = prizes[prizeIndex];
     
-    // Calculate rotation (multiple full spins + final position)
-    const degreesPerPrize = 360 / prizes.length;
-    const finalRotation = 360 * 5 + (360 - (prizeIndex * degreesPerPrize + degreesPerPrize / 2));
+    // Calculate rotation - the wheel spins and the pointer stays at top
+    // We need to calculate so the winning segment ends up under the pointer
+    const degreesPerSegment = 360 / prizes.length;
+    const offset = degreesPerSegment / 2; // Center of segment
+    const targetAngle = prizeIndex * degreesPerSegment + offset;
+    
+    // Add multiple rotations (5-7 full spins) plus the target angle
+    const spins = 5 + Math.random() * 2; // Random between 5-7 full spins
+    const finalRotation = rotation + (360 * spins) + (360 - targetAngle);
     
     setRotation(finalRotation);
     
     setTimeout(() => {
       setWonPrize(prize);
       setIsSpinning(false);
-      setStep('result');
-    }, 4000);
+      setTimeout(() => {
+        setStep('result');
+      }, 500);
+    }, 5000);
   };
 
   // Email Capture Step
@@ -339,48 +347,70 @@ export default function QuizCRM() {
             {/* Wheel */}
             <div className="relative w-80 h-80 mx-auto mb-8">
               {/* Pointer */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-10">
-                <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[25px] border-t-pink-600" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 z-20">
+                <div className="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[30px] border-t-pink-600 drop-shadow-lg" />
               </div>
 
+              {/* Outer Ring */}
+              <div className="absolute inset-0 rounded-full border-8 border-pink-600 z-10" />
+
               {/* Wheel Circle */}
-              <motion.div
-                className="w-full h-full rounded-full relative overflow-hidden shadow-2xl"
-                style={{
-                  rotate: rotation,
-                  transition: isSpinning ? 'rotate 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)' : 'none'
-                }}
-              >
-                {prizes.map((prize, index) => {
-                  const angle = (360 / prizes.length) * index;
-                  return (
-                    <div
-                      key={prize.id}
-                      className={`absolute w-full h-full bg-gradient-to-br ${prize.color}`}
-                      style={{
-                        clipPath: `polygon(50% 50%, ${50 + 50 * Math.cos((angle - 90) * Math.PI / 180)}% ${50 + 50 * Math.sin((angle - 90) * Math.PI / 180)}%, ${50 + 50 * Math.cos((angle + 360/prizes.length - 90) * Math.PI / 180)}% ${50 + 50 * Math.sin((angle + 360/prizes.length - 90) * Math.PI / 180)}%)`
-                      }}
-                    >
+              <div className="absolute inset-2">
+                <div
+                  className="w-full h-full rounded-full relative shadow-2xl border-4 border-white"
+                  style={{
+                    transform: `rotate(${rotation}deg)`,
+                    transition: isSpinning ? 'transform 5s cubic-bezier(0.17, 0.67, 0.15, 1)' : 'none'
+                  }}
+                >
+                  {prizes.map((prize, index) => {
+                    const degreesPerSegment = 360 / prizes.length;
+                    const startAngle = index * degreesPerSegment - 90;
+                    const endAngle = startAngle + degreesPerSegment;
+                    
+                    const startRad = (startAngle * Math.PI) / 180;
+                    const endRad = (endAngle * Math.PI) / 180;
+                    const midAngle = (startAngle + endAngle) / 2;
+                    
+                    // Create path for segment
+                    const x1 = 50 + 50 * Math.cos(startRad);
+                    const y1 = 50 + 50 * Math.sin(startRad);
+                    const x2 = 50 + 50 * Math.cos(endRad);
+                    const y2 = 50 + 50 * Math.sin(endRad);
+                    
+                    return (
                       <div
-                        className="absolute text-white font-bold text-xs text-center"
+                        key={prize.id}
+                        className="absolute inset-0"
                         style={{
-                          top: '25%',
-                          left: '50%',
-                          transform: `translate(-50%, -50%) rotate(${angle + 360/(prizes.length * 2)}deg)`,
-                          width: '80px'
+                          clipPath: `polygon(50% 50%, ${x1}% ${y1}%, ${x2}% ${y2}%)`
                         }}
                       >
-                        {prize.value}
+                        <div className={`w-full h-full bg-gradient-to-br ${prize.color}`}>
+                          <div
+                            className="absolute text-white font-bold text-[10px] leading-tight text-center px-1"
+                            style={{
+                              top: '30%',
+                              left: '50%',
+                              transform: `translate(-50%, -50%) rotate(${midAngle + 90}deg)`,
+                              width: '70px',
+                              textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                            }}
+                          >
+                            <div className="mb-1">🎁</div>
+                            <div>{prize.value}</div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
 
-                {/* Center Circle */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
-                  <Gift className="w-8 h-8 text-pink-600" />
+                  {/* Center Circle */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full shadow-xl flex items-center justify-center border-4 border-white z-10">
+                    <Gift className="w-9 h-9 text-white" />
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             <Button
