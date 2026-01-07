@@ -6,7 +6,7 @@ import { useGreemy } from './GreemyContext';
 
 export default function GreemyStickyBuyBar() {
   const [isVisible, setIsVisible] = useState(false);
-  const { selectedSize, selectedFlavor, prices } = useGreemy();
+  const { selectedSize, prices } = useGreemy();
 
   useEffect(() => {
     const handleScroll = () => {
