@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind } from 'lucide-react';
+import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind, ClipboardList } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from 'react-router-dom';
+import { createPageUrl } from './utils';
 import GreemyStories from './GreemyStories';
 import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
@@ -256,6 +258,17 @@ export default function GreemyHero() {
             >
               Comprar Agora
             </Button>
+
+            {/* Quiz Button */}
+            <Link to={createPageUrl('Quiz')}>
+              <Button 
+                variant="outline"
+                className="w-full h-12 border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-base font-semibold rounded-xl"
+              >
+                <ClipboardList className="w-5 h-5 mr-2" />
+                Descubra se esse colágeno é para você
+              </Button>
+            </Link>
 
             {/* Delivery Estimate */}
             <div className="bg-pink-100 border border-pink-300 rounded-xl p-4">
