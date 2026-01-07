@@ -2,20 +2,6 @@ import React, { useEffect } from 'react';
 
 export default function Layout({ children, currentPageName }) {
   useEffect(() => {
-    // Meta Pixel
-    const metaPixelScript = document.createElement('script');
-    metaPixelScript.innerHTML = `!function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2816328212013851');
-    fbq('track', 'PageView');`;
-    document.head.appendChild(metaPixelScript);
-
     // Update favicon
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
@@ -133,17 +119,5 @@ export default function Layout({ children, currentPageName }) {
     document.head.appendChild(faqSchema);
     }, []);
 
-  return (
-    <>
-      <noscript>
-        <img 
-          height="1" 
-          width="1" 
-          style={{ display: 'none' }}
-          src="https://www.facebook.com/tr?id=2816328212013851&ev=PageView&noscript=1"
-        />
-      </noscript>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
