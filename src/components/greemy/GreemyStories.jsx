@@ -55,13 +55,23 @@ export default function GreemyStories() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
 
   const flavors = [
-    { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true },
-    { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
-    { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
-    { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
-    { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' },
-    { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true }
+    { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true, code: '6J3KDTF80E' },
+    { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500', code: 'GAA70WUDT7' },
+    { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500', code: 'OY7JZG4UE9' },
+    { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400', code: 'Q7TJA8P8X6' },
+    { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500', code: '4JF2A26WUQ' },
+    { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true, code: 'OY9KOFHD8D' }
   ];
+
+  // Mapa de códigos para garantir consistência
+  const FLAVOR_CODES = {
+    'cranberry': '6J3KDTF80E',
+    'tropical': 'GAA70WUDT7',
+    'limao': 'OY7JZG4UE9',
+    'pink-lemonade': 'Q7TJA8P8X6',
+    'tangerina': '4JF2A26WUQ',
+    'chocolate': 'OY9KOFHD8D'
+  };
 
   const getFlavorCount = (flavorId) => {
     return selectedFlavors.filter(f => f === flavorId).length;
@@ -131,15 +141,51 @@ export default function GreemyStories() {
     }
   };
 
-  const getCheckoutLink = () => {
-    if (selectedSize === '3 Unidades') {
-      return 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
-    }
-    return 'https://seguro.avozon.com.br/r/O0QFN501RQ';
-  };
-
   const handleBuyClick = () => {
-    window.location.href = getCheckoutLink();
+    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+    
+    // Verificar se os sabores foram selecionados
+    if (!selectedFlavors || selectedFlavors.length === 0 || selectedFlavors.length !== maxFlavors) {
+      return;
+    }
+
+    // Contar quantas vezes cada sabor foi selecionado
+    const flavorCounts = {};
+    selectedFlavors.forEach(flavorId => {
+      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+    });
+
+    // Gerar a string de produtos no formato CODIGO:QUANTIDADE
+    const productParts = [];
+    Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
+      const code = FLAVOR_CODES[flavorId];
+      if (code) {
+        productParts.push(`${code}:${quantity}`);
+      } else {
+        console.error('Código não encontrado para sabor:', flavorId);
+      }
+    });
+
+    if (productParts.length === 0) {
+      alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
+      console.error('Nenhum código de produto gerado');
+      return;
+    }
+
+    // Montar a URL final
+    const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
+    const checkoutUrl = baseUrl + productParts.join(',');
+    
+    console.log('=== DEBUG CHECKOUT STORIES ===');
+    console.log('Tamanho selecionado:', selectedSize);
+    console.log('Sabores selecionados (array):', selectedFlavors);
+    console.log('Contagem de sabores:', flavorCounts);
+    console.log('Códigos gerados:', productParts);
+    console.log('URL final:', checkoutUrl);
+    console.log('==============================');
+    
+    // Redirecionar imediatamente
+    window.location.href = checkoutUrl;
   };
 
   const handleShare = () => {
@@ -431,7 +477,7 @@ export default function GreemyStories() {
                               {flavor.hasLactose && (
                                 <div className="absolute -top-1.5 -left-1">
                                   <span className="bg-amber-500 text-white text-[8px] font-bold px-1 py-0.5 rounded-full whitespace-nowrap">
-                                    Lactose
+                                    Contém Lactose
                                   </span>
                                 </div>
                               )}
