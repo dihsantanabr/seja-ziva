@@ -9,7 +9,7 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/66b1713a7_br-11134207-7qukw-lfsqn9uymlmma5.jpeg"
+  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/7da82ad57_MODELO---COLAGENO1.jpg"
 ];
 
 const flavors = [
