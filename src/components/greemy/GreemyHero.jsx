@@ -82,10 +82,8 @@ export default function GreemyHero() {
         // Se tem espaço, adiciona mais um deste sabor
         setSelectedFlavors([...selectedFlavors, flavorId]);
       } else if (count > 0) {
-        // Se já está no limite total, mas este sabor está selecionado, remove um
-        const indexToRemove = selectedFlavors.findIndex(f => f === flavorId);
-        const newFlavors = [...selectedFlavors];
-        newFlavors.splice(indexToRemove, 1);
+        // Se já está no limite total e este sabor está selecionado, zera todos deste sabor
+        const newFlavors = selectedFlavors.filter(f => f !== flavorId);
         setSelectedFlavors(newFlavors);
       }
     }
