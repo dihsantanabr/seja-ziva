@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { GreemyProvider } from '../components/greemy/GreemyContext';
 import GreemyHero from '../components/greemy/GreemyHero';
 import GreemyForWho from '../components/greemy/GreemyForWho';
 import GreemyResults from '../components/greemy/GreemyResults';
@@ -7,23 +6,22 @@ import GreemyFormula from '../components/greemy/GreemyFormula';
 import GreemyHowToUse from '../components/greemy/GreemyHowToUse';
 import GreemyPainMatch from '../components/greemy/GreemyPainMatch';
 import GreemyTestimonials from '../components/greemy/GreemyTestimonials';
-import GreemyContraindications from '../components/greemy/GreemyContraindications';
 import GreemyComparison from '../components/greemy/GreemyComparison';
-import GreemyKits from '../components/greemy/GreemyKits';
+
 import GreemyGuarantee from '../components/greemy/GreemyGuarantee';
 import GreemyFAQ from '../components/greemy/GreemyFAQ';
 import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
-import SocialProofNotification from '../components/greemy/SocialProofNotification';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
+import { GreemyProvider } from '../components/greemy/GreemyContext';
 
-export default function Colageno() {
+export default function HomeCopy() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
     <GreemyProvider>
-    <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white">
       {/* Quiz Popup */}
       {showQuiz && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
@@ -50,17 +48,12 @@ export default function Colageno() {
       <div id="depoimentos">
         <GreemyTestimonials />
       </div>
-      <div id="contraindicacoes">
-        <GreemyContraindications />
-      </div>
       <GreemyComparison />
-      <GreemyKits />
       <GreemyGuarantee />
       <GreemyFAQ />
       <GreemyFinalCTA />
       <GreemyStickyBuyBar />
       <WhatsAppWidget />
-      <SocialProofNotification />
 
       {/* Marquee animation styles */}
       <style>{`
@@ -77,7 +70,7 @@ export default function Colageno() {
           animation: marquee 30s linear infinite;
         }
       `}</style>
-    </div>
+      </div>
     </GreemyProvider>
   );
 }
