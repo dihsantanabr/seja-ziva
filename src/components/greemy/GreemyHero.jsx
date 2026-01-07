@@ -279,12 +279,12 @@ export default function GreemyHero() {
                         </span>
                       </div>
                     )}
-                    <div className="text-base font-bold mb-1">{size}</div>
-                    <div className={`text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
+                    <div className="text-sm lg:text-base font-bold mb-1">{size}</div>
+                    <div className={`text-xs lg:text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
                       {size === '1 Unidade' ? 'Rotina Inicial' : 'Rotina Completa'}
                     </div>
                     {size === '3 Unidades' && (
-                      <div className={`text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-pink-500'}`}>
+                      <div className={`text-[10px] lg:text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-pink-500'}`}>
                         43% OFF
                       </div>
                     )}
