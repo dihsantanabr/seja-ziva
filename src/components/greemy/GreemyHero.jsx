@@ -226,7 +226,7 @@ export default function GreemyHero() {
                   <Badge className="bg-pink-600 text-white">
                     {pricesWithExtras[selectedSize].discount}% OFF
                   </Badge>
-                  <Badge className="bg-green-600 text-white">
+                  <Badge className="bg-pink-600 text-white">
                     Frete Grátis
                   </Badge>
                 </div>
