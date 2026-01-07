@@ -63,8 +63,10 @@ export default function GreemyHero() {
     window.location.href = getCheckoutLink();
   };
 
+  const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+
   const handleFlavorClick = (flavorId) => {
-    if (selectedFlavors.length < 3) {
+    if (selectedFlavors.length < maxFlavors) {
       setSelectedFlavors([...selectedFlavors, flavorId]);
     }
   };
@@ -81,9 +83,7 @@ export default function GreemyHero() {
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
-    if (size === '1 Unidade') {
-      setSelectedFlavors([]);
-    }
+    setSelectedFlavors([]);
   };
 
   return (
@@ -284,85 +284,93 @@ export default function GreemyHero() {
               )}
             </div>
 
-            {/* Flavor Selection - Only for 3 Units */}
-            {selectedSize === '3 Unidades' && (
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <p className="font-medium text-gray-700">Escolha seus sabores:</p>
-                  <span className="text-sm text-pink-600 font-medium">
-                    {selectedFlavors.length}/3 selecionados
-                  </span>
-                </div>
+            {/* Flavor Selection */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <p className="font-medium text-gray-700">
+                  {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
+                </p>
+                <span className="text-sm text-pink-600 font-medium">
+                  {selectedFlavors.length}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
+                </span>
+              </div>
 
-                {/* Selected Flavors Summary */}
-                {selectedFlavors.length > 0 && (
-                  <div className="mb-3 flex flex-wrap gap-2">
-                    {selectedFlavors.map((flavorId, index) => {
-                      const flavor = flavors.find(f => f.id === flavorId);
-                      return (
-                        <button
-                          key={index}
-                          onClick={() => handleRemoveFlavor(index)}
-                          className="flex items-center gap-2 bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-pink-200 transition-colors"
-                        >
-                          <span>{flavor.emoji}</span>
-                          <span>{flavor.name}</span>
-                          <span className="text-pink-400">×</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {/* Flavor Options */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {flavors.map((flavor) => {
-                    const count = getFlavorCount(flavor.id);
-                    const isDisabled = selectedFlavors.length >= 3 && count === 0;
-                    
+              {/* Selected Flavors Summary */}
+              {selectedFlavors.length > 0 && (
+                <div className="mb-3 flex flex-wrap gap-2">
+                  {selectedFlavors.map((flavorId, index) => {
+                    const flavor = flavors.find(f => f.id === flavorId);
                     return (
                       <button
-                        key={flavor.id}
-                        onClick={() => handleFlavorClick(flavor.id)}
-                        disabled={isDisabled}
-                        className={`relative p-4 rounded-xl border-2 transition-all text-center ${
-                          count > 0
-                            ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
-                            : isDisabled
-                            ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
-                            : 'border-gray-200 hover:border-pink-300 text-gray-700'
-                        }`}
+                        key={index}
+                        onClick={() => handleRemoveFlavor(index)}
+                        className="flex items-center gap-2 bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-pink-200 transition-colors"
                       >
-                        {count > 0 && (
-                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
-                            {count}
-                          </div>
-                        )}
-                        <div className="text-3xl mb-2">{flavor.emoji}</div>
-                        <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
-                          {flavor.name}
-                        </div>
+                        <span>{flavor.emoji}</span>
+                        <span>{flavor.name}</span>
+                        <span className="text-pink-400">×</span>
                       </button>
                     );
                   })}
                 </div>
+              )}
 
-                {selectedFlavors.length < 3 && (
-                  <p className="text-xs text-gray-500 mt-2 text-center">
-                    Clique nos sabores para selecionar suas 3 unidades
-                  </p>
-                )}
+              {/* Flavor Options */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {flavors.map((flavor) => {
+                  const count = getFlavorCount(flavor.id);
+                  const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
+                  
+                  return (
+                    <button
+                      key={flavor.id}
+                      onClick={() => handleFlavorClick(flavor.id)}
+                      disabled={isDisabled}
+                      className={`relative p-4 rounded-xl border-2 transition-all text-center ${
+                        count > 0
+                          ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
+                          : isDisabled
+                          ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
+                          : 'border-gray-200 hover:border-pink-300 text-gray-700'
+                      }`}
+                    >
+                      {count > 0 && selectedSize === '3 Unidades' && (
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                          {count}
+                        </div>
+                      )}
+                      {count > 0 && selectedSize === '1 Unidade' && (
+                        <div className="absolute -top-2 -right-2">
+                          <Check className="w-6 h-6 text-pink-600" />
+                        </div>
+                      )}
+                      <div className="text-3xl mb-2">{flavor.emoji}</div>
+                      <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
+                        {flavor.name}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-            )}
+
+              {selectedFlavors.length < maxFlavors && (
+                <p className="text-xs text-gray-500 mt-2 text-center">
+                  {selectedSize === '1 Unidade' 
+                    ? 'Clique no sabor desejado'
+                    : `Clique nos sabores para selecionar suas ${maxFlavors} unidades`
+                  }
+                </p>
+              )}
+            </div>
 
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              disabled={selectedSize === '3 Unidades' && selectedFlavors.length < 3}
+              disabled={selectedFlavors.length < maxFlavors}
               className="w-full h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {selectedSize === '3 Unidades' && selectedFlavors.length < 3 
-                ? `Selecione ${3 - selectedFlavors.length} sabor(es) para continuar`
+              {selectedFlavors.length < maxFlavors
+                ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''} para continuar`
                 : 'Comprar Agora'
               }
             </Button>
