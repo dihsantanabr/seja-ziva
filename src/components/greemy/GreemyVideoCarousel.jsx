@@ -5,19 +5,19 @@ import { motion } from 'framer-motion';
 const videos = [
   {
     id: 1,
-    videoUrl: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4#t=3"
+    videoUrl: "https://cdn.shopify.com/videos/c/vp/6054136dfd974e1f9cbf1aad695db1fd/6054136dfd974e1f9cbf1aad695db1fd.HD-720p-3.0Mbps-66536281.mp4"
   },
   {
     id: 2,
-    videoUrl: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/vp/b541f8d5840d4922bb48d42c22c5827f/b541f8d5840d4922bb48d42c22c5827f.HD-720p-1.6Mbps-66536601.mp4"
   },
   {
     id: 3,
-    videoUrl: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4"
   },
   {
     id: 4,
-    videoUrl: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4"
   },
   {
     id: 5,
