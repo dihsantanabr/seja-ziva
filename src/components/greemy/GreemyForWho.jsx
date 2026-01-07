@@ -75,10 +75,17 @@ export default function GreemyForWho({ onOpenQuiz }) {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center space-y-6">
           <p className="text-lg text-gray-700 bg-gradient-to-r from-pink-100 to-rose-100 inline-block px-6 py-3 rounded-full">
             💗 Se você se identificou com algum desses casos, <strong>o Colágeno Verisol® foi feito para você</strong>
           </p>
+          <Button 
+            onClick={onOpenQuiz}
+            variant="outline"
+            className="text-pink-600 border-pink-300 hover:bg-pink-50 hover:border-pink-400"
+          >
+            ✨ Descubra se esse colágeno é ideal para você
+          </Button>
         </div>
       </div>
     </section>
