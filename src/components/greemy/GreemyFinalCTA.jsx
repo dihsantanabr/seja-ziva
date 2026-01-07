@@ -13,7 +13,7 @@ export default function GreemyFinalCTA() {
   };
 
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-br from-teal-600 via-emerald-600 to-teal-600">
+    <section className="py-12 lg:py-24 bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,10 +26,10 @@ export default function GreemyFinalCTA() {
           </div>
 
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-            Guia Completo de Cuidados com a Pele
+            Guia Completo: Colágeno para Pele Jovem
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Baixe nosso E-Book gratuito e descubra os segredos para uma pele saudável, hidratada e radiante naturalmente
+            Descubra os segredos do colágeno e como rejuvenescer sua pele de dentro para fora com dicas exclusivas
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -45,7 +45,7 @@ export default function GreemyFinalCTA() {
               <Button 
                 type="submit"
                 size="lg"
-                className="bg-white text-teal-600 hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
+                className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
               >
                 <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 Baixar Grátis
