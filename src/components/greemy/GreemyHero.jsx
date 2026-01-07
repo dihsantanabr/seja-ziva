@@ -124,7 +124,7 @@ export default function GreemyHero() {
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             {/* Mobile Stats Bar */}
             <div className="lg:hidden flex items-center justify-between px-2 py-2">
-              <span className="text-xs font-medium text-gray-500">+117 MIL VENDAS</span>
+              <span className="text-xs font-medium text-gray-500">+2 Milhões de Vendas</span>
               <div className="flex items-center gap-1.5">
                 <span className="font-semibold text-gray-900 text-sm">4.9</span>
                 <div className="flex">
