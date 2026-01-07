@@ -260,12 +260,12 @@ export default function GreemyHero() {
             </Button>
 
             {/* Quiz Button */}
-            <Link to={createPageUrl('Quiz')}>
+            <Link to={createPageUrl('Quiz')} className="w-full">
               <Button 
-                variant="outline"
-                className="w-full h-12 border-2 border-pink-500 text-pink-600 hover:bg-pink-50 text-base font-semibold rounded-xl"
+                variant="ghost"
+                className="w-full h-12 text-gray-600 hover:text-pink-600 hover:bg-transparent text-sm font-normal"
               >
-                <ClipboardList className="w-5 h-5 mr-2" />
+                <ClipboardList className="w-4 h-4 mr-2" />
                 Descubra se esse colágeno é para você
               </Button>
             </Link>
