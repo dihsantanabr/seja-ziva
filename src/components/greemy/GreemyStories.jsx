@@ -7,38 +7,31 @@ import { Button } from "@/components/ui/button";
 const stories = [
     {
       id: 1,
-      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-19.11.47.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4#t=0",
       title: "História 1",
       type: "video",
-      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-19.11.47.mp4"
+      videoUrl: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4"
     },
     {
       id: 2,
-      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.16.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4#t=0",
       title: "História 2",
       type: "video",
-      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.16.mp4"
+      videoUrl: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4"
     },
     {
       id: 3,
-      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.37.mp4_20251212T113522119Z#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4#t=0",
       title: "História 3",
       type: "video",
-      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.37.mp4_20251212T113522119Z"
+      videoUrl: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4"
     },
     {
       id: 4,
-      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.48.16.mp4_20251212T113556728Z#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4#t=0",
       title: "História 4",
       type: "video",
-      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.48.16.mp4_20251212T113556728Z"
-    },
-    {
-      id: 5,
-      thumb: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.46.04.mp4_20251212T113652349Z#t=0",
-      title: "História 5",
-      type: "video",
-      videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.46.04.mp4_20251212T113652349Z"
+      videoUrl: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4"
     }
   ];
 
