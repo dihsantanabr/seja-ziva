@@ -13,7 +13,7 @@ const productImages = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500' },
+  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true },
   { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
   { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
   { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
@@ -340,6 +340,11 @@ export default function GreemyHero() {
                       {flavor.hasLactose && (
                         <div className="absolute -top-2 -left-2">
                           <Badge className="bg-amber-600 text-white text-xs">Contém Lactose</Badge>
+                        </div>
+                      )}
+                      {flavor.mostChosen && (
+                        <div className="absolute -top-2 -left-2">
+                          <Badge className="bg-green-600 text-white text-xs">+ Escolhido</Badge>
                         </div>
                       )}
                       <div className="text-3xl mb-2">{flavor.emoji}</div>
