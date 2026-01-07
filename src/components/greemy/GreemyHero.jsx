@@ -55,7 +55,7 @@ export default function GreemyHero() {
   return (
     <section className="bg-white">
       {/* Announcement Bar */}
-      <div className="bg-gradient-to-r from-pink-400 to-pink-600 text-white py-2.5 overflow-hidden">
+      <div className="bg-gradient-to-r from-pink-500 to-pink-700 text-white py-2.5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 mx-8">
@@ -103,7 +103,7 @@ export default function GreemyHero() {
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-pink-400 to-pink-500 text-white">
+              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
                 Mais Vendido
               </Badge>
               <img
@@ -117,12 +117,12 @@ export default function GreemyHero() {
           {/* Product Info */}
           <div className="space-y-4 lg:space-y-6">
             <div>
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider mb-2">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-sm uppercase tracking-wider mb-2">
                 Cuidado Natural da Pele
               </p>
               <h1 className="text-2xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Colágeno Verisol®
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500">+ Ácido Hialurônico</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
               </h1>
               <p className="mt-2 text-base lg:text-lg text-gray-600">
                 Beleza que começa de dentro. Reduz rugas, aumenta firmeza e hidrata profundamente sua pele em até 4 semanas.
@@ -143,27 +143,27 @@ export default function GreemyHero() {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
                 100% Natural
               </Badge>
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
                 Hidratação Intensa
               </Badge>
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Shield className="w-3.5 h-3.5 mr-1.5" />
                 Alívio de Irritações
               </Badge>
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Zap className="w-3.5 h-3.5 mr-1.5" />
                 Rápida Absorção
               </Badge>
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
                 Cruelty Free
               </Badge>
-              <Badge variant="outline" className="border-pink-400 text-pink-500 px-3 py-1.5">
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
                 Vegano
               </Badge>
@@ -176,7 +176,7 @@ export default function GreemyHero() {
                   <span className="text-lg text-gray-400 line-through">
                     R$ {pricesWithExtras[selectedSize].original.toFixed(2).replace('.', ',')}
                   </span>
-                  <Badge className="bg-pink-500 text-white">
+                  <Badge className="bg-pink-600 text-white">
                     {pricesWithExtras[selectedSize].discount}% OFF
                   </Badge>
                 </div>
@@ -189,10 +189,10 @@ export default function GreemyHero() {
               <p className="text-sm text-gray-600 mt-2">
                 ou 4x de R$ {(pricesWithExtras[selectedSize].current / 4).toFixed(2).replace('.', ',')} sem juros
               </p>
-              <div className="flex items-center gap-2 mt-3 text-pink-700 bg-pink-50 px-3 py-2 rounded-lg">
+              <div className="flex items-center gap-2 mt-3 text-pink-800 bg-pink-100 px-3 py-2 rounded-lg">
                 <div className="relative">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" />
-                  <div className="absolute inset-0 w-2 h-2 bg-pink-500 rounded-full animate-ping opacity-75" />
+                  <div className="w-2 h-2 bg-pink-600 rounded-full animate-pulse" />
+                  <div className="absolute inset-0 w-2 h-2 bg-pink-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-sm font-medium">
                   {selectedSize === '1 Unidade' 
@@ -215,8 +215,8 @@ export default function GreemyHero() {
                     onClick={() => setSelectedSize(size)}
                     className={`relative px-6 py-5 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
-                        ? 'border-pink-400 bg-gradient-to-r from-pink-400 to-pink-500 text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-pink-400'
+                        ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white'
+                        : 'border-gray-200 text-gray-700 hover:border-pink-500'
                     }`}
                   >
                     {size === '3 Unidades' && (
@@ -241,8 +241,8 @@ export default function GreemyHero() {
               
               {/* Unit Price Box - Only for 3 Units */}
               {selectedSize === '3 Unidades' && (
-                <div className="mt-3 bg-pink-50 border border-pink-200 rounded-xl p-3 text-center">
-                  <p className="text-pink-700 font-semibold text-sm">
+                <div className="mt-3 bg-pink-100 border border-pink-300 rounded-xl p-3 text-center">
+                  <p className="text-pink-800 font-semibold text-sm">
                     Cada Unidade sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
                   </p>
                 </div>
@@ -252,15 +252,15 @@ export default function GreemyHero() {
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              className="w-full h-12 bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-400/25 transition-all hover:shadow-xl hover:shadow-pink-400/30"
+              className="w-full h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
             >
               Comprar Agora
             </Button>
 
             {/* Delivery Estimate */}
-            <div className="bg-pink-50 border border-pink-200 rounded-xl p-4">
+            <div className="bg-pink-100 border border-pink-300 rounded-xl p-4">
               <div className="flex items-start gap-3">
-                <Package className="w-5 h-5 text-pink-500 flex-shrink-0 mt-0.5" />
+                <Package className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <p className="font-semibold text-pink-900">
@@ -272,7 +272,7 @@ export default function GreemyHero() {
                       </Badge>
                     )}
                   </div>
-                  <p className="text-sm text-pink-600 mt-1">
+                  <p className="text-sm text-pink-700 mt-1">
                     Confirme o prazo final na próxima etapa.
                   </p>
                 </div>
@@ -281,21 +281,21 @@ export default function GreemyHero() {
 
             {/* Trust Cards */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-pink-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-400/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Sparkles className="w-5 h-5 text-pink-500" />
+              <div className="bg-pink-100 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Sparkles className="w-5 h-5 text-pink-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Acelera Cicatrização</p>
               </div>
-              <div className="bg-pink-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-400/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Flower2 className="w-5 h-5 text-pink-500" />
+              <div className="bg-pink-100 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Flower2 className="w-5 h-5 text-pink-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Estimula Colágeno</p>
               </div>
-              <div className="bg-pink-50 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 bg-pink-400/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <Wind className="w-5 h-5 text-pink-500" />
+              <div className="bg-pink-100 rounded-xl p-4 text-center">
+                <div className="w-10 h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Wind className="w-5 h-5 text-pink-600" />
                 </div>
                 <p className="font-semibold text-gray-900 text-sm">Ação Calmante</p>
               </div>
@@ -310,7 +310,7 @@ export default function GreemyHero() {
                 'Controle de Caspas'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="w-4 h-4 text-pink-500" />
+                  <Check className="w-4 h-4 text-pink-600" />
                   {benefit}
                 </div>
               ))}
