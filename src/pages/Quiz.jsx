@@ -14,6 +14,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 const questions = [
   {
@@ -167,12 +168,12 @@ export default function Quiz() {
     if (Object.keys(answers).length > 0 && !showResult) {
       setShowExitDialog(true);
     } else {
-      navigate(-1);
+      window.location.href = createPageUrl('Colageno');
     }
   };
 
   const confirmExit = () => {
-    navigate(-1);
+    window.location.href = createPageUrl('Colageno');
   };
 
   const isSelected = (optionId) => {
