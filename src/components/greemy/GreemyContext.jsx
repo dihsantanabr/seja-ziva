@@ -15,7 +15,7 @@ export const GreemyProvider = ({ children }) => {
   const [selectedFlavor, setSelectedFlavor] = useState('30ml');
 
   const prices = {
-    '1 Unidade': { original: 157.00, current: 117.00, discount: 25 },
+    '1 Unidade': { original: 157.00, current: 117.70, discount: 25 },
     '3 Unidades': { original: 471.00, current: 267.70, discount: 43 }
   };
 
