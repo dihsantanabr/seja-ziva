@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Shield, Leaf, Heart, Check, Sparkles, Zap } from 'lucide-react';
+import { Star, Leaf, Heart, Check, Sparkles, Zap, ShieldCheck } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 import { motion } from 'framer-motion';
 
