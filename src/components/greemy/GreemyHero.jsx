@@ -13,18 +13,17 @@ const productImages = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true },
-  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
-  { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
-  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
-  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' },
-  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true }
+  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true, code: '6J3KDTF80E' },
+  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500', code: 'GAA70WUDT7' },
+  { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500', code: 'OY7JZG4UE9' },
+  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400', code: 'Q7TJA8P8X6' },
+  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500', code: '4JF2A26WUQ' },
+  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true, code: 'OY9KOFHD8D' }
 ];
 
 export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
-  const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
-  const [selectedFlavors, setSelectedFlavors] = useState([]);
+  const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, selectedFlavors, setSelectedFlavors, prices } = useGreemy();
 
   // Fixed number of reviews
   const formattedReviews = '238.917';
@@ -46,15 +45,27 @@ export default function GreemyHero() {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
   };
 
-  const getCheckoutLink = () => {
-    if (selectedSize === '3 Unidades') {
-      return 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
-    }
-    return 'https://seguro.avozon.com.br/r/O0QFN501RQ';
-  };
-
   const handleBuyClick = () => {
-    window.location.href = getCheckoutLink();
+    // Contar quantas vezes cada sabor foi selecionado
+    const flavorCounts = {};
+    selectedFlavors.forEach(flavorId => {
+      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+    });
+
+    // Gerar a string de produtos no formato CODIGO:QUANTIDADE
+    const productParts = [];
+    Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
+      const flavor = flavors.find(f => f.id === flavorId);
+      if (flavor && flavor.code) {
+        productParts.push(`${flavor.code}:${quantity}`);
+      }
+    });
+
+    // Montar a URL final
+    const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
+    const checkoutUrl = baseUrl + productParts.join(',');
+    
+    window.location.href = checkoutUrl;
   };
 
   const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
