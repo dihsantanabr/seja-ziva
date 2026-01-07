@@ -117,11 +117,11 @@ export default function GreemyHero() {
 
       {/* Logo */}
       <div className="bg-white py-4">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <img 
             src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/81df3e842_LOGO-RENOVA-PRETO2.png"
             alt="Renova Be"
-            className="h-8 lg:h-10"
+            className="h-8 lg:h-10 mx-auto"
           />
         </div>
       </div>
