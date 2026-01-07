@@ -25,14 +25,8 @@ export default function GreemyHero() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
   const [selectedFlavors, setSelectedFlavors] = useState([]);
 
-  // Calculate dynamic reviews based on date (98 reviews per day)
-  const baseDate = new Date('2025-12-26');
-  const baseReviews = 1473;
-  const reviewsPerDay = 98;
-  const today = new Date();
-  const daysDiff = Math.floor((today - baseDate) / (1000 * 60 * 60 * 24));
-  const currentReviews = baseReviews + (daysDiff * reviewsPerDay);
-  const formattedReviews = currentReviews.toLocaleString('pt-BR');
+  // Fixed number of reviews
+  const formattedReviews = '238.917';
 
 
 
