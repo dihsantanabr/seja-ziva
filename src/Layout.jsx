@@ -2,6 +2,19 @@ import React, { useEffect } from 'react';
 
 export default function Layout({ children, currentPageName }) {
   useEffect(() => {
+    // Prevent third-party script errors
+    if (typeof window !== 'undefined') {
+      window.WapStore = window.WapStore || {};
+      
+      // Global error handler for external scripts
+      window.addEventListener('error', (e) => {
+        if (e.message && e.message.includes('WapStore')) {
+          e.preventDefault();
+          console.warn('WapStore error suppressed');
+        }
+      }, true);
+    }
+
     // Meta Pixel
     if (typeof window !== 'undefined') {
       try {
