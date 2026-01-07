@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GreemyHero from '../components/greemy/GreemyHero';
+import LPTextHero from '../components/greemy/LPTextHero';
 import GreemyForWho from '../components/greemy/GreemyForWho';
 import GreemyResults from '../components/greemy/GreemyResults';
 import GreemyFormula from '../components/greemy/GreemyFormula';
