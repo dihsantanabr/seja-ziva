@@ -27,8 +27,18 @@ export default function GreemyStickyBuyBar() {
   }, []);
 
   const handleBuyClick = () => {
+    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+    
     // Se não houver sabores selecionados, scroll até o seletor
     if (!selectedFlavors || selectedFlavors.length === 0) {
+      const purchaseSection = document.querySelector('#escolha-seu-colageno');
+      if (purchaseSection) {
+        purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    if (selectedFlavors.length !== maxFlavors) {
       const purchaseSection = document.querySelector('#escolha-seu-colageno');
       if (purchaseSection) {
         purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -48,11 +58,14 @@ export default function GreemyStickyBuyBar() {
       const flavor = flavors.find(f => f.id === flavorId);
       if (flavor && flavor.code) {
         productParts.push(`${flavor.code}:${quantity}`);
+      } else {
+        console.error('Sabor não encontrado:', flavorId);
       }
     });
 
     if (productParts.length === 0) {
       alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
+      console.error('Nenhum código de produto gerado');
       return;
     }
 
@@ -60,11 +73,18 @@ export default function GreemyStickyBuyBar() {
     const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
     
-    console.log('Redirecionando para:', checkoutUrl);
+    console.log('=== DEBUG CHECKOUT ===');
+    console.log('Tamanho selecionado:', selectedSize);
     console.log('Sabores selecionados:', selectedFlavors);
-    console.log('Contagem:', flavorCounts);
+    console.log('Contagem de sabores:', flavorCounts);
+    console.log('Códigos gerados:', productParts);
+    console.log('URL final:', checkoutUrl);
+    console.log('====================');
     
-    window.location.href = checkoutUrl;
+    // Redirecionar
+    setTimeout(() => {
+      window.location.href = checkoutUrl;
+    }, 100);
   };
 
   return (
