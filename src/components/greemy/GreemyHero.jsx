@@ -130,12 +130,12 @@ export default function GreemyHero() {
       {/* Stories Section */}
       <GreemyStories />
 
-      <div className="max-w-7xl mx-auto px-4 py-6 lg:py-12">
+      <div className="max-w-7xl mx-auto px-4 pt-2 pb-6 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Image Gallery */}
           <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
             {/* Mobile Stats Bar */}
-            <div className="lg:hidden flex items-center justify-between px-2 py-2">
+            <div className="lg:hidden flex items-center justify-between px-2">
               <span className="text-xs font-medium text-gray-500">+2 Milhões de Vendas</span>
               <div className="flex items-center gap-1.5">
                 <span className="font-semibold text-gray-900 text-sm">4.9</span>
