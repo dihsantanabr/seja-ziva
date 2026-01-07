@@ -224,7 +224,7 @@ export default function GreemyPurchaseSelector() {
                   )}
                   {flavor.hasLactose && (
                     <div className="absolute -top-2 -left-2">
-                      <Badge className="bg-amber-600 text-white text-[9px] lg:text-xs whitespace-nowrap px-1">Lactose</Badge>
+                      <Badge className="bg-amber-600 text-white text-[9px] lg:text-xs whitespace-nowrap px-1">Contém Lactose</Badge>
                     </div>
                   )}
                   {flavor.mostChosen && count === 0 && (
