@@ -149,7 +149,7 @@ export default function GreemyHero() {
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
-              <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
+              <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
                 Mais Vendido
               </Badge>
               <img
