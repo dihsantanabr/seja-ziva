@@ -23,12 +23,12 @@ const sizes = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', mostChosen: true },
-  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍' },
-  { id: 'limao', name: 'Limão', emoji: '🍋' },
-  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹' },
-  { id: 'tangerina', name: 'Tangerina', emoji: '🍊' },
-  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', hasLactose: true }
+  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', mostChosen: true, code: '6J3KDTF80E' },
+  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', code: 'GAA70WUDT7' },
+  { id: 'limao', name: 'Limão', emoji: '🍋', code: 'OY7JZG4UE9' },
+  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', code: 'Q7TJA8P8X6' },
+  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', code: '4JF2A26WUQ' },
+  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', hasLactose: true, code: 'OY9KOFHD8D' }
 ];
 
 export default function GreemyPurchaseSelector() {
@@ -68,11 +68,26 @@ export default function GreemyPurchaseSelector() {
   };
 
   const handleBuyNow = () => {
-    const checkoutLinks = {
-      '1 Unidade': 'https://seguro.avozon.com.br/r/O0QFN501RQ',
-      '3 Unidades': 'https://seguro.avozon.com.br/r/9LBQYYJH8D'
-    };
-    window.location.href = checkoutLinks[selectedSize];
+    // Contar quantas vezes cada sabor foi selecionado
+    const flavorCounts = {};
+    selectedFlavors.forEach(flavorId => {
+      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+    });
+
+    // Gerar a string de produtos no formato CODIGO:QUANTIDADE
+    const productParts = [];
+    Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
+      const flavor = flavors.find(f => f.id === flavorId);
+      if (flavor && flavor.code) {
+        productParts.push(`${flavor.code}:${quantity}`);
+      }
+    });
+
+    // Montar a URL final
+    const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
+    const checkoutUrl = baseUrl + productParts.join(',');
+    
+    window.location.href = checkoutUrl;
   };
 
   return (
