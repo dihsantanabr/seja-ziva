@@ -66,15 +66,18 @@ export default function GreemyHero() {
   const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
 
   const handleFlavorClick = (flavorId) => {
-    if (selectedFlavors.length < maxFlavors) {
+    const count = getFlavorCount(flavorId);
+    
+    // Se já está selecionado e clicou novamente, remove um
+    if (count > 0) {
+      const indexToRemove = selectedFlavors.findIndex(f => f === flavorId);
+      const newFlavors = [...selectedFlavors];
+      newFlavors.splice(indexToRemove, 1);
+      setSelectedFlavors(newFlavors);
+    } else if (selectedFlavors.length < maxFlavors) {
+      // Se não está selecionado e tem espaço, adiciona
       setSelectedFlavors([...selectedFlavors, flavorId]);
     }
-  };
-
-  const handleRemoveFlavor = (index) => {
-    const newFlavors = [...selectedFlavors];
-    newFlavors.splice(index, 1);
-    setSelectedFlavors(newFlavors);
   };
 
   const getFlavorCount = (flavorId) => {
@@ -295,26 +298,6 @@ export default function GreemyHero() {
                 </span>
               </div>
 
-              {/* Selected Flavors Summary */}
-              {selectedFlavors.length > 0 && (
-                <div className="mb-3 flex flex-wrap gap-2">
-                  {selectedFlavors.map((flavorId, index) => {
-                    const flavor = flavors.find(f => f.id === flavorId);
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleRemoveFlavor(index)}
-                        className="flex items-center gap-2 bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-pink-200 transition-colors"
-                      >
-                        <span>{flavor.emoji}</span>
-                        <span>{flavor.name}</span>
-                        <span className="text-pink-400">×</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-
               {/* Flavor Options */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {flavors.map((flavor) => {
@@ -326,7 +309,7 @@ export default function GreemyHero() {
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
                       disabled={isDisabled}
-                      className={`relative p-4 rounded-xl border-2 transition-all text-center ${
+                      className={`relative p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
                           : isDisabled
@@ -353,14 +336,12 @@ export default function GreemyHero() {
                 })}
               </div>
 
-              {selectedFlavors.length < maxFlavors && (
-                <p className="text-xs text-gray-500 mt-2 text-center">
-                  {selectedSize === '1 Unidade' 
-                    ? 'Clique no sabor desejado'
-                    : `Clique nos sabores para selecionar suas ${maxFlavors} unidades`
-                  }
-                </p>
-              )}
+              <p className="text-xs text-gray-500 mt-2 text-center">
+                {selectedSize === '1 Unidade' 
+                  ? 'Clique no sabor desejado (clique novamente para desselecionar)'
+                  : 'Clique nos sabores (clique novamente no mesmo para desselecionar)'
+                }
+              </p>
             </div>
 
             {/* Buy Button */}
