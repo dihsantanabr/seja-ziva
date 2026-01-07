@@ -26,10 +26,10 @@ export default function GreemyFinalCTA() {
           </div>
 
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-            Guia Completo: Colágeno para Pele Jovem
+            Guia da Pele Perfeita
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Descubra os segredos do colágeno e como rejuvenescer sua pele de dentro para fora com dicas exclusivas
+            Descubra todos os segredos para ter uma pele radiante, jovem e saudável com nosso guia exclusivo
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
