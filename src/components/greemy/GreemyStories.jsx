@@ -117,7 +117,7 @@ export default function GreemyStories() {
       {/* Stories Strip */}
       <div className="bg-white py-4">
         <div className="max-w-7xl mx-auto lg:px-4">
-          <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide lg:justify-center px-4 lg:px-0 snap-x snap-mandatory">
+          <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide lg:justify-center pl-6 pr-4 lg:px-0 snap-x snap-mandatory">
             {stories.map((story, index) => (
               <button
                 key={story.id}
