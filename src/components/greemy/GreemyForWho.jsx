@@ -6,49 +6,49 @@ import { Button } from "@/components/ui/button";
 const painPoints = [
   {
     icon: Droplets,
-    title: "Pele seca e desidratada",
-    description: "Sensação de ressecamento constante"
+    title: "Rugas e linhas de expressão",
+    description: "Sinais visíveis de envelhecimento"
   },
   {
     icon: Heart,
-    title: "Irritações na pele",
-    description: "Vermelhidão e desconforto"
+    title: "Perda de firmeza",
+    description: "Pele flácida e sem elasticidade"
   },
   {
     icon: Sparkles,
-    title: "Falta de vitalidade",
-    description: "Pele sem brilho e opaca"
+    title: "Falta de hidratação",
+    description: "Pele ressecada e sem viço"
   },
   {
     icon: Shield,
-    title: "Cicatrização lenta",
-    description: "Marcas demoram para desaparecer"
+    title: "Colágeno reduzido",
+    description: "Diminuição natural com a idade"
   },
   {
     icon: Wind,
-    title: "Sensibilidade aumentada",
-    description: "Pele reage facilmente"
+    title: "Pele sem luminosidade",
+    description: "Aspecto cansado e opaco"
   },
   {
     icon: Star,
-    title: "Busca por cuidado natural",
-    description: "Quer hidratação sem químicos"
+    title: "Busca por rejuvenescimento",
+    description: "Beleza que vem de dentro"
   }
 ];
 
 export default function GreemyForWho({ onOpenQuiz }) {
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-teal-50">
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
             Esse é o seu caso?
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Cuidado natural ideal para sua pele!
+            Beleza que começa de dentro!
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Perfeito para quem busca hidratação profunda e tratamento natural
+            Perfeito para quem busca reduzir rugas, aumentar firmeza e hidratar profundamente
           </p>
         </div>
 
@@ -60,10 +60,10 @@ export default function GreemyForWho({ onOpenQuiz }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-teal-100"
+              className="group bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-pink-100"
               >
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:shadow-md transition-all">
-                <point.icon className="w-7 h-7 text-teal-600" />
+                <point.icon className="w-7 h-7 text-pink-500" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {point.title}
@@ -76,8 +76,8 @@ export default function GreemyForWho({ onOpenQuiz }) {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-700 bg-gradient-to-r from-teal-100 to-emerald-100 inline-block px-6 py-3 rounded-full">
-            💚 Se você se identificou com algum desses casos, <strong>o Óleo Ozonizado foi feito para você</strong>
+          <p className="text-lg text-gray-700 bg-gradient-to-r from-pink-100 to-rose-100 inline-block px-6 py-3 rounded-full">
+            💗 Se você se identificou com algum desses casos, <strong>o Colágeno Verisol® foi feito para você</strong>
           </p>
         </div>
       </div>
