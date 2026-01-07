@@ -50,8 +50,43 @@ export default function GreemyStories() {
   const [showPurchaseModal, setShowPurchaseModal] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [selectedFlavors, setSelectedFlavors] = useState([]);
   const videoRef = React.useRef(null);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor } = useGreemy();
+
+  const flavors = [
+    { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500' },
+    { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
+    { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
+    { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
+    { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' },
+    { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600' }
+  ];
+
+  const getFlavorCount = (flavorId) => {
+    return selectedFlavors.filter(f => f === flavorId).length;
+  };
+
+  const handleFlavorClick = (flavorId) => {
+    const count = getFlavorCount(flavorId);
+    const totalSelected = selectedFlavors.length;
+    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+    
+    if (selectedSize === '1 Unidade') {
+      if (count > 0) {
+        setSelectedFlavors([]);
+      } else {
+        setSelectedFlavors([flavorId]);
+      }
+    } else {
+      if (totalSelected < maxFlavors) {
+        setSelectedFlavors([...selectedFlavors, flavorId]);
+      } else if (count > 0) {
+        const newFlavors = selectedFlavors.filter(f => f !== flavorId);
+        setSelectedFlavors(newFlavors);
+      }
+    }
+  };
 
   const openStory = (index) => {
     setCurrentIndex(index);
