@@ -15,7 +15,6 @@ import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 import GreemyPurchaseSelector from '../components/greemy/GreemyPurchaseSelector';
-import GreemyDebugPanel from '../components/greemy/GreemyDebugPanel';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 export default function Home() {
@@ -57,7 +56,6 @@ export default function Home() {
       <GreemyFinalCTA />
       <GreemyStickyBuyBar />
       <WhatsAppWidget />
-      <GreemyDebugPanel />
 
       {/* Marquee animation styles */}
       <style>{`
