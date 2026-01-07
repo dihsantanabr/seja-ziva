@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LPTextHero from '../components/greemy/LPTextHero';
 import GreemyForWho from '../components/greemy/GreemyForWho';
 import GreemyResults from '../components/greemy/GreemyResults';
+import LPPersonalizationCTA from '../components/greemy/LPPersonalizationCTA';
 import GreemyFormula from '../components/greemy/GreemyFormula';
 import GreemyHowToUse from '../components/greemy/GreemyHowToUse';
 import GreemyPainMatch from '../components/greemy/GreemyPainMatch';
@@ -39,6 +40,7 @@ export default function LP1() {
       <div id="resultados">
         <GreemyResults />
       </div>
+      <LPPersonalizationCTA onOpenQuiz={() => setShowQuiz(true)} />
       <div id="formula">
         <GreemyFormula />
       </div>
@@ -49,6 +51,7 @@ export default function LP1() {
       <div id="depoimentos">
         <GreemyTestimonials />
       </div>
+      <LPPersonalizationCTA onOpenQuiz={() => setShowQuiz(true)} />
       <GreemyPurchaseSelector />
       <GreemyComparison />
       <GreemyGuarantee />
