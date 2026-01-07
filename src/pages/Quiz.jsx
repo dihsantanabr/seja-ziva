@@ -35,9 +35,8 @@ const questions = [
   {
     id: 2,
     title: "O que mais te incomoda quando olha para sua pele?",
-    subtitle: "Escolha até 2 opções",
-    type: "multiple",
-    maxChoices: 2,
+    subtitle: "Escolha a opção que mais se identifica com você",
+    type: "single",
     options: [
       { id: "flacidez", label: "Flacidez ou perda de firmeza", emoji: "😕" },
       { id: "rugas", label: "Rugas e linhas de expressão", emoji: "😟" },
