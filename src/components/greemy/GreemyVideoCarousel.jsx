@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const videos = [
   {
     id: 1,
-    videoUrl: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4"
+    videoUrl: "https://cdn.shopify.com/videos/c/vp/484494cbb6e349b188ab013a41a870d3/484494cbb6e349b188ab013a41a870d3.HD-720p-4.5Mbps-65676654.mp4#t=3"
   },
   {
     id: 2,
