@@ -565,9 +565,9 @@ export default function Quiz() {
             onClick={handleExit}
             variant="ghost"
             size="icon"
-            className="text-gray-500 hover:text-gray-700 min-h-[44px] min-w-[44px]"
+            className="text-gray-500 hover:text-gray-700 min-h-[48px] min-w-[48px] touch-manipulation"
           >
-            <X className="w-5 h-5" />
+            <X className="w-6 h-6" />
           </Button>
         </div>
 
@@ -602,7 +602,7 @@ export default function Quiz() {
                 key={idx}
                 onClick={() => goToQuestion(idx)}
                 disabled={idx > currentQuestion}
-                className={`min-w-[44px] min-h-[44px] w-11 h-11 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
+                className={`min-w-[48px] min-h-[48px] w-12 h-12 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold transition-all touch-manipulation ${
                   isCurrent
                     ? 'bg-pink-600 text-white scale-110 ring-4 ring-pink-200'
                     : isAnswered
@@ -652,7 +652,7 @@ export default function Quiz() {
                   onClick={() => handleAnswer(option.id)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full min-h-[56px] p-3 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 ${
+                  className={`w-full min-h-[60px] p-4 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 touch-manipulation ${
                     isSelected(option.id)
                       ? 'border-pink-500 bg-pink-50'
                       : 'border-gray-200 hover:border-pink-300'
@@ -681,21 +681,21 @@ export default function Quiz() {
                 <Button
                   onClick={prevQuestion}
                   variant="outline"
-                  className="flex-1 h-12 min-h-[48px] text-sm sm:text-base"
+                  className="flex-1 h-14 min-h-[56px] text-base sm:text-base touch-manipulation"
                 >
-                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                  <ChevronLeft className="w-5 h-5 mr-2" />
                   Voltar
                 </Button>
               )}
               <Button
                 onClick={nextQuestion}
                 disabled={!isAnswered()}
-                className={`h-12 min-h-[48px] text-sm sm:text-base bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white ${
+                className={`h-14 min-h-[56px] text-base sm:text-base bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white touch-manipulation ${
                   currentQuestion === 0 ? 'w-full' : 'flex-1'
                 }`}
               >
                 {currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima'}
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2" />
+                <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </motion.div>

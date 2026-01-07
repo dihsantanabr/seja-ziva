@@ -31,9 +31,9 @@ export default function Flacidez() {
             <div className="relative w-full max-w-3xl m-auto">
               <button
                 onClick={() => setShowQuiz(false)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+                className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all touch-manipulation"
               >
-                <span className="text-gray-600 text-xl">×</span>
+                <span className="text-gray-600 text-2xl font-bold">×</span>
               </button>
               <Quiz />
             </div>
