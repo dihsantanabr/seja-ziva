@@ -15,7 +15,7 @@ import GreemyFAQ from '../components/greemy/GreemyFAQ';
 import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
-import GreemyQuiz from '../components/greemy/GreemyQuiz';
+import Quiz from './Quiz';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 export default function LP1() {
@@ -26,9 +26,11 @@ export default function LP1() {
       <div className="min-h-screen bg-white">
       {/* Quiz Popup */}
       {showQuiz && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <GreemyQuiz onComplete={() => setShowQuiz(false)} />
+        <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
+          <div className="min-h-screen flex items-center justify-center p-4">
+            <div className="relative w-full">
+              <Quiz />
+            </div>
           </div>
         </div>
       )}
