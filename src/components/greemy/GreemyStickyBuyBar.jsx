@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, ShoppingCart } from 'lucide-react';
+import { Star, ShoppingCart, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGreemy } from './GreemyContext';
@@ -16,16 +16,18 @@ const FLAVOR_CODES = {
 
 export default function GreemyStickyBuyBar() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
   const { selectedSize, selectedFlavors, prices } = useGreemy();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 200);
+      const scrolled = window.scrollY > 200;
+      setIsVisible(scrolled && !isDismissed);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isDismissed]);
 
   const handleBuyClick = () => {
     const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
@@ -93,9 +95,16 @@ export default function GreemyStickyBuyBar() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 shadow-2xl safe-area-bottom"
+          className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t-2 border-pink-200 shadow-2xl safe-area-bottom"
         >
-          <div className="px-4 py-2 flex flex-col gap-2">
+          <button
+            onClick={() => setIsDismissed(true)}
+            className="absolute top-2 right-2 p-1 text-gray-400 hover:text-gray-600 active:scale-95"
+            aria-label="Fechar"
+          >
+            <X className="w-4 h-4" />
+          </button>
+          <div className="px-4 py-3 flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1">
                 <span className="font-semibold text-sm text-gray-900">4.9</span>

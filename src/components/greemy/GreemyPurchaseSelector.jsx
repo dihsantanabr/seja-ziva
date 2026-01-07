@@ -146,10 +146,10 @@ export default function GreemyPurchaseSelector() {
               <button
                 key={size.id}
                 onClick={() => handleSizeChange(size.id)}
-                className={`relative px-3 py-4 lg:px-4 lg:py-5 rounded-xl border-2 font-medium transition-all text-center ${
+                className={`relative px-3 py-5 lg:px-4 lg:py-5 rounded-xl border-2 font-medium transition-all text-center min-h-[88px] active:scale-95 ${
                   selectedSize === size.id
-                    ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white'
-                    : 'border-gray-200 text-gray-700 hover:border-pink-500'
+                    ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg'
+                    : 'border-gray-200 text-gray-700 hover:border-pink-500 hover:shadow-md'
                 }`}
               >
                 {size.popular && (
@@ -180,9 +180,23 @@ export default function GreemyPurchaseSelector() {
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900">
               {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
             </h3>
-            <span className="text-sm text-pink-600 font-medium">
-              {selectedFlavors.length}/{maxFlavors} selecionado{maxFlavors > 1 ? 's' : ''}
-            </span>
+            <div className="flex items-center gap-2">
+              <div className="flex gap-1">
+                {[...Array(maxFlavors)].map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      i < selectedFlavors.length
+                        ? 'bg-pink-600 scale-110'
+                        : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              <span className="text-sm text-pink-600 font-medium">
+                {selectedFlavors.length}/{maxFlavors}
+              </span>
+            </div>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
@@ -195,16 +209,16 @@ export default function GreemyPurchaseSelector() {
                   key={flavor.id}
                   onClick={() => handleFlavorClick(flavor.id)}
                   disabled={isDisabled}
-                  className={`relative p-3 lg:p-4 rounded-xl border-2 transition-all text-center ${
+                  className={`relative p-4 lg:p-4 rounded-xl border-2 transition-all text-center min-h-[100px] active:scale-95 ${
                     count > 0
-                      ? 'border-pink-500 bg-pink-50 text-gray-900'
+                      ? 'border-pink-500 bg-pink-50 text-gray-900 shadow-md'
                       : isDisabled
                       ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
-                      : 'border-gray-200 hover:border-pink-300 text-gray-700'
+                      : 'border-gray-200 hover:border-pink-300 text-gray-700 hover:shadow-sm'
                   }`}
                 >
                   {count > 0 && (
-                    <div className="absolute -top-2 -right-2 w-5 h-5 lg:w-6 lg:h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 lg:w-7 lg:h-7 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg ring-2 ring-white">
                       {count}
                     </div>
                   )}
@@ -261,7 +275,7 @@ export default function GreemyPurchaseSelector() {
             <Button
               onClick={handleBuyNow}
               disabled={selectedFlavors.length < maxFlavors}
-              className="w-full md:w-auto bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base lg:text-lg px-8 py-6 lg:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full md:w-auto bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base lg:text-lg px-8 py-7 lg:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 min-h-[56px]"
             >
               {selectedFlavors.length < maxFlavors
                 ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
