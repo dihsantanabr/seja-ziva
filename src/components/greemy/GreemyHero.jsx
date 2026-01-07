@@ -115,6 +115,15 @@ export default function GreemyHero() {
         </div>
       </div>
 
+      {/* Logo */}
+      <div className="bg-white py-4 px-4">
+        <img 
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/81df3e842_LOGO-RENOVA-PRETO2.png"
+          alt="Renova Be"
+          className="h-8 lg:h-10"
+        />
+      </div>
+
       {/* Stories Section */}
       <GreemyStories />
 
