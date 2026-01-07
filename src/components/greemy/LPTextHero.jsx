@@ -91,7 +91,7 @@ export default function LPTextHero() {
               Aumenta Firmeza
             </Badge>
             <Badge variant="outline" className="border-pink-500 text-pink-600 px-4 py-2">
-              <Shield className="w-4 h-4 mr-2" />
+              <ShieldCheck className="w-4 h-4 mr-2" />
               Hidratação Profunda
             </Badge>
             <Badge variant="outline" className="border-pink-500 text-pink-600 px-4 py-2">
