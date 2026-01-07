@@ -156,7 +156,7 @@ export default function GreemyStories() {
             {stories.map((story, index) => (
               <button
                 key={story.id}
-                onClick={() => openStory(0)}
+                onClick={() => openStory(index)}
                 className="flex-shrink-0 group snap-start"
               >
                 <div className="relative">
