@@ -85,8 +85,8 @@ export default function GreemyResults() {
 
             <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">✨</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Rejuvenescimento</h4>
-              <p className="text-sm text-gray-600">Pele renovada</p>
+              <h4 className="font-semibold text-gray-900 mb-1 break-words">Rejuvenescimento</h4>
+              <p className="text-sm text-gray-600 break-words">Pele renovada</p>
             </div>
           </div>
         </div>
