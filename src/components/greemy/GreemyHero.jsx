@@ -382,7 +382,7 @@ export default function GreemyHero() {
                 <Package className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <p className="font-semibold text-green-900 text-sm lg:text-base">
+                    <p className="font-semibold text-green-900 text-xs lg:text-base">
                       Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                     </p>
                     {selectedSize === '3 Unidades' && (
