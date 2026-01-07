@@ -4,10 +4,10 @@ import { AlertTriangle, Shield, MessageCircle, RefreshCw } from 'lucide-react';
 
 export default function GreemyContraindications() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-green-50 to-white">
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-pink-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-lime-600 font-medium text-sm uppercase tracking-wider">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-sm uppercase tracking-wider">
             Segurança
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -21,11 +21,11 @@ export default function GreemyContraindications() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-amber-50 rounded-3xl p-8 border-2 border-amber-200"
+            className="bg-rose-50 rounded-3xl p-8 border-2 border-rose-200"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
-                <AlertTriangle className="w-6 h-6 text-amber-600" />
+              <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-rose-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">
                 Quem deve ter atenção especial?
@@ -39,7 +39,7 @@ export default function GreemyContraindications() {
                 "Em tratamento médico: consulte seu médico"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-gray-700">
-                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 bg-rose-500 rounded-full mt-2 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -52,11 +52,11 @@ export default function GreemyContraindications() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-green-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-green-600" />
+                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-pink-600" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
@@ -74,11 +74,11 @@ export default function GreemyContraindications() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-green-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-6 h-6 text-green-600" />
+                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-6 h-6 text-pink-600" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
@@ -96,11 +96,11 @@ export default function GreemyContraindications() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-green-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <RefreshCw className="w-6 h-6 text-green-600" />
+                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <RefreshCw className="w-6 h-6 text-pink-600" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">
