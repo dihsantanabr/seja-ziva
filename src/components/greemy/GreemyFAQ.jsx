@@ -4,52 +4,56 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "O que é o Colágeno Verisol® + Ácido Hialurônico e para que serve?",
-    answer: "É um suplemento de beleza que combina Colágeno Verisol® (peptídeos bioativos patenteados) com Ácido Hialurônico. Essa fórmula atua de dentro para fora na redução de rugas, aumento da firmeza e hidratação profunda da pele. É ideal para quem busca prevenir e reverter sinais de envelhecimento, melhorando a aparência geral da pele em 4 semanas."
+    question: "Colágeno realmente funciona ou é só marketing?",
+    answer: "Funciona sim! O Colágeno Verisol® tem mais de 15 estudos clínicos comprovando sua eficácia. A diferença está na qualidade: Verisol® possui peptídeos bioativos específicos que são absorvidos e direcionados para a pele, ao contrário de colágenos comuns que não têm essa tecnologia. Estudos mostram redução de até 20% nas rugas em 4 semanas de uso contínuo."
   },
   {
-    question: "Como o Colágeno Verisol® age na pele?",
-    answer: "O Verisol® contém peptídeos bioativos específicos que estimulam a produção natural de colágeno, elastina e ácido hialurônico nas camadas profundas da pele. Isso melhora a estrutura cutânea, aumenta a firmeza, reduz rugas e linhas de expressão, além de hidratar profundamente. Estudos clínicos comprovam redução visível de rugas em até 4 semanas."
+    question: "Já tenho mais de 40 anos, ainda vai fazer efeito em mim?",
+    answer: "Com certeza! Na verdade, quanto mais idade você tem, mais perceptíveis são os resultados, pois a produção natural de colágeno diminui significativamente após os 30 anos. Muitas clientes acima de 40 e 50 anos relatam os resultados mais impressionantes, com pele mais firme, redução de flacidez e rugas suavizadas. Nunca é tarde para começar!"
   },
   {
-    question: "Para quem o Colágeno Verisol® é indicado?",
-    answer: "Indicado para mulheres e homens a partir dos 25 anos que desejam prevenir ou tratar sinais de envelhecimento como rugas, perda de firmeza e hidratação. É especialmente eficaz para peles maduras, ressecadas ou que perderam elasticidade. Também beneficia cabelos e unhas, tornando-os mais fortes e saudáveis."
+    question: "Quanto tempo demora para eu ver resultado na minha pele?",
+    answer: "Os primeiros sinais você percebe entre 2 a 4 semanas: pele mais hidratada e luminosa. Entre 4 a 8 semanas: redução visível de linhas finas e maior firmeza. Após 12 semanas: resultados completos com pele mais densa, elástica e rugas minimizadas. O segredo é a constância - tome todos os dias!"
   },
   {
-    question: "Quais são os principais benefícios do Colágeno Verisol®?",
-    answer: "Reduz rugas e linhas de expressão em até 20% após 4 semanas; aumenta a firmeza e elasticidade da pele; promove hidratação profunda e duradoura; estimula a produção natural de colágeno; melhora a textura e o brilho da pele; fortalece cabelos e unhas; possui absorção otimizada de peptídeos bioativos; resultados cientificamente comprovados."
+    question: "Por que esse colágeno é mais caro que outros?",
+    answer: "Porque você está pagando por qualidade comprovada, não por pó qualquer! Verisol® é a única tecnologia patenteada com estudos científicos que provam que funciona. Colágenos baratos não têm peptídeos específicos, então são pouco absorvidos e eliminados pelo corpo. É como comparar um cosmético de farmácia com um de dermatologista - a diferença está nos resultados."
   },
   {
-    question: "Como devo tomar o Colágeno Verisol®?",
-    answer: "Recomenda-se tomar 1 dose (10g) por dia, diluída em 200ml de água, suco ou bebida de sua preferência. Pode ser consumido em qualquer horário, preferencialmente pela manhã ou antes de dormir. Para melhores resultados, mantenha o uso contínuo por pelo menos 3 meses. Não precisa refrigeração após aberto."
+    question: "Posso tomar com outros suplementos que já uso?",
+    answer: "Sim! O Colágeno Verisol® é seguro e complementa perfeitamente vitaminas, ômega 3, biotina, e outros suplementos. Inclusive, muitas pessoas tomam junto com vitamina C para potencializar a absorção do colágeno. Não há interações negativas. Se toma algum medicamento controlado, consulte seu médico por precaução."
   },
   {
-    question: "Em quanto tempo posso ver resultados?",
-    answer: "Estudos clínicos mostram que os primeiros resultados aparecem em 4 semanas de uso contínuo, com redução visível de rugas e aumento da hidratação. A firmeza e elasticidade melhoram progressivamente, com resultados mais expressivos entre 8 e 12 semanas. A constância é fundamental para maximizar os benefícios."
+    question: "Tem algum gosto ruim? Como eu tomo?",
+    answer: "É completamente sem sabor e sem cheiro! Você dissolve 10g (1 medidor) em qualquer líquido: água, suco, café, vitamina, iogurte... Dissolve rapidinho e não altera nada o sabor da bebida. A maioria das nossas clientes toma pela manhã no café ou suco, vira hábito automático na rotina."
   },
   {
-    question: "O colágeno tem sabor ou deixa gosto ruim?",
-    answer: "Nosso Colágeno Verisol® é neutro e inodoro, dissolve-se facilmente em qualquer líquido sem alterar o sabor. Não deixa gosto residual desagradável e pode ser misturado a água, sucos, vitaminas, café ou chás sem interferir no paladar da bebida."
+    question: "Vou engordar tomando colágeno?",
+    answer: "Não! Cada dose tem apenas 36 calorias e zero açúcar. É uma proteína pura que não engorda. Pelo contrário, muitas clientes relatam que o colágeno ajuda na saciedade e até auxilia na perda de peso quando combinado com dieta equilibrada, porque é proteína de alta qualidade."
   },
   {
-    question: "É um produto natural e seguro?",
-    answer: "Sim, nosso colágeno é de origem bovina, hidrolisado (alta absorção), sem conservantes artificiais, glúten, lactose ou açúcar. O Verisol® é uma tecnologia patenteada e clinicamente testada, aprovada por dermatologistas e segura para consumo diário. Seguimos rigorosos padrões de qualidade e pureza."
+    question: "Meu cabelo e unha também melhoram?",
+    answer: "Sim! Embora o foco seja a pele, o colágeno é a proteína estrutural de todo o corpo. Nossas clientes relatam muito que as unhas ficam mais fortes, crescem mais rápido e param de descamar. O cabelo fica menos quebradiço, com mais brilho e cresce mais saudável. É um bônus maravilhoso!"
   },
   {
-    question: "Existem contraindicações?",
-    answer: "O produto é seguro para adultos saudáveis. Gestantes, lactantes, crianças e pessoas com condições médicas específicas ou alergias a proteínas bovinas devem consultar um médico antes de usar. Não exceda a dose diária recomendada. Não é um medicamento e não substitui alimentação equilibrada."
+    question: "Preciso tomar para sempre ou posso parar depois?",
+    answer: "O ideal é incorporar na rotina para manter os resultados, já que nosso corpo continua perdendo colágeno com o tempo. Mas você não é 'dependente' - se parar, sua pele volta ao estado natural dela, não piora do que era antes. Pense como academia: para manter os resultados, você precisa continuar. Mas os benefícios acumulados não desaparecem de uma hora pra outra."
   },
   {
-    question: "Posso tomar colágeno todos os dias?",
-    answer: "Sim, o Colágeno Verisol® foi desenvolvido para uso diário contínuo. A ingestão regular é essencial para manter os níveis adequados de colágeno no organismo e sustentar os benefícios para pele, cabelos e unhas. É recomendado incorporá-lo à sua rotina de autocuidado."
+    question: "Grávida ou amamentando pode tomar?",
+    answer: "Por segurança e precaução, recomendamos que gestantes e lactantes consultem seu obstetra antes de usar qualquer suplemento, incluindo colágeno. Embora seja um produto natural e seguro, cada gravidez é única e seu médico conhece seu histórico. Depois da amamentação, pode voltar sem problemas!"
   },
   {
-    question: "O produto é aprovado por dermatologistas?",
-    answer: "Sim, o Colágeno Verisol® é amplamente recomendado por dermatologistas e profissionais de saúde. É sustentado por mais de 15 estudos clínicos que comprovam sua eficácia na redução de rugas, aumento de firmeza e melhora da hidratação da pele."
+    question: "É vegano? Tenho restrições alimentares.",
+    answer: "Nosso colágeno é de origem bovina (bovino hidrolisado), portanto não é vegano. É livre de glúten, lactose, açúcar e conservantes artificiais. Para vegetarianos que consomem derivados animais, não há problema. Ainda não existe colágeno vegetal no mercado - o que existe são estimuladores de colágeno, que têm mecanismo diferente."
   },
   {
-    question: "Qual o tamanho da embalagem e quanto tempo dura?",
-    answer: "Cada pote contém 300g de colágeno puro, equivalente a 30 doses de 10g. Com o uso diário recomendado, um pote dura exatamente 1 mês, proporcionando um tratamento completo e eficaz para sua beleza de dentro para fora."
+    question: "Se eu não gostar, posso devolver?",
+    answer: "Sim! Oferecemos garantia de 30 dias. Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro, sem burocracia. Estamos tão confiantes nos resultados que assumimos todo o risco para você. Você só precisa entrar em contato com nossa equipe dentro dos 30 dias."
+  },
+  {
+    question: "Quantos potes devo comprar para ver resultado?",
+    answer: "Recomendamos começar com 3 potes (3 meses) para experimentar os resultados completos que os estudos mostram. Cada pote dura 30 dias. Você pode começar com 1 para testar, mas os resultados mais impressionantes acontecem após 8-12 semanas de uso contínuo. Por isso o kit com 3 unidades sai mais em conta e garante o tratamento completo."
   }
 ];
 
