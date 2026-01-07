@@ -119,4 +119,34 @@ button, a {
   * {
     transition-duration: 0.2s;
   }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px !important;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Better tap targets */
+  button, a, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

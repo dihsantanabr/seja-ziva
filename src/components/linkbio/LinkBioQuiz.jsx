@@ -150,14 +150,14 @@ export default function LinkBioQuiz() {
   }
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-6 lg:p-8">
+    <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8">
       {/* Progress Bar */}
-      <div className="mb-6">
+      <div className="mb-5 sm:mb-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-600">
+          <span className="text-xs sm:text-sm font-medium text-gray-600">
             Pergunta {currentQuestion + 1} de {questions.length}
           </span>
-          <span className="text-sm font-medium text-pink-600">
+          <span className="text-xs sm:text-sm font-medium text-pink-600">
             {Math.round(progress)}%
           </span>
         </div>
@@ -180,27 +180,27 @@ export default function LinkBioQuiz() {
           transition={{ duration: 0.3 }}
         >
           {/* Question */}
-          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
             {question.question}
           </h3>
 
           {/* Options */}
-          <div className="space-y-3 mb-6">
+          <div className="space-y-2 sm:space-y-3 mb-5 sm:mb-6">
             {question.options.map((option) => (
               <motion.button
                 key={option.id}
                 onClick={() => handleAnswer(option.id)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
+                className={`w-full min-h-[56px] p-3 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 ${
                   answers[question.id] === option.id
                     ? 'border-pink-500 bg-pink-50'
                     : 'border-gray-200 hover:border-pink-300'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">{option.emoji}</span>
-                  <span className="font-medium text-gray-700 flex-1">
+                  <span className="text-xl sm:text-2xl flex-shrink-0">{option.emoji}</span>
+                  <span className="text-sm sm:text-base font-medium text-gray-700 flex-1">
                     {option.label}
                   </span>
                   {answers[question.id] === option.id && (
@@ -216,9 +216,9 @@ export default function LinkBioQuiz() {
             <Button
               onClick={prevQuestion}
               variant="outline"
-              className="w-full h-12"
+              className="w-full h-12 min-h-[48px] text-sm sm:text-base"
             >
-              <ChevronLeft className="w-5 h-5 mr-2" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
               Voltar
             </Button>
           )}

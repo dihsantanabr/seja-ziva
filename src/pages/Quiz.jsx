@@ -557,27 +557,27 @@ export default function Quiz() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-4 sm:py-8 px-3 sm:px-4">
       <div className="max-w-2xl mx-auto">
         {/* Exit Button */}
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-3 sm:mb-4">
           <Button
             onClick={handleExit}
             variant="ghost"
             size="icon"
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-gray-700 min-h-[44px] min-w-[44px]"
           >
             <X className="w-5 h-5" />
           </Button>
         </div>
 
         {/* Progress Bar */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-xs sm:text-sm font-medium text-gray-600">
               Pergunta {currentQuestion + 1} de {questions.length}
             </span>
-            <span className="text-sm font-medium text-pink-600">
+            <span className="text-xs sm:text-sm font-medium text-pink-600">
               {Math.round(progress)}%
             </span>
           </div>
@@ -592,7 +592,7 @@ export default function Quiz() {
         </div>
 
         {/* Question History Navigation */}
-        <div className="mb-6 flex flex-wrap gap-2 justify-center">
+        <div className="mb-4 sm:mb-6 flex flex-wrap gap-2 justify-center">
           {questions.map((q, idx) => {
             const isAnswered = answers[q.id] && answers[q.id].length > 0;
             const isCurrent = idx === currentQuestion;
@@ -602,11 +602,11 @@ export default function Quiz() {
                 key={idx}
                 onClick={() => goToQuestion(idx)}
                 disabled={idx > currentQuestion}
-                className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
+                className={`min-w-[44px] min-h-[44px] w-11 h-11 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
                   isCurrent
                     ? 'bg-pink-600 text-white scale-110 ring-4 ring-pink-200'
                     : isAnswered
-                    ? 'bg-pink-100 text-pink-600 hover:bg-pink-200'
+                    ? 'bg-pink-100 text-pink-600 hover:bg-pink-200 active:bg-pink-300'
                     : 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 }`}
               >
@@ -627,14 +627,14 @@ export default function Quiz() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: direction * -50 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-3xl shadow-xl p-6 lg:p-10"
-          >
+            className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-6 lg:p-10"
+            >
             {/* Question */}
-            <div className="mb-8">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                 {question.title}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 {question.subtitle}
               </p>
               {question.type === "multiple" && (
@@ -645,22 +645,22 @@ export default function Quiz() {
             </div>
 
             {/* Options */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {question.options.map((option) => (
                 <motion.button
                   key={option.id}
                   onClick={() => handleAnswer(option.id)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full p-4 rounded-xl border-2 text-left transition-all ${
+                  className={`w-full min-h-[56px] p-3 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 ${
                     isSelected(option.id)
                       ? 'border-pink-500 bg-pink-50'
                       : 'border-gray-200 hover:border-pink-300'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">{option.emoji}</span>
-                    <span className={`font-medium flex-1 ${
+                    <span className="text-xl sm:text-2xl flex-shrink-0">{option.emoji}</span>
+                    <span className={`text-sm sm:text-base font-medium flex-1 ${
                       isSelected(option.id) ? 'text-pink-900' : 'text-gray-700'
                     }`}>
                       {option.label}
@@ -676,26 +676,26 @@ export default function Quiz() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {currentQuestion > 0 && (
                 <Button
                   onClick={prevQuestion}
                   variant="outline"
-                  className="flex-1 h-12"
+                  className="flex-1 h-12 min-h-[48px] text-sm sm:text-base"
                 >
-                  <ChevronLeft className="w-5 h-5 mr-2" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                   Voltar
                 </Button>
               )}
               <Button
                 onClick={nextQuestion}
                 disabled={!isAnswered()}
-                className={`h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white ${
+                className={`h-12 min-h-[48px] text-sm sm:text-base bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white ${
                   currentQuestion === 0 ? 'w-full' : 'flex-1'
                 }`}
               >
                 {currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima'}
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2" />
               </Button>
             </div>
           </motion.div>

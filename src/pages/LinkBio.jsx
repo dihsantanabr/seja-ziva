@@ -71,46 +71,46 @@ export default function LinkBio() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-pink-50">
       {/* Logo/Brand */}
-      <div className="pt-8 pb-4 text-center">
-        <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
+      <div className="pt-6 sm:pt-8 pb-3 sm:pb-4 text-center px-4">
+        <h1 className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
           Dreams Nutrition
         </h1>
       </div>
 
       {/* SESSÃO 1: Captura de E-mail */}
       {!emailCaptured && (
-        <section className="px-4 py-8">
+        <section className="px-3 sm:px-4 py-6 sm:py-8">
           <div className="max-w-md mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-3xl shadow-xl p-6 lg:p-8"
+              className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-6 lg:p-8"
             >
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Sparkles className="w-8 h-8 text-white" />
+              <div className="text-center mb-5 sm:mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                   Descubra o colágeno ideal para a sua pele
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   Responda algumas perguntas rápidas e receba uma recomendação personalizada para sua rotina.
                 </p>
               </div>
 
-              <form onSubmit={handleEmailSubmit} className="space-y-4">
+              <form onSubmit={handleEmailSubmit} className="space-y-3 sm:space-y-4">
                 <Input
                   type="email"
                   placeholder="Digite seu melhor e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="h-12 text-base"
+                  className="h-12 min-h-[48px] text-sm sm:text-base"
                 />
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-base font-semibold"
+                  className="w-full h-12 min-h-[48px] bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-sm sm:text-base font-semibold"
                 >
                   {isSubmitting ? 'Processando...' : 'Quero descobrir meu colágeno ideal'}
                   <ChevronRight className="w-5 h-5 ml-2" />
@@ -126,18 +126,18 @@ export default function LinkBio() {
       )}
 
       {/* SESSÃO 2: Quiz Inteligente */}
-      <section ref={quizRef} className="px-4 py-8">
+      <section ref={quizRef} className="px-3 sm:px-4 py-6 sm:py-8">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: emailCaptured ? 0.3 : 0 }}
           >
-            <div className="text-center mb-8">
-              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+            <div className="text-center mb-6 sm:mb-8 px-2">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                 Vamos encontrar o colágeno perfeito para você
               </h2>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 Leva menos de 1 minuto e considera seu tipo de pele, seus objetivos e sua rotina.
               </p>
             </div>
@@ -148,13 +148,13 @@ export default function LinkBio() {
       </section>
 
       {/* SESSÃO 3: Links Úteis */}
-      <section className="px-4 py-12 bg-white">
+      <section className="px-3 sm:px-4 py-8 sm:py-12 bg-white">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-6 sm:mb-8">
             Acesse rapidamente
           </h2>
 
-          <div className="grid gap-4">
+          <div className="grid gap-3 sm:gap-4">
             {links.map((link, idx) => (
               <motion.a
                 key={idx}
@@ -166,21 +166,21 @@ export default function LinkBio() {
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="block bg-white rounded-2xl shadow-md border border-gray-100 p-5 hover:shadow-xl transition-all"
+                className="block bg-white rounded-xl sm:rounded-2xl shadow-md border border-gray-100 p-4 sm:p-5 hover:shadow-xl transition-all active:scale-95 min-h-[72px]"
               >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center text-white flex-shrink-0`}>
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center text-white flex-shrink-0`}>
                     {link.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-0.5 sm:mb-1 truncate">
                       {link.title}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-1">
                       {link.subtitle}
                     </p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                  <ChevronRight className="w-5 h-5 text-gray-400 flex-shrink-0" />
                 </div>
               </motion.a>
             ))}
