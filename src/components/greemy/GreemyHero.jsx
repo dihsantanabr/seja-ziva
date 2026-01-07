@@ -317,14 +317,9 @@ export default function GreemyHero() {
                           : 'border-gray-200 hover:border-pink-300 text-gray-700'
                       }`}
                     >
-                      {count > 0 && selectedSize === '3 Unidades' && (
+                      {count > 0 && (
                         <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
                           {count}
-                        </div>
-                      )}
-                      {count > 0 && selectedSize === '1 Unidade' && (
-                        <div className="absolute -top-2 -right-2">
-                          <Check className="w-6 h-6 text-pink-600" />
                         </div>
                       )}
                       <div className="text-3xl mb-2">{flavor.emoji}</div>
