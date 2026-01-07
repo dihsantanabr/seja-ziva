@@ -306,7 +306,7 @@ export default function GreemyHero() {
               </div>
 
               {/* Flavor Options */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="flex gap-2 overflow-x-auto pb-2">
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
                   const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
@@ -316,7 +316,7 @@ export default function GreemyHero() {
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
                       disabled={isDisabled}
-                      className={`relative p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
+                      className={`relative flex-shrink-0 px-4 py-3 rounded-xl border-2 transition-all active:scale-95 flex items-center gap-2 ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
                           : isDisabled
@@ -329,8 +329,8 @@ export default function GreemyHero() {
                           {count}
                         </div>
                       )}
-                      <div className="text-3xl mb-2">{flavor.emoji}</div>
-                      <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
+                      <div className="text-2xl">{flavor.emoji}</div>
+                      <div className={`text-sm font-semibold whitespace-nowrap ${count > 0 ? 'text-white' : ''}`}>
                         {flavor.name}
                       </div>
                     </button>
@@ -370,12 +370,12 @@ export default function GreemyHero() {
             </Link>
 
             {/* Delivery Estimate */}
-            <div className="bg-pink-100 border border-pink-300 rounded-xl p-4">
+            <div className="bg-green-100 border border-green-300 rounded-xl p-4">
               <div className="flex items-start gap-3">
-                <Package className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
+                <Package className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <p className="font-semibold text-pink-900">
+                    <p className="font-semibold text-green-900">
                       Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                     </p>
                     {selectedSize === '3 Unidades' && (
@@ -384,7 +384,7 @@ export default function GreemyHero() {
                       </Badge>
                     )}
                   </div>
-                  <p className="text-sm text-pink-700 mt-1">
+                  <p className="text-sm text-green-700 mt-1">
                     Confirme o prazo final na próxima etapa.
                   </p>
                 </div>
