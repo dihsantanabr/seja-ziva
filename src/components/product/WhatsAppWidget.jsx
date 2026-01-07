@@ -22,7 +22,7 @@ export default function WhatsAppWidget() {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent('Olá, tenho dúvidas sobre o Colágeno.');
-    window.open(`https://wa.me/551931670628?text=${message}`, '_blank');
+    window.open('https://wa.me/551931670628?text=' + message, '_blank');
   };
 
   return (
