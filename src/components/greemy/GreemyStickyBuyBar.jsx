@@ -51,7 +51,7 @@ export default function GreemyStickyBuyBar() {
             <div className="flex items-center justify-between gap-3">
               <div className="flex-1">
                 <p className="text-xs font-medium text-gray-600 mb-1">
-                  {selectedSize === '1 Unidade' ? 'Rotina Inicial' : 'Rotina Completa'} - {selectedFlavor}
+                  {selectedSize} - {selectedSize === '1 Unidade' ? 'Rotina Inicial' : 'Rotina Completa'}
                 </p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-xs text-gray-400 line-through">
