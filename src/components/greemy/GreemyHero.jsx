@@ -46,6 +46,11 @@ export default function GreemyHero() {
   };
 
   const handleBuyClick = () => {
+    if (!selectedFlavors || selectedFlavors.length === 0) {
+      alert('Por favor, selecione os sabores antes de comprar.');
+      return;
+    }
+
     // Contar quantas vezes cada sabor foi selecionado
     const flavorCounts = {};
     selectedFlavors.forEach(flavorId => {
@@ -61,9 +66,18 @@ export default function GreemyHero() {
       }
     });
 
+    if (productParts.length === 0) {
+      alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
+      return;
+    }
+
     // Montar a URL final
     const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
+    
+    console.log('Redirecionando para:', checkoutUrl);
+    console.log('Sabores selecionados:', selectedFlavors);
+    console.log('Contagem:', flavorCounts);
     
     window.location.href = checkoutUrl;
   };

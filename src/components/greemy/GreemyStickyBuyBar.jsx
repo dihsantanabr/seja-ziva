@@ -28,7 +28,7 @@ export default function GreemyStickyBuyBar() {
 
   const handleBuyClick = () => {
     // Se não houver sabores selecionados, scroll até o seletor
-    if (selectedFlavors.length === 0) {
+    if (!selectedFlavors || selectedFlavors.length === 0) {
       const purchaseSection = document.querySelector('#escolha-seu-colageno');
       if (purchaseSection) {
         purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -51,9 +51,18 @@ export default function GreemyStickyBuyBar() {
       }
     });
 
+    if (productParts.length === 0) {
+      alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
+      return;
+    }
+
     // Montar a URL final
     const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
+    
+    console.log('Redirecionando para:', checkoutUrl);
+    console.log('Sabores selecionados:', selectedFlavors);
+    console.log('Contagem:', flavorCounts);
     
     window.location.href = checkoutUrl;
   };
