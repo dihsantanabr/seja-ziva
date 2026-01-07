@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import GreemyHero from '../components/greemy/GreemyHero';
-import GreemyForWho from '../components/greemy/GreemyForWho';
-import GreemyResults from '../components/greemy/GreemyResults';
-import GreemyFormula from '../components/greemy/GreemyFormula';
-import GreemyHowToUse from '../components/greemy/GreemyHowToUse';
-import GreemyPainMatch from '../components/greemy/GreemyPainMatch';
-import GreemyTestimonials from '../components/greemy/GreemyTestimonials';
-import GreemyComparison from '../components/greemy/GreemyComparison';
-
-import GreemyGuarantee from '../components/greemy/GreemyGuarantee';
-import GreemyFAQ from '../components/greemy/GreemyFAQ';
-import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
-import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
-import WhatsAppWidget from '../components/product/WhatsAppWidget';
-import GreemyQuiz from '../components/greemy/GreemyQuiz';
 import GreemyPurchaseSelector from '../components/greemy/GreemyPurchaseSelector';
+import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
+
+const GreemyForWho = lazy(() => import('../components/greemy/GreemyForWho'));
+const GreemyResults = lazy(() => import('../components/greemy/GreemyResults'));
+const GreemyFormula = lazy(() => import('../components/greemy/GreemyFormula'));
+const GreemyHowToUse = lazy(() => import('../components/greemy/GreemyHowToUse'));
+const GreemyPainMatch = lazy(() => import('../components/greemy/GreemyPainMatch'));
+const GreemyTestimonials = lazy(() => import('../components/greemy/GreemyTestimonials'));
+const GreemyComparison = lazy(() => import('../components/greemy/GreemyComparison'));
+const GreemyGuarantee = lazy(() => import('../components/greemy/GreemyGuarantee'));
+const GreemyFAQ = lazy(() => import('../components/greemy/GreemyFAQ'));
+const GreemyFinalCTA = lazy(() => import('../components/greemy/GreemyFinalCTA'));
+const WhatsAppWidget = lazy(() => import('../components/product/WhatsAppWidget'));
+const GreemyQuiz = lazy(() => import('../components/greemy/GreemyQuiz'));
 
 export default function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
@@ -34,28 +34,30 @@ export default function Home() {
 
       <GreemyHero />
       <GreemyPurchaseSelector />
-      <div id="para-quem-e">
-        <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
-      </div>
-      <div id="resultados">
-        <GreemyResults />
-      </div>
-      <div id="formula">
-        <GreemyFormula />
-      </div>
-      <div id="como-usar">
-        <GreemyHowToUse />
-      </div>
-      <GreemyPainMatch />
-      <div id="depoimentos">
-        <GreemyTestimonials />
-      </div>
-      <GreemyComparison />
-      <GreemyGuarantee />
-      <GreemyFAQ />
-      <GreemyFinalCTA />
+      <Suspense fallback={<div className="h-20" />}>
+        <div id="para-quem-e">
+          <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
+        </div>
+        <div id="resultados">
+          <GreemyResults />
+        </div>
+        <div id="formula">
+          <GreemyFormula />
+        </div>
+        <div id="como-usar">
+          <GreemyHowToUse />
+        </div>
+        <GreemyPainMatch />
+        <div id="depoimentos">
+          <GreemyTestimonials />
+        </div>
+        <GreemyComparison />
+        <GreemyGuarantee />
+        <GreemyFAQ />
+        <GreemyFinalCTA />
+        <WhatsAppWidget />
+      </Suspense>
       <GreemyStickyBuyBar />
-      <WhatsAppWidget />
 
       {/* Marquee animation styles */}
       <style>{`

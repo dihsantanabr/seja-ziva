@@ -43,6 +43,8 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  loading: lazy;
+  content-visibility: auto;
 }
 
 /* Prevent zoom on input focus in iOS */
@@ -209,5 +211,15 @@ input:focus, select:focus, textarea:focus {
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+
+  /* Optimize animations on mobile */
+  * {
+    will-change: auto !important;
+  }
+
+  .animate-fade-in,
+  [class*="motion-"] {
+    animation-duration: 0.15s !important;
   }
 }
