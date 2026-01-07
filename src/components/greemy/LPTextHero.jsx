@@ -110,7 +110,7 @@ export default function LPTextHero() {
             {[
               { icon: Heart, text: 'Reduz Rugas em 20%' },
               { icon: Sparkles, text: 'Aumenta Firmeza' },
-              { icon: Shield, text: 'Hidratação Profunda' },
+              { icon: ShieldCheck, text: 'Hidratação Profunda' },
               { icon: Zap, text: 'Pele Luminosa' }
             ].map((benefit, idx) => (
               <div key={idx} className="bg-white rounded-xl p-4 shadow-md border border-pink-100">
