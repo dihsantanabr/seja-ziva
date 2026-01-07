@@ -14,28 +14,28 @@ const stories = [
     },
     {
       id: 2,
-      thumb: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4#t=2",
       title: "História 2",
       type: "video",
       videoUrl: "https://cdn.shopify.com/videos/c/vp/06798b54702445e3b13d06d0a3d4fe17/06798b54702445e3b13d06d0a3d4fe17.HD-720p-1.6Mbps-65676655.mp4"
     },
     {
       id: 3,
-      thumb: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4#t=2",
       title: "História 3",
       type: "video",
       videoUrl: "https://cdn.shopify.com/videos/c/vp/f5f10887b8cb45b68861dd3bad9ab4eb/f5f10887b8cb45b68861dd3bad9ab4eb.HD-720p-4.5Mbps-65676651.mp4"
     },
     {
       id: 4,
-      thumb: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4#t=2",
       title: "História 4",
       type: "video",
       videoUrl: "https://cdn.shopify.com/videos/c/vp/dca5d2fd6e964fcdb90e3cf456c8d179/dca5d2fd6e964fcdb90e3cf456c8d179.HD-720p-4.5Mbps-65676653.mp4"
     },
     {
       id: 5,
-      thumb: "https://cdn.shopify.com/videos/c/vp/4dde27f93fec43fc832e51409e92d929/4dde27f93fec43fc832e51409e92d929.HD-720p-4.5Mbps-65676652.mp4#t=0",
+      thumb: "https://cdn.shopify.com/videos/c/vp/4dde27f93fec43fc832e51409e92d929/4dde27f93fec43fc832e51409e92d929.HD-720p-4.5Mbps-65676652.mp4#t=2",
       title: "História 5",
       type: "video",
       videoUrl: "https://cdn.shopify.com/videos/c/vp/4dde27f93fec43fc832e51409e92d929/4dde27f93fec43fc832e51409e92d929.HD-720p-4.5Mbps-65676652.mp4"
