@@ -144,28 +144,28 @@ export default function GreemyHero() {
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Leaf className="w-3.5 h-3.5 mr-1.5" />
-                100% Natural
+                <Star className="w-3.5 h-3.5 mr-1.5" />
+                Colágeno Verisol®
+              </Badge>
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
+                <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+                Ácido Hialurônico
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Heart className="w-3.5 h-3.5 mr-1.5" />
-                Hidratação Intensa
-              </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Shield className="w-3.5 h-3.5 mr-1.5" />
-                Alívio de Irritações
+                Reduz Rugas
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Zap className="w-3.5 h-3.5 mr-1.5" />
-                Rápida Absorção
+                Aumenta Firmeza
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
-                <Heart className="w-3.5 h-3.5 mr-1.5" />
-                Cruelty Free
+                <Shield className="w-3.5 h-3.5 mr-1.5" />
+                Hidrata Profundamente
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-3 py-1.5">
                 <Leaf className="w-3.5 h-3.5 mr-1.5" />
-                Vegano
+                Resultados em 4 Semanas
               </Badge>
             </div>
 
