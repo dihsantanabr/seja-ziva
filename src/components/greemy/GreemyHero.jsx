@@ -17,7 +17,8 @@ const flavors = [
   { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
   { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
   { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
-  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' }
+  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' },
+  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true }
 ];
 
 export default function GreemyHero() {
@@ -317,7 +318,7 @@ export default function GreemyHero() {
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
                   const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
-                  
+
                   return (
                     <button
                       key={flavor.id}
@@ -334,6 +335,11 @@ export default function GreemyHero() {
                       {count > 0 && (
                         <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
                           {count}
+                        </div>
+                      )}
+                      {flavor.hasLactose && (
+                        <div className="absolute -top-2 -left-2">
+                          <Badge className="bg-amber-600 text-white text-xs">Contém Lactose</Badge>
                         </div>
                       )}
                       <div className="text-3xl mb-2">{flavor.emoji}</div>
