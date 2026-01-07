@@ -7,13 +7,13 @@ import { useGreemy } from './GreemyContext';
 
 const sizes = [
   { 
-    id: 1, 
+    id: '1 Unidade', 
     units: '1 Unidade', 
     subtitle: 'Rotina Inicial',
     gradient: 'from-pink-400 to-pink-500'
   },
   { 
-    id: 3, 
+    id: '3 Unidades', 
     units: '3 Unidades', 
     subtitle: 'Rotina Completa',
     discount: '43% OFF',
@@ -33,12 +33,12 @@ const flavors = [
 
 export default function GreemyPurchaseSelector() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
-  const currentPrice = prices[selectedSize];
+  const currentPrice = prices[selectedSize]?.current || 0;
 
   const handleBuyNow = () => {
     const checkoutLinks = {
-      1: 'https://buy.stripe.com/00g3eVehK2LgfbW6oB',
-      3: 'https://buy.stripe.com/6oE2b13wY4To3vafZc'
+      '1 Unidade': 'https://buy.stripe.com/00g3eVehK2LgfbW6oB',
+      '3 Unidades': 'https://buy.stripe.com/6oE2b13wY4To3vafZc'
     };
     window.location.href = checkoutLinks[selectedSize];
   };
