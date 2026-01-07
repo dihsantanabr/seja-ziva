@@ -5,35 +5,23 @@ import { motion } from 'framer-motion';
 const videos = [
   {
     id: 1,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/73a16eb3d4e64bff8af3a553fa855c2f.mp4"
+    videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-19.11.47.mp4"
   },
   {
     id: 2,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/eea813e52745445a8305e669b9d9e2cf.mov"
+    videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.16.mp4"
   },
   {
     id: 3,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/82446e001a2c41ec9d224c3b9b440b59.mp4"
+    videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.47.37.mp4_20251212T113522119Z"
   },
   {
     id: 4,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/60b9f5c988dd42728c0dad47567c7a08.mp4"
+    videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.48.16.mp4_20251212T113556728Z"
   },
   {
     id: 5,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/4bc03fe1fed84425b6e11bf8a9d5280c.mov"
-  },
-  {
-    id: 6,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/e8c8c1e1beac4a09bbeafb65e405170e.mp4"
-  },
-  {
-    id: 7,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/f407ac39c7ac4ba986535898c00dd85c.mp4"
-  },
-  {
-    id: 8,
-    videoUrl: "https://cdn.shopify.com/videos/c/o/v/a390e2505bb54cf7a4eb22431df3cf40.mp4"
+    videoUrl: "https://phxkpzehxsbteunlmdoq.supabase.co/storage/v1/object/public/vidget::videos/b87d51fc-834a-449b-a868-aff82a2175e6/test1/WhatsApp-Video-2025-12-11-at-18.46.04.mp4_20251212T113652349Z"
   }
 ];
 
@@ -134,7 +122,7 @@ export default function GreemyVideoCarousel() {
                 className="flex-shrink-0 relative"
                 style={{ zIndex }}
               >
-                <div className={`rounded-2xl overflow-hidden shadow-xl relative ${isCenter ? 'ring-4 ring-teal-500' : ''}`}>
+                <div className={`rounded-2xl overflow-hidden shadow-xl relative ${isCenter ? 'ring-4 ring-pink-500' : ''}`}>
                   <video
                     ref={(el) => {
                       if (isCenter) {
@@ -152,13 +140,13 @@ export default function GreemyVideoCarousel() {
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
                       <button
                         onClick={togglePlay}
-                        className="text-white hover:text-teal-400 transition"
+                        className="text-white hover:text-pink-400 transition"
                       >
                         {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                       </button>
                       <button
                         onClick={toggleMute}
-                        className="text-white hover:text-teal-400 transition"
+                        className="text-white hover:text-pink-400 transition"
                       >
                         {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                       </button>
@@ -177,7 +165,7 @@ export default function GreemyVideoCarousel() {
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`w-2 h-2 rounded-full transition-all ${
-                idx === currentIndex ? 'bg-teal-600 w-8' : 'bg-gray-300'
+                idx === currentIndex ? 'bg-pink-500 w-8' : 'bg-gray-300'
               }`}
             />
           ))}
