@@ -234,7 +234,7 @@ export default function GreemyHero() {
                 </span>
               </div>
               <p className="text-sm text-gray-600 mt-2">
-                ou 4x de R$ {(pricesWithExtras[selectedSize].current / 4).toFixed(2).replace('.', ',')} sem juros
+                ou 6x de R$ {(pricesWithExtras[selectedSize].current / 6).toFixed(2).replace('.', ',')} sem juros
               </p>
               <div className="flex items-center gap-2 mt-3 text-green-800 bg-green-100 px-3 py-2 rounded-lg">
                 <div className="relative">
