@@ -40,12 +40,12 @@ export default function GreemyFinalCTA() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 h-14 px-6 text-lg bg-white/95 border-0 rounded-full focus:ring-2 focus:ring-white placeholder:text-gray-400"
+                className="flex-1 h-16 sm:h-14 px-6 text-lg bg-white/95 border-0 rounded-full focus:ring-2 focus:ring-white placeholder:text-gray-400"
               />
               <Button 
                 type="submit"
                 size="lg"
-                className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
+                className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 h-12 sm:h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
               >
                 <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 Baixar Grátis
