@@ -6,7 +6,6 @@ import GreemyFormula from '../components/greemy/GreemyFormula';
 import GreemyHowToUse from '../components/greemy/GreemyHowToUse';
 import GreemyPainMatch from '../components/greemy/GreemyPainMatch';
 import GreemyTestimonials from '../components/greemy/GreemyTestimonials';
-import GreemyKits from '../components/greemy/GreemyKits';
 import GreemyComparison from '../components/greemy/GreemyComparison';
 
 import GreemyGuarantee from '../components/greemy/GreemyGuarantee';
@@ -46,7 +45,6 @@ export default function LP1() {
         <GreemyHowToUse />
       </div>
       <GreemyPainMatch />
-      <GreemyKits />
       <div id="depoimentos">
         <GreemyTestimonials />
       </div>
