@@ -4,7 +4,7 @@ import { Star, Users, Award, Check } from 'lucide-react';
 import GreemyVideoCarousel from './GreemyVideoCarousel';
 
 const stats = [
-  { number: "22.000+", label: "Clientes satisfeitos", icon: Users },
+  { number: "+ de 2 Milhões", label: "Clientes satisfeitos", icon: Users },
   { number: "4.9/5", label: "Avaliação média", icon: Star },
   { number: "98%", label: "Recomendam", icon: Award }
 ];
