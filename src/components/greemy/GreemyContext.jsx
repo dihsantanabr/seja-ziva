@@ -13,6 +13,7 @@ export const useGreemy = () => {
 export const GreemyProvider = ({ children }) => {
   const [selectedSize, setSelectedSize] = useState('1 Unidade');
   const [selectedFlavor, setSelectedFlavor] = useState(null);
+  const [selectedFlavors, setSelectedFlavors] = useState([]);
 
   const prices = {
     '1 Unidade': { original: 157.00, current: 117.70, discount: 25 },
@@ -25,6 +26,8 @@ export const GreemyProvider = ({ children }) => {
       setSelectedSize, 
       selectedFlavor, 
       setSelectedFlavor,
+      selectedFlavors,
+      setSelectedFlavors,
       prices 
     }}>
       {children}

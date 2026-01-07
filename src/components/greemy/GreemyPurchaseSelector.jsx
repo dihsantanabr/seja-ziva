@@ -32,8 +32,7 @@ const flavors = [
 ];
 
 export default function GreemyPurchaseSelector() {
-  const { selectedSize, setSelectedSize, prices } = useGreemy();
-  const [selectedFlavors, setSelectedFlavors] = useState([]);
+  const { selectedSize, setSelectedSize, selectedFlavors, setSelectedFlavors, prices } = useGreemy();
   
   const currentPrice = prices[selectedSize]?.current || 0;
   const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
@@ -91,7 +90,7 @@ export default function GreemyPurchaseSelector() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-pink-50">
+    <section id="escolha-seu-colageno" className="py-12 lg:py-16 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-4xl mx-auto px-4">
         {/* Título Principal */}
         <div className="text-center mb-8">

@@ -4,9 +4,18 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGreemy } from './GreemyContext';
 
+const flavors = [
+  { id: 'cranberry', code: '6J3KDTF80E' },
+  { id: 'tropical', code: 'GAA70WUDT7' },
+  { id: 'limao', code: 'OY7JZG4UE9' },
+  { id: 'pink-lemonade', code: 'Q7TJA8P8X6' },
+  { id: 'tangerina', code: '4JF2A26WUQ' },
+  { id: 'chocolate', code: 'OY9KOFHD8D' }
+];
+
 export default function GreemyStickyBuyBar() {
   const [isVisible, setIsVisible] = useState(false);
-  const { selectedSize, prices } = useGreemy();
+  const { selectedSize, selectedFlavors, prices } = useGreemy();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,15 +26,36 @@ export default function GreemyStickyBuyBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const getCheckoutLink = () => {
-    if (selectedSize === '3 Unidades') {
-      return 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
-    }
-    return 'https://seguro.avozon.com.br/r/O0QFN501RQ';
-  };
-
   const handleBuyClick = () => {
-    window.location.href = getCheckoutLink();
+    // Se não houver sabores selecionados, scroll até o seletor
+    if (selectedFlavors.length === 0) {
+      const purchaseSection = document.querySelector('#escolha-seu-colageno');
+      if (purchaseSection) {
+        purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    // Contar quantas vezes cada sabor foi selecionado
+    const flavorCounts = {};
+    selectedFlavors.forEach(flavorId => {
+      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+    });
+
+    // Gerar a string de produtos no formato CODIGO:QUANTIDADE
+    const productParts = [];
+    Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
+      const flavor = flavors.find(f => f.id === flavorId);
+      if (flavor && flavor.code) {
+        productParts.push(`${flavor.code}:${quantity}`);
+      }
+    });
+
+    // Montar a URL final
+    const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
+    const checkoutUrl = baseUrl + productParts.join(',');
+    
+    window.location.href = checkoutUrl;
   };
 
   return (
