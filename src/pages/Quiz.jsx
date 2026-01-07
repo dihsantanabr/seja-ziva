@@ -15,71 +15,61 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import GreemyPurchaseSelector from '../components/greemy/GreemyPurchaseSelector';
+import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 const questions = [
   {
     id: 1,
-    title: "Como você descreveria sua pele hoje?",
-    subtitle: "Entender seu tipo de pele nos ajuda a personalizar a recomendação",
+    title: "Como está seu bem-estar intestinal hoje?",
+    subtitle: "Entender sua situação nos ajuda a personalizar a recomendação",
     type: "single",
     options: [
-      { id: "seca", label: "Pele seca ou ressecada", emoji: "🌵" },
-      { id: "mista", label: "Pele mista (seca em algumas áreas, oleosa em outras)", emoji: "🔄" },
-      { id: "oleosa", label: "Pele oleosa", emoji: "💧" },
-      { id: "sensivel", label: "Pele sensível ou com tendência à irritação", emoji: "🌸" },
-      { id: "nao_sei", label: "Não sei dizer exatamente", emoji: "🤔" }
+      { id: "inchaço", label: "Sinto inchaço frequentemente", emoji: "😣" },
+      { id: "gases", label: "Tenho gases e desconforto", emoji: "😖" },
+      { id: "irregular", label: "Meu intestino é irregular", emoji: "😟" },
+      { id: "constipacao", label: "Tenho constipação frequente", emoji: "😔" },
+      { id: "tudo", label: "Um pouco de tudo acima", emoji: "😩" }
     ]
   },
   {
     id: 2,
-    title: "O que mais te incomoda quando olha para sua pele hoje?",
+    title: "O que mais te incomoda no seu dia a dia?",
     subtitle: "Escolha até 2 opções",
     type: "multiple",
     maxChoices: 2,
     options: [
-      { id: "flacidez", label: "Flacidez ou perda de firmeza", emoji: "😕" },
-      { id: "linhas", label: "Linhas finas e sinais de envelhecimento", emoji: "😕" },
-      { id: "vico", label: "Falta de viço e aparência cansada", emoji: "😕" },
-      { id: "elasticidade", label: "Pele sem elasticidade", emoji: "😕" },
-      { id: "ressecamento", label: "Ressecamento constante", emoji: "😕" },
-      { id: "manchas", label: "Manchas ou textura irregular", emoji: "😕" }
+      { id: "barriga_estufada", label: "Barriga estufada após comer", emoji: "🤰" },
+      { id: "desconforto", label: "Desconforto digestivo constante", emoji: "😫" },
+      { id: "cansaco", label: "Sensação de peso e cansaço", emoji: "😴" },
+      { id: "má_digestao", label: "Má digestão", emoji: "🥴" },
+      { id: "sono_ruim", label: "Qualidade de sono prejudicada", emoji: "😵" },
+      { id: "disposicao", label: "Falta de disposição", emoji: "🫠" }
     ]
   },
   {
     id: 3,
-    title: "Se você pudesse melhorar UMA coisa na sua pele nos próximos 60 dias, o que seria?",
+    title: "Se você pudesse melhorar UMA coisa nos próximos 30 dias, o que seria?",
     subtitle: "Seu objetivo principal",
     type: "single",
     options: [
-      { id: "firmeza", label: "Deixar a pele mais firme e uniforme", emoji: "✨" },
-      { id: "hidratacao", label: "Melhorar a hidratação de dentro para fora", emoji: "✨" },
-      { id: "envelhecimento", label: "Reduzir sinais do envelhecimento", emoji: "✨" },
-      { id: "brilho", label: "Devolver o brilho e aparência saudável", emoji: "✨" },
-      { id: "prevencao", label: "Prevenir o envelhecimento precoce", emoji: "✨" }
+      { id: "desinchar", label: "Reduzir o inchaço abdominal", emoji: "✨" },
+      { id: "regularizar", label: "Regularizar meu intestino", emoji: "✨" },
+      { id: "digestao", label: "Melhorar a digestão", emoji: "✨" },
+      { id: "energia", label: "Ter mais energia no dia a dia", emoji: "✨" },
+      { id: "bem_estar", label: "Sentir leveza e bem-estar geral", emoji: "✨" }
     ]
   },
   {
     id: 4,
-    title: "Como costuma ser sua rotina com suplementos?",
+    title: "Como é sua rotina com suplementos?",
     subtitle: "Seja sincera, isso ajuda na escolha ideal",
     type: "single",
     options: [
-      { id: "organizada", label: "Sou organizada e tomo todos os dias", emoji: "🕒" },
-      { id: "esquece", label: "Tento manter, mas às vezes esqueço", emoji: "🕒" },
-      { id: "pratico", label: "Só consigo se for prático e rápido", emoji: "🕒" },
-      { id: "primeira", label: "Nunca tomei colágeno antes", emoji: "🕒" }
-    ]
-  },
-  {
-    id: 5,
-    title: "Qual tipo de sabor você prefere no dia a dia?",
-    subtitle: "Última pergunta! Vamos encontrar o colágeno perfeito para você",
-    type: "single",
-    options: [
-      { id: "adocicado", label: "Sabores suaves e adocicados", emoji: "🍓" },
-      { id: "citrico", label: "Sabores cítricos e refrescantes", emoji: "🍋" },
-      { id: "neutro", label: "Algo neutro, que combine com qualquer bebida", emoji: "☕" },
-      { id: "resultado", label: "Não me importo com sabor, foco no resultado", emoji: "🤍" }
+      { id: "organizada", label: "Sou organizada e tomo todos os dias", emoji: "✅" },
+      { id: "esquece", label: "Tento manter, mas às vezes esqueço", emoji: "📅" },
+      { id: "pratico", label: "Só consigo se for prático e rápido", emoji: "⚡" },
+      { id: "primeira", label: "Nunca tomei suco verde funcional antes", emoji: "🆕" }
     ]
   }
 ];
@@ -177,12 +167,12 @@ export default function Quiz() {
     if (Object.keys(answers).length > 0 && !showResult) {
       setShowExitDialog(true);
     } else {
-      window.location.href = createPageUrl('Colageno');
+      window.location.href = createPageUrl('Home');
     }
   };
 
   const confirmExit = () => {
-    window.location.href = createPageUrl('Colageno');
+    window.location.href = createPageUrl('Home');
   };
 
   const isSelected = (optionId) => {
@@ -191,52 +181,41 @@ export default function Quiz() {
   };
 
   const getPersonalizedResult = () => {
-    const skinType = answers[1]?.[0];
+    const issue = answers[1]?.[0];
     const goal = answers[3]?.[0];
     const routine = answers[4]?.[0];
-    const flavor = answers[5]?.[0];
-
-    let skinTypeText = "";
-    if (skinType === "seca") skinTypeText = "pele seca";
-    else if (skinType === "mista") skinTypeText = "pele mista";
-    else if (skinType === "oleosa") skinTypeText = "pele oleosa";
-    else if (skinType === "sensivel") skinTypeText = "pele sensível";
-    else skinTypeText = "seu tipo de pele";
 
     let goalText = "";
-    if (goal === "firmeza") goalText = "aumentar firmeza e uniformidade";
-    else if (goal === "hidratacao") goalText = "melhorar a hidratação profunda";
-    else if (goal === "envelhecimento") goalText = "reduzir sinais de envelhecimento";
-    else if (goal === "brilho") goalText = "devolver viço e brilho natural";
-    else goalText = "prevenir o envelhecimento precoce";
-
-    let flavorText = "";
-    if (flavor === "adocicado") flavorText = "morango";
-    else if (flavor === "citrico") flavorText = "limão";
-    else if (flavor === "neutro") flavorText = "neutro";
-    else flavorText = "neutro";
+    if (goal === "desinchar") goalText = "reduzir o inchaço abdominal";
+    else if (goal === "regularizar") goalText = "regularizar seu intestino";
+    else if (goal === "digestao") goalText = "melhorar sua digestão";
+    else if (goal === "energia") goalText = "ter mais energia no dia a dia";
+    else goalText = "sentir leveza e bem-estar geral";
 
     const benefits = [];
-    if (goal === "firmeza" || answers[2]?.includes("flacidez")) {
-      benefits.push("Aumenta firmeza e elasticidade da pele");
+    if (goal === "desinchar" || answers[2]?.includes("barriga_estufada")) {
+      benefits.push("Reduz inchaço abdominal e sensação de barriga estufada");
     }
-    if (goal === "hidratacao" || answers[2]?.includes("ressecamento")) {
-      benefits.push("Hidrata profundamente de dentro para fora");
+    if (goal === "regularizar" || issue === "irregular" || issue === "constipacao") {
+      benefits.push("Regulariza o trânsito intestinal naturalmente");
     }
-    if (goal === "envelhecimento" || answers[2]?.includes("linhas")) {
-      benefits.push("Reduz rugas e linhas de expressão");
+    if (goal === "digestao" || answers[2]?.includes("má_digestao") || answers[2]?.includes("desconforto")) {
+      benefits.push("Melhora a digestão e reduz desconfortos");
+    }
+    if (goal === "energia" || answers[2]?.includes("cansaco") || answers[2]?.includes("disposicao")) {
+      benefits.push("Aumenta disposição e sensação de leveza");
     }
     if (benefits.length === 0) {
-      benefits.push("Estimula produção natural de colágeno");
-      benefits.push("Melhora textura e viço da pele");
-      benefits.push("Fortalece cabelos e unhas");
+      benefits.push("Apoia o equilíbrio do microbioma intestinal");
+      benefits.push("Fornece fibras e nutrientes essenciais");
+      benefits.push("Promove bem-estar digestivo completo");
     }
 
     // Benefícios secundários personalizados
     const secondaryBenefits = [
-      { icon: "💪", title: "Fortalece unhas quebradiças", desc: "Unhas mais fortes e resistentes" },
-      { icon: "💇‍♀️", title: "Reduz queda de cabelo", desc: "Fios mais saudáveis e volumosos" },
-      { icon: "🦴", title: "Fortalece ossos e articulações", desc: "Mais mobilidade e conforto" }
+      { icon: "💚", title: "Rico em superfoods", desc: "Nutrientes essenciais para sua saúde" },
+      { icon: "🌱", title: "100% Natural e Vegano", desc: "Sem ingredientes artificiais" },
+      { icon: "⚡", title: "Energia Natural", desc: "Mais disposição sem estimulantes" }
     ];
 
     // Rotina personalizada baseada nas respostas
@@ -244,58 +223,56 @@ export default function Quiz() {
     let whenToTake = "";
     
     if (routine === "organizada") {
-      morningRoutine = "Misture 1 dose (10g) em 200ml de água ou suco pela manhã";
-      whenToTake = "Recomendamos tomar sempre no mesmo horário para criar o hábito";
+      morningRoutine = "Dissolva 1 sachê em 200-250ml de água pela manhã";
+      whenToTake = "Recomendamos tomar sempre no mesmo horário para melhores resultados";
     } else if (routine === "esquece") {
-      morningRoutine = "Deixe o pote em local visível e tome ao acordar";
-      whenToTake = "Configure um alarme diário no celular para não esquecer";
+      morningRoutine = "Deixe os sachês em local visível e tome ao acordar";
+      whenToTake = "Configure um lembrete no celular para criar o hábito";
     } else if (routine === "pratico") {
-      morningRoutine = "Dissolve rapidamente - apenas 30 segundos do seu dia";
-      whenToTake = "Pode ser tomado com café, vitamina ou água, como preferir";
+      morningRoutine = "Dissolve em segundos - super prático para sua rotina";
+      whenToTake = "Pode misturar em água, suco ou sua bebida favorita";
     } else {
-      morningRoutine = "Comece misturando 1 dose em 200ml de água pela manhã";
-      whenToTake = "Os primeiros resultados aparecem em 4 semanas de uso contínuo";
+      morningRoutine = "Comece dissolvendo 1 sachê em água pela manhã";
+      whenToTake = "Resultados aparecem com uso regular já nos primeiros dias";
     }
 
     // Depoimentos relevantes baseados no objetivo
     const testimonials = [];
     
-    if (goal === "firmeza" || answers[2]?.includes("flacidez")) {
+    if (goal === "desinchar" || answers[2]?.includes("barriga_estufada")) {
       testimonials.push({
-        name: "Ana Paula, 42 anos",
-        text: "Em 6 semanas minha pele ficou visivelmente mais firme. Até meu marido percebeu!",
+        name: "Fernanda L., 34 anos",
+        text: "Minha barriga estava sempre estufada. Com o Greemy, em 1 semana já senti diferença!",
         rating: 5
       });
     }
     
-    if (goal === "hidratacao" || skinType === "seca") {
+    if (goal === "regularizar" || issue === "irregular") {
       testimonials.push({
-        name: "Mariana Silva, 35 anos",
-        text: "Minha pele era super ressecada. Hoje está hidratada e com brilho natural!",
+        name: "Carolina M., 29 anos",
+        text: "Meu intestino era super irregular. Agora funciona direitinho todos os dias!",
         rating: 5
       });
     }
     
-    if (goal === "envelhecimento" || answers[2]?.includes("linhas")) {
+    if (goal === "digestao" || answers[2]?.includes("má_digestao")) {
       testimonials.push({
-        name: "Claudia Mendes, 48 anos",
-        text: "As linhas ao redor dos olhos diminuíram muito. Estou impressionada com o resultado!",
+        name: "Patrícia S., 41 anos",
+        text: "Sofria com má digestão há anos. O Greemy mudou minha qualidade de vida!",
         rating: 5
       });
     }
     
     if (testimonials.length < 2) {
       testimonials.push({
-        name: "Juliana Costa, 38 anos",
-        text: "Além da pele, minhas unhas pararam de quebrar e meu cabelo está mais forte!",
+        name: "Juliana R., 36 anos",
+        text: "Além do intestino regulado, tenho muito mais disposição no dia a dia!",
         rating: 5
       });
     }
 
     return {
-      skinTypeText,
       goalText,
-      flavorText,
       benefits,
       routine,
       secondaryBenefits,
@@ -305,16 +282,15 @@ export default function Quiz() {
     };
   };
 
-  const handleCheckout = () => {
-    window.location.href = 'https://seguro.avozon.com.br/r/9LBQYYJH8D';
-  };
+
 
   if (showResult) {
     const result = getPersonalizedResult();
     
     return (
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <GreemyProvider>
+        <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
+          <div className="max-w-4xl mx-auto space-y-6">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -326,10 +302,10 @@ export default function Quiz() {
                 <Sparkles className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                🎯 Seu Colágeno Ideal foi Definido
+                🎯 Seu Suco Verde Ideal foi Definido!
               </h1>
               <p className="text-lg text-gray-600">
-                Com base em sua {result.skinTypeText} e seu objetivo de {result.goalText}, encontramos o colágeno perfeito para você
+                Com base nas suas necessidades e objetivo de {result.goalText}, o Greemy é perfeito para você
               </p>
             </div>
 
@@ -337,10 +313,10 @@ export default function Quiz() {
             <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 mb-6">
               <Badge className="bg-pink-600 text-white mb-3">Recomendado para você</Badge>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Colágeno Verisol® + Ácido Hialurônico
+                Greemy - Suco Verde Funcional
               </h2>
               <p className="text-pink-700 font-semibold mb-4">
-                Beleza que começa de dentro para fora
+                Bem-estar intestinal que transforma seu dia a dia
               </p>
 
               <div className="space-y-3 mb-6">
@@ -357,32 +333,31 @@ export default function Quiz() {
               <div className="bg-white rounded-xl p-4 mb-4">
                 <p className="font-semibold text-gray-900 mb-2">Por que ele é ideal para você:</p>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>✓ Fórmula com Verisol®, o colágeno mais estudado do mundo</li>
-                  <li>✓ Resultados visíveis em 4 semanas de uso contínuo</li>
-                  <li>✓ {result.routine === "pratico" ? "Formato prático e rápido de usar" : "Fácil de incluir na sua rotina diária"}</li>
-                  <li>✓ Sabor {result.flavorText} que torna o uso ainda mais agradável</li>
+                  <li>✓ Fórmula com fibras e superfoods para saúde intestinal</li>
+                  <li>✓ Reduz inchaço e melhora digestão em poucos dias</li>
+                  <li>✓ {result.routine === "pratico" ? "Super prático - apenas dissolver em água" : "Fácil de incluir na sua rotina diária"}</li>
+                  <li>✓ Sachês individuais para levar onde quiser</li>
+                  <li>✓ Sem açúcar, sem glúten, sem lactose</li>
                 </ul>
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <span className="font-semibold">10g por porção</span>
+              <div className="flex items-center gap-2 text-sm text-gray-600 flex-wrap">
+                <span className="font-semibold">21 sachês</span>
                 <span>•</span>
                 <span>Uso diário simples</span>
                 <span>•</span>
-                <span>Não é medicamento</span>
+                <span>Vegano</span>
               </div>
             </div>
-
-            <Button 
-              onClick={handleCheckout}
-              className="w-full h-14 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-bold rounded-xl shadow-lg"
-            >
-              Quero Começar Minha Rotina Personalizada
-            </Button>
-
-            <p className="text-center text-sm text-gray-500 mt-4">
-              ✓ Frete Grátis • ✓ 10% Cashback • ✓ Resultados em 4 Semanas
-            </p>
+          </motion.div>
+          
+          {/* Purchase Selector */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <GreemyPurchaseSelector />
           </motion.div>
 
           {/* Secondary Benefits */}
@@ -464,9 +439,9 @@ export default function Quiz() {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Expectativa de resultados</h4>
                     <p className="text-gray-700">
-                      <span className="font-semibold text-pink-700">4 semanas:</span> Pele mais hidratada e luminosa<br/>
-                      <span className="font-semibold text-pink-700">8 semanas:</span> Redução visível de linhas finas<br/>
-                      <span className="font-semibold text-pink-700">12 semanas:</span> Firmeza e elasticidade melhoradas
+                      <span className="font-semibold text-pink-700">Primeiros dias:</span> Redução do inchaço e leveza<br/>
+                      <span className="font-semibold text-pink-700">1-2 semanas:</span> Intestino mais regular e digestão melhor<br/>
+                      <span className="font-semibold text-pink-700">3-4 semanas:</span> Bem-estar completo e mais energia
                     </p>
                   </div>
                 </div>
@@ -509,7 +484,7 @@ export default function Quiz() {
 
             <div className="mt-6 bg-pink-100 border-l-4 border-pink-600 rounded-r-xl p-4">
               <p className="text-sm text-pink-900">
-                <span className="font-semibold">✨ Mais de 117 mil pessoas</span> já transformaram sua pele com nosso colágeno
+                <span className="font-semibold">✨ Milhares de pessoas</span> já melhoraram seu bem-estar intestinal com o Greemy
               </p>
             </div>
           </motion.div>
@@ -523,18 +498,11 @@ export default function Quiz() {
           >
             <Heart className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-2xl lg:text-3xl font-bold mb-3">
-              Pronta para transformar sua pele?
+              Pronta para transformar seu bem-estar?
             </h3>
             <p className="text-lg mb-6 text-white/90">
-              Comece sua jornada hoje e veja resultados em 4 semanas
+              Escolha seus sabores acima e comece sua jornada hoje!
             </p>
-            
-            <Button 
-              onClick={handleCheckout}
-              className="w-full lg:w-auto lg:px-12 h-14 bg-white text-pink-600 hover:bg-gray-100 text-lg font-bold rounded-xl shadow-lg"
-            >
-              Garantir Meu Colágeno Agora
-            </Button>
 
             <div className="flex items-center justify-center gap-6 mt-6 text-sm">
               <div className="flex items-center gap-2">
@@ -553,6 +521,7 @@ export default function Quiz() {
           </motion.div>
         </div>
       </div>
+      </GreemyProvider>
     );
   }
 
