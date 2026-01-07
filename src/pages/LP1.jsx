@@ -56,7 +56,7 @@ export default function LP1() {
       <GreemyComparison />
       <GreemyGuarantee />
       <GreemyFAQ />
-      <GreemyFinalCTA />
+      <GreemyFinalCTA onOpenQuiz={() => setShowQuiz(true)} />
       <GreemyStickyBuyBar />
       <WhatsAppWidget />
 

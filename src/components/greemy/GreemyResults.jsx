@@ -4,24 +4,24 @@ import { Droplets, Shield, Sparkles, Heart, ArrowRight } from 'lucide-react';
 
 const results = [
   {
-    icon: Droplets,
-    title: "Reduz rugas",
-    description: "Suaviza linhas de expressão"
-  },
-  {
     icon: Shield,
-    title: "Aumenta firmeza",
-    description: "Elasticidade e sustentação"
-  },
-  {
-    icon: Sparkles,
-    title: "Hidrata profundamente",
-    description: "Pele macia e radiante"
+    title: "Suporte à firmeza",
+    description: "Ajuda a manter a sustentação"
   },
   {
     icon: Heart,
-    title: "Estimula colágeno",
-    description: "Beleza de dentro para fora"
+    title: "Auxilia na elasticidade",
+    description: "Contribui para pele resiliente"
+  },
+  {
+    icon: Sparkles,
+    title: "Complementa hidratação",
+    description: "Ajuda a manter pele nutrida"
+  },
+  {
+    icon: Droplets,
+    title: "Uso contínuo",
+    description: "Resultados progressivos"
   }
 ];
 
@@ -31,11 +31,14 @@ export default function GreemyResults() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
-            Benefícios
+            Onde o colágeno entra
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Resultados visíveis em 4 semanas!
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-4">
+            Suporte estrutural para sua pele
           </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            A suplementação com colágeno atua como um <span className="font-semibold text-gray-700">suporte estrutural</span>, ajudando a pele a manter firmeza e elasticidade quando usada de forma contínua e adequada ao perfil da pessoa.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16 px-4 lg:px-0">

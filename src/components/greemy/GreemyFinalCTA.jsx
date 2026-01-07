@@ -4,14 +4,7 @@ import { Download, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export default function GreemyFinalCTA() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email submitted:', email);
-  };
-
+export default function GreemyFinalCTA({ onOpenQuiz }) {
   return (
     <section className="py-12 lg:py-24 pb-32 lg:pb-24 bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600">
       <div className="max-w-4xl mx-auto px-4 text-center">
@@ -20,41 +13,22 @@ export default function GreemyFinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-            <FileText className="w-5 h-5 text-white" />
-            <span className="text-white font-medium">E-Book Gratuito</span>
-          </div>
-
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-            Guia da Pele Perfeita
+            Encontre a opção ideal para sua rotina
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Descubra todos os segredos para ter uma pele radiante, jovem e saudável com nosso guia exclusivo
+            Cada pele é única. Descubra qual colágeno se encaixa melhor no seu perfil e objetivo.
           </p>
 
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Input
-                type="email"
-                placeholder="Seu melhor e-mail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 h-16 sm:h-14 px-6 text-lg bg-white/95 border-0 rounded-full focus:ring-2 focus:ring-white placeholder:text-gray-400"
-              />
-              <Button 
-                type="submit"
-                size="lg"
-                className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 h-12 sm:h-14 rounded-full font-semibold shadow-2xl hover:shadow-3xl transition-all group whitespace-nowrap"
-              >
-                <Download className="mr-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
-                Baixar Grátis
-              </Button>
-            </div>
-          </form>
+          <Button
+            onClick={onOpenQuiz}
+            className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all"
+          >
+            Receber Recomendação Personalizada
+          </Button>
 
-          <p className="text-white/60 text-sm mt-6">
-            PDF • 100% gratuito • Enviado direto no seu e-mail
+          <p className="text-white/80 text-sm mt-6">
+            Menos de 2 minutos • Totalmente gratuito
           </p>
         </motion.div>
       </div>

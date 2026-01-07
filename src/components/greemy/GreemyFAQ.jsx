@@ -4,16 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "Colágeno realmente funciona ou é só marketing?",
-    answer: "Funciona sim! O Colágeno Verisol® tem mais de 15 estudos clínicos comprovando sua eficácia. A diferença está na qualidade: Verisol® possui peptídeos bioativos específicos que são absorvidos e direcionados para a pele, ao contrário de colágenos comuns que não têm essa tecnologia. Estudos mostram redução de até 20% nas rugas em 4 semanas de uso contínuo."
+    question: "O colágeno realmente ajuda com a flacidez da pele?",
+    answer: "Sim! O colágeno atua como um suporte estrutural interno, ajudando a pele a manter firmeza quando usado de forma contínua. Estudos com Colágeno Verisol® mostram que ele contribui para melhorar a elasticidade e densidade da pele. É importante entender que não é um tratamento milagroso, mas um complemento que, junto com bons hábitos, ajuda a dar sustentação à pele."
   },
   {
-    question: "Já tenho mais de 40 anos, ainda vai fazer efeito em mim?",
-    answer: "Com certeza! Na verdade, quanto mais idade você tem, mais perceptíveis são os resultados, pois a produção natural de colágeno diminui significativamente após os 30 anos. Muitas clientes acima de 40 e 50 anos relatam os resultados mais impressionantes, com pele mais firme, redução de flacidez e rugas suavizadas. Nunca é tarde para começar!"
+    question: "Já tenho mais de 40 anos, ainda vai ajudar?",
+    answer: "Sim! Após os 30 anos, o corpo reduz naturalmente a produção de colágeno, e esse processo se intensifica com o tempo. Por isso, a suplementação pode ser ainda mais relevante para quem tem mais de 40 anos. Muitas pessoas relatam perceber melhora na firmeza e textura da pele quando usam de forma regular."
   },
   {
-    question: "Quanto tempo demora para eu ver resultado na minha pele?",
-    answer: "Os primeiros sinais você percebe entre 2 a 4 semanas: pele mais hidratada e luminosa. Entre 4 a 8 semanas: redução visível de linhas finas e maior firmeza. Após 12 semanas: resultados completos com pele mais densa, elástica e rugas minimizadas. O segredo é a constância - tome todos os dias!"
+    question: "Em quanto tempo posso começar a perceber diferença?",
+    answer: "Os resultados são progressivos e variam de pessoa para pessoa. Algumas pessoas relatam sentir a pele mais hidratada nas primeiras semanas. Melhorias em firmeza e elasticidade costumam ser mais perceptíveis entre 4 a 12 semanas de uso contínuo. A constância e a escolha correta fazem toda a diferença."
   },
   {
     question: "Por que esse colágeno é mais caro que outros?",

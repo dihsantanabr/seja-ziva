@@ -62,15 +62,17 @@ export default function GreemyGuarantee() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-pink-400 to-pink-500 rounded-3xl p-8 text-center text-white"
+          className="mt-12 bg-gradient-to-r from-pink-50 to-rose-50 border border-pink-200 rounded-3xl p-8 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">
-            💗 Confiança Total em Cada Compra
+          <h3 className="text-2xl font-bold mb-4 text-gray-900">
+            Informações importantes
           </h3>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Milhares de mulheres confiam em nosso Colágeno Verisol® para rejuvenescer e fortalecer sua pele. 
-            Junte-se a elas e experimente a transformação!
-          </p>
+          <div className="text-left max-w-2xl mx-auto space-y-2 text-gray-700">
+            <p>✓ Uso diário simples e prático</p>
+            <p>✓ Não é medicamento, é suplemento alimentar</p>
+            <p>✓ Compra segura no site oficial</p>
+            <p className="mt-4 text-sm text-gray-600 italic">Os resultados são progressivos e variam de pessoa para pessoa. A constância e a escolha correta fazem toda a diferença.</p>
+          </div>
         </motion.div>
       </div>
     </section>

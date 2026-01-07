@@ -5,34 +5,34 @@ import { Button } from "@/components/ui/button";
 
 const painPoints = [
   {
-    icon: Droplets,
-    title: "Rugas e linhas de expressão",
-    description: "Sinais visíveis de envelhecimento"
-  },
-  {
     icon: Heart,
     title: "Perda de firmeza",
-    description: "Pele flácida e sem elasticidade"
+    description: "Pele sem sustentação e caída"
   },
   {
-    icon: Sparkles,
-    title: "Falta de hidratação",
-    description: "Pele ressecada e sem viço"
+    icon: Droplets,
+    title: "Linhas finas e sulcos",
+    description: "Marcas que não existiam antes"
   },
   {
     icon: Shield,
-    title: "Colágeno reduzido",
-    description: "Diminuição natural com a idade"
+    title: "Elasticidade reduzida",
+    description: "Pele que não volta ao lugar"
   },
   {
     icon: Wind,
-    title: "Pele sem luminosidade",
-    description: "Aspecto cansado e opaco"
+    title: "Aspecto cansado",
+    description: "Rosto com aparência flácida"
+  },
+  {
+    icon: Sparkles,
+    title: "Falta de densidade",
+    description: "Pele mais fina e frágil"
   },
   {
     icon: Star,
-    title: "Busca por rejuvenescimento",
-    description: "Beleza que vem de dentro"
+    title: "Busca por sustentação",
+    description: "Desejo de pele mais firme"
   }
 ];
 
@@ -40,15 +40,15 @@ export default function GreemyForWho({ onOpenQuiz }) {
   return (
     <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
-            Esse é o seu caso?
+            Por que a flacidez acontece
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Beleza que começa de dentro!
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-4">
+            Você se identifica com algum desses sinais?
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Perfeito para quem busca reduzir rugas, aumentar firmeza e hidratar profundamente
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Com o passar do tempo, o corpo reduz a produção natural de colágeno, proteína responsável por dar estrutura e sustentação à pele.
           </p>
         </div>
 
@@ -75,16 +75,12 @@ export default function GreemyForWho({ onOpenQuiz }) {
           ))}
         </div>
 
-        <div className="mt-12 text-center space-y-6">
-          <p className="text-lg text-gray-700 bg-gradient-to-r from-pink-100 to-rose-100 inline-block px-6 py-3 rounded-full">
-            💗 Se você se identificou com algum desses casos, <strong>o Colágeno Verisol® foi feito para você</strong>
-          </p>
+        <div className="mt-12 text-center">
           <Button 
             onClick={onOpenQuiz}
-            variant="outline"
-            className="text-pink-600 border-pink-300 hover:bg-pink-50 hover:border-pink-400"
+            className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-8 py-4 text-lg"
           >
-            ✨ Descubra se esse colágeno é ideal para você
+            Descubra qual colágeno faz sentido para sua pele
           </Button>
         </div>
       </div>
