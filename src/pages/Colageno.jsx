@@ -15,6 +15,7 @@ import GreemyFAQ from '../components/greemy/GreemyFAQ';
 import GreemyFinalCTA from '../components/greemy/GreemyFinalCTA';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import WhatsAppWidget from '../components/product/WhatsAppWidget';
+import SocialProofNotification from '../components/greemy/SocialProofNotification';
 import GreemyQuiz from '../components/greemy/GreemyQuiz';
 
 export default function Colageno() {
@@ -59,6 +60,7 @@ export default function Colageno() {
       <GreemyFinalCTA />
       <GreemyStickyBuyBar />
       <WhatsAppWidget />
+      <SocialProofNotification />
 
       {/* Marquee animation styles */}
       <style>{`
