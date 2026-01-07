@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, X } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
 const purchases = [
   { name: "Ana Silva", city: "São Paulo" },
@@ -59,15 +59,8 @@ export default function SocialProofNotification() {
           initial={{ opacity: 0, x: -100, y: 20 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           exit={{ opacity: 0, x: -100, y: 20 }}
-          className="fixed bottom-6 left-6 z-50 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 max-w-sm"
+          className="fixed bottom-6 left-6 z-50 bg-white/30 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-4 max-w-sm"
         >
-          <button
-            onClick={() => setShow(false)}
-            className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
-          >
-            <X className="w-4 h-4" />
-          </button>
-          
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
               <ShoppingBag className="w-5 h-5 text-white" />
