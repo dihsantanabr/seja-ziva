@@ -18,7 +18,7 @@ import WhatsAppWidget from '../components/product/WhatsAppWidget';
 import Quiz from './Quiz';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
 
-export default function LP1() {
+export default function Flacidez() {
   const [showQuiz, setShowQuiz] = useState(false);
 
   return (
