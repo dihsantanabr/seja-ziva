@@ -26,9 +26,15 @@ export default function LP1() {
       <div className="min-h-screen bg-white">
       {/* Quiz Popup */}
       {showQuiz && (
-        <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
-          <div className="min-h-screen flex items-center justify-center p-4">
-            <div className="relative w-full">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 overflow-y-auto">
+          <div className="min-h-screen flex items-center justify-center p-0">
+            <div className="relative w-full max-w-3xl m-auto">
+              <button
+                onClick={() => setShowQuiz(false)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+              >
+                <span className="text-gray-600 text-xl">×</span>
+              </button>
               <Quiz />
             </div>
           </div>
