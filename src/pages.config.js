@@ -1,11 +1,13 @@
-import Home from './pages/Home';
 import Colageno from './pages/Colageno';
+import Home from './pages/Home';
+import Quiz from './pages/Quiz';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "Home": Home,
     "Colageno": Colageno,
+    "Home": Home,
+    "Quiz": Quiz,
 }
 
 export const pagesConfig = {
