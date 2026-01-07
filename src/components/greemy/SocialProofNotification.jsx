@@ -62,7 +62,7 @@ export default function SocialProofNotification() {
           className="fixed bottom-6 left-6 z-50 bg-white/30 backdrop-blur-xl rounded-2xl shadow-xl border border-white/20 p-4 max-w-sm"
         >
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
               <ShoppingBag className="w-5 h-5 text-white" />
             </div>
             
