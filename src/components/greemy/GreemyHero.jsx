@@ -12,9 +12,18 @@ const productImages = [
   "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/66b1713a7_br-11134207-7qukw-lfsqn9uymlmma5.jpeg"
 ];
 
+const flavors = [
+  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500' },
+  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500' },
+  { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500' },
+  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400' },
+  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500' }
+];
+
 export default function GreemyHero() {
   const [selectedImage, setSelectedImage] = useState(0);
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, prices } = useGreemy();
+  const [selectedFlavors, setSelectedFlavors] = useState([]);
 
   // Calculate dynamic reviews based on date (98 reviews per day)
   const baseDate = new Date('2025-12-26');
@@ -52,6 +61,29 @@ export default function GreemyHero() {
 
   const handleBuyClick = () => {
     window.location.href = getCheckoutLink();
+  };
+
+  const handleFlavorClick = (flavorId) => {
+    if (selectedFlavors.length < 3) {
+      setSelectedFlavors([...selectedFlavors, flavorId]);
+    }
+  };
+
+  const handleRemoveFlavor = (index) => {
+    const newFlavors = [...selectedFlavors];
+    newFlavors.splice(index, 1);
+    setSelectedFlavors(newFlavors);
+  };
+
+  const getFlavorCount = (flavorId) => {
+    return selectedFlavors.filter(f => f === flavorId).length;
+  };
+
+  const handleSizeChange = (size) => {
+    setSelectedSize(size);
+    if (size === '1 Unidade') {
+      setSelectedFlavors([]);
+    }
   };
 
   return (
@@ -215,7 +247,7 @@ export default function GreemyHero() {
                 {Object.keys(pricesWithExtras).map((size) => (
                   <button
                     key={size}
-                    onClick={() => setSelectedSize(size)}
+                    onClick={() => handleSizeChange(size)}
                     className={`relative px-6 py-5 rounded-xl border-2 font-medium transition-all text-center ${
                       selectedSize === size
                         ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white'
@@ -252,12 +284,87 @@ export default function GreemyHero() {
               )}
             </div>
 
+            {/* Flavor Selection - Only for 3 Units */}
+            {selectedSize === '3 Unidades' && (
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="font-medium text-gray-700">Escolha seus sabores:</p>
+                  <span className="text-sm text-pink-600 font-medium">
+                    {selectedFlavors.length}/3 selecionados
+                  </span>
+                </div>
+
+                {/* Selected Flavors Summary */}
+                {selectedFlavors.length > 0 && (
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    {selectedFlavors.map((flavorId, index) => {
+                      const flavor = flavors.find(f => f.id === flavorId);
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleRemoveFlavor(index)}
+                          className="flex items-center gap-2 bg-pink-100 text-pink-700 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-pink-200 transition-colors"
+                        >
+                          <span>{flavor.emoji}</span>
+                          <span>{flavor.name}</span>
+                          <span className="text-pink-400">×</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Flavor Options */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {flavors.map((flavor) => {
+                    const count = getFlavorCount(flavor.id);
+                    const isDisabled = selectedFlavors.length >= 3 && count === 0;
+                    
+                    return (
+                      <button
+                        key={flavor.id}
+                        onClick={() => handleFlavorClick(flavor.id)}
+                        disabled={isDisabled}
+                        className={`relative p-4 rounded-xl border-2 transition-all text-center ${
+                          count > 0
+                            ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
+                            : isDisabled
+                            ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
+                            : 'border-gray-200 hover:border-pink-300 text-gray-700'
+                        }`}
+                      >
+                        {count > 0 && (
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                            {count}
+                          </div>
+                        )}
+                        <div className="text-3xl mb-2">{flavor.emoji}</div>
+                        <div className={`text-sm font-semibold ${count > 0 ? 'text-white' : ''}`}>
+                          {flavor.name}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {selectedFlavors.length < 3 && (
+                  <p className="text-xs text-gray-500 mt-2 text-center">
+                    Clique nos sabores para selecionar suas 3 unidades
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              className="w-full h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
+              disabled={selectedSize === '3 Unidades' && selectedFlavors.length < 3}
+              className="w-full h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Comprar Agora
+              {selectedSize === '3 Unidades' && selectedFlavors.length < 3 
+                ? `Selecione ${3 - selectedFlavors.length} sabor(es) para continuar`
+                : 'Comprar Agora'
+              }
             </Button>
 
             {/* Quiz Button */}
