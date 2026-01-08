@@ -656,28 +656,19 @@ export default function Quiz() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              {currentQuestion > 0 && (
+            {currentQuestion > 0 && (
+              <div className="flex justify-center">
                 <Button
                   onClick={prevQuestion}
-                  variant="outline"
-                  className="flex-1 h-14 min-h-[56px] text-base sm:text-base touch-manipulation"
+                  variant="ghost"
+                  size="sm"
+                  className="text-gray-400 hover:text-gray-600 text-sm"
                 >
-                  <ChevronLeft className="w-5 h-5 mr-2" />
+                  <ChevronLeft className="w-4 h-4 mr-1" />
                   Voltar
                 </Button>
-              )}
-              <Button
-                onClick={nextQuestion}
-                disabled={!isAnswered()}
-                className={`h-14 min-h-[56px] text-base sm:text-base bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white touch-manipulation ${
-                  currentQuestion === 0 ? 'w-full' : 'flex-1'
-                }`}
-              >
-                {currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima'}
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
+              </div>
+            )}
           </motion.div>
         </AnimatePresence>
 
