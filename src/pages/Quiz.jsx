@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft, Sparkles, Check, Star, Clock, Users, Heart, Zap, Shield, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,62 +21,71 @@ import { GreemyProvider } from '../components/greemy/GreemyContext';
 
 const questions = [
   {
-    id: 1,
-    title: "Como você descreveria sua pele hoje?",
-    subtitle: "Entender sua pele nos ajuda a personalizar a recomendação",
+    id: 'name',
+    title: "Qual é o seu nome?",
+    subtitle: "Vamos usar seu nome para personalizar sua recomendação.",
+    type: "text"
+  },
+  {
+    id: 'pain',
+    title: "O que mais te incomoda hoje quando pensa em cuidado com o corpo, pele ou cabelo?",
+    subtitle: "Escolha uma opção",
     type: "single",
     options: [
-      { id: "seca", label: "Pele seca ou ressecada", emoji: "🌵" },
-      { id: "mista", label: "Pele mista", emoji: "🔄" },
-      { id: "oleosa", label: "Pele oleosa", emoji: "💧" },
-      { id: "sensivel", label: "Pele sensível", emoji: "🌸" },
-      { id: "nao_sei", label: "Não sei dizer", emoji: "🤔" }
+      { id: "flacidez", label: "Flacidez da pele", emoji: "😕" },
+      { id: "aparencia", label: "Aparência da pele (opaca, cansada, linhas ou rugas)", emoji: "😔" },
+      { id: "unhas", label: "Unhas fracas e quebradiças", emoji: "💅" },
+      { id: "cabelos", label: "Cabelos finos e fracos", emoji: "💇‍♀️" }
     ]
   },
   {
-    id: 2,
-    title: "O que mais te incomoda quando olha para sua pele?",
-    subtitle: "Escolha a opção que mais se identifica com você",
+    id: 'frequency',
+    title: "Com que frequência você percebe esse incômodo no dia a dia?",
+    subtitle: "Escolha uma opção",
     type: "single",
     options: [
-      { id: "flacidez", label: "Flacidez ou perda de firmeza", emoji: "😕" },
-      { id: "rugas", label: "Rugas e linhas de expressão", emoji: "😟" },
-      { id: "vico", label: "Falta de viço e luminosidade", emoji: "😔" },
-      { id: "elasticidade", label: "Pele sem elasticidade", emoji: "😣" },
-      { id: "ressecamento", label: "Ressecamento constante", emoji: "😖" },
-      { id: "manchas", label: "Manchas ou textura irregular", emoji: "😫" }
+      { id: "quase_todos", label: "Quase todos os dias", emoji: "😟" },
+      { id: "algumas_vezes", label: "Algumas vezes por semana", emoji: "🤔" },
+      { id: "quando_presto", label: "Só quando presto mais atenção", emoji: "👀" },
+      { id: "recentemente", label: "Comecei a perceber recentemente", emoji: "🆕" }
     ]
   },
   {
-    id: 3,
-    title: "Se você pudesse melhorar UMA coisa na sua pele nos próximos 60 dias, o que seria?",
-    subtitle: "Seu objetivo principal",
+    id: 'history',
+    title: "Você já tentou cuidar disso de alguma forma antes?",
+    subtitle: "Escolha uma opção",
     type: "single",
     options: [
-      { id: "firmeza", label: "Deixar a pele mais firme", emoji: "✨" },
-      { id: "hidratacao", label: "Hidratar profundamente", emoji: "💧" },
-      { id: "rejuvenescer", label: "Reduzir sinais de idade", emoji: "🌟" },
-      { id: "brilho", label: "Ter pele radiante e luminosa", emoji: "✨" },
-      { id: "prevencao", label: "Prevenir envelhecimento", emoji: "🛡️" }
+      { id: "sem_resultado", label: "Sim, já tentei e não tive o resultado que esperava", emoji: "😞" },
+      { id: "sem_rotina", label: "Já tentei, mas não consegui manter uma rotina", emoji: "📅" },
+      { id: "nunca_cuidei", label: "Já ouvi falar, mas nunca cuidei de verdade", emoji: "💭" },
+      { id: "primeira_vez", label: "Não, essa é a primeira vez que busco algo para isso", emoji: "✨" }
     ]
   },
   {
-    id: 4,
-    title: "Como é sua rotina com suplementos?",
-    subtitle: "Seja sincera, isso ajuda na escolha ideal",
+    id: 'routine',
+    title: "Como é a sua rotina hoje?",
+    subtitle: "Escolha uma opção",
     type: "single",
     options: [
-      { id: "organizada", label: "Sou organizada e tomo todos os dias", emoji: "✅" },
-      { id: "esquece", label: "Tento manter, mas às vezes esqueço", emoji: "📅" },
-      { id: "pratico", label: "Só consigo se for prático e rápido", emoji: "⚡" },
-      { id: "primeira", label: "Nunca tomei colágeno antes", emoji: "🆕" }
+      { id: "corrida", label: "Corrida, preciso de algo simples", emoji: "⚡" },
+      { id: "pratica", label: "Consigo manter rotina se for prática", emoji: "✅" },
+      { id: "organizada", label: "Sou organizada e sigo bem hábitos diários", emoji: "📋" },
+      { id: "varia", label: "Varia muito de semana para semana", emoji: "🔄" }
     ]
+  },
+  {
+    id: 'email',
+    title: "Sua recomendação está quase pronta",
+    subtitle: "Não enviamos spam. Você pode sair da lista quando quiser.",
+    type: "email"
   }
 ];
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [textInput, setTextInput] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [direction, setDirection] = useState(1);
   const [showExitDialog, setShowExitDialog] = useState(false);
@@ -108,38 +118,42 @@ export default function Quiz() {
     const questionId = question.id;
     
     if (question.type === "single") {
-      setAnswers({ ...answers, [questionId]: [optionId] });
+      setAnswers({ ...answers, [questionId]: optionId });
       // Auto-advance for single choice questions
       setTimeout(() => {
         if (currentQuestion < questions.length - 1) {
           setDirection(1);
           setCurrentQuestion(currentQuestion + 1);
+          setTextInput(''); // Clear text input for next question
         } else {
           setShowResult(true);
         }
       }, 300);
-    } else {
-      const currentAnswers = answers[questionId] || [];
-      
-      if (currentAnswers.includes(optionId)) {
-        setAnswers({
-          ...answers,
-          [questionId]: currentAnswers.filter(id => id !== optionId)
-        });
-      } else {
-        if (currentAnswers.length < question.maxChoices) {
-          setAnswers({
-            ...answers,
-            [questionId]: [...currentAnswers, optionId]
-          });
-        }
-      }
     }
   };
 
+  const handleTextSubmit = () => {
+    if (!textInput.trim()) return;
+    
+    const questionId = question.id;
+    setAnswers({ ...answers, [questionId]: textInput });
+    
+    setTimeout(() => {
+      if (currentQuestion < questions.length - 1) {
+        setDirection(1);
+        setCurrentQuestion(currentQuestion + 1);
+        setTextInput('');
+      } else {
+        setShowResult(true);
+      }
+    }, 300);
+  };
+
   const isAnswered = () => {
-    const questionAnswers = answers[question.id];
-    return questionAnswers && questionAnswers.length > 0;
+    if (question.type === 'text' || question.type === 'email') {
+      return textInput.trim().length > 0;
+    }
+    return !!answers[question.id];
   };
 
   const nextQuestion = () => {
@@ -180,45 +194,42 @@ export default function Quiz() {
   };
 
   const isSelected = (optionId) => {
-    const questionAnswers = answers[question.id] || [];
-    return questionAnswers.includes(optionId);
+    return answers[question.id] === optionId;
   };
 
   const getPersonalizedResult = () => {
-    const skinType = answers[1]?.[0];
-    const goal = answers[3]?.[0];
-    const routine = answers[4]?.[0];
+    const name = answers.name || 'você';
+    const pain = answers.pain;
+    const frequency = answers.frequency;
+    const history = answers.history;
+    const routine = answers.routine;
 
-    let skinTypeText = "";
-    if (skinType === "seca") skinTypeText = "pele seca";
-    else if (skinType === "mista") skinTypeText = "pele mista";
-    else if (skinType === "oleosa") skinTypeText = "pele oleosa";
-    else if (skinType === "sensivel") skinTypeText = "pele sensível";
-    else skinTypeText = "seu tipo de pele";
-
-    let goalText = "";
-    if (goal === "firmeza") goalText = "aumentar a firmeza da pele";
-    else if (goal === "hidratacao") goalText = "hidratar profundamente";
-    else if (goal === "rejuvenescer") goalText = "reduzir sinais de idade";
-    else if (goal === "brilho") goalText = "ter pele radiante";
-    else goalText = "prevenir o envelhecimento";
+    let painText = "";
+    if (pain === "flacidez") painText = "flacidez da pele";
+    else if (pain === "aparencia") painText = "aparência da pele";
+    else if (pain === "unhas") painText = "unhas fracas";
+    else if (pain === "cabelos") painText = "cabelos finos e fracos";
+    else painText = "sua preocupação";
 
     const benefits = [];
-    if (goal === "firmeza" || answers[2]?.includes("flacidez")) {
+    if (pain === "flacidez") {
       benefits.push("Aumenta firmeza e elasticidade da pele");
-    }
-    if (goal === "hidratacao" || skinType === "seca" || answers[2]?.includes("ressecamento")) {
-      benefits.push("Hidrata profundamente de dentro para fora");
-    }
-    if (goal === "rejuvenescer" || answers[2]?.includes("rugas")) {
+      benefits.push("Reduz sinais visíveis de flacidez");
+    } else if (pain === "aparencia") {
       benefits.push("Reduz rugas e linhas de expressão");
-    }
-    if (goal === "brilho" || answers[2]?.includes("vico")) {
       benefits.push("Devolve luminosidade e viço natural");
+    } else if (pain === "unhas") {
+      benefits.push("Fortalece unhas e reduz quebra");
+      benefits.push("Melhora a aparência e crescimento");
+    } else if (pain === "cabelos") {
+      benefits.push("Fortalece fios de dentro para fora");
+      benefits.push("Melhora volume e brilho");
     }
+    
+    benefits.push("Estimula produção natural de colágeno");
+    
     if (benefits.length < 3) {
-      benefits.push("Fortalece unhas e cabelos");
-      benefits.push("Estimula produção natural de colágeno");
+      benefits.push("Hidrata profundamente de dentro para fora");
     }
 
     // Benefícios secundários personalizados
@@ -235,12 +246,15 @@ export default function Quiz() {
     if (routine === "organizada") {
       morningRoutine = "Dissolva 1 sachê em 200-250ml de água ou suco pela manhã";
       whenToTake = "Recomendamos tomar sempre no mesmo horário para criar o hábito";
-    } else if (routine === "esquece") {
-      morningRoutine = "Deixe os sachês em local visível e tome ao acordar";
-      whenToTake = "Configure um alarme diário no celular para não esquecer";
-    } else if (routine === "pratico") {
+    } else if (routine === "pratica") {
       morningRoutine = "Dissolve rapidamente - apenas 30 segundos do seu dia";
       whenToTake = "Pode ser tomado com água, vitamina ou sua bebida favorita";
+    } else if (routine === "corrida") {
+      morningRoutine = "Formato prático em sachês individuais";
+      whenToTake = "Perfeito para rotinas agitadas - dissolve em segundos";
+    } else if (routine === "varia") {
+      morningRoutine = "Deixe os sachês em local visível e tome quando lembrar";
+      whenToTake = "Configure um alarme diário no celular para criar consistência";
     } else {
       morningRoutine = "Comece dissolvendo 1 sachê em 200ml de água pela manhã";
       whenToTake = "Os primeiros resultados aparecem em 4 semanas de uso contínuo";
@@ -249,7 +263,7 @@ export default function Quiz() {
     // Depoimentos relevantes baseados no objetivo
     const testimonials = [];
     
-    if (goal === "firmeza" || answers[2]?.includes("flacidez")) {
+    if (pain === "flacidez") {
       testimonials.push({
         name: "Ana Paula, 42 anos",
         text: "Em 6 semanas minha pele ficou visivelmente mais firme. Até meu marido percebeu!",
@@ -257,15 +271,7 @@ export default function Quiz() {
       });
     }
     
-    if (goal === "hidratacao" || skinType === "seca") {
-      testimonials.push({
-        name: "Mariana Silva, 35 anos",
-        text: "Minha pele era super ressecada. Hoje está hidratada e com brilho natural!",
-        rating: 5
-      });
-    }
-    
-    if (goal === "rejuvenescer" || answers[2]?.includes("rugas")) {
+    if (pain === "aparencia") {
       testimonials.push({
         name: "Claudia Mendes, 48 anos",
         text: "As rugas ao redor dos olhos diminuíram muito. Estou impressionada!",
@@ -273,17 +279,25 @@ export default function Quiz() {
       });
     }
     
-    if (testimonials.length < 2) {
+    if (pain === "unhas" || pain === "cabelos") {
       testimonials.push({
         name: "Juliana Costa, 38 anos",
         text: "Além da pele, minhas unhas pararam de quebrar e meu cabelo está mais forte!",
         rating: 5
       });
     }
+    
+    if (testimonials.length < 2) {
+      testimonials.push({
+        name: "Mariana Silva, 35 anos",
+        text: "Minha pele está hidratada e com brilho natural. Melhor investimento!",
+        rating: 5
+      });
+    }
 
     return {
-      skinTypeText,
-      goalText,
+      name,
+      painText,
       benefits,
       routine,
       secondaryBenefits,
@@ -313,10 +327,10 @@ export default function Quiz() {
                 <Sparkles className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                🎯 Seu Colágeno Ideal foi Definido!
+                🎯 {result.name}, Seu Colágeno Ideal foi Definido!
               </h1>
               <p className="text-lg text-gray-600">
-                Com base na sua {result.skinTypeText} e objetivo de {result.goalText}, encontramos o colágeno perfeito para você
+                Com base na sua preocupação com {result.painText}, encontramos o colágeno perfeito para você
               </p>
             </div>
 
@@ -574,7 +588,7 @@ export default function Quiz() {
         {/* Question History Navigation */}
         <div className="mb-4 sm:mb-6 flex flex-wrap gap-2 justify-center">
           {questions.map((q, idx) => {
-            const isAnswered = answers[q.id] && answers[q.id].length > 0;
+            const isAnswered = !!answers[q.id];
             const isCurrent = idx === currentQuestion;
             
             return (
@@ -624,36 +638,68 @@ export default function Quiz() {
               )}
             </div>
 
-            {/* Options */}
-            <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-              {question.options.map((option) => (
-                <motion.button
-                  key={option.id}
-                  onClick={() => handleAnswer(option.id)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`w-full min-h-[60px] p-4 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 touch-manipulation ${
-                    isSelected(option.id)
-                      ? 'border-pink-500 bg-pink-50'
-                      : 'border-gray-200 hover:border-pink-300'
-                  }`}
+            {/* Text/Email Input */}
+            {(question.type === "text" || question.type === "email") ? (
+              <div className="space-y-4 mb-6 sm:mb-8">
+                <Input
+                  type={question.type === "email" ? "email" : "text"}
+                  value={textInput}
+                  onChange={(e) => setTextInput(e.target.value)}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter' && isAnswered()) {
+                      handleTextSubmit();
+                    }
+                  }}
+                  placeholder={question.type === "email" ? "Digite seu melhor e-mail" : "Digite sua resposta"}
+                  className="w-full h-14 text-base px-4"
+                  autoFocus
+                />
+                {question.type === "email" && (
+                  <p className="text-sm text-gray-500 text-center">
+                    Com base nas suas respostas, preparamos uma recomendação personalizada para você.
+                  </p>
+                )}
+                <Button
+                  onClick={handleTextSubmit}
+                  disabled={!isAnswered()}
+                  className="w-full h-14 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base font-semibold"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl sm:text-2xl flex-shrink-0">{option.emoji}</span>
-                    <span className={`text-sm sm:text-base font-medium flex-1 ${
-                      isSelected(option.id) ? 'text-pink-900' : 'text-gray-700'
-                    }`}>
-                      {option.label}
-                    </span>
-                    {isSelected(option.id) && (
-                      <div className="w-6 h-6 bg-pink-600 rounded-full flex items-center justify-center">
-                        <Check className="w-4 h-4 text-white" />
-                      </div>
-                    )}
-                  </div>
-                </motion.button>
-              ))}
-            </div>
+                  Continuar
+                  <ChevronRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+            ) : (
+              /* Options */
+              <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                {question.options?.map((option) => (
+                  <motion.button
+                    key={option.id}
+                    onClick={() => handleAnswer(option.id)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full min-h-[60px] p-4 sm:p-4 rounded-xl border-2 text-left transition-all active:scale-95 touch-manipulation ${
+                      isSelected(option.id)
+                        ? 'border-pink-500 bg-pink-50'
+                        : 'border-gray-200 hover:border-pink-300'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl sm:text-2xl flex-shrink-0">{option.emoji}</span>
+                      <span className={`text-sm sm:text-base font-medium flex-1 ${
+                        isSelected(option.id) ? 'text-pink-900' : 'text-gray-700'
+                      }`}>
+                        {option.label}
+                      </span>
+                      {isSelected(option.id) && (
+                        <div className="w-6 h-6 bg-pink-600 rounded-full flex items-center justify-center">
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+            )}
 
             {/* Navigation */}
             {currentQuestion > 0 && (
