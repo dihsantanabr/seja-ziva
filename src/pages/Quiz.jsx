@@ -421,15 +421,10 @@ export default function Quiz() {
                 </div>
               </div>
             </div>
-          </motion.div>
-          
-          {/* Purchase Selector */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            <GreemyPurchaseSelector />
+            {/* Purchase Selector - Integrated */}
+            <div className="mt-8">
+              <GreemyPurchaseSelector />
+            </div>
           </motion.div>
 
           {/* Secondary Benefits */}
