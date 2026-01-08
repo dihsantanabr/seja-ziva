@@ -48,7 +48,17 @@ export default function GreemyStickyBuyBar() {
     const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
 
     // Se não houver sabores selecionados ou quantidade incorreta, scroll até o seletor
-    if (!selectedFlavors || selectedFlavors.length === 0 || selectedFlavors.length !== maxFlavors) {
+    if (!selectedFlavors || !Array.isArray(selectedFlavors) || selectedFlavors.length === 0 || selectedFlavors.length !== maxFlavors) {
+      const purchaseSection = document.querySelector('#escolha-seu-colageno');
+      if (purchaseSection) {
+        purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    // Filtrar sabores inválidos (undefined ou null)
+    const validFlavors = selectedFlavors.filter(f => f && typeof f === 'string');
+    if (validFlavors.length === 0 || validFlavors.length !== maxFlavors) {
       const purchaseSection = document.querySelector('#escolha-seu-colageno');
       if (purchaseSection) {
         purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -58,8 +68,10 @@ export default function GreemyStickyBuyBar() {
 
     // Contar quantas vezes cada sabor foi selecionado
     const flavorCounts = {};
-    selectedFlavors.forEach(flavorId => {
-      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+    validFlavors.forEach(flavorId => {
+      if (flavorId && typeof flavorId === 'string') {
+        flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+      }
     });
 
     // Gerar a string de produtos no formato CODIGO:QUANTIDADE usando o mapa de códigos
