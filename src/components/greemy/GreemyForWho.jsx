@@ -2,6 +2,8 @@ import React from 'react';
 import { Droplets, Heart, Sparkles, Shield, Wind, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 const painPoints = [
   {
@@ -76,12 +78,13 @@ export default function GreemyForWho({ onOpenQuiz }) {
         </div>
 
         <div className="mt-12 text-center">
-          <Button 
-            onClick={onOpenQuiz}
-            className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-8 py-4 text-lg"
-          >
-            Descubra qual colágeno faz sentido para sua pele
-          </Button>
+          <Link to={createPageUrl('Quiz')}>
+            <Button 
+              className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold px-8 py-4 text-lg"
+            >
+              Descubra qual colágeno faz sentido para sua pele
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
