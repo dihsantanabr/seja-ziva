@@ -1,6 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
 import GreemyHero from '../components/greemy/GreemyHero';
-import GreemyPurchaseSelector from '../components/greemy/GreemyPurchaseSelector';
 import GreemyStickyBuyBar from '../components/greemy/GreemyStickyBuyBar';
 import { GreemyProvider } from '../components/greemy/GreemyContext';
 
@@ -33,7 +32,6 @@ export default function Home() {
       )}
 
       <GreemyHero />
-      <GreemyPurchaseSelector />
       <Suspense fallback={<div className="h-20" />}>
         <div id="para-quem-e">
           <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
