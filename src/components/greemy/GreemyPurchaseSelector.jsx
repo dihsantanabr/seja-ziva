@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, ShoppingCart } from 'lucide-react';
+import { Check, ShoppingCart, Package } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useGreemy } from './GreemyContext';
