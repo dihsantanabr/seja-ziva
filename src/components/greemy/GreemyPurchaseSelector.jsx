@@ -290,6 +290,28 @@ export default function GreemyPurchaseSelector() {
             : 'COMPRAR AGORA'
           }
         </Button>
+
+        {/* Delivery Estimate */}
+        <div className="bg-green-100 border border-green-300 rounded-xl p-3 lg:p-4 mt-4">
+          <div className="flex items-start gap-2 lg:gap-3">
+            <Package className="w-4 h-4 lg:w-5 lg:h-5 text-green-600 flex-shrink-0 mt-0.5" />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1.5 lg:gap-2 flex-wrap">
+                <p className="font-semibold text-green-900 text-xs lg:text-base">
+                  Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
+                </p>
+                {selectedSize === '3 Unidades' && (
+                  <Badge className="bg-green-600 hover:bg-green-700 text-white text-[10px] lg:text-xs whitespace-nowrap">
+                    Receba + Rápido
+                  </Badge>
+                )}
+              </div>
+              <p className="text-xs lg:text-sm text-green-700 mt-1">
+                Confirme o prazo final na próxima etapa.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
