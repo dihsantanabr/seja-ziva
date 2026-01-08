@@ -93,7 +93,12 @@ export default function Quiz() {
 
   // Safety check: ensure question exists before any calculations
   const question = questions[currentQuestion];
+  if (!question) {
+    return null;
+  }
   
+  const progress = ((currentQuestion + 1) / questions.length) * 100;
+
   // Prevent accidental exit
   useEffect(() => {
     if (showResult) return;
@@ -108,12 +113,6 @@ export default function Quiz() {
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [answers, showResult]);
-
-  if (!question) {
-    return null;
-  }
-  
-  const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   const handleAnswer = (optionId) => {
     const questionId = question.id;
@@ -151,6 +150,7 @@ export default function Quiz() {
   };
 
   const isAnswered = () => {
+    if (!question) return false;
     if (question.type === 'text' || question.type === 'email') {
       return textInput.trim().length > 0;
     }
