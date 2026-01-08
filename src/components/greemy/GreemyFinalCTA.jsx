@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Download, FileText } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 
 export default function GreemyFinalCTA({ onOpenQuiz }) {
   return (
@@ -20,12 +22,13 @@ export default function GreemyFinalCTA({ onOpenQuiz }) {
             Cada pele é única. Descubra qual colágeno se encaixa melhor no seu perfil e objetivo.
           </p>
 
-          <Button
-            onClick={onOpenQuiz}
-            className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all"
-          >
-            Receber Recomendação Personalizada
-          </Button>
+          <Link to={createPageUrl('Quiz')}>
+            <Button
+              className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all"
+            >
+              Receber Recomendação Personalizada
+            </Button>
+          </Link>
 
           <p className="text-white/80 text-sm mt-6">
             Menos de 2 minutos • Totalmente gratuito
