@@ -91,13 +91,13 @@ export default function Quiz() {
   const [showExitDialog, setShowExitDialog] = useState(false);
   const navigate = useNavigate();
 
-  const question = questions[currentQuestion] || questions[0];
-  const progress = ((currentQuestion + 1) / questions.length) * 100;
-
-  // Safety check: if no question exists, don't render
+  // Safety check: ensure question exists before any calculations
+  const question = questions[currentQuestion];
   if (!question) {
     return null;
   }
+  
+  const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   // Prevent accidental exit
   useEffect(() => {
