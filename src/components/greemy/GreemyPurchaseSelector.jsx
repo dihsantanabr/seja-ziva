@@ -47,6 +47,18 @@ export default function GreemyPurchaseSelector() {
   const currentPrice = prices[selectedSize]?.current || 0;
   const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
 
+  // Calculate delivery dates
+  const today = new Date();
+  const daysOffset = selectedSize === '3 Unidades' ? 1 : 0;
+  const minDeliveryDate = new Date(today);
+  minDeliveryDate.setDate(today.getDate() + 4 - daysOffset);
+  const maxDeliveryDate = new Date(today);
+  maxDeliveryDate.setDate(today.getDate() + 8 - daysOffset);
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
+  };
+
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
     const totalSelected = selectedFlavors.length;
