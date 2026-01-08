@@ -136,6 +136,31 @@ export default function GreemyPurchaseSelector() {
           </h2>
         </div>
 
+        {/* Price Box */}
+        <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-pink-100 mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              {prices[selectedSize]?.discount > 0 && (
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="text-sm text-gray-400 line-through">
+                    R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
+                  </span>
+                  <Badge className="bg-pink-600 text-white text-xs">
+                    {prices[selectedSize].discount}% OFF
+                  </Badge>
+                  <Badge className="bg-pink-600 text-white text-xs">
+                    Frete Grátis
+                  </Badge>
+                </div>
+              )}
+              <div className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
+                R$ {currentPrice.toFixed(2).replace('.', ',')}
+              </div>
+              <div className="text-gray-600 text-xs mt-1">Em até 6x sem juros</div>
+            </div>
+          </div>
+        </div>
+
         {/* Escolha a quantidade */}
         <div className="mb-8">
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
@@ -249,41 +274,17 @@ export default function GreemyPurchaseSelector() {
           </p>
         </div>
 
-        {/* Price and Buy Button */}
-        <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-pink-100">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              {prices[selectedSize]?.discount > 0 && (
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="text-sm text-gray-400 line-through">
-                    R$ {prices[selectedSize].original.toFixed(2).replace('.', ',')}
-                  </span>
-                  <Badge className="bg-pink-600 text-white text-xs">
-                    {prices[selectedSize].discount}% OFF
-                  </Badge>
-                  <Badge className="bg-pink-600 text-white text-xs">
-                    Frete Grátis
-                  </Badge>
-                </div>
-              )}
-              <div className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
-                R$ {currentPrice.toFixed(2).replace('.', ',')}
-              </div>
-              <div className="text-gray-600 text-xs mt-1">Em até 6x sem juros</div>
-            </div>
-            
-            <Button
-              onClick={handleBuyNow}
-              disabled={selectedFlavors.length < maxFlavors}
-              className="w-full md:w-auto bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base lg:text-lg px-8 py-7 lg:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 min-h-[56px]"
-            >
-              {selectedFlavors.length < maxFlavors
-                ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
-                : 'COMPRAR AGORA'
-              }
-            </Button>
-          </div>
-        </div>
+        {/* Buy Button */}
+        <Button
+          onClick={handleBuyNow}
+          disabled={selectedFlavors.length < maxFlavors}
+          className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base lg:text-lg px-8 py-7 lg:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 min-h-[56px]"
+        >
+          {selectedFlavors.length < maxFlavors
+            ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
+            : 'COMPRAR AGORA'
+          }
+        </Button>
       </div>
     </section>
   );
