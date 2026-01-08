@@ -195,6 +195,7 @@ export default function Quiz() {
   };
 
   const isSelected = (optionId) => {
+    if (!question) return false;
     return answers[question.id] === optionId;
   };
 
