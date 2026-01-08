@@ -335,7 +335,7 @@ export default function Quiz() {
             </div>
 
             {/* Product Hero Section - Replicating first fold */}
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 mb-6">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
               {/* Product Image */}
               <div className="space-y-4">
                 <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
@@ -350,10 +350,10 @@ export default function Quiz() {
                 </div>
               </div>
 
-              {/* Product Info */}
+              {/* Product Info + Purchase Selector */}
               <div className="space-y-4">
                 <Badge className="bg-pink-600 text-white mb-2">Recomendado para você</Badge>
-                
+
                 <div>
                   <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-sm uppercase tracking-wider mb-2">
                     Cuidado Natural da Pele
@@ -419,11 +419,12 @@ export default function Quiz() {
                     ))}
                   </div>
                 </div>
+
+                {/* Purchase Selector - Integrated */}
+                <div className="pt-4">
+                  <GreemyPurchaseSelector />
+                </div>
               </div>
-            </div>
-            {/* Purchase Selector - Integrated */}
-            <div className="mt-8">
-              <GreemyPurchaseSelector />
             </div>
           </motion.div>
 
