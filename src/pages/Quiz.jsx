@@ -315,7 +315,7 @@ export default function Quiz() {
     return (
       <GreemyProvider>
         <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white py-8 px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto space-y-6">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -334,44 +334,91 @@ export default function Quiz() {
               </p>
             </div>
 
-            {/* Product Recommendation */}
-            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 mb-6">
-              <Badge className="bg-pink-600 text-white mb-3">Recomendado para você</Badge>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Colágeno Verisol® + Ácido Hialurônico
-              </h2>
-              <p className="text-pink-700 font-semibold mb-4">
-                Beleza que começa de dentro para fora
-              </p>
+            {/* Product Hero Section - Replicating first fold */}
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 mb-6">
+              {/* Product Image */}
+              <div className="space-y-4">
+                <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
+                  <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
+                    Mais Vendido
+                  </Badge>
+                  <img
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/7da82ad57_MODELO---COLAGENO1.jpg"
+                    alt="Colágeno Verisol® + Ácido Hialurônico"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
 
-              <div className="space-y-3 mb-6">
-                {result.benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-gray-700">{benefit}</span>
+              {/* Product Info */}
+              <div className="space-y-4">
+                <Badge className="bg-pink-600 text-white mb-2">Recomendado para você</Badge>
+                
+                <div>
+                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-sm uppercase tracking-wider mb-2">
+                    Cuidado Natural da Pele
+                  </p>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                    Colágeno Verisol®
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
+                  </h2>
+                  <p className="mt-2 text-base text-gray-600">
+                    Beleza que começa de dentro. Reduz rugas, aumenta firmeza e hidrata profundamente sua pele em até 4 semanas.
+                  </p>
+                </div>
+
+                {/* Reviews */}
+                <div className="flex items-center gap-3">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    ))}
                   </div>
-                ))}
-              </div>
+                  <span className="font-semibold text-gray-900">4.9</span>
+                  <span className="text-gray-500">•</span>
+                  <span className="text-gray-600">238.917 avaliações</span>
+                </div>
 
-              <div className="bg-white rounded-xl p-4 mb-4">
-                <p className="font-semibold text-gray-900 mb-2">Por que ele é ideal para você:</p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>✓ Fórmula com Verisol®, o colágeno mais estudado do mundo</li>
-                  <li>✓ Resultados visíveis em 4 semanas de uso contínuo</li>
-                  <li>✓ {result.routine === "pratico" ? "Formato prático e rápido de usar" : "Fácil de incluir na sua rotina diária"}</li>
-                  <li>✓ Sachês individuais para máxima praticidade</li>
-                  <li>✓ 6 sabores deliciosos para escolher</li>
-                </ul>
-              </div>
+                {/* Trust Badges */}
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Star className="w-3.5 h-3.5 mr-1.5" />
+                    Colágeno Verisol®
+                  </Badge>
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+                    Ácido Hialurônico
+                  </Badge>
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Heart className="w-3.5 h-3.5 mr-1.5" />
+                    Reduz Rugas
+                  </Badge>
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Zap className="w-3.5 h-3.5 mr-1.5" />
+                    Aumenta Firmeza
+                  </Badge>
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Shield className="w-3.5 h-3.5 mr-1.5" />
+                    Hidrata Profundamente
+                  </Badge>
+                  <Badge variant="outline" className="border-pink-500 text-pink-600">
+                    <Check className="w-3.5 h-3.5 mr-1.5" />
+                    Resultados em 4 Semanas
+                  </Badge>
+                </div>
 
-              <div className="flex items-center gap-2 text-sm text-gray-600 flex-wrap">
-                <span className="font-semibold">21 sachês</span>
-                <span>•</span>
-                <span>Uso diário simples</span>
-                <span>•</span>
-                <span>10g de colágeno por sachê</span>
+                {/* Benefits for user */}
+                <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-4">
+                  <p className="font-semibold text-gray-900 mb-3">Por que ele é ideal para você:</p>
+                  <div className="space-y-2">
+                    {result.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700 text-sm">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
