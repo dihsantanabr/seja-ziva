@@ -127,15 +127,8 @@ export default function GreemyPurchaseSelector() {
   };
 
   return (
-    <section id="escolha-seu-colageno" className="py-12 lg:py-16 bg-gradient-to-b from-white to-pink-50">
+    <section id="escolha-seu-colageno" className="py-4 lg:py-6 bg-gradient-to-b from-white to-pink-50">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Título Principal */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-            Escolha seu Colágeno
-          </h2>
-        </div>
-
         {/* Price Box */}
         <div className="bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-pink-100 mb-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
