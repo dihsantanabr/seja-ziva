@@ -84,6 +84,11 @@ export default function Quiz() {
   const question = questions[currentQuestion] || questions[0];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
+  // Safety check: if no question exists, don't render
+  if (!question) {
+    return null;
+  }
+
   // Prevent accidental exit
   useEffect(() => {
     if (showResult) return;
