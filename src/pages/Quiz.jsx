@@ -81,7 +81,7 @@ export default function Quiz() {
   const [showExitDialog, setShowExitDialog] = useState(false);
   const navigate = useNavigate();
 
-  const question = questions[currentQuestion];
+  const question = questions[currentQuestion] || questions[0];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   // Prevent accidental exit
