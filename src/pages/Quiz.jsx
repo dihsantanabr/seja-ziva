@@ -337,7 +337,7 @@ export default function Quiz() {
             {/* Product Hero Section - Replicating first fold */}
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
               {/* Product Image */}
-              <div className="space-y-4">
+              <div className="space-y-4 lg:sticky lg:top-8 lg:self-start">
                 <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
                   <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
                     Mais Vendido
