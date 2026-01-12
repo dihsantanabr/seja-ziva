@@ -4,6 +4,7 @@ import { ChevronRight, ChevronLeft, Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { base44 } from '@/api/base44Client';
 
 export default function LinkBioQuiz({ onComplete }) {
   const [step, setStep] = useState(0);
@@ -180,6 +181,26 @@ export default function LinkBioQuiz({ onComplete }) {
   if (showResult) {
     const mainProduct = getMainProduct() || products.colageno; // Guard rail: default ao Colágeno
     const complementary = getComplementary();
+
+    // Salvar lead no banco de dados quando os resultados aparecem
+    React.useEffect(() => {
+      const saveLead = async () => {
+        const productKey = productMapping[answers.objective];
+        try {
+          await base44.entities.QuizLead.create({
+            name: answers.name,
+            email: answers.email,
+            objective: answers.objective,
+            symptom: answers.symptom,
+            routine: answers.routine,
+            recommendedProduct: productKey
+          });
+        } catch (error) {
+          console.error('Erro ao salvar lead:', error);
+        }
+      };
+      saveLead();
+    }, []);
 
     return (
       <motion.div
