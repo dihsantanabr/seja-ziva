@@ -95,29 +95,16 @@ export default function LinkBio() {
         </div>
       </section>
 
-      {/* QUIZ */}
-      <section ref={quizRef} className="px-3 sm:px-4 py-8 sm:py-12">
+      {/* PRODUTOS - Acesso Direto */}
+      <section className="px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-pink-50 to-white">
         <div className="max-w-2xl mx-auto">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
           >
-            <LinkBioQuiz onComplete={() => setQuizCompleted(true)} />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* PRODUTOS */}
-      {quizCompleted && (
-        <section className="px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-pink-50 to-white">
-          <div className="max-w-2xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-10">
-                Ou acesse direto por objetivo
-              </h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-10">
+              Ou acesse direto por objetivo
+            </h2>
 
               <div className="grid gap-4 sm:gap-6">
                 {products.map((product, idx) => (
@@ -154,7 +141,26 @@ export default function LinkBio() {
             </motion.div>
           </div>
         </section>
-      )}
+
+      {/* QUIZ */}
+      <section ref={quizRef} className="px-3 sm:px-4 py-8 sm:py-12 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+              Ou deixe o quiz escolher para você
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600">
+              Responda 4 perguntas rápidas e receba uma recomendação personalizada
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <LinkBioQuiz onComplete={() => setQuizCompleted(true)} />
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA DE REFORÇO */}
       {quizCompleted && (
