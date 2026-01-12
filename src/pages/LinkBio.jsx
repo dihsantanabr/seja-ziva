@@ -46,7 +46,7 @@ export default function LinkBio() {
               <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-              Descubra o produto ideal para o seu objetivo
+              Descubra o produto ideal para o seu objetivo hoje
             </h1>
             <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
               Responda algumas perguntas rápidas e receba uma recomendação personalizada para sua rotina.
@@ -82,13 +82,13 @@ export default function LinkBio() {
                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-green-600" />
                 </div>
-                <span className="text-sm sm:text-base text-gray-700">Considera seu objetivo e rotina</span>
+                <span className="text-sm sm:text-base text-gray-700">Considera seu objetivo e sua rotina</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-green-600" />
                 </div>
-                <span className="text-sm sm:text-base text-gray-700">Recomendação clara e direta</span>
+                <span className="text-sm sm:text-base text-gray-700">Recomenda o produto mais indicado para você</span>
               </div>
             </div>
           </motion.div>
