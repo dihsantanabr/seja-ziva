@@ -48,10 +48,10 @@ export default function LinkBio() {
               className="h-16 sm:h-20 mx-auto mb-4 sm:mb-6 object-contain"
             />
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-              Descubra o produto ideal para o seu objetivo hoje
+              Encontre o produto certo para o seu objetivo
             </h1>
             <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
-              Responda algumas perguntas rápidas e receba uma recomendação personalizada para sua rotina.
+              Responda algumas perguntas rápidas e receba uma recomendação pensada para você.
             </p>
           </motion.div>
 
@@ -61,8 +61,8 @@ export default function LinkBio() {
               onClick={() => quizRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
               className="w-full h-14 sm:h-16 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-base sm:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95"
             >
-              👉 Quero descobrir o ideal para mim
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
+              👉 Quero receber minha recomendação
+               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
             </Button>
           </div>
 
