@@ -102,10 +102,10 @@ export default function LinkBio() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Descubra o produto ideal para o seu objetivo
+              Responda e receba sua recomendação
             </h2>
             <p className="text-sm sm:text-base text-gray-600 mb-4">
-              Responda 4 perguntas rápidas e receba uma recomendação personalizada
+              Responda 4 perguntas rápidas e veja a recomendação certa para você
             </p>
             <Button
               variant="link"
@@ -115,7 +115,7 @@ export default function LinkBio() {
               }}
               className="text-sm text-pink-600 hover:text-pink-700 p-0 h-auto"
             >
-              Prefere escolher direto? Ver produtos →
+              Já sabe o que procura? Ver produtos →
             </Button>
           </div>
           <motion.div
@@ -182,6 +182,9 @@ export default function LinkBio() {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Ainda em dúvida?
               </h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-6">
+                Receba uma recomendação personalizada em 1 minuto
+              </p>
               <Button
                 onClick={() => {
                   setQuizCompleted(false);
@@ -189,7 +192,7 @@ export default function LinkBio() {
                 }}
                 className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-semibold px-8 py-3 sm:py-4 rounded-lg"
               >
-                👉 Faça o quiz e descubra o ideal para você
+                👉 Responder agora
               </Button>
             </motion.div>
           </div>
