@@ -178,7 +178,7 @@ export default function LinkBioQuiz({ onComplete }) {
   const progress = ((step + 1) / 5) * 100;
 
   if (showResult) {
-    const mainProduct = getMainProduct();
+    const mainProduct = getMainProduct() || products.colageno; // Guard rail: default ao Colágeno
     const complementary = getComplementary();
 
     return (
@@ -323,7 +323,7 @@ export default function LinkBioQuiz({ onComplete }) {
             </div>
           )}
 
-          {/* Step 1: Objetivo Principal (DECISIVO) */}
+          {/* Step 1: Objetivo Principal (DECISIVO) - Auto-avança */}
           {step === 1 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -354,7 +354,7 @@ export default function LinkBioQuiz({ onComplete }) {
             </div>
           )}
 
-          {/* Step 2: Contexto/Sintoma (personalização) */}
+          {/* Step 2: Contexto/Sintoma (personalização) - Auto-avança */}
           {step === 2 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -384,7 +384,7 @@ export default function LinkBioQuiz({ onComplete }) {
             </div>
           )}
 
-          {/* Step 3: Rotina (personalização) */}
+          {/* Step 3: Rotina (personalização) - Auto-avança */}
           {step === 3 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
