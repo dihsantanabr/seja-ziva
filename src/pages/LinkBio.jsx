@@ -42,9 +42,11 @@ export default function LinkBio() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8 sm:mb-10"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-              <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-            </div>
+            <img 
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/81df3e842_LOGO-RENOVA-PRETO2.png" 
+              alt="RenovaBe" 
+              className="h-16 sm:h-20 mx-auto mb-4 sm:mb-6 object-contain"
+            />
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
               Descubra o produto ideal para o seu objetivo hoje
             </h1>
