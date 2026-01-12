@@ -11,70 +11,47 @@ export default function LinkBioQuiz({ onComplete }) {
   const [showResult, setShowResult] = useState(false);
   const [direction, setDirection] = useState(1);
 
-  // Mapeamento de respostas para produtos
+  // Mapeamento FIXO: Objetivo → Produto Principal
   const productMapping = {
     'aparencia': 'colageno',
     'firmeza': 'lift',
     'forca': 'creatina',
-    'multiplo': 'combo'
+    'multiplo': 'colageno' // Âncora: Colágeno é o mais abrangente
   };
 
-  const productRecommendations = {
+  const products = {
     colageno: {
       icon: '🧬',
       title: 'Colágeno RenovaBe',
       subtitle: 'Para pele, unhas e cabelo',
-      mainDescription: 'é o produto mais indicado porque atua diretamente na aparência da pele, fortalece unhas e cabelos, e funciona com constância em qualquer rotina.',
-      benefits: ['Reduz rugas e linhas finas', 'Aumenta firmeza e elasticidade', 'Fortalece unhas e cabelos'],
       url: 'https://colageno.renovabe.com'
     },
     lift: {
       icon: '✨',
       title: 'Lift RenovaBe',
       subtitle: 'Para firmeza e cuidado corporal',
-      mainDescription: 'é o produto mais indicado porque atua especificamente em firmeza e textura da pele corporal, complementando seu cuidado com a aparência.',
-      benefits: ['Aumenta firmeza da pele', 'Melhora textura corporal', 'Reduz aparência de flacidez'],
       url: 'https://lift.renovabe.com'
     },
     creatina: {
       icon: '💪',
       title: 'Creatina RenovaBe',
       subtitle: 'Para força, energia e desempenho',
-      mainDescription: 'é o produto mais indicado porque potencializa seu rendimento nos treinos, aumenta força e energia, com suplementação simples no dia a dia.',
-      benefits: ['Aumenta força e resistência', 'Melhora desempenho nos treinos', 'Eleva energia diária'],
       url: 'https://creatina.renovabe.com'
-    },
-    combo: {
-      icon: '🌟',
-      title: 'Combo RenovaBe Completo',
-      subtitle: 'Para máximos resultados',
-      mainDescription: 'recomendamos explorar múltiplos produtos que, juntos, potencializam seus resultados estéticos e de desempenho.',
-      benefits: ['Cuidado 360° da pele e corpo', 'Mais força e energia', 'Resultados potencializados'],
-      url: 'https://renovabe.com'
     }
   };
 
-  const otherProducts = {
-    colageno: [
-      { icon: '✨', title: 'Lift RenovaBe', description: 'Para firmeza e cuidado corporal', url: 'https://lift.renovabe.com' },
-      { icon: '💪', title: 'Creatina RenovaBe', description: 'Para força, energia e desempenho', url: 'https://creatina.renovabe.com' }
-    ],
-    lift: [
-      { icon: '🧬', title: 'Colágeno RenovaBe', description: 'Para pele, unhas e cabelo', url: 'https://colageno.renovabe.com' },
-      { icon: '💪', title: 'Creatina RenovaBe', description: 'Para força, energia e desempenho', url: 'https://creatina.renovabe.com' }
-    ],
-    creatina: [
-      { icon: '🧬', title: 'Colágeno RenovaBe', description: 'Para pele, unhas e cabelo', url: 'https://colageno.renovabe.com' },
-      { icon: '✨', title: 'Lift RenovaBe', description: 'Para firmeza e cuidado corporal', url: 'https://lift.renovabe.com' }
-    ],
-    combo: [
-      { icon: '🧬', title: 'Colágeno RenovaBe', description: 'Para pele, unhas e cabelo', url: 'https://colageno.renovabe.com' },
-      { icon: '✨', title: 'Lift RenovaBe', description: 'Para firmeza e cuidado corporal', url: 'https://lift.renovabe.com' },
-      { icon: '💪', title: 'Creatina RenovaBe', description: 'Para força, energia e desempenho', url: 'https://creatina.renovabe.com' }
-    ]
+  // Produtos complementares (sempre os outros 2)
+  const getComplementaryProducts = (productKey) => {
+    const allKeys = ['colageno', 'lift', 'creatina'];
+    return allKeys
+      .filter(key => key !== productKey)
+      .map(key => ({
+        ...products[key],
+        description: products[key].subtitle
+      }));
   };
 
-  // Questões dinâmicas baseadas no objetivo
+  // Perguntas dinâmicas para Pergunta 3 (apenas contexto, não muda produto)
   const dynamicQuestions = {
     aparencia: [
       { id: 'flacidez', label: 'Flacidez ou perda de firmeza', emoji: '😕' },
@@ -116,17 +93,17 @@ export default function LinkBioQuiz({ onComplete }) {
       setDirection(1);
       setStep(1);
     } else if (step === 1) {
-      // Objetivo principal
+      // Objetivo principal (DEFINE O PRODUTO)
       setAnswers({ ...answers, objective: answerId });
       setDirection(1);
       setStep(2);
     } else if (step === 2) {
-      // Contexto/Sintoma
+      // Contexto/Sintoma (apenas para personalização)
       setAnswers({ ...answers, symptom: answerId });
       setDirection(1);
       setStep(3);
     } else if (step === 3) {
-      // Rotina
+      // Rotina (apenas para personalização)
       setAnswers({ ...answers, routine: answerId });
       setDirection(1);
       setStep(4);
@@ -144,19 +121,65 @@ export default function LinkBioQuiz({ onComplete }) {
     }
   };
 
-  const getProductKey = () => {
-    return productMapping[answers.objective] || 'colageno';
+  // Obtém o produto principal BASEADO NA PERGUNTA 2
+  const getMainProduct = () => {
+    const productKey = productMapping[answers.objective];
+    return products[productKey];
   };
 
-  const getRecommendation = () => {
-    return productRecommendations[getProductKey()];
+  // Obtém os produtos complementares
+  const getComplementary = () => {
+    const productKey = productMapping[answers.objective];
+    return getComplementaryProducts(productKey);
+  };
+
+  // Gera texto personalizado baseado no sintoma
+  const getPersonalizedText = () => {
+    const objective = answers.objective;
+    const symptom = answers.symptom;
+    const productKey = productMapping[objective];
+
+    const texts = {
+      colageno: {
+        flacidez: 'atua na firmeza e elasticidade, reduzindo a aparência de flacidez com constância.',
+        'pele-opaca': 'reduz rugas e linhas, devolvendo luminosidade e viço natural à sua pele.',
+        unhas: 'fortalece unhas de dentro para fora, reduzindo quebra e descamação.',
+        cabelo: 'potencializa a saúde dos fios, deixando-os mais fortes e brilhantes.',
+        'pele-forca': 'cuida da pele enquanto você trabalha seu desempenho.',
+        'pele-corpo': 'melhora a aparência da pele enquanto reforça sua confiança.',
+        todos: 'é a solução mais abrangente, cuidando de pele, unhas e cabelo simultaneamente.',
+        'nao-sei': 'é a escolha mais versátil, servindo como base para diversos objetivos de beleza.'
+      },
+      lift: {
+        flacidez: 'trabalha especificamente em firmeza corporal e redução de flacidez.',
+        textura: 'melhora a textura da pele corporal, deixando-a mais lisa e viçosa.',
+        postura: 'aumenta sua confiança ao melhorar a aparência e firmeza da pele.',
+        celulite: 'reduz a aparência de celulite e melhora a textura geral da pele.',
+        'pele-forca': 'complementa seu cuidado estético com foco em firmeza corporal.',
+        'pele-corpo': 'é a solução principal para quem busca firmeza e cuidado corporal.',
+        todos: 'trabalha a firmeza enquanto você cuida de outros objetivos também.',
+        'nao-sei': 'é ideal se seu foco é melhorar a aparência e firmeza da pele corporal.'
+      },
+      creatina: {
+        energia: 'aumenta energia diária e potencializa seu desempenho nos treinos.',
+        ganho: 'melhora sua capacidade de ganhar força e resistência.',
+        treino: 'otimiza seu rendimento durante os exercícios, amplificando resultados.',
+        cansaco: 'reduz fadiga e aumenta disposição para suas atividades.',
+        'pele-forca': 'potencializa sua força enquanto você cuida da saúde da pele.',
+        'pele-corpo': 'complementa seu cuidado estético com foco em desempenho.',
+        todos: 'é perfeita se você quer força e energia para melhorar também em outros aspectos.',
+        'nao-sei': 'é ideal se seu foco é aumentar força, energia e desempenho físico.'
+      }
+    };
+
+    return texts[productKey]?.[symptom] || 'é o produto mais indicado para seus objetivos neste momento.';
   };
 
   const progress = ((step + 1) / 5) * 100;
 
   if (showResult) {
-    const recommendation = getRecommendation();
-    const productKey = getProductKey();
+    const mainProduct = getMainProduct();
+    const complementary = getComplementary();
 
     return (
       <motion.div
@@ -165,64 +188,58 @@ export default function LinkBioQuiz({ onComplete }) {
         className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-6 lg:p-8"
         onAnimationComplete={() => onComplete?.()}
       >
+        {/* Headline */}
         <div className="text-center mb-6 sm:mb-8">
-          <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">{recommendation.icon}</div>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
-            {answers.name}, encontramos a solução ideal para você
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+            {answers.name}, encontramos a melhor opção para você
           </h2>
           <p className="text-sm sm:text-base text-gray-600">
-            Com base no seu objetivo e na sua rotina, aqui está nossa recomendação:
+            Com base no seu objetivo principal e na sua rotina, este é o produto mais indicado para você neste momento.
           </p>
         </div>
 
-        {/* Produto Principal Recomendado */}
+        {/* Produto Principal */}
         <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
-          <Badge className="bg-pink-600 text-white mb-3">Mais indicado para você</Badge>
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
-            {recommendation.title}
-          </h3>
-          <p className="text-sm text-pink-600 font-semibold mb-4">
-            {recommendation.subtitle}
-          </p>
-          <p className="text-sm sm:text-base text-gray-700 mb-4">
-            <span className="font-semibold text-gray-900">{recommendation.title}</span> {recommendation.mainDescription}
-          </p>
-
-          <div className="space-y-2 mb-4">
-            {recommendation.benefits.map((benefit, idx) => (
-              <div key={idx} className="flex items-start gap-2">
-                <Check className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-700">{benefit}</span>
-              </div>
-            ))}
+          <Badge className="bg-pink-600 text-white mb-3">Recomendado para você</Badge>
+          
+          <div className="mb-4">
+            <div className="text-4xl sm:text-5xl mb-3">{mainProduct.icon}</div>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+              {mainProduct.title}
+            </h3>
+            <p className="text-sm text-pink-600 font-semibold mb-4">
+              {mainProduct.subtitle}
+            </p>
           </div>
 
+          <p className="text-sm sm:text-base text-gray-700 mb-6">
+            <span className="font-semibold">{mainProduct.title}</span> {getPersonalizedText()}
+          </p>
+
+          {/* CTA PRINCIPAL - ÚNICO */}
           <Button
-            onClick={() => window.open(recommendation.url, '_blank')}
+            onClick={() => window.open(mainProduct.url, '_blank')}
             className="w-full h-12 sm:h-14 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-sm sm:text-base font-bold rounded-lg sm:rounded-xl"
           >
-            👉 Começar agora
+            👉 Acessar o site
             <ChevronRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
 
-        {/* Outros Produtos Complementares */}
-        {otherProducts[productKey].length > 0 && (
+        {/* Produtos Complementares (SEM CTA PRINCIPAL) */}
+        {complementary.length > 0 && (
           <div>
-            <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+            <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-3 sm:mb-4">
               Dependendo da sua rotina, estes produtos também podem complementar seus resultados:
             </h4>
             <div className="space-y-2 sm:space-y-3">
-              {otherProducts[productKey].map((product, idx) => (
-                <motion.a
+              {complementary.map((product, idx) => (
+                <motion.div
                   key={idx}
-                  href={product.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="block bg-white border border-gray-200 rounded-lg p-3 hover:border-pink-300 hover:shadow-md transition-all active:scale-95"
+                  className="bg-white border border-gray-200 rounded-lg p-3 hover:border-pink-300 hover:shadow-md transition-all"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{product.icon}</span>
@@ -230,9 +247,8 @@ export default function LinkBioQuiz({ onComplete }) {
                       <h5 className="text-sm font-semibold text-gray-900">{product.title}</h5>
                       <p className="text-xs text-gray-600">{product.description}</p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-gray-400 flex-shrink-0" />
                   </div>
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -307,7 +323,7 @@ export default function LinkBioQuiz({ onComplete }) {
             </div>
           )}
 
-          {/* Step 1: Objetivo Principal */}
+          {/* Step 1: Objetivo Principal (DECISIVO) */}
           {step === 1 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -335,16 +351,10 @@ export default function LinkBioQuiz({ onComplete }) {
                   </motion.button>
                 ))}
               </div>
-              {step > 0 && (
-                <Button onClick={goBack} variant="outline" className="w-full mt-4 h-11">
-                  <ChevronLeft className="w-4 h-4 mr-2" />
-                  Voltar
-                </Button>
-              )}
             </div>
           )}
 
-          {/* Step 2: Contexto/Sintoma Dinâmico */}
+          {/* Step 2: Contexto/Sintoma (personalização) */}
           {step === 2 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -374,7 +384,7 @@ export default function LinkBioQuiz({ onComplete }) {
             </div>
           )}
 
-          {/* Step 3: Rotina */}
+          {/* Step 3: Rotina (personalização) */}
           {step === 3 && (
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
