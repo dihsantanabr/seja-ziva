@@ -47,7 +47,7 @@ const questions = [
   }
 ];
 
-export default function LinkBioQuiz() {
+export default function LinkBioQuiz({ onComplete }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
@@ -86,46 +86,47 @@ export default function LinkBioQuiz() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white rounded-3xl shadow-xl p-6 lg:p-10"
+        className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-6 lg:p-8"
+        onAnimationComplete={() => onComplete?.()}
       >
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Heart className="w-10 h-10 text-white" />
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
             🎯 Seu colágeno ideal está aqui
           </h2>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Com base no seu tipo de pele, no que mais te incomoda hoje e na sua rotina, este é o colágeno mais indicado para você.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 mb-6">
+        <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-5 sm:mb-6">
           <Badge className="bg-pink-600 text-white mb-3">Recomendado para você</Badge>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
             Colágeno Verisol® + Ácido Hialurônico
           </h3>
-          <p className="text-pink-700 font-semibold mb-4">
+          <p className="text-pink-700 font-semibold mb-4 text-sm sm:text-base">
             Beleza que começa de dentro para fora
           </p>
 
-          <div className="space-y-2 mb-6">
+          <div className="space-y-2 mb-5 sm:mb-6">
             <div className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Reduz rugas e linhas de expressão</span>
+              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
+              <span className="text-sm sm:text-base text-gray-700">Reduz rugas e linhas de expressão</span>
             </div>
             <div className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Aumenta firmeza e elasticidade</span>
+              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
+              <span className="text-sm sm:text-base text-gray-700">Aumenta firmeza e elasticidade</span>
             </div>
             <div className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-pink-600 flex-shrink-0 mt-0.5" />
-              <span className="text-gray-700">Hidrata profundamente sua pele</span>
+              <Check className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 flex-shrink-0 mt-0.5" />
+              <span className="text-sm sm:text-base text-gray-700">Hidrata profundamente sua pele</span>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-4">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4">
+            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-gray-600">
               <span className="font-semibold">10g por porção</span>
               <span>•</span>
               <span>Uso diário simples</span>
@@ -136,13 +137,13 @@ export default function LinkBioQuiz() {
         </div>
 
         <Button 
-          onClick={handleCheckout}
-          className="w-full h-14 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-lg font-bold rounded-xl shadow-lg"
+          onClick={() => window.location.href = 'https://seguro.renovabe.com/r/6J3KDTF80E'}
+          className="w-full h-12 sm:h-14 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-base sm:text-lg font-bold rounded-lg sm:rounded-xl shadow-lg"
         >
           👉 Começar minha rotina personalizada
         </Button>
 
-        <p className="text-center text-sm text-gray-500 mt-4">
+        <p className="text-center text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
           ✓ Frete Grátis • ✓ 10% Cashback • ✓ Resultados em 4 Semanas
         </p>
       </motion.div>
