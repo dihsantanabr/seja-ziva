@@ -95,7 +95,7 @@ export default function GreemyStickyBuyBar() {
     }
 
     // Montar a URL final
-    const baseUrl = 'https://renovabe5.pay.yampi.com.br/r/';
+    const baseUrl = 'https://seguro.renovabe.com/r/';
     const checkoutUrl = baseUrl + productParts.join(',');
 
     console.log('=== DEBUG CHECKOUT STICKY ===');
