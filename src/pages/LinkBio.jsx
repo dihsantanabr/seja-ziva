@@ -10,21 +10,21 @@ export default function LinkBio() {
 
   const products = [
     {
-      icon: '🧬',
+      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/e54a8bbef_e20f19eba_deixe_o_pote_de_colageno_molhado_e_mude_o_mixer_ultra-realistic_premium_beauty-nutrition_product_ph_uzvg4tlap4fnu9kznvwo.jpg',
       title: "Colágeno RenovaBe",
       subtitle: "Para pele, unhas e cabelo",
       description: "Ideal para quem busca melhorar a aparência da pele, fortalecer unhas e cabelos.",
       url: "https://colageno.renovabe.com"
     },
     {
-      icon: '💪',
+      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/0ffc92c23_c0efcc58f_5.png',
       title: "Creatina RenovaBe",
       subtitle: "Para força, energia e desempenho",
       description: "Para quem treina e busca mais força, resistência e performance no dia a dia.",
       url: "https://creatina.renovabe.com"
     },
     {
-      icon: '✨',
+      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/c5dba9fb1_6c45eda96_GeneratedImageJanuary082026-6_38PM.jpg',
       title: "Lift RenovaBe",
       subtitle: "Para firmeza e cuidado corporal",
       description: "Cuidado corporal focado em firmeza, textura e aparência da pele.",
@@ -153,7 +153,11 @@ export default function LinkBio() {
                     className="block bg-white rounded-xl sm:rounded-2xl shadow-md border border-gray-100 p-4 sm:p-6 hover:shadow-xl hover:border-pink-300 transition-all active:scale-95"
                   >
                     <div className="flex items-start gap-4 sm:gap-5">
-                      <span className="text-4xl sm:text-5xl flex-shrink-0">{product.icon}</span>
+                      <img 
+                        src={product.icon} 
+                        alt={product.title}
+                        className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 object-cover rounded-lg"
+                      />
                       <div className="flex-1 min-w-0">
                         <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                           {product.title}
