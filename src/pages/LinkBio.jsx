@@ -95,6 +95,26 @@ export default function LinkBio() {
         </div>
       </section>
 
+      {/* QUIZ */}
+      <section ref={quizRef} className="px-3 sm:px-4 py-8 sm:py-12 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+              Ou deixe o quiz escolher para você
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600">
+              Responda 4 perguntas rápidas e receba uma recomendação personalizada
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <LinkBioQuiz onComplete={() => setQuizCompleted(true)} />
+          </motion.div>
+        </div>
+      </section>
+
       {/* PRODUTOS - Acesso Direto */}
       <section className="px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-pink-50 to-white">
         <div className="max-w-2xl mx-auto">
@@ -141,26 +161,6 @@ export default function LinkBio() {
             </motion.div>
           </div>
         </section>
-
-      {/* QUIZ */}
-      <section ref={quizRef} className="px-3 sm:px-4 py-8 sm:py-12 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
-              Ou deixe o quiz escolher para você
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600">
-              Responda 4 perguntas rápidas e receba uma recomendação personalizada
-            </p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <LinkBioQuiz onComplete={() => setQuizCompleted(true)} />
-          </motion.div>
-        </div>
-      </section>
 
       {/* CTA DE REFORÇO */}
       {quizCompleted && (
