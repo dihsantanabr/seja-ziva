@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind, ClipboardList, Clock } from 'lucide-react';
+import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind, ClipboardList, Clock, Eye } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from 'react-router-dom';
@@ -41,6 +41,9 @@ export default function GreemyHero() {
 
   // Countdown timer (4 days, then resets)
   const [timeLeft, setTimeLeft] = useState({ days: 4 });
+  
+  // Live viewers counter (oscilates between 150-200)
+  const [viewersCount, setViewersCount] = useState(175);
 
   useEffect(() => {
     const targetDate = new Date();
@@ -62,6 +65,20 @@ export default function GreemyHero() {
     }, 1000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateViewers = () => {
+      // Random oscillation between 150-200 (175 ± 25)
+      const baseCount = 175;
+      const variation = Math.floor(Math.random() * 51) - 25; // -25 to +25
+      setViewersCount(baseCount + variation);
+    };
+
+    // Update every 3-5 seconds
+    const interval = setInterval(updateViewers, 3000 + Math.random() * 2000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   const pricesWithExtras = {
@@ -311,6 +328,17 @@ export default function GreemyHero() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-pulse" />
                 </div>
+              </div>
+              
+              {/* Live Viewers */}
+              <div className="flex items-center justify-center gap-2 mt-3 pt-3 border-t border-orange-200">
+                <div className="relative">
+                  <Eye className="w-4 h-4 text-orange-600" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                </div>
+                <span className="text-xs font-medium text-gray-700">
+                  <span className="font-bold text-orange-600">{viewersCount}</span> pessoas vendo esse produto agora
+                </span>
               </div>
             </div>
 
