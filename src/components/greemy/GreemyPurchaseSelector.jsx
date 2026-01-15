@@ -89,9 +89,13 @@ export default function GreemyPurchaseSelector() {
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' });
   };
 
+  const getFlavorCount = (flavorId) => {
+    return selectedFlavors?.filter(f => f === flavorId).length || 0;
+  };
+
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
-    const totalSelected = selectedFlavors.length;
+    const totalSelected = selectedFlavors?.length || 0;
     
     if (selectedSize === '1 Unidade') {
       if (count > 0) {
@@ -107,10 +111,6 @@ export default function GreemyPurchaseSelector() {
         setSelectedFlavors(newFlavors);
       }
     }
-  };
-
-  const getFlavorCount = (flavorId) => {
-    return selectedFlavors.filter(f => f === flavorId).length;
   };
 
   const handleSizeChange = (size) => {
@@ -286,7 +286,7 @@ export default function GreemyPurchaseSelector() {
                   <div
                     key={i}
                     className={`w-2 h-2 rounded-full transition-all ${
-                      i < selectedFlavors.length
+                      i < (selectedFlavors?.length || 0)
                         ? 'bg-pink-600 scale-110'
                         : 'bg-gray-300'
                     }`}
@@ -294,7 +294,7 @@ export default function GreemyPurchaseSelector() {
                 ))}
               </div>
               <span className="text-sm text-pink-600 font-medium">
-                {selectedFlavors.length}/{maxFlavors}
+                {selectedFlavors?.length || 0}/{maxFlavors}
               </span>
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function GreemyPurchaseSelector() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
             {flavors.map((flavor) => {
               const count = getFlavorCount(flavor.id);
-              const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
+              const isDisabled = (selectedFlavors?.length || 0) >= maxFlavors && count === 0;
 
               return (
                 <button
@@ -352,11 +352,11 @@ export default function GreemyPurchaseSelector() {
         {/* Buy Button */}
         <Button
           onClick={handleBuyNow}
-          disabled={selectedFlavors.length < maxFlavors}
+          disabled={(selectedFlavors?.length || 0) < maxFlavors}
           className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base lg:text-lg px-8 py-7 lg:px-10 rounded-xl shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 min-h-[56px]"
         >
-          {selectedFlavors.length < maxFlavors
-            ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
+          {(selectedFlavors?.length || 0) < maxFlavors
+            ? `Selecione ${maxFlavors - (selectedFlavors?.length || 0)} sabor${maxFlavors - (selectedFlavors?.length || 0) > 1 ? 'es' : ''}`
             : 'COMPRAR AGORA'
           }
         </Button>
