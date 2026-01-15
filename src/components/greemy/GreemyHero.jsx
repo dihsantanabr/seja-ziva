@@ -136,7 +136,7 @@ export default function GreemyHero() {
 
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
-    const totalSelected = selectedFlavors.length;
+    const totalSelected = selectedFlavors?.length || 0;
     
     if (selectedSize === '1 Unidade') {
       // Para 1 unidade: toggle simples
@@ -159,7 +159,7 @@ export default function GreemyHero() {
   };
 
   const getFlavorCount = (flavorId) => {
-    return selectedFlavors.filter(f => f === flavorId).length;
+    return selectedFlavors?.filter(f => f === flavorId).length || 0;
   };
 
   const handleSizeChange = (size) => {
@@ -400,7 +400,7 @@ export default function GreemyHero() {
                   {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
                 </p>
                 <span className="text-xs lg:text-sm text-pink-600 font-medium whitespace-nowrap">
-                  {selectedFlavors.length}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
+                  {selectedFlavors?.length || 0}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
                 </span>
               </div>
 
@@ -408,7 +408,7 @@ export default function GreemyHero() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
-                  const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
+                  const isDisabled = (selectedFlavors?.length || 0) >= maxFlavors && count === 0;
 
                   return (
                     <button
@@ -458,11 +458,11 @@ export default function GreemyHero() {
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              disabled={selectedFlavors.length < maxFlavors}
+              disabled={(selectedFlavors?.length || 0) < maxFlavors}
               className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {selectedFlavors.length < maxFlavors
-                ? `Selecione ${maxFlavors - selectedFlavors.length} sabor${maxFlavors - selectedFlavors.length > 1 ? 'es' : ''}`
+              {(selectedFlavors?.length || 0) < maxFlavors
+                ? `Selecione ${maxFlavors - (selectedFlavors?.length || 0)} sabor${maxFlavors - (selectedFlavors?.length || 0) > 1 ? 'es' : ''}`
                 : 'Comprar Agora'
               }
             </Button>
