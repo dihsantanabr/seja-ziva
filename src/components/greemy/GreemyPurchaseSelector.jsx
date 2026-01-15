@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, ShoppingCart, Package, Clock } from 'lucide-react';
+import { Check, ShoppingCart, Package } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useGreemy } from './GreemyContext';
@@ -46,36 +46,6 @@ export default function GreemyPurchaseSelector() {
   
   const currentPrice = prices[selectedSize]?.current || 0;
   const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
-
-  // Countdown timer
-  const [timeLeft, setTimeLeft] = useState({
-    days: 4,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 4);
-    targetDate.setHours(23, 59, 59, 999);
-
-    const timer = setInterval(() => {
-      const now = new Date();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
-        });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   // Calculate delivery dates
   const today = new Date();
@@ -188,46 +158,6 @@ export default function GreemyPurchaseSelector() {
                   </Badge>
                 </div>
               )}
-
-              {/* Countdown Timer */}
-              <div className="mb-3 bg-gradient-to-r from-orange-50 to-pink-50 rounded-lg p-3 border border-orange-200">
-                <div className="flex items-center gap-2 mb-2">
-                  <Clock className="w-4 h-4 text-orange-600" />
-                  <span className="text-xs font-semibold text-orange-900">
-                    Faltam {timeLeft.days} dias para essa oferta acabar
-                  </span>
-                </div>
-                <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-orange-500 to-pink-500"
-                    initial={{ width: '100%' }}
-                    animate={{ width: `${(timeLeft.days / 7) * 100}%` }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <div className="flex items-center justify-center gap-2 mt-2 text-xs text-gray-600">
-                  <div className="flex flex-col items-center">
-                    <span className="font-bold text-orange-600">{String(timeLeft.days).padStart(2, '0')}</span>
-                    <span className="text-[10px]">dias</span>
-                  </div>
-                  <span className="text-orange-600">:</span>
-                  <div className="flex flex-col items-center">
-                    <span className="font-bold text-orange-600">{String(timeLeft.hours).padStart(2, '0')}</span>
-                    <span className="text-[10px]">horas</span>
-                  </div>
-                  <span className="text-orange-600">:</span>
-                  <div className="flex flex-col items-center">
-                    <span className="font-bold text-orange-600">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                    <span className="text-[10px]">min</span>
-                  </div>
-                  <span className="text-orange-600">:</span>
-                  <div className="flex flex-col items-center">
-                    <span className="font-bold text-orange-600">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                    <span className="text-[10px]">seg</span>
-                  </div>
-                </div>
-              </div>
-
               <div className="text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">
                 R$ {currentPrice.toFixed(2).replace('.', ',')}
               </div>
