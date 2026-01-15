@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind, ClipboardList } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Star, Shield, Leaf, Heart, Check, Truck, ChevronLeft, ChevronRight, Package, Tag, Zap, Sparkles, Activity, Flower2, Wind, ClipboardList, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from 'react-router-dom';
@@ -38,6 +38,31 @@ export default function GreemyHero() {
   // Fixed number of reviews
   const formattedReviews = '238.917';
   const today = new Date();
+
+  // Countdown timer (4 days, then resets)
+  const [timeLeft, setTimeLeft] = useState({ days: 4 });
+
+  useEffect(() => {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 4);
+    targetDate.setHours(23, 59, 59, 999);
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24))
+        });
+      } else {
+        // Reset after 4 days
+        targetDate.setDate(targetDate.getDate() + 4);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const pricesWithExtras = {
     '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
@@ -269,6 +294,22 @@ export default function GreemyHero() {
                 <Leaf className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
                 <span className="whitespace-nowrap">Resultados em 4 Semanas</span>
               </Badge>
+            </div>
+
+            {/* Countdown Banner */}
+            <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-xl p-3 border border-orange-200">
+              <div className="flex items-center justify-center gap-2">
+                <Clock className="w-4 h-4 text-orange-600" />
+                <span className="text-sm font-semibold text-orange-900">
+                  Faltam {timeLeft.days} dias para essa oferta acabar
+                </span>
+              </div>
+              <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mt-2">
+                <div 
+                  className="h-full bg-gradient-to-r from-orange-500 to-pink-500 transition-all"
+                  style={{ width: `${(timeLeft.days / 4) * 100}%` }}
+                />
+              </div>
             </div>
 
             {/* Price Box */}
