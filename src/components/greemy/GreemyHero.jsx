@@ -299,16 +299,18 @@ export default function GreemyHero() {
             {/* Countdown Banner */}
             <div className="bg-gradient-to-r from-orange-50 to-pink-50 rounded-xl p-3 border border-orange-200">
               <div className="flex items-center justify-center gap-2">
-                <Clock className="w-4 h-4 text-orange-600" />
+                <Clock className="w-4 h-4 text-orange-600 animate-pulse" />
                 <span className="text-sm font-semibold text-orange-900">
                   Faltam {timeLeft.days} dias para essa oferta acabar
                 </span>
               </div>
-              <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mt-2">
+              <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mt-2 relative">
                 <div 
-                  className="h-full bg-gradient-to-r from-orange-500 to-pink-500 transition-all"
-                  style={{ width: `${(timeLeft.days / 4) * 100}%` }}
-                />
+                  className="h-full bg-gradient-to-r from-orange-500 to-pink-500 relative"
+                  style={{ width: '65%' }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-pulse" />
+                </div>
               </div>
             </div>
 
