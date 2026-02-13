@@ -4,56 +4,52 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "O colágeno realmente ajuda com a flacidez da pele?",
-    answer: "Sim! O colágeno atua como um suporte estrutural interno, ajudando a pele a manter firmeza quando usado de forma contínua. Estudos com Colágeno Verisol® mostram que ele contribui para melhorar a elasticidade e densidade da pele. É importante entender que não é um tratamento milagroso, mas um complemento que, junto com bons hábitos, ajuda a dar sustentação à pele."
+    question: "O simbiótico realmente previne candidíase?",
+    answer: "Sim! O Simbiótico Íntimo contém cepas probióticas específicas (L. Rhamnosus e L. Reuteri) que restauram o equilíbrio da flora vaginal, criando um ambiente desfavorável para o crescimento de fungos como a Candida. Estudos mostram que o uso regular ajuda a prevenir infecções recorrentes quando usado de forma contínua junto com bons hábitos de higiene."
   },
   {
-    question: "Já tenho mais de 40 anos, ainda vai ajudar?",
-    answer: "Sim! Após os 30 anos, o corpo reduz naturalmente a produção de colágeno, e esse processo se intensifica com o tempo. Por isso, a suplementação pode ser ainda mais relevante para quem tem mais de 40 anos. Muitas pessoas relatam perceber melhora na firmeza e textura da pele quando usam de forma regular."
+    question: "Em quanto tempo posso perceber melhora nos sintomas?",
+    answer: "Os resultados variam de pessoa para pessoa. Muitas mulheres relatam alívio de sintomas como coceira e odor já na primeira semana. Para equilíbrio completo do pH e prevenção de infecções, recomenda-se uso contínuo por 30 dias. A constância é fundamental para resultados duradouros."
   },
   {
-    question: "Em quanto tempo posso começar a perceber diferença?",
-    answer: "Os resultados são progressivos e variam de pessoa para pessoa. Algumas pessoas relatam sentir a pele mais hidratada nas primeiras semanas. Melhorias em firmeza e elasticidade costumam ser mais perceptíveis entre 4 a 12 semanas de uso contínuo. A constância e a escolha correta fazem toda a diferença."
+    question: "Posso tomar durante tratamento com antibióticos?",
+    answer: "É recomendado aguardar o término do tratamento antibiótico, pois eles podem eliminar também as bactérias benéficas do probiótico. O ideal é começar o uso do Simbiótico Íntimo após finalizar os antibióticos, para repovoar a flora vaginal que foi afetada. Consulte seu médico para orientação específica."
   },
   {
-    question: "Por que esse colágeno é mais caro que outros?",
-    answer: "Porque você está pagando por qualidade comprovada, não por pó qualquer! Verisol® é a única tecnologia patenteada com estudos científicos que provam que funciona. Colágenos baratos não têm peptídeos específicos, então são pouco absorvidos e eliminados pelo corpo. É como comparar um cosmético de farmácia com um de dermatologista - a diferença está nos resultados."
+    question: "Tem algum gosto ou cheiro desagradável?",
+    answer: "Não! O Simbiótico Íntimo vem em sachês com sabores agradáveis de frutas (cranberry, limão, tangerina, etc.). Você dissolve 1 sachê em 200ml de água fria, mexe bem e bebe. É refrescante e fácil de incorporar na rotina matinal, tomando em jejum para melhor absorção."
   },
   {
-    question: "Posso tomar com outros suplementos que já uso?",
-    answer: "Sim! O Colágeno Verisol® é seguro e complementa perfeitamente vitaminas, ômega 3, biotina, e outros suplementos. Inclusive, muitas pessoas tomam junto com vitamina C para potencializar a absorção do colágeno. Não há interações negativas. Se toma algum medicamento controlado, consulte seu médico por precaução."
+    question: "Posso usar junto com outros suplementos?",
+    answer: "Sim! O Simbiótico Íntimo é seguro e pode ser usado com outros suplementos como vitaminas, colágeno, ômega 3, etc. Não há interações negativas. Se você usa medicamentos controlados ou tem alguma condição de saúde específica, consulte seu médico por precaução."
   },
   {
-    question: "Tem algum gosto ruim? Como eu tomo?",
-    answer: "É completamente sem sabor e sem cheiro! Você dissolve 10g (1 medidor) em qualquer líquido: água, suco, café, vitamina, iogurte... Dissolve rapidinho e não altera nada o sabor da bebida. A maioria das nossas clientes toma pela manhã no café ou suco, vira hábito automático na rotina."
+    question: "Grávida ou amamentando pode usar?",
+    answer: "Por precaução, recomendamos que gestantes e lactantes consultem seu obstetra ou ginecologista antes de usar qualquer suplemento, incluindo probióticos. Cada gestação é única e seu médico conhece seu histórico. Após a amamentação, pode usar normalmente para restaurar a saúde íntima."
   },
   {
-    question: "Vou engordar tomando colágeno?",
-    answer: "Não! Cada dose tem apenas 36 calorias e zero açúcar. É uma proteína pura que não engorda. Pelo contrário, muitas clientes relatam que o colágeno ajuda na saciedade e até auxilia na perda de peso quando combinado com dieta equilibrada, porque é proteína de alta qualidade."
+    question: "É vegano? Tem glúten ou lactose?",
+    answer: "O Simbiótico Íntimo é livre de glúten e lactose, atendendo quem tem essas restrições. Quanto ao veganismo, as cepas probióticas são cultivadas em meio de cultura, e o produto final não contém ingredientes de origem animal direta. Consulte a lista completa de ingredientes na embalagem se tiver restrições específicas."
   },
   {
-    question: "Meu cabelo e unha também melhoram?",
-    answer: "Sim! Embora o foco seja a pele, o colágeno é a proteína estrutural de todo o corpo. Nossas clientes relatam muito que as unhas ficam mais fortes, crescem mais rápido e param de descamar. O cabelo fica menos quebradiço, com mais brilho e cresce mais saudável. É um bônus maravilhoso!"
+    question: "Preciso guardar na geladeira?",
+    answer: "Não é necessário! Nossos sachês são estáveis em temperatura ambiente. Guarde em local fresco e seco, longe da luz solar direta. A embalagem individual protege os probióticos e mantém sua viabilidade até a data de validade. Isso torna o produto prático para levar na bolsa ou viajar."
   },
   {
-    question: "Preciso tomar para sempre ou posso parar depois?",
-    answer: "O ideal é incorporar na rotina para manter os resultados, já que nosso corpo continua perdendo colágeno com o tempo. Mas você não é 'dependente' - se parar, sua pele volta ao estado natural dela, não piora do que era antes. Pense como academia: para manter os resultados, você precisa continuar. Mas os benefícios acumulados não desaparecem de uma hora pra outra."
+    question: "Por que tomar em jejum?",
+    answer: "O uso em jejum permite que os probióticos atravessem o estômago com menos ácido gástrico, aumentando a quantidade de bactérias vivas que chegam ao intestino e, posteriormente, à região vaginal. Recomendamos tomar pela manhã, 20-30 minutos antes do café da manhã, para melhor eficácia."
   },
   {
-    question: "Grávida ou amamentando pode tomar?",
-    answer: "Por segurança e precaução, recomendamos que gestantes e lactantes consultem seu obstetra antes de usar qualquer suplemento, incluindo colágeno. Embora seja um produto natural e seguro, cada gravidez é única e seu médico conhece seu histórico. Depois da amamentação, pode voltar sem problemas!"
+    question: "Resolve o problema do odor vaginal?",
+    answer: "Sim! O odor vaginal desagradável geralmente é causado por desequilíbrio na flora, com crescimento excessivo de bactérias ruins. O Simbiótico Íntimo repovoação as bactérias benéficas, restaura o pH e elimina o odor na origem. Muitas clientes relatam melhora significativa já nos primeiros 7-14 dias."
   },
   {
-    question: "É vegano? Tenho restrições alimentares.",
-    answer: "Nosso colágeno é de origem bovina (bovino hidrolisado), portanto não é vegano. É livre de glúten, lactose, açúcar e conservantes artificiais. Para vegetarianos que consomem derivados animais, não há problema. Ainda não existe colágeno vegetal no mercado - o que existe são estimuladores de colágeno, que têm mecanismo diferente."
+    question: "Quantas caixas devo comprar?",
+    answer: "Recomendamos iniciar com 3 caixas (90 sachês total) para um tratamento completo de 3 meses. Cada caixa contém 30 sachês. Esse período permite que sua flora vaginal se restabeleça completamente e você experimente todos os benefícios. O kit com 3 unidades oferece melhor custo-benefício."
   },
   {
-    question: "Se eu não gostar, posso devolver?",
-    answer: "Sim! Oferecemos garantia de 30 dias. Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro, sem burocracia. Estamos tão confiantes nos resultados que assumimos todo o risco para você. Você só precisa entrar em contato com nossa equipe dentro dos 30 dias."
-  },
-  {
-    question: "Quantos potes devo comprar para ver resultado?",
-    answer: "Recomendamos começar com 3 potes (3 meses) para experimentar os resultados completos que os estudos mostram. Cada pote dura 30 dias. Você pode começar com 1 para testar, mas os resultados mais impressionantes acontecem após 8-12 semanas de uso contínuo. Por isso o kit com 3 unidades sai mais em conta e garante o tratamento completo."
+    question: "Posso usar durante a menstruação?",
+    answer: "Sim! Você pode e deve continuar usando durante a menstruação. Na verdade, o período menstrual pode alterar o pH vaginal, então manter o uso do probiótico ajuda a proteger sua flora nessa fase. Não há contraindicação."
   }
 ];
 
