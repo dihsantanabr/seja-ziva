@@ -15,7 +15,7 @@ const productImages = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Sérum Íntimo Ozonizado', emoji: '💧', color: 'from-blue-500 to-cyan-500', mostChosen: true, code: '6J3KDTF80E' },
+  { id: 'cranberry', name: 'Sérum Íntimo Ozonizado', image: 'https://sejaziva.com.br/cdn/shop/files/2_ef7a6779-789b-4749-84b2-893761bc28f1.png?v=1764703506', color: 'from-blue-500 to-cyan-500', mostChosen: true, code: '6J3KDTF80E' },
   { id: 'tropical', name: 'Espuma Íntima Ozonizada', emoji: '🫧', color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
 ];
 
@@ -411,6 +411,8 @@ export default function GreemyHero() {
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
                       className={`relative p-3 lg:p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
+                        flavor.image ? 'min-h-[140px] lg:min-h-[160px]' : ''
+                      } ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
                           : 'border-gray-200 hover:border-pink-300 text-gray-700'
@@ -431,7 +433,13 @@ export default function GreemyHero() {
                           <Badge className="bg-green-600 text-white text-[9px] lg:text-xs whitespace-nowrap px-1 lg:px-2">+ Escolhido</Badge>
                         </div>
                       )}
-                      <div className="text-2xl lg:text-3xl mb-1 lg:mb-2">{flavor.emoji}</div>
+                      {flavor.image ? (
+                        <div className="mb-2 flex items-center justify-center h-16 lg:h-20">
+                          <img src={flavor.image} alt={flavor.name} className="h-full w-auto object-contain" />
+                        </div>
+                      ) : (
+                        <div className="text-2xl lg:text-3xl mb-1 lg:mb-2">{flavor.emoji}</div>
+                      )}
                       <div className={`text-xs lg:text-sm font-semibold break-words ${count > 0 ? 'text-white' : ''}`}>
                         {flavor.name}
                       </div>
