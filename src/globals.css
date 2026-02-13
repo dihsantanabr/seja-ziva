@@ -82,11 +82,17 @@ input:focus, select:focus, textarea:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-purple-600 rounded-full;
+  @apply bg-pink-500 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-purple-700;
+  @apply bg-pink-600;
+}
+
+/* Color theme overrides for Ziva */
+:root {
+  --primary-pink: #f472b6;
+  --primary-pink-dark: #ec4899;
 }
 
 /* Animations */
