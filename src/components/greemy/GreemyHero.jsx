@@ -15,8 +15,33 @@ const productImages = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Sérum Íntimo Ozonizado', image: 'https://sejaziva.com.br/cdn/shop/files/2_ef7a6779-789b-4749-84b2-893761bc28f1.png?v=1764703506', price: 187.00, color: 'from-blue-500 to-cyan-500', mostChosen: true, code: '6J3KDTF80E' },
-  { id: 'tropical', name: 'Espuma Íntima Ozonizada', image: 'https://sejaziva.com.br/cdn/shop/files/3_f86c8057-32aa-4f7f-ab7b-a402d1f2c134.png?v=1764703529', price: 117.00, color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
+  { 
+    id: 'cranberry', 
+    name: 'Sérum Íntimo Ozonizado', 
+    image: 'https://sejaziva.com.br/cdn/shop/files/2_ef7a6779-789b-4749-84b2-893761bc28f1.png?v=1764703506', 
+    price: 187.00, 
+    color: 'from-blue-500 to-cyan-500', 
+    mostChosen: true, 
+    code: '6J3KDTF80E',
+    benefits: [
+      'Hidratação profunda',
+      'Combate odores',
+      'Previne infecções'
+    ]
+  },
+  { 
+    id: 'tropical', 
+    name: 'Espuma Íntima Ozonizada', 
+    image: 'https://sejaziva.com.br/cdn/shop/files/3_f86c8057-32aa-4f7f-ab7b-a402d1f2c134.png?v=1764703529', 
+    price: 117.00, 
+    color: 'from-purple-500 to-pink-500', 
+    code: 'GAA70WUDT7',
+    benefits: [
+      'Limpeza suave',
+      'Frescor duradouro',
+      'Não resseca'
+    ]
+  }
 ];
 
 // Códigos de produtos
@@ -418,7 +443,17 @@ export default function GreemyHero() {
                       <div className="text-xs lg:text-sm font-bold mt-1 text-gray-900">
                         R$ {flavor.price.toFixed(2).replace('.', ',')}
                       </div>
-                    </button>
+                      {flavor.benefits && (
+                        <div className="mt-2 space-y-1">
+                          {flavor.benefits.map((benefit, idx) => (
+                            <div key={idx} className="flex items-center gap-1 text-[10px] lg:text-xs text-gray-600">
+                              <Check className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-pink-500 flex-shrink-0" />
+                              <span className="leading-tight">{benefit}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      </button>
                   );
                 })}
               </div>
