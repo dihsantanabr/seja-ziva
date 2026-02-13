@@ -9,7 +9,9 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
-  "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/7da82ad57_MODELO---COLAGENO1.jpg"
+  'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png',
+  'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_05.png',
+  'https://sejaziva.com.br/cdn/shop/files/Sache_Probiotico_WEBP.webp'
 ];
 
 const flavors = [
@@ -36,7 +38,7 @@ export default function GreemyHero() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, selectedFlavors, setSelectedFlavors, prices } = useGreemy();
 
   // Fixed number of reviews
-  const formattedReviews = '238.917';
+  const formattedReviews = '37';
   const today = new Date();
 
   // Countdown timer (4 days, then resets)
@@ -193,15 +195,15 @@ export default function GreemyHero() {
             <div key={i} className="flex items-center gap-8 mx-8">
               <span className="flex items-center gap-2 text-sm">
                 <Truck className="w-4 h-4" />
-                10% Cashback em todas as compras
+                Frete Grátis acima de R$ 249
               </span>
               <span className="flex items-center gap-2 text-sm">
-                <Leaf className="w-4 h-4" />
-                Colágeno Verisol® + Ácido Hialurônico
+                <Shield className="w-4 h-4" />
+                10 Bilhões de UFC + Prebiótico FOS
               </span>
               <span className="flex items-center gap-2 text-sm">
                 <Heart className="w-4 h-4" />
-                Reduz rugas em até 4 semanas
+                pH saudável e odor controlado
               </span>
             </div>
           ))}
@@ -242,7 +244,7 @@ export default function GreemyHero() {
 
             {/* Mobile Title */}
             <h1 className="lg:hidden text-base font-bold text-gray-900 text-center px-2">
-              Colágeno Verisol® <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
+              Simbiótico Íntimo <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">para pH Saudável</span>
             </h1>
 
             <div className="relative aspect-[2/3] bg-white rounded-2xl overflow-hidden shadow-lg">
@@ -251,7 +253,7 @@ export default function GreemyHero() {
               </Badge>
               <img
                 src={productImages[0]}
-                alt="Colágeno Verisol® + Ácido Hialurônico"
+                alt="Simbiótico Íntimo"
                 className="w-full h-full object-cover"
                 loading="eager"
               />
@@ -262,14 +264,14 @@ export default function GreemyHero() {
           <div className="space-y-4 lg:space-y-6">
             <div>
               <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-xs lg:text-sm uppercase tracking-wider mb-2">
-                Cuidado Natural da Pele
+                Saúde Íntima Natural
               </p>
               <h1 className="text-xl lg:text-4xl font-bold text-gray-900 leading-tight">
-                Colágeno Verisol®
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">+ Ácido Hialurônico</span>
+                Simbiótico Íntimo
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">Ziva</span>
               </h1>
               <p className="mt-2 text-sm lg:text-lg text-gray-600">
-                Beleza que começa de dentro. Reduz rugas, aumenta firmeza e hidrata profundamente sua pele em até 4 semanas.
+                Probiótico vaginal que equilibra pH, elimina odores e previne infecções. 10 bilhões de UFC + prebiótico FOS.
               </p>
             </div>
 
@@ -288,28 +290,28 @@ export default function GreemyHero() {
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
-                <Star className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Colágeno Verisol®</span>
-              </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
-                <Sparkles className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Ácido Hialurônico</span>
+                <Shield className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">10 Bilhões UFC</span>
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
                 <Heart className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Reduz Rugas</span>
-              </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
-                <Zap className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Aumenta Firmeza</span>
-              </Badge>
-              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
-                <Shield className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Hidrata Profundamente</span>
+                <span className="whitespace-nowrap">Equilibra pH</span>
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
                 <Leaf className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Resultados em 4 Semanas</span>
+                <span className="whitespace-nowrap">Prebiótico FOS</span>
+              </Badge>
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Sparkles className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Elimina Odores</span>
+              </Badge>
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Zap className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">Previne Infecções</span>
+              </Badge>
+              <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
+                <Star className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
+                <span className="whitespace-nowrap">30 Sachês</span>
               </Badge>
             </div>
 
@@ -523,31 +525,31 @@ export default function GreemyHero() {
             <div className="grid grid-cols-3 gap-2 lg:gap-3">
               <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
                 <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
-                  <Zap className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
+                  <Shield className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Transformação</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Proteção</p>
               </div>
               <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
                 <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
-                  <Flower2 className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
+                  <Heart className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Estimula Colágeno</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Equilíbrio</p>
               </div>
               <div className="bg-pink-100 rounded-xl p-2 lg:p-4 text-center">
                 <div className="w-8 h-8 lg:w-10 lg:h-10 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-1 lg:mb-2">
-                  <Wind className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
+                  <Sparkles className="w-4 h-4 lg:w-5 lg:h-5 text-pink-600" />
                 </div>
-                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Ação Calmante</p>
+                <p className="font-semibold text-gray-900 text-[10px] lg:text-sm leading-tight">Bem-Estar</p>
               </div>
             </div>
 
             {/* Benefits List */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-3 pt-4 border-t border-gray-100">
               {[
-                'Anti Envelhecimento Natural',
-                'Manutenção de Manchas',
-                'Recomendado para Cuidados Íntimos',
-                'Controle de Caspas'
+                'Regula pH Vaginal',
+                'Elimina Odores Indesejados',
+                'Previne Candidíase',
+                'Restaura Flora Natural'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-xs lg:text-sm text-gray-600">
                   <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-pink-600 flex-shrink-0" />
