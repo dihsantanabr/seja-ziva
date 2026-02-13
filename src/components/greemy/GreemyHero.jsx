@@ -129,16 +129,16 @@ export default function GreemyHero() {
     window.location.href = checkoutUrl;
   };
 
-  const maxPerProduct = 3;
+  const maxPerProduct = 1;
 
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
     
-    if (count < maxPerProduct) {
-      // Adiciona mais um deste produto
+    if (count === 0) {
+      // Adiciona o produto
       setSelectedFlavors([...selectedFlavors, flavorId]);
     } else {
-      // Remove todos deste produto
+      // Remove o produto
       const newFlavors = selectedFlavors.filter(f => f !== flavorId);
       setSelectedFlavors(newFlavors);
     }
@@ -369,7 +369,7 @@ export default function GreemyHero() {
                   Complete sua Rotina de Cuidado:
                 </p>
                 <p className="text-xs text-gray-500">
-                  Opcional: Adicione até 3 de cada produto complementar
+                  Opcional: Adicione 1 de cada produto complementar
                 </p>
               </div>
 
