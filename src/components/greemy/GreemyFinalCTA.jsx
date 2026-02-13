@@ -16,22 +16,22 @@ export default function GreemyFinalCTA({ onOpenQuiz }) {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight">
-            Encontre a opção ideal para sua rotina
+            Comece sua jornada para saúde íntima
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Cada pele é única. Descubra qual colágeno se encaixa melhor no seu perfil e objetivo.
+            Proteja-se naturalmente e recupere o equilíbrio da sua flora vaginal com o Simbiótico Íntimo.
           </p>
 
-          <Link to={createPageUrl('Quiz')}>
+          <a href="#tp-main-product">
             <Button
               className="bg-white text-pink-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl font-bold shadow-2xl hover:shadow-3xl transition-all"
             >
-              Receber Recomendação Personalizada
+              Garantir Minha Proteção Agora
             </Button>
-          </Link>
+          </a>
 
           <p className="text-white/80 text-sm mt-6">
-            Menos de 2 minutos • Totalmente gratuito
+            Frete Grátis acima de R$ 249 • Entrega Rápida
           </p>
         </motion.div>
       </div>
