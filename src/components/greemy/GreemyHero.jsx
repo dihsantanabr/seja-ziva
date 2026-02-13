@@ -17,10 +17,7 @@ const productImages = [
 const flavors = [
   { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true, code: '6J3KDTF80E' },
   { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500', code: 'GAA70WUDT7' },
-  { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500', code: 'OY7JZG4UE9' },
-  { id: 'pink-lemonade', name: 'Pink Lemonade', emoji: '🍹', color: 'from-pink-400 to-rose-400', code: 'Q7TJA8P8X6' },
-  { id: 'tangerina', name: 'Tangerina', emoji: '🍊', color: 'from-orange-500 to-amber-500', code: '4JF2A26WUQ' },
-  { id: 'chocolate', name: 'Chocolate', emoji: '🍫', color: 'from-amber-700 to-brown-600', hasLactose: true, code: 'OY9KOFHD8D' }
+  { id: 'limao', name: 'Limão', emoji: '🍋', color: 'from-lime-500 to-green-500', code: 'OY7JZG4UE9' }
 ];
 
 // Mapa de códigos para garantir consistência
@@ -434,7 +431,7 @@ export default function GreemyHero() {
               </div>
 
               {/* Flavor Options */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
                   const isDisabled = (selectedFlavors?.length || 0) >= maxFlavors && count === 0;
