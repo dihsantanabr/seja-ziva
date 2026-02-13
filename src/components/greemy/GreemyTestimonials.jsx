@@ -12,39 +12,39 @@ const stats = [
 const testimonials = [
   {
     name: "Ana Paula",
-    review: "Em 3 semanas minhas rugas diminuíram visivelmente! Minha pele está firme.",
+    review: "Em 2 semanas a candidíase que voltava todo mês sumiu! Estou livre dos desconfortos.",
     rating: 5,
-    result: "Rugas reduzidas"
+    result: "Sem candidíase"
   },
   {
     name: "Carla Silva",
-    review: "Pele muito mais hidratada e com brilho natural. Colágeno realmente funciona!",
+    review: "O odor desagradável que me incomodava tanto desapareceu completamente!",
     rating: 5,
-    result: "Hidratação visível"
+    result: "Odor eliminado"
   },
   {
     name: "Mariana Costa",
-    review: "Notei firmeza já na segunda semana. Minha pele está rejuvenescida!",
+    review: "Coceira e irritação sumiram na primeira semana. Sensação de conforto total!",
     rating: 5,
-    result: "Firmeza aumentada"
+    result: "Zero desconforto"
   },
   {
     name: "Juliana Mendes",
-    review: "Resultado incrível! Linhas de expressão sumiram e pele ficou luminosa.",
+    review: "Resultado incrível! pH regulado, sem corrimento e muito mais confiança.",
     rating: 5,
-    result: "Pele luminosa"
+    result: "pH equilibrado"
   },
   {
     name: "Roberta Alves",
-    review: "Melhor colágeno que já tomei! Pele mais jovem e elasticidade de volta.",
+    review: "Melhor probiótico que já tomei! Proteção natural e saúde íntima de volta.",
     rating: 5,
-    result: "Rejuvenescimento"
+    result: "Flora restaurada"
   },
   {
     name: "Patricia Lima",
-    review: "Em 4 semanas vi resultados reais. Pele firme, hidratada e sem flacidez.",
+    review: "Em 30 dias vi resultados reais. Sem infecções, protegida e muito mais segura.",
     rating: 5,
-    result: "Elasticidade renovada"
+    result: "Proteção duradoura"
   }
 ];
 

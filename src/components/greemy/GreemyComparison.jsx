@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
 const comparisons = [
-  { feature: "Colágeno Verisol® Patenteado", greemy: true, regular: false, others: "Genérico" },
-  { feature: "Ácido Hialurônico Combinado", greemy: true, regular: false, others: "Variável" },
-  { feature: "Reduz Rugas Comprovado", greemy: true, regular: "Limitado", others: "Parcial" },
-  { feature: "Aumenta Firmeza da Pele", greemy: true, regular: false, others: "Moderado" },
-  { feature: "Hidratação Profunda", greemy: true, regular: "Superficial", others: "Moderada" },
-  { feature: "Estimula Colágeno Natural", greemy: true, regular: false, others: "Limitado" },
-  { feature: "Peptídeos Bioativos", greemy: true, regular: false, others: "Variável" },
-  { feature: "Vitamina C Incluída", greemy: true, regular: false, others: "Parcial" },
-  { feature: "Resultados em 4 Semanas", greemy: true, regular: false, others: "8-12 Semanas" },
-  { feature: "Absorção Otimizada", greemy: true, regular: "Baixa", others: "Variável" }
+  { feature: "10 Bilhões de UFC", greemy: true, regular: "Variável", others: "Baixo" },
+  { feature: "Prebiótico FOS Incluso", greemy: true, regular: false, others: "Raro" },
+  { feature: "Previne Candidíase", greemy: true, regular: "Limitado", others: "Parcial" },
+  { feature: "Regula pH Vaginal", greemy: true, regular: false, others: "Moderado" },
+  { feature: "Elimina Odores", greemy: true, regular: "Superficial", others: "Moderado" },
+  { feature: "Cepas Específicas Vaginais", greemy: true, regular: false, others: "Genérico" },
+  { feature: "Cranberry Natural", greemy: true, regular: false, others: "Variável" },
+  { feature: "Sem Glúten e Lactose", greemy: true, regular: false, others: "Variável" },
+  { feature: "Resultados em 7 Dias", greemy: true, regular: false, others: "4-6 Semanas" },
+  { feature: "Sinergia Pro + Prebiótico", greemy: true, regular: "Raro", others: "Limitado" }
 ];
 
 const ValueCell = ({ value }) => {
@@ -34,10 +34,10 @@ export default function GreemyComparison() {
             Comparativo
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Por que escolher nosso Colágeno Verisol®?
+            Por que escolher o Simbiótico Íntimo Ziva?
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Veja como nos destacamos de outros colágenos
+            Veja como nos destacamos de outros probióticos
           </p>
         </div>
 
@@ -55,13 +55,13 @@ export default function GreemyComparison() {
                     Características
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Nosso Colágeno
+                    Nosso Simbiótico
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Colágeno Comum
+                    Probiótico Comum
                   </th>
                   <th className="px-1 lg:px-6 py-2 lg:py-4 text-center text-white font-semibold text-[10px] lg:text-base">
-                    Outros Colágenos
+                    Outros Probióticos
                   </th>
                 </tr>
               </thead>

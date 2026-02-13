@@ -5,23 +5,23 @@ import { Stethoscope, Truck, ThumbsUp, Leaf } from 'lucide-react';
 const guarantees = [
   {
     icon: Stethoscope,
-    title: "Recomendado por Dermatologistas",
+    title: "Recomendado por Ginecologistas",
     description: "Aprovado por profissionais de saúde"
   },
   {
     icon: Truck,
     title: "Frete Grátis",
-    description: "Para todo Brasil acima de R$ 200"
+    description: "Para todo Brasil acima de R$ 249"
   },
   {
     icon: ThumbsUp,
-    title: "+ de 98% dos Clientes Recomendam",
+    title: "+ de 94% dos Clientes Recomendam",
     description: "Satisfação comprovada"
   },
   {
     icon: Leaf,
-    title: "Colágeno Verisol® Patenteado",
-    description: "Tecnologia cientificamente comprovada"
+    title: "10 Bilhões de UFC + FOS",
+    description: "Sinergia cientificamente comprovada"
   }
 ];
 
