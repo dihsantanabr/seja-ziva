@@ -19,14 +19,15 @@ const flavors = [
   { id: 'tropical', name: 'Espuma Íntima Ozonizada', emoji: '🫧', color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
 ];
 
-// Mapa de códigos para garantir consistência
+// Códigos de produtos
+const PROBIOTIC_CODES = {
+  '1 Unidade': 'CODIGO_PROBIOTICO_1',
+  '3 Unidades': 'CODIGO_PROBIOTICO_3'
+};
+
 const FLAVOR_CODES = {
   'cranberry': '6J3KDTF80E',
-  'tropical': 'GAA70WUDT7',
-  'limao': 'OY7JZG4UE9',
-  'pink-lemonade': 'Q7TJA8P8X6',
-  'tangerina': '4JF2A26WUQ',
-  'chocolate': 'OY9KOFHD8D'
+  'tropical': 'GAA70WUDT7'
 };
 
 export default function GreemyHero() {
@@ -96,39 +97,22 @@ export default function GreemyHero() {
   };
 
   const handleBuyClick = () => {
-    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
-    
-    if (!selectedFlavors || selectedFlavors.length === 0) {
-      alert('Por favor, selecione os sabores antes de comprar.');
-      return;
-    }
+    // Sempre adicionar o probiótico base
+    const productParts = [PROBIOTIC_CODES[selectedSize] + ':1'];
 
-    if (selectedFlavors.length !== maxFlavors) {
-      alert(`Por favor, selecione ${maxFlavors} sabor${maxFlavors > 1 ? 'es' : ''}.`);
-      return;
-    }
+    // Adicionar produtos opcionais se selecionados
+    if (selectedFlavors && selectedFlavors.length > 0) {
+      const flavorCounts = {};
+      selectedFlavors.forEach(flavorId => {
+        flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
+      });
 
-    // Contar quantas vezes cada sabor foi selecionado
-    const flavorCounts = {};
-    selectedFlavors.forEach(flavorId => {
-      flavorCounts[flavorId] = (flavorCounts[flavorId] || 0) + 1;
-    });
-
-    // Gerar a string de produtos no formato CODIGO:QUANTIDADE usando o mapa de códigos
-    const productParts = [];
-    Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
-      const code = FLAVOR_CODES[flavorId];
-      if (code) {
-        productParts.push(`${code}:${quantity}`);
-      } else {
-        console.error('Código não encontrado para sabor:', flavorId);
-      }
-    });
-
-    if (productParts.length === 0) {
-      alert('Erro ao gerar link de checkout. Por favor, tente novamente.');
-      console.error('Nenhum código de produto gerado');
-      return;
+      Object.entries(flavorCounts).forEach(([flavorId, quantity]) => {
+        const code = FLAVOR_CODES[flavorId];
+        if (code) {
+          productParts.push(`${code}:${quantity}`);
+        }
+      });
     }
 
     // Montar a URL final
@@ -137,8 +121,7 @@ export default function GreemyHero() {
     
     console.log('=== DEBUG CHECKOUT HERO ===');
     console.log('Tamanho selecionado:', selectedSize);
-    console.log('Sabores selecionados (array):', selectedFlavors);
-    console.log('Contagem de sabores:', flavorCounts);
+    console.log('Produtos opcionais:', selectedFlavors);
     console.log('Códigos gerados:', productParts);
     console.log('URL final:', checkoutUrl);
     console.log('==========================');
@@ -147,29 +130,18 @@ export default function GreemyHero() {
     window.location.href = checkoutUrl;
   };
 
-  const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+  const maxPerProduct = selectedSize === '1 Unidade' ? 1 : 3;
 
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
-    const totalSelected = selectedFlavors?.length || 0;
     
-    if (selectedSize === '1 Unidade') {
-      // Para 1 unidade: toggle simples
-      if (count > 0) {
-        setSelectedFlavors([]);
-      } else {
-        setSelectedFlavors([flavorId]);
-      }
+    if (count < maxPerProduct) {
+      // Adiciona mais um deste produto
+      setSelectedFlavors([...selectedFlavors, flavorId]);
     } else {
-      // Para 3 unidades: permite adicionar múltiplos do mesmo sabor
-      if (totalSelected < maxFlavors) {
-        // Se tem espaço, adiciona mais um deste sabor
-        setSelectedFlavors([...selectedFlavors, flavorId]);
-      } else if (count > 0) {
-        // Se já está no limite total e este sabor está selecionado, zera todos deste sabor
-        const newFlavors = selectedFlavors.filter(f => f !== flavorId);
-        setSelectedFlavors(newFlavors);
-      }
+      // Remove todos deste produto
+      const newFlavors = selectedFlavors.filter(f => f !== flavorId);
+      setSelectedFlavors(newFlavors);
     }
   };
 
@@ -420,31 +392,27 @@ export default function GreemyHero() {
 
             {/* Flavor Selection */}
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <p className="font-medium text-gray-700 text-sm lg:text-base">
+              <div className="mb-3">
+                <p className="font-medium text-gray-700 text-sm lg:text-base mb-1">
                   Complete sua Rotina de Cuidado:
                 </p>
-                <span className="text-xs lg:text-sm text-pink-600 font-medium whitespace-nowrap">
-                  {selectedFlavors?.length || 0}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
-                </span>
+                <p className="text-xs text-gray-500">
+                  Opcional: Adicione até {maxPerProduct} de cada produto
+                </p>
               </div>
 
               {/* Flavor Options */}
               <div className="grid grid-cols-2 gap-3">
                 {flavors.map((flavor) => {
                   const count = getFlavorCount(flavor.id);
-                  const isDisabled = (selectedFlavors?.length || 0) >= maxFlavors && count === 0;
 
                   return (
                     <button
                       key={flavor.id}
                       onClick={() => handleFlavorClick(flavor.id)}
-                      disabled={isDisabled}
                       className={`relative p-3 lg:p-4 rounded-xl border-2 transition-all text-center active:scale-95 ${
                         count > 0
                           ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
-                          : isDisabled
-                          ? 'border-gray-200 bg-gray-50 text-gray-400 cursor-not-allowed'
                           : 'border-gray-200 hover:border-pink-300 text-gray-700'
                       }`}
                       >
@@ -473,23 +441,16 @@ export default function GreemyHero() {
               </div>
 
               <p className="text-xs text-gray-500 mt-2 text-center">
-                {selectedSize === '1 Unidade' 
-                  ? 'Clique no sabor desejado (clique novamente para desselecionar)'
-                  : 'Clique para adicionar sabores (pode escolher múltiplos do mesmo)'
-                }
+                Clique para adicionar ao carrinho. Clique novamente para remover.
               </p>
             </div>
 
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              disabled={(selectedFlavors?.length || 0) < maxFlavors}
-              className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
             >
-              {(selectedFlavors?.length || 0) < maxFlavors
-                ? `Selecione ${maxFlavors - (selectedFlavors?.length || 0)} sabor${maxFlavors - (selectedFlavors?.length || 0) > 1 ? 'es' : ''}`
-                : 'Comprar Agora'
-              }
+              Comprar Agora
             </Button>
 
             {/* Delivery Estimate */}
