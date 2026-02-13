@@ -9,8 +9,8 @@ import GreemyQuickNav from './GreemyQuickNav';
 import { useGreemy } from './GreemyContext';
 
 const productImages = [
+  'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_04.png',
   'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png',
-  'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_05.png',
   'https://sejaziva.com.br/cdn/shop/files/Sache_Probiotico_WEBP.webp'
 ];
 
