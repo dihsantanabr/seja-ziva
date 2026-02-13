@@ -386,9 +386,9 @@ export default function GreemyHero() {
                         flavor.image ? 'min-h-[140px] lg:min-h-[160px]' : ''
                       } ${
                         count > 0
-                          ? 'border-pink-500 bg-gradient-to-br ' + flavor.color + ' text-white'
-                          : 'border-gray-200 hover:border-pink-300 text-gray-700'
-                      }`}
+                          ? 'border-pink-500 bg-white'
+                          : 'border-gray-200 hover:border-pink-300 bg-white'
+                      } text-gray-700`}
                       >
                       {count > 0 && (
                         <div className="absolute -top-2 -right-2 w-5 h-5 lg:w-6 lg:h-6 bg-pink-600 text-white rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold">
@@ -412,10 +412,10 @@ export default function GreemyHero() {
                       ) : (
                         <div className="text-2xl lg:text-3xl mb-1 lg:mb-2">{flavor.emoji}</div>
                       )}
-                      <div className={`text-xs lg:text-sm font-semibold break-words ${count > 0 ? 'text-white' : ''}`}>
+                      <div className="text-xs lg:text-sm font-semibold break-words text-gray-700">
                         {flavor.name}
                       </div>
-                      <div className={`text-xs lg:text-sm font-bold mt-1 ${count > 0 ? 'text-white' : 'text-gray-900'}`}>
+                      <div className="text-xs lg:text-sm font-bold mt-1 text-gray-900">
                         R$ {flavor.price.toFixed(2).replace('.', ',')}
                       </div>
                     </button>
