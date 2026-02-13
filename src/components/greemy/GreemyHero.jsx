@@ -422,7 +422,7 @@ export default function GreemyHero() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <p className="font-medium text-gray-700 text-sm lg:text-base">
-                  {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
+                  Complete sua Rotina de Cuidado:
                 </p>
                 <span className="text-xs lg:text-sm text-pink-600 font-medium whitespace-nowrap">
                   {selectedFlavors?.length || 0}/{maxFlavors} {selectedSize === '1 Unidade' ? 'selecionado' : 'selecionados'}
