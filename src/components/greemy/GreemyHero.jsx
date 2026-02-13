@@ -214,8 +214,8 @@ export default function GreemyHero() {
       <div className="bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <img 
-            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/81df3e842_LOGO-RENOVA-PRETO2.png"
-            alt="Renova Be"
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698f17e9124bfe3a6f9a6198/9eab2108f_Screenshot2026-02-13at165800.png"
+            alt="Ziva Health"
             className="h-8 lg:h-10 mx-auto"
           />
         </div>
