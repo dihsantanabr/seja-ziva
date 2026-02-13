@@ -62,7 +62,7 @@ input, select, textarea, button {
 }
 
 input:focus, select:focus, textarea:focus {
-  outline: 2px solid #ec4899;
+  outline: 2px solid #f7c4cb;
   outline-offset: 2px;
 }
 
@@ -82,17 +82,19 @@ input:focus, select:focus, textarea:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-pink-500 rounded-full;
+  background-color: #f7c4cb;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-pink-600;
+  background-color: #e8a9b3;
 }
 
 /* Color theme overrides for Ziva */
 :root {
-  --primary-pink: #f472b6;
-  --primary-pink-dark: #ec4899;
+  --primary-pink: #f7c4cb;
+  --primary-pink-dark: #e8a9b3;
+  --primary-pink-hover: #e0a0a9;
 }
 
 /* Animations */
