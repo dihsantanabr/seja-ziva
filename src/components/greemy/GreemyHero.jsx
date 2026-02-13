@@ -16,7 +16,7 @@ const productImages = [
 
 const flavors = [
   { id: 'cranberry', name: 'Sérum Íntimo Ozonizado', image: 'https://sejaziva.com.br/cdn/shop/files/2_ef7a6779-789b-4749-84b2-893761bc28f1.png?v=1764703506', color: 'from-blue-500 to-cyan-500', mostChosen: true, code: '6J3KDTF80E' },
-  { id: 'tropical', name: 'Espuma Íntima Ozonizada', emoji: '🫧', color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
+  { id: 'tropical', name: 'Espuma Íntima Ozonizada', image: 'https://sejaziva.com.br/cdn/shop/files/3_f86c8057-32aa-4f7f-ab7b-a402d1f2c134.png?v=1764703529', color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
 ];
 
 // Códigos de produtos
