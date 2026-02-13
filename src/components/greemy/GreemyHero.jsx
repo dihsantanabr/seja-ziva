@@ -154,6 +154,24 @@ export default function GreemyHero() {
     setSelectedFlavors([]);
   };
 
+  // Calcular preço total incluindo produtos opcionais
+  const calculateTotalPrice = () => {
+    let total = pricesWithExtras[selectedSize].current;
+    
+    if (selectedFlavors && selectedFlavors.length > 0) {
+      selectedFlavors.forEach(flavorId => {
+        const flavor = flavors.find(f => f.id === flavorId);
+        if (flavor && flavor.price) {
+          total += flavor.price;
+        }
+      });
+    }
+    
+    return total;
+  };
+
+  const totalPrice = calculateTotalPrice();
+
   return (
     <section className="bg-white">
       {/* Announcement Bar */}
@@ -329,11 +347,11 @@ export default function GreemyHero() {
               )}
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl lg:text-4xl font-bold text-gray-900">
-                  R$ {pricesWithExtras[selectedSize].current.toFixed(2).replace('.', ',')}
+                  R$ {totalPrice.toFixed(2).replace('.', ',')}
                 </span>
               </div>
               <p className="text-xs lg:text-sm text-gray-600 mt-2">
-                ou 3x de R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')} sem juros
+                ou 3x de R$ {(totalPrice / 3).toFixed(2).replace('.', ',')} sem juros
               </p>
               <div className="flex items-center gap-2 mt-3 text-green-800 bg-green-100 px-2 lg:px-3 py-2 rounded-lg">
                 <div className="relative flex-shrink-0">
@@ -341,7 +359,7 @@ export default function GreemyHero() {
                   <div className="absolute inset-0 w-2 h-2 bg-green-600 rounded-full animate-ping opacity-75" />
                 </div>
                 <span className="text-xs lg:text-sm font-medium">
-                  Receba de Volta R$ {(pricesWithExtras[selectedSize].current * 0.1).toFixed(2).replace('.', ',')} em Cashback
+                  Receba de Volta R$ {(totalPrice * 0.1).toFixed(2).replace('.', ',')} em Cashback
                 </span>
               </div>
               </div>
