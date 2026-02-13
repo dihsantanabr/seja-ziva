@@ -85,7 +85,7 @@ export default function GreemyHero() {
 
   const pricesWithExtras = {
     '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
-    '3 Unidades': { ...prices['3 Unidades'], badge: '90ml total', duration: '3 frascos' }
+    '3 Unidades': { original: 897.00, current: 567.00, discount: 37, badge: '90ml total', duration: '3 frascos' }
   };
 
   // Calculate delivery dates (faster for 3 units)
