@@ -5,23 +5,23 @@ import { Droplets, Shield, Sparkles, Heart, ArrowRight } from 'lucide-react';
 const results = [
   {
     icon: Shield,
-    title: "Suporte à firmeza",
-    description: "Ajuda a manter a sustentação"
+    title: "Equilíbrio do pH",
+    description: "Restaura pH vaginal saudável"
   },
   {
     icon: Heart,
-    title: "Auxilia na elasticidade",
-    description: "Contribui para pele resiliente"
+    title: "Previne infecções",
+    description: "Protege contra candidíase"
   },
   {
     icon: Sparkles,
-    title: "Complementa hidratação",
-    description: "Ajuda a manter pele nutrida"
+    title: "Elimina odores",
+    description: "Neutraliza odores indesejados"
   },
   {
     icon: Droplets,
-    title: "Uso contínuo",
-    description: "Resultados progressivos"
+    title: "Flora restaurada",
+    description: "Repovoamento bacteriano benéfico"
   }
 ];
 
@@ -31,13 +31,13 @@ export default function GreemyResults() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
-            Onde o colágeno entra
+            Como o simbiótico age
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-4">
-            Suporte estrutural para sua pele
+            Proteção natural para sua saúde íntima
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A suplementação com colágeno atua como um <span className="font-semibold text-gray-700">suporte estrutural</span>, ajudando a pele a manter firmeza e elasticidade quando usada de forma contínua e adequada ao perfil da pessoa.
+            O simbiótico combina <span className="font-semibold text-gray-700">probióticos + prebióticos</span>, restaurando e nutrindo sua flora vaginal para proteção duradoura contra infecções e desconfortos.
           </p>
         </div>
 
@@ -71,25 +71,25 @@ export default function GreemyResults() {
           </h3>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
             <div className="bg-pink-50 rounded-2xl p-6 text-center flex-1 max-w-xs border border-pink-100">
-              <div className="text-4xl mb-3">💊</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Colágeno Verisol®</h4>
-              <p className="text-sm text-gray-600">Peptídeos bioativos</p>
+              <div className="text-4xl mb-3">🦠</div>
+              <h4 className="font-semibold text-gray-900 mb-1">Probióticos</h4>
+              <p className="text-sm text-gray-600">10 bilhões de UFC</p>
             </div>
 
             <ArrowRight className="w-8 h-8 text-pink-500 rotate-90 lg:rotate-0 flex-shrink-0" />
 
             <div className="bg-rose-50 rounded-2xl p-6 text-center flex-1 max-w-xs border border-rose-100">
-              <div className="text-4xl mb-3">💧</div>
-              <h4 className="font-semibold text-gray-900 mb-1">Ácido Hialurônico</h4>
-              <p className="text-sm text-gray-600">Hidratação profunda</p>
+              <div className="text-4xl mb-3">🌾</div>
+              <h4 className="font-semibold text-gray-900 mb-1">Prebiótico FOS</h4>
+              <p className="text-sm text-gray-600">Nutre bactérias boas</p>
             </div>
 
             <ArrowRight className="w-8 h-8 text-pink-500 rotate-90 lg:rotate-0 flex-shrink-0" />
 
             <div className="bg-gradient-to-br from-pink-100 to-rose-100 rounded-2xl p-6 text-center flex-1 max-w-xs">
               <div className="text-4xl mb-3">✨</div>
-              <h4 className="font-semibold text-gray-900 mb-1 break-words">Rejuvenescimento</h4>
-              <p className="text-sm text-gray-600 break-words">Pele renovada</p>
+              <h4 className="font-semibold text-gray-900 mb-1 break-words">Equilíbrio</h4>
+              <p className="text-sm text-gray-600 break-words">Flora restaurada</p>
             </div>
           </div>
         </div>

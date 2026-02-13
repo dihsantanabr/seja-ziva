@@ -8,33 +8,33 @@ import { createPageUrl } from '@/utils';
 const painPoints = [
   {
     icon: Heart,
-    title: "Perda de firmeza",
-    description: "Pele sem sustentação e caída"
+    title: "Candidíase recorrente",
+    description: "Infecções que voltam constantemente"
   },
   {
     icon: Droplets,
-    title: "Linhas finas e sulcos",
-    description: "Marcas que não existiam antes"
+    title: "Corrimento anormal",
+    description: "Fluxo vaginal irregular ou com odor"
   },
   {
     icon: Shield,
-    title: "Elasticidade reduzida",
-    description: "Pele que não volta ao lugar"
+    title: "pH desequilibrado",
+    description: "Flora vaginal desregulada"
   },
   {
     icon: Wind,
-    title: "Aspecto cansado",
-    description: "Rosto com aparência flácida"
+    title: "Odor desagradável",
+    description: "Desconforto íntimo persistente"
   },
   {
     icon: Sparkles,
-    title: "Falta de densidade",
-    description: "Pele mais fina e frágil"
+    title: "Coceira e irritação",
+    description: "Incômodo na região íntima"
   },
   {
     icon: Star,
-    title: "Busca por sustentação",
-    description: "Desejo de pele mais firme"
+    title: "Proteção natural",
+    description: "Busca por equilíbrio íntimo"
   }
 ];
 
@@ -44,13 +44,13 @@ export default function GreemyForWho({ onOpenQuiz }) {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
-            Por que a flacidez acontece
+            Sinais de desequilíbrio íntimo
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-4">
-            Você se identifica com algum desses sinais?
+            Você se identifica com algum desses sintomas?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Com o passar do tempo, o corpo reduz a produção natural de colágeno, proteína responsável por dar estrutura e sustentação à pele.
+            A flora vaginal pode ser afetada por diversos fatores como estresse, antibióticos, alimentação e higiene inadequada, causando desequilíbrio no pH e desconfortos.
           </p>
         </div>
 

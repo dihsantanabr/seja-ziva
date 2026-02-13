@@ -6,55 +6,55 @@ const steps = [
   {
     number: 1,
     title: "Dissolva em água",
-    description: "Misture o conteúdo em 200ml de água",
+    description: "Misture 1 sachê em 200ml de água fria",
     icon: Droplets
   },
   {
     number: 2,
-    title: "Tome pela manhã",
-    description: "Consuma em jejum ou antes do café",
+    title: "Tome em jejum",
+    description: "Consuma pela manhã com estômago vazio",
     icon: Coffee
   },
   {
     number: 3,
     title: "Use diariamente",
-    description: "Mantenha constância de 1x ao dia",
+    description: "Mantenha constância de 1 sachê ao dia",
     icon: Clock
   },
   {
     number: 4,
-    title: "Aguarde resultados",
-    description: "Primeiros efeitos em até 4 semanas",
+    title: "Sinta os resultados",
+    description: "Primeiras melhoras em 7-14 dias",
     icon: CheckCircle
   }
 ];
 
 const timelineResults = [
   {
-    period: "1 semana",
+    period: "7 dias",
     title: "Primeiros sinais",
-    results: ["Pele mais hidratada", "Sensação de bem-estar"],
+    results: ["Menos coceira", "Redução de odores", "Mais conforto"],
     approval: 87,
     color: "from-pink-50 to-rose-50"
   },
   {
-    period: "2 semanas",
-    title: "Melhora visível",
-    results: ["Redução de linhas finas", "Pele mais luminosa", "Hidratação aumentada"],
+    period: "14 dias",
+    title: "Melhora notável",
+    results: ["pH equilibrado", "Corrimento normalizado", "Flora restaurada"],
     approval: 91,
     color: "from-pink-100 to-rose-100"
   },
   {
-    period: "4 semanas",
-    title: "Transformação notável",
-    results: ["Rugas suavizadas", "Firmeza aumentada", "Elasticidade melhorada"],
+    period: "30 dias",
+    title: "Transformação completa",
+    results: ["Infecções prevenidas", "Proteção duradoura", "Saúde íntima ideal"],
     approval: 94,
     color: "from-pink-100 to-pink-200"
   },
   {
-    period: "8 semanas",
-    title: "Resultados completos",
-    results: ["Pele rejuvenescida", "Máxima firmeza", "Beleza radiante"],
+    period: "60 dias",
+    title: "Proteção máxima",
+    results: ["Flora fortificada", "Zero recorrências", "Bem-estar total"],
     approval: 97,
     color: "from-rose-100 to-pink-200"
   }
@@ -72,8 +72,8 @@ export default function GreemyHowToUse() {
           className="flex justify-center mb-12"
         >
           <img
-            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/66b1713a7_br-11134207-7qukw-lfsqn9uymlmma5.jpeg"
-            alt="Colágeno Verisol® + Ácido Hialurônico"
+            src="https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_04.png"
+            alt="Simbiótico Íntimo Ziva"
             className="max-w-md w-full h-auto rounded-3xl shadow-2xl"
           />
         </motion.div>
@@ -83,7 +83,7 @@ export default function GreemyHowToUse() {
             Modo de Uso
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Como usar o Colágeno Verisol®?
+            Como usar o Simbiótico Íntimo?
           </h2>
         </div>
 
@@ -125,11 +125,11 @@ export default function GreemyHowToUse() {
             Quando você verá resultados?
           </h3>
           <p className="text-gray-700 text-center mb-6">
-            Os primeiros resultados aparecem em 1 semana, mas é com o uso contínuo que você experimenta a transformação completa na sua pele!
+            Os primeiros resultados aparecem em 7 dias, mas é com o uso contínuo por 30 dias que você experimenta proteção duradoura e equilíbrio completo!
           </p>
           <div className="bg-white rounded-xl p-4 border border-pink-100">
             <p className="text-sm text-gray-600 text-center">
-              <strong className="text-pink-500">💡 Importante:</strong> Use diariamente para melhores resultados. A beleza de dentro para fora vem com consistência!
+              <strong className="text-pink-500">💡 Importante:</strong> Use diariamente em jejum para melhores resultados. A saúde íntima começa de dentro para fora!
             </p>
           </div>
         </motion.div>

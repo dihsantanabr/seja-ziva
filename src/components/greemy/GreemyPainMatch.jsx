@@ -4,30 +4,30 @@ import { ArrowRight } from 'lucide-react';
 
 const painMatches = [
   {
-    pain: "Rugas e Linhas",
-    solution: "Redução Visível",
-    ingredient: "Colágeno Verisol® com peptídeos bioativos que suavizam rugas",
+    pain: "Candidíase Recorrente",
+    solution: "Prevenção Natural",
+    ingredient: "L. Rhamnosus com 10 bilhões de UFC que previnem infecções fúngicas",
     color: "from-pink-100 to-rose-100",
     border: "border-pink-200"
   },
   {
-    pain: "Perda de Firmeza",
-    solution: "Elasticidade Renovada",
-    ingredient: "Peptídeos que aumentam elasticidade e firmeza da pele",
+    pain: "pH Desequilibrado",
+    solution: "Equilíbrio Restaurado",
+    ingredient: "Probióticos + Prebiótico FOS que regulam o pH vaginal ideal",
     color: "from-rose-100 to-pink-100",
     border: "border-rose-200"
   },
   {
-    pain: "Falta de Hidratação",
-    solution: "Hidratação Profunda",
-    ingredient: "Ácido Hialurônico que retém água e hidrata intensamente",
+    pain: "Odor Desagradável",
+    solution: "Frescor Natural",
+    ingredient: "Cranberry e probióticos que eliminam odores na origem",
     color: "from-pink-50 to-pink-100",
     border: "border-pink-200"
   },
   {
-    pain: "Colágeno Reduzido",
-    solution: "Estimulação Natural",
-    ingredient: "Vitamina C que estimula produção de colágeno endógeno",
+    pain: "Flora Desequilibrada",
+    solution: "Repovoamento Saudável",
+    ingredient: "Prebiótico FOS que nutre e multiplica bactérias benéficas",
     color: "from-rose-50 to-rose-100",
     border: "border-rose-200"
   }
@@ -42,10 +42,10 @@ export default function GreemyPainMatch() {
             Soluções
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
-            Transforme seus desafios em beleza
+            Transforme desconfortos em bem-estar
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
-            Cada preocupação tem sua solução no Colágeno Verisol®
+            Cada sintoma tem sua solução no Simbiótico Íntimo
           </p>
         </div>
 
