@@ -87,21 +87,13 @@ export default function GreemyStories() {
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
     const totalSelected = selectedFlavors.length;
-    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+    const maxFlavors = 3;
     
-    if (selectedSize === '1 Unidade') {
-      if (count > 0) {
-        setSelectedFlavors([]);
-      } else {
-        setSelectedFlavors([flavorId]);
-      }
-    } else {
-      if (totalSelected < maxFlavors) {
-        setSelectedFlavors([...selectedFlavors, flavorId]);
-      } else if (count > 0) {
-        const newFlavors = selectedFlavors.filter(f => f !== flavorId);
-        setSelectedFlavors(newFlavors);
-      }
+    if (totalSelected < maxFlavors) {
+      setSelectedFlavors([...selectedFlavors, flavorId]);
+    } else if (count > 0) {
+      const newFlavors = selectedFlavors.filter(f => f !== flavorId);
+      setSelectedFlavors(newFlavors);
     }
   };
 
@@ -149,7 +141,7 @@ export default function GreemyStories() {
   };
 
   const handleBuyClick = () => {
-    const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+    const maxFlavors = 3;
     
     // Verificar se os sabores foram selecionados
     if (!selectedFlavors || selectedFlavors.length === 0 || selectedFlavors.length !== maxFlavors) {
@@ -395,63 +387,23 @@ export default function GreemyStories() {
                       <X className="w-4 h-4" />
                     </button>
 
-                    {/* Size Selection */}
-                    <div>
-                      <p className="text-xs font-semibold text-gray-700 mb-1.5">Escolha a quantidade:</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {[
-                          { name: '1 Unidade', duration: '30 Dias' },
-                          { name: '3 Unidades', duration: '90 Dias', showBadge: true }
-                        ].map((size) => (
-                          <button
-                            key={size.name}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedSize(size.name);
-                              setSelectedFlavors([]);
-                            }}
-                            className={`relative px-3 py-2.5 rounded-lg border-2 font-medium transition-all text-center ${
-                              selectedSize === size.name
-                                ? 'border-pink-600 bg-gradient-to-r from-pink-400 to-pink-600 text-white'
-                                : 'border-gray-200 text-gray-700'
-                            }`}
-                          >
-                            {size.showBadge && (
-                              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                <span className="bg-orange-200 text-orange-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">
-                                  + Vendido
-                                </span>
-                              </div>
-                            )}
-                            <div className="text-xs font-bold leading-tight mb-0.5">{size.name}</div>
-                            <div className={`text-[10px] ${selectedSize === size.name ? 'text-white/80' : 'text-gray-500'}`}>
-                              {size.duration}
-                            </div>
-                            {size.showBadge && (
-                              <div className={`text-[10px] font-bold mt-0.5 ${selectedSize === size.name ? 'text-white' : 'text-pink-600'}`}>
-                                43% OFF
-                              </div>
-                            )}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+
 
                     {/* Flavor Selection */}
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
                         <p className="text-xs font-semibold text-gray-700">
-                          {selectedSize === '1 Unidade' ? 'Escolha seu sabor:' : 'Escolha seus sabores:'}
+                          Escolha seus sabores:
                         </p>
                         <span className="text-[10px] text-pink-600 font-medium">
-                          {selectedFlavors.length}/{selectedSize === '1 Unidade' ? 1 : 3}
+                          {selectedFlavors.length}/3
                         </span>
                       </div>
 
                       <div className="grid grid-cols-3 gap-2">
                         {flavors.map((flavor) => {
                           const count = getFlavorCount(flavor.id);
-                          const maxFlavors = selectedSize === '1 Unidade' ? 1 : 3;
+                          const maxFlavors = 3;
                           const isDisabled = selectedFlavors.length >= maxFlavors && count === 0;
 
                           return (
@@ -505,11 +457,11 @@ export default function GreemyStories() {
                         e.stopPropagation();
                         handleBuyClick();
                       }}
-                      disabled={selectedFlavors.length < (selectedSize === '1 Unidade' ? 1 : 3)}
+                      disabled={selectedFlavors.length < 3}
                       className="w-full bg-gradient-to-r from-pink-400 to-pink-600 hover:from-pink-500 hover:to-pink-700 text-white font-semibold rounded-lg text-sm py-2 disabled:opacity-50"
                     >
-                      {selectedFlavors.length < (selectedSize === '1 Unidade' ? 1 : 3)
-                        ? `Selecione ${(selectedSize === '1 Unidade' ? 1 : 3) - selectedFlavors.length} sabor${(selectedSize === '1 Unidade' ? 1 : 3) - selectedFlavors.length > 1 ? 'es' : ''}`
+                      {selectedFlavors.length < 3
+                        ? `Selecione ${3 - selectedFlavors.length} sabor${3 - selectedFlavors.length > 1 ? 'es' : ''}`
                         : 'Comprar Agora'
                       }
                     </Button>

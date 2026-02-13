@@ -81,8 +81,7 @@ export default function GreemyHero() {
   }, []);
 
   const pricesWithExtras = {
-    '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' },
-    '3 Unidades': { original: 897.00, current: 567.00, discount: 37, badge: '90ml total', duration: '3 frascos' }
+    '1 Unidade': { ...prices['1 Unidade'], badge: '30ml', duration: '1 frasco' }
   };
 
   // Calculate delivery dates (faster for 3 units)
@@ -130,7 +129,7 @@ export default function GreemyHero() {
     window.location.href = checkoutUrl;
   };
 
-  const maxPerProduct = selectedSize === '1 Unidade' ? 1 : 3;
+  const maxPerProduct = 3;
 
   const handleFlavorClick = (flavorId) => {
     const count = getFlavorCount(flavorId);
@@ -149,10 +148,7 @@ export default function GreemyHero() {
     return selectedFlavors?.filter(f => f === flavorId).length || 0;
   };
 
-  const handleSizeChange = (size) => {
-    setSelectedSize(size);
-    setSelectedFlavors([]);
-  };
+
 
   // Calcular preço total incluindo produtos opcionais
   const calculateTotalPrice = () => {
@@ -364,58 +360,16 @@ export default function GreemyHero() {
               </div>
               </div>
 
-              {/* Size Selection */}
-              <div>
-              <p className="font-medium text-gray-700 mb-3 text-sm lg:text-base">Escolha a quantidade:</p>
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                {Object.keys(pricesWithExtras).map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => handleSizeChange(size)}
-                    className={`relative px-3 py-4 lg:px-6 lg:py-5 rounded-xl border-2 font-medium transition-all text-center ${
-                      selectedSize === size
-                        ? 'border-pink-500 bg-gradient-to-r from-pink-500 to-pink-600 text-white'
-                        : 'border-gray-200 text-gray-700 hover:border-pink-500'
-                    }`}
-                  >
-                    {size === '3 Unidades' && (
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                        <span className="bg-orange-200 text-orange-800 text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
-                          Mais Vendido
-                        </span>
-                      </div>
-                    )}
-                    <div className="text-sm lg:text-base font-bold mb-1">{size}</div>
-                    <div className={`text-xs lg:text-sm ${selectedSize === size ? 'text-white/80' : 'text-gray-500'}`}>
-                      {size === '1 Unidade' ? 'Rotina de 30 Dias' : 'Rotina de 3 Meses'}
-                    </div>
-                    {size === '3 Unidades' && (
-                      <div className={`text-[10px] lg:text-xs font-bold mt-1 ${selectedSize === size ? 'text-white' : 'text-pink-500'}`}>
-                        43% OFF
-                      </div>
-                    )}
-                  </button>
-                ))}
-              </div>
-              
-              {/* Unit Price Box - Only for 3 Units */}
-              {selectedSize === '3 Unidades' && (
-                <div className="mt-3 bg-green-100 border border-green-300 rounded-xl p-2 lg:p-3 text-center">
-                  <p className="text-green-800 font-semibold text-xs lg:text-sm">
-                    Cada Unidade sai por R$ {(pricesWithExtras[selectedSize].current / 3).toFixed(2).replace('.', ',')}
-                  </p>
-                </div>
-              )}
-            </div>
 
-            {/* Flavor Selection */}
+
+            {/* Complementary Products */}
             <div>
               <div className="mb-3">
                 <p className="font-medium text-gray-700 text-sm lg:text-base mb-1">
                   Complete sua Rotina de Cuidado:
                 </p>
                 <p className="text-xs text-gray-500">
-                  Opcional: Adicione até {maxPerProduct} de cada produto
+                  Opcional: Adicione até 3 de cada produto complementar
                 </p>
               </div>
 
