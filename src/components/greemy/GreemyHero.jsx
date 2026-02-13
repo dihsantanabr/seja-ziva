@@ -15,8 +15,8 @@ const productImages = [
 ];
 
 const flavors = [
-  { id: 'cranberry', name: 'Cranberry', emoji: '🍒', color: 'from-red-500 to-pink-500', mostChosen: true, code: '6J3KDTF80E' },
-  { id: 'tropical', name: 'Frutas Tropicais', emoji: '🍍', color: 'from-yellow-500 to-orange-500', code: 'GAA70WUDT7' }
+  { id: 'cranberry', name: 'Sérum Íntimo Ozonizado', emoji: '💧', color: 'from-blue-500 to-cyan-500', mostChosen: true, code: '6J3KDTF80E' },
+  { id: 'tropical', name: 'Espuma Íntima Ozonizada', emoji: '🫧', color: 'from-purple-500 to-pink-500', code: 'GAA70WUDT7' }
 ];
 
 // Mapa de códigos para garantir consistência
