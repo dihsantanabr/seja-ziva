@@ -280,6 +280,11 @@ export default function GreemyHero() {
               <p className="mt-2 text-sm lg:text-lg text-gray-600">
                 Probiótico vaginal que equilibra pH, elimina odores e previne infecções. 10 bilhões de UFC + prebiótico FOS.
               </p>
+              <div className="mt-3 inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-2">
+                <span className="text-lg">🍬</span>
+                <span className="text-sm font-semibold text-pink-700">Sabor Algodão Doce</span>
+                <span className="text-xs text-pink-500 bg-pink-100 rounded-full px-2 py-0.5">Delicioso!</span>
+              </div>
             </div>
 
             {/* Reviews */}
