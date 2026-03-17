@@ -32,7 +32,7 @@ export default function Home() {
       )}
 
       <GreemyHero />
-      <Suspense fallback={<div className="h-20" />}>
+      <Suspense fallback={<div className="h-32 flex items-center justify-center"><div className="w-6 h-6 border-2 border-pink-300 border-t-pink-500 rounded-full animate-spin" /></div>}>
         <div id="para-quem-e">
           <GreemyForWho onOpenQuiz={() => setShowQuiz(true)} />
         </div>
