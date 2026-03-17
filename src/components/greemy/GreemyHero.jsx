@@ -305,7 +305,7 @@ export default function GreemyHero() {
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
                 <Shield className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
-                <span className="whitespace-nowrap">Sem Candidíase</span>
+                <span className="whitespace-nowrap">Combate a Candidíase</span>
               </Badge>
               <Badge variant="outline" className="border-pink-500 text-pink-600 px-2 py-1 text-xs lg:px-3 lg:py-1.5 lg:text-sm">
                 <Heart className="w-3 h-3 lg:w-3.5 lg:h-3.5 mr-1 lg:mr-1.5" />
