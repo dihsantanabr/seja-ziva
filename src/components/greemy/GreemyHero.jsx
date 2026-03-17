@@ -254,14 +254,14 @@ export default function GreemyHero() {
               Simbiótico Íntimo <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">para pH Saudável</span>
             </h1>
 
-            <div className="relative aspect-square bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-lg" style={{aspectRatio: '9/16'}}>
               <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
                 Mais Vendido
               </Badge>
               <img
-                src={productImages[0]}
+                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/03fb3c764_Gemini_Generated_Image_dx7biidx7biidx7b.png"
                 alt="Simbiótico Íntimo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 loading="eager"
               />
             </div>
