@@ -292,7 +292,7 @@ export default function GreemyStories() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-md w-full h-[80vh] mx-4"
+              className="relative max-w-sm w-full mx-3" style={{height: 'min(80vh, 700px)'}}
             >
               {selectedStory.type === 'video' ? (
                 <>
