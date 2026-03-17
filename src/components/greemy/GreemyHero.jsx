@@ -254,8 +254,8 @@ export default function GreemyHero() {
               Simbiótico Íntimo <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">para pH Saudável</span>
             </h1>
 
-            <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-lg" style={{aspectRatio: '9/16'}}>
-              <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
+            <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-lg" style={{aspectRatio: '9/16', maxHeight: '70vh'}}>
+              <Badge className="absolute top-3 right-3 z-10 bg-gradient-to-r from-pink-500 to-pink-600 text-white text-xs">
                 Mais Vendido
               </Badge>
               <img
@@ -263,6 +263,8 @@ export default function GreemyHero() {
                 alt="Simbiótico Íntimo"
                 className="w-full h-full object-cover"
                 loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
           </div>
