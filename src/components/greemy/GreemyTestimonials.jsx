@@ -87,14 +87,14 @@ export default function GreemyTestimonials() {
         <GreemyVideoCarousel />
 
         {/* Testimonials */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-6">
           {testimonials.map((testimonial, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ delay: idx * 0.07, duration: 0.3 }}
               className="bg-white rounded-2xl p-3 lg:p-6 shadow-lg border border-pink-100"
             >
               <div className="flex gap-1 mb-2 lg:mb-3">
