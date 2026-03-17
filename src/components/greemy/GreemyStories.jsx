@@ -195,25 +195,26 @@ export default function GreemyStories() {
   return (
     <>
       {/* Stories Strip */}
-      <div className="bg-white py-4">
+      <div className="bg-white py-3">
         <div className="max-w-7xl mx-auto lg:px-4">
-          <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide lg:justify-center pl-6 pr-4 lg:px-0 snap-x snap-mandatory">
+          <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide lg:justify-center pl-4 pr-3 lg:px-0 snap-x snap-mandatory">
             {stories.map((story, index) => (
               <button
                 key={story.id}
                 onClick={() => openStory(index)}
-                className="flex-shrink-0 group snap-start"
+                className="flex-shrink-0 snap-start touch-manipulation active:scale-95 transition-transform"
+                aria-label={story.title}
               >
                 <div className="relative">
-                  {/* Gradient border */}
                   <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 p-[2px]">
                     <div className="w-full h-full rounded-full bg-white p-[2px] overflow-hidden">
+                      {/* Use video thumbnail as poster for performance */}
                       <video
                         src={story.thumb}
                         className="w-full h-full rounded-full object-cover"
                         muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                       />
                     </div>
                   </div>
