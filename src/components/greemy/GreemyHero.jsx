@@ -268,7 +268,7 @@ export default function GreemyHero() {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-4 lg:space-y-6">
+          <div className="space-y-3 lg:space-y-5">
             <div>
               <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600 font-medium text-xs lg:text-sm uppercase tracking-wider mb-2">
                 Saúde Íntima Natural
