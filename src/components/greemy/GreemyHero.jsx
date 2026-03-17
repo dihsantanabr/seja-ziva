@@ -60,7 +60,7 @@ export default function GreemyHero() {
   const { selectedSize, setSelectedSize, selectedFlavor, setSelectedFlavor, selectedFlavors, setSelectedFlavors, prices } = useGreemy();
 
   // Fixed number of reviews
-  const formattedReviews = '37';
+  const formattedReviews = '+2.352';
   const today = new Date();
 
   // Countdown timer (4 days, then resets)
