@@ -332,7 +332,7 @@ export default function GreemyHero() {
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 text-orange-600 animate-pulse" />
                 <span className="text-sm font-semibold text-orange-900">
-                  Faltam {timeLeft.days} dias para essa oferta acabar
+                  Últimas unidades com frete grátis — faltam {timeLeft.days} dias
                 </span>
               </div>
               <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mt-2 relative">
