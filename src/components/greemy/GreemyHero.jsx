@@ -473,7 +473,7 @@ export default function GreemyHero() {
             {/* Buy Button */}
             <Button 
               onClick={handleBuyClick}
-              className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
+              className="w-full h-14 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 active:scale-[0.98] text-white text-base lg:text-lg font-bold rounded-xl shadow-lg shadow-pink-500/25 transition-transform touch-manipulation"
             >
               Quero Meu Simbiótico Íntimo
             </Button>
