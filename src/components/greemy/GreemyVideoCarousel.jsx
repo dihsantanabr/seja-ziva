@@ -84,31 +84,33 @@ export default function GreemyVideoCarousel() {
     return result;
   };
 
+  const visibleVideos = getVisibleVideos();
+
   return (
-    <div className="relative py-8">
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-gray-900">Quem usa, ama!</h3>
+    <div className="relative py-6">
+      <div className="text-center mb-4">
+        <h3 className="text-xl lg:text-2xl font-bold text-gray-900">Quem usa, ama!</h3>
       </div>
 
       <div className="relative max-w-6xl mx-auto">
         {/* Navigation Buttons */}
         <button
           onClick={prevVideo}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 active:scale-95 transition touch-manipulation"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-700" />
+          <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-gray-700" />
         </button>
 
         <button
           onClick={nextVideo}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 active:scale-95 transition touch-manipulation"
         >
-          <ChevronRight className="w-6 h-6 text-gray-700" />
+          <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-gray-700" />
         </button>
 
-        {/* Video Carousel */}
-        <div className="flex items-center justify-center gap-4 px-16 overflow-hidden">
-          {getVisibleVideos().map((video, idx) => {
+        {/* Video Carousel — only renders adjacent videos for performance */}
+        <div className="flex items-center justify-center gap-2 lg:gap-4 px-12 lg:px-16 overflow-hidden">
+          {visibleVideos.map((video, idx) => {
             const isCenter = video.position === 0;
             const scale = isCenter ? 1 : 0.7;
             const opacity = Math.abs(video.position) === 2 ? 0.3 : Math.abs(video.position) === 1 ? 0.6 : 1;
@@ -117,41 +119,27 @@ export default function GreemyVideoCarousel() {
             return (
               <motion.div
                 key={`${video.id}-${idx}`}
-                animate={{
-                  scale,
-                  opacity,
-                  x: video.position * 20
-                }}
-                transition={{ duration: 0.3 }}
+                animate={{ scale, opacity, x: video.position * 10 }}
+                transition={{ duration: 0.25 }}
                 className="flex-shrink-0 relative"
                 style={{ zIndex }}
               >
                 <div className={`rounded-2xl overflow-hidden shadow-xl relative ${isCenter ? 'ring-4 ring-pink-500' : ''}`}>
                   <video
-                    ref={(el) => {
-                      if (isCenter) {
-                        videoRefs.current[currentIndex] = el;
-                      }
-                    }}
+                    ref={(el) => { if (isCenter) videoRefs.current[currentIndex] = el; }}
                     src={video.videoUrl}
-                    className="w-56 h-96 lg:w-72 lg:h-[550px] object-cover"
+                    className="w-44 h-[300px] lg:w-72 lg:h-[550px] object-cover"
                     playsInline
                     loop
-                    preload="metadata"
+                    preload={isCenter ? 'metadata' : 'none'}
                     muted={isMuted}
                   />
                   {isCenter && (
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
-                      <button
-                        onClick={togglePlay}
-                        className="text-white hover:text-pink-400 transition"
-                      >
+                      <button onClick={togglePlay} className="text-white hover:text-pink-400 transition touch-manipulation">
                         {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                       </button>
-                      <button
-                        onClick={toggleMute}
-                        className="text-white hover:text-pink-400 transition"
-                      >
+                      <button onClick={toggleMute} className="text-white hover:text-pink-400 transition touch-manipulation">
                         {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                       </button>
                     </div>
@@ -163,13 +151,13 @@ export default function GreemyVideoCarousel() {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-2 mt-5">
           {videos.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                idx === currentIndex ? 'bg-pink-500 w-8' : 'bg-gray-300'
+              className={`h-2 rounded-full transition-all touch-manipulation ${
+                idx === currentIndex ? 'bg-pink-500 w-8' : 'bg-gray-300 w-2'
               }`}
             />
           ))}
