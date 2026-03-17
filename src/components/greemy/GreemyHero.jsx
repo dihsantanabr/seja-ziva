@@ -473,7 +473,7 @@ export default function GreemyHero() {
               onClick={handleBuyClick}
               className="w-full h-11 lg:h-12 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all hover:shadow-xl hover:shadow-pink-500/30"
             >
-              Comprar Agora
+              Quero Meu Simbiótico Íntimo
             </Button>
 
             {/* Delivery Estimate */}
