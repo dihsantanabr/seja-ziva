@@ -278,7 +278,7 @@ export default function GreemyHero() {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">Ziva</span>
               </h1>
               <p className="mt-2 text-sm lg:text-lg text-gray-600">
-                Probiótico vaginal que equilibra pH, elimina odores e previne infecções. 10 bilhões de UFC + prebiótico FOS.
+                O simbiótico que acabou com a candidíase recorrente, o odor e o desconforto íntimo de mais de 2.352 mulheres.
               </p>
               <div className="mt-3 inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-2">
                 <span className="text-lg">🍬</span>
