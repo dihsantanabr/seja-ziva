@@ -50,9 +50,9 @@ const testimonials = [
 
 export default function GreemyTestimonials() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
+    <section className="py-10 lg:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4">
+        <div className="text-center mb-8">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-500 font-medium text-sm uppercase tracking-wider">
             Depoimentos
           </span>
