@@ -54,13 +54,13 @@ import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "Home": Home,
+    "simbiotico-pdp": Home,
     "LinkBio": LinkBio,
     "Quiz": Quiz,
 }
 
 export const pagesConfig = {
-    mainPage: "Home",
+    mainPage: "simbiotico-pdp",
     Pages: PAGES,
     Layout: __Layout,
 };
