@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Package, Tag, Truck } from 'lucide-react';
+import { Check, Package, Shield, Tag, Truck } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from 'framer-motion';

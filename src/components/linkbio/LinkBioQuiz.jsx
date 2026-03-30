@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft, Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -178,29 +178,30 @@ export default function LinkBioQuiz({ onComplete }) {
 
   const progress = ((step + 1) / 5) * 100;
 
-  if (showResult) {
-    const mainProduct = getMainProduct() || products.colageno; // Guard rail: default ao Colágeno
-    const complementary = getComplementary();
+  // Salvar lead no banco de dados quando os resultados aparecem
+  useEffect(() => {
+    if (!showResult) return;
+    const productKey = productMapping[answers.objective];
+    const saveLead = async () => {
+      try {
+        await base44.entities.QuizLead.create({
+          name: answers.name,
+          email: answers.email,
+          objective: answers.objective,
+          symptom: answers.symptom,
+          routine: answers.routine,
+          recommendedProduct: productKey
+        });
+      } catch (error) {
+        console.error('Erro ao salvar lead:', error);
+      }
+    };
+    saveLead();
+  }, [showResult]);
 
-    // Salvar lead no banco de dados quando os resultados aparecem
-    React.useEffect(() => {
-      const saveLead = async () => {
-        const productKey = productMapping[answers.objective];
-        try {
-          await base44.entities.QuizLead.create({
-            name: answers.name,
-            email: answers.email,
-            objective: answers.objective,
-            symptom: answers.symptom,
-            routine: answers.routine,
-            recommendedProduct: productKey
-          });
-        } catch (error) {
-          console.error('Erro ao salvar lead:', error);
-        }
-      };
-      saveLead();
-    }, []);
+  if (showResult) {
+    const mainProduct = getMainProduct() || products.colageno;
+    const complementary = getComplementary();
 
     return (
       <motion.div

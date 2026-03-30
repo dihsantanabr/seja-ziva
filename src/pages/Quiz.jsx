@@ -91,17 +91,12 @@ export default function Quiz() {
   const [showExitDialog, setShowExitDialog] = useState(false);
   const navigate = useNavigate();
 
-  // Safety check: ensure question exists before any calculations
   const question = questions[currentQuestion];
-  if (!question) {
-    return null;
-  }
-  
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   // Prevent accidental exit
   useEffect(() => {
-    if (showResult) return;
+    if (!question || showResult) return;
 
     const handleBeforeUnload = (e) => {
       if (Object.keys(answers).length > 0) {
@@ -112,7 +107,11 @@ export default function Quiz() {
 
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [answers, showResult]);
+  }, [answers, showResult, question]);
+
+  if (!question) {
+    return null;
+  }
 
   const handleAnswer = (optionId) => {
     const questionId = question.id;
