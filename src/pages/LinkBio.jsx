@@ -1,232 +1,98 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import { ChevronRight, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Sparkles, Check, ChevronRight, Shield, Instagram, MessageCircle } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import LinkBioQuiz from '../components/linkbio/LinkBioQuiz';
+
+const links = [
+  { label: 'Simbiótico Íntimo', url: 'https://seguro.renovabe.com/r/SIMBIOTICO' },
+  { label: 'Sérum Íntimo Ozonizado', url: 'https://seguro.renovabe.com/r/6J3KDTF80E' },
+  { label: 'Espuma Íntima Ozonizada', url: 'https://seguro.renovabe.com/r/GAA70WUDT7' },
+  { label: 'Kit Saúde Íntima Completo', url: 'https://seguro.renovabe.com/r/KIT' },
+];
 
 export default function LinkBio() {
-  const [quizCompleted, setQuizCompleted] = useState(false);
-  const quizRef = useRef(null);
-
-  const products = [
-    {
-      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/e54a8bbef_e20f19eba_deixe_o_pote_de_colageno_molhado_e_mude_o_mixer_ultra-realistic_premium_beauty-nutrition_product_ph_uzvg4tlap4fnu9kznvwo.jpg',
-      title: "Colágeno RenovaBe",
-      subtitle: "Para pele, unhas e cabelo",
-      description: "Ideal para quem busca melhorar a aparência da pele, fortalecer unhas e cabelos.",
-      url: "https://colageno.renovabe.com"
-    },
-    {
-      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/0ffc92c23_c0efcc58f_5.png',
-      title: "Creatina RenovaBe",
-      subtitle: "Para força, energia e desempenho",
-      description: "Para quem treina e busca mais força, resistência e performance no dia a dia.",
-      url: "https://creatina.renovabe.com"
-    },
-    {
-      icon: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/c5dba9fb1_6c45eda96_GeneratedImageJanuary082026-6_38PM.jpg',
-      title: "Lift RenovaBe",
-      subtitle: "Para firmeza e cuidado corporal",
-      description: "Cuidado corporal focado em firmeza, textura e aparência da pele.",
-      url: "https://lift.renovabe.com"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-white">
-      {/* HERO: Foco Total no Quiz */}
-      <section className="px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-white to-pink-50">
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+    <div className="min-h-screen bg-pink-50 flex flex-col items-center py-10 px-4">
+      <div className="w-full max-w-sm space-y-4">
+
+        {/* Logo / Marca */}
+        <div className="text-center mb-6">
+          <img
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698f17e9124bfe3a6f9a6198/9eab2108f_Screenshot2026-02-13at165800.png"
+            alt="Ziva"
+            className="h-12 mx-auto mb-2 object-contain"
+          />
+          <p className="text-sm text-pink-500 font-medium">Saúde íntima que transforma sua vida.</p>
+        </div>
+
+        {/* Botão CTA principal */}
+        <motion.a
+          href="https://seguro.renovabe.com/r/SIMBIOTICO"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileTap={{ scale: 0.97 }}
+          className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white font-bold text-base rounded-2xl py-4 shadow-md hover:shadow-lg transition-all"
+        >
+          Quero meu Simbiótico Íntimo
+          <ChevronRight className="w-5 h-5" />
+        </motion.a>
+
+        {/* Banner produto em destaque */}
+        <motion.a
+          href="https://seguro.renovabe.com/r/SIMBIOTICO"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileTap={{ scale: 0.97 }}
+          className="block relative overflow-hidden rounded-2xl shadow-md"
+        >
+          <img
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/03fb3c764_Gemini_Generated_Image_dx7biidx7biidx7b.png"
+            alt="Simbiótico Íntimo Ziva"
+            className="w-full h-44 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col justify-end">
+            <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Mais Vendido</span>
+            <h2 className="text-white font-bold text-lg leading-tight">Simbiótico Íntimo Ziva</h2>
+            <p className="text-white/80 text-sm mt-0.5">pH saudável, sem odor, sem candidíase.</p>
+            <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
+              Ver produto <ChevronRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
+        </motion.a>
+
+        {/* Links de categoria */}
+        {links.map((link, idx) => (
+          <motion.a
+            key={idx}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8 sm:mb-10"
+            transition={{ delay: idx * 0.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="flex items-center justify-center w-full bg-white text-gray-800 font-medium text-sm rounded-2xl py-3.5 px-4 shadow-sm border border-gray-100 hover:border-pink-300 hover:shadow-md transition-all"
           >
-            <img 
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695d9796d8674f7efcac0aa1/81df3e842_LOGO-RENOVA-PRETO2.png" 
-              alt="RenovaBe" 
-              className="h-16 sm:h-20 mx-auto mb-4 sm:mb-6 object-contain"
-            />
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-              Encontre o produto certo para o seu objetivo
-            </h1>
-            <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
-              Responda algumas perguntas rápidas e receba uma recomendação pensada para você.
-            </p>
-          </motion.div>
+            {link.label}
+          </motion.a>
+        ))}
 
-          {/* CTA Principal */}
-          <div className="flex flex-col gap-4 mb-8 sm:mb-10">
-            <Button
-              onClick={() => quizRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-              className="w-full h-14 sm:h-16 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white text-base sm:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95"
-            >
-              👉 Quero receber minha recomendação
-               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
-            </Button>
-          </div>
+        {/* WhatsApp */}
+        <motion.a
+          href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%20Ziva,%20preciso%20de%20ajuda!"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileTap={{ scale: 0.97 }}
+          className="flex items-center justify-center gap-2 w-full bg-white text-gray-700 font-medium text-sm rounded-2xl py-3.5 px-4 shadow-sm border border-gray-100 hover:border-green-300 hover:shadow-md transition-all"
+        >
+          <MessageCircle className="w-4 h-4 text-green-500" />
+          Atendimento Personalizado
+        </motion.a>
 
-          {/* Prova de Valor */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-100"
-          >
-            <div className="space-y-2 sm:space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-green-600" />
-                </div>
-                <span className="text-sm sm:text-base text-gray-700">Leva menos de 1 minuto</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-green-600" />
-                </div>
-                <span className="text-sm sm:text-base text-gray-700">Considera seu objetivo e sua rotina</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-green-600" />
-                </div>
-                <span className="text-sm sm:text-base text-gray-700">Recomenda o produto mais indicado para você</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* QUIZ */}
-      <section ref={quizRef} className="px-3 sm:px-4 py-8 sm:py-12 bg-white">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Responda e receba sua recomendação
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 mb-4">
-              Responda 4 perguntas rápidas e veja a recomendação certa para você
-            </p>
-            <Button
-              variant="link"
-              onClick={() => {
-                const section = document.querySelector('[data-products-direct]');
-                section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              className="text-sm text-pink-600 hover:text-pink-700 p-0 h-auto"
-            >
-              Já sabe o que procura? Ver produtos →
-            </Button>
-          </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <LinkBioQuiz onComplete={() => setQuizCompleted(true)} />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* PRODUTOS - Acesso Direto */}
-      <section data-products-direct className="px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-pink-50 to-white">
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-10">
-              Ou acesse direto por objetivo
-            </h2>
-
-              <div className="grid gap-4 sm:gap-6">
-                {products.map((product, idx) => (
-                  <motion.a
-                    key={idx}
-                    href={product.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="block bg-white rounded-xl sm:rounded-2xl shadow-md border border-gray-100 p-4 sm:p-6 hover:shadow-xl hover:border-pink-300 transition-all active:scale-95"
-                  >
-                    <div className="flex items-start gap-4 sm:gap-5">
-                      <img 
-                        src={product.icon} 
-                        alt={product.title}
-                        className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 object-cover rounded-lg"
-                      />
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
-                          {product.title}
-                        </h3>
-                        <p className="text-sm text-pink-600 font-medium">
-                          Para {product.subtitle.split('Para ')[1] || product.subtitle}
-                        </p>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400 flex-shrink-0 mt-1" />
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-      {/* CTA DE REFORÇO */}
-      {quizCompleted && (
-        <section className="px-3 sm:px-4 py-8 sm:py-10 bg-white">
-          <div className="max-w-2xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Ainda em dúvida?
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-6">
-                Receba uma recomendação personalizada em 1 minuto
-              </p>
-              <Button
-                onClick={() => {
-                  setQuizCompleted(false);
-                  quizRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }}
-                className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-semibold px-8 py-3 sm:py-4 rounded-lg"
-              >
-                👉 Responder agora
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-      )}
-
-      {/* Rodapé de Confiança */}
-      <footer className="py-6 sm:py-8 px-4 bg-white border-t border-gray-100">
-        <div className="max-w-2xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <p className="text-sm text-gray-600 mb-3 sm:mb-4">
-              <span className="font-semibold text-gray-900">RenovaBe</span> – Site Oficial
-            </p>
-            <div className="flex items-center justify-center gap-4 text-xs sm:text-sm text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4" />
-                Compra segura
-              </span>
-              <span>•</span>
-              <span>Produtos originais</span>
-              <span>•</span>
-              <span>Entrega em todo o Brasil</span>
-            </div>
-          </motion.div>
-        </div>
-      </footer>
+        {/* Rodapé */}
+        <p className="text-center text-xs text-pink-400 font-medium pt-2 pb-6">
+          sejaziva.com.br
+        </p>
+      </div>
     </div>
   );
 }
