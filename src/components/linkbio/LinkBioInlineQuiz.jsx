@@ -108,13 +108,15 @@ function getResult(answers) {
 
 export default function LinkBioInlineQuiz() {
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(-1); // -1 = name step
+  const [name, setName] = useState('');
   const [answers, setAnswers] = useState([]);
   const [result, setResult] = useState(null);
 
   const handleStart = () => {
     setOpen(true);
-    setStep(0);
+    setStep(-1);
+    setName('');
     setAnswers([]);
     setResult(null);
   };
@@ -132,8 +134,10 @@ export default function LinkBioInlineQuiz() {
   };
 
   const handleBack = () => {
-    if (step === 0) {
+    if (step === -1) {
       setOpen(false);
+    } else if (step === 0) {
+      setStep(-1);
     } else {
       setAnswers(answers.slice(0, -1));
       setStep(step - 1);
@@ -141,7 +145,8 @@ export default function LinkBioInlineQuiz() {
   };
 
   const handleReset = () => {
-    setStep(0);
+    setStep(-1);
+    setName('');
     setAnswers([]);
     setResult(null);
   };
@@ -181,7 +186,7 @@ export default function LinkBioInlineQuiz() {
                     ✨ Sua recomendação
                   </p>
                   <h3 className="text-base font-bold text-gray-900 mb-4">
-                    Com base nas suas respostas, o ideal para você é:
+                    {name ? `${name}, o ideal para você é:` : 'Com base nas suas respostas, o ideal para você é:'}
                   </h3>
 
                   {/* Produto principal */}
@@ -235,6 +240,43 @@ export default function LinkBioInlineQuiz() {
                     Refazer quiz
                   </button>
                 </motion.div>
+              ) : step === -1 ? (
+                /* Nome */
+                <motion.div
+                  key="name"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    <button onClick={handleBack} className="text-gray-400 hover:text-pink-500 p-1 -ml-1 transition-colors">
+                      <ArrowLeft className="w-4 h-4" />
+                    </button>
+                    <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-pink-400 rounded-full" style={{ width: '0%' }} />
+                    </div>
+                    <span className="text-xs text-gray-400">1/{QUESTIONS.length + 1}</span>
+                  </div>
+                  <p className="text-sm font-semibold text-gray-900 mb-4 leading-snug">
+                    Antes de começar, qual é o seu nome? 😊
+                  </p>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && name.trim() && setStep(0)}
+                    placeholder="Digite seu nome..."
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-pink-400 mb-3"
+                    autoFocus
+                  />
+                  <button
+                    onClick={() => name.trim() && setStep(0)}
+                    disabled={!name.trim()}
+                    className="w-full bg-pink-500 hover:bg-pink-600 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold text-sm rounded-xl py-3 transition-all"
+                  >
+                    Continuar →
+                  </button>
+                </motion.div>
               ) : (
                 /* Perguntas */
                 <motion.div
@@ -251,10 +293,10 @@ export default function LinkBioInlineQuiz() {
                     <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-pink-400 rounded-full transition-all duration-300"
-                        style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }}
+                        style={{ width: `${((step + 2) / (QUESTIONS.length + 1)) * 100}%` }}
                       />
                     </div>
-                    <span className="text-xs text-gray-400">{step + 1}/{QUESTIONS.length}</span>
+                    <span className="text-xs text-gray-400">{step + 2}/{QUESTIONS.length + 1}</span>
                   </div>
 
                   <p className="text-sm font-semibold text-gray-900 mb-4 leading-snug">
