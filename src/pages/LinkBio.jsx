@@ -58,7 +58,7 @@ export default function LinkBio() {
           <div className="flex h-44">
             <div className="w-1/2 flex-shrink-0">
               <img
-                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/fed7f445d_Screenshot2026-04-07at080835.png"
+                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/51445a86f_Frame_1261153608_0e5dec7c-b0d6-4339-b9e5-f8275dfa0d47.jpg"
                 alt="Beatriz - Fundadora Ziva"
                 className="w-full h-full object-cover object-top"
               />
