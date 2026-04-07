@@ -4,7 +4,6 @@ import LinkBioInlineQuiz from '../components/linkbio/LinkBioInlineQuiz';
 import { motion } from 'framer-motion';
 
 const links = [
-  { label: 'Conheça Nossa História', url: '#' },
   { label: 'Entre no Nosso Grupo VIP', url: '#' },
   { label: 'Quero ser uma Creator Ziva', url: '#' },
 ];
@@ -49,6 +48,33 @@ export default function LinkBio() {
             </span>
           </div>
         </motion.a>
+
+        {/* Card Conheça Nossa História */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden"
+        >
+          <div className="flex h-44">
+            <div className="w-1/2 flex-shrink-0">
+              <img
+                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/b3ca87383_Screenshot2026-04-07at080406.png"
+                alt="Beatriz - Fundadora Ziva"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-4 gap-2">
+              <h3 className="text-gray-800 font-bold text-base leading-tight">Minha jornada, <em>nossa missão</em></h3>
+              <p className="text-gray-500 text-xs leading-snug line-clamp-3">Olá, sou Beatriz, fundadora da Ziva. Uma marca criada para transformar e acolher cada mulher.</p>
+              <a
+                href="#"
+                className="mt-1 inline-block bg-pink-400 hover:bg-pink-500 text-white text-xs font-bold rounded-full px-4 py-2 text-center transition-colors"
+              >
+                LEIA NOSSA HISTÓRIA
+              </a>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Links de categoria */}
         {links.map((link, idx) => (
