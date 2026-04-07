@@ -4,9 +4,9 @@ import LinkBioInlineQuiz from '../components/linkbio/LinkBioInlineQuiz';
 import { motion } from 'framer-motion';
 
 const links = [
-  { label: 'Sérum Íntimo Ozonizado', url: 'https://sejaziva.com.br/products/serum-intimo-ozonizado' },
-  { label: 'Espuma Íntima Ozonizada', url: 'https://sejaziva.com.br/products/espuma-intima-ozonizada' },
-  { label: 'BOX Equilibrium', url: 'https://sejaziva.com.br/products/kit-bem-estar-completo' },
+  { label: 'Conheça Nossa História', url: '#' },
+  { label: 'Entre no Nosso Grupo VIP', url: '#' },
+  { label: 'Quero ser uma Creator Ziva', url: '#' },
 ];
 
 export default function LinkBio() {
