@@ -4,7 +4,6 @@ import LinkBioInlineQuiz from '../components/linkbio/LinkBioInlineQuiz';
 import { motion } from 'framer-motion';
 
 const links = [
-  { label: 'Simbiótico Íntimo', url: 'https://seguro.renovabe.com/r/SIMBIOTICO' },
   { label: 'Sérum Íntimo Ozonizado', url: 'https://seguro.renovabe.com/r/6J3KDTF80E' },
   { label: 'Espuma Íntima Ozonizada', url: 'https://seguro.renovabe.com/r/GAA70WUDT7' },
   { label: 'Kit Saúde Íntima Completo', url: 'https://seguro.renovabe.com/r/KIT' },
