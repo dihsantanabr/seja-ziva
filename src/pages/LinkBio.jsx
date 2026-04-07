@@ -4,9 +4,9 @@ import LinkBioInlineQuiz from '../components/linkbio/LinkBioInlineQuiz';
 import { motion } from 'framer-motion';
 
 const links = [
-  { label: 'Sérum Íntimo Ozonizado', url: 'https://seguro.renovabe.com/r/6J3KDTF80E' },
-  { label: 'Espuma Íntima Ozonizada', url: 'https://seguro.renovabe.com/r/GAA70WUDT7' },
-  { label: 'Kit Saúde Íntima Completo', url: 'https://seguro.renovabe.com/r/KIT' },
+  { label: 'Sérum Íntimo Ozonizado', url: 'https://sejaziva.com.br/products/serum-intimo-ozonizado' },
+  { label: 'Espuma Íntima Ozonizada', url: 'https://sejaziva.com.br/products/espuma-intima-ozonizada' },
+  { label: 'BOX Equilibrium', url: 'https://sejaziva.com.br/products/kit-bem-estar-completo' },
 ];
 
 export default function LinkBio() {
