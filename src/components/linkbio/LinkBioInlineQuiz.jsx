@@ -163,7 +163,7 @@ export default function LinkBioInlineQuiz() {
         className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white font-bold text-base rounded-2xl py-4 shadow-md hover:shadow-lg transition-all"
       >
         <Sparkles className="w-4 h-4" />
-        Descubra o Cuidado Íntimo ideal para você
+        Descubra o Cuidado Íntimo Ideal
         <ChevronRight className="w-5 h-5" />
       </motion.button>
 
