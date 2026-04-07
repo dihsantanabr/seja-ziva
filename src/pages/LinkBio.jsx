@@ -29,7 +29,7 @@ export default function LinkBio() {
 
         {/* Banner produto em destaque */}
         <motion.a
-          href="https://seguro.renovabe.com/r/SIMBIOTICO"
+          href="https://sejaziva.com.br/products/simbiotico-intimo"
           target="_blank"
           rel="noopener noreferrer"
           whileTap={{ scale: 0.97 }}
