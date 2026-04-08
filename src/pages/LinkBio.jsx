@@ -35,9 +35,8 @@ export default function LinkBio() {
           className="block relative overflow-hidden rounded-2xl shadow-md"
         >
           <img
-            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/03fb3c764_Gemini_Generated_Image_dx7biidx7biidx7b.png"
-            alt="Simbiótico Íntimo Ziva"
-            className="w-full h-44 object-cover"
+            src="https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png"
+          className="w-full h-44 object-contain bg-pink-100"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col justify-end">
             <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Mais Vendido</span>
