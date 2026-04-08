@@ -259,7 +259,7 @@ export default function GreemyHero() {
                 Mais Vendido
               </Badge>
               <img
-                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/03fb3c764_Gemini_Generated_Image_dx7biidx7biidx7b.png"
+                src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/6581dae92_Screenshot2026-03-17at140841.png"
                 alt="Simbiótico Íntimo"
                 className="w-full h-full object-cover"
                 loading="eager"
