@@ -24,9 +24,9 @@ const flavors = [
     mostChosen: true, 
     code: '6J3KDTF80E',
     benefits: [
-      'Hidratação profunda',
       'Combate odores',
-      'Previne infecções'
+      'Antifúngico e antibacteriano',
+      'Hidratação e regeneração da pele'
     ]
   },
   { 
@@ -38,8 +38,8 @@ const flavors = [
     code: 'GAA70WUDT7',
     benefits: [
       'Limpeza suave',
-      'Frescor duradouro',
-      'Não resseca'
+      'Sem fragrância',
+      'Ação protetora diária'
     ]
   }
 ];
@@ -280,12 +280,20 @@ export default function GreemyHero() {
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-600">Ziva</span>
               </h1>
               <p className="mt-2 text-sm lg:text-lg text-gray-600">
-                O simbiótico que acabou com a candidíase recorrente, o odor e o desconforto íntimo de mais de 2.352 mulheres.
+                Ajuda no controle de odores, equilíbrio do pH e na regulação do intestino — e favorece um sabor íntimo naturalmente mais suave.
               </p>
               <div className="mt-3 inline-flex items-center gap-2 bg-pink-50 border border-pink-200 rounded-full px-4 py-2">
                 <span className="text-lg">🍬</span>
                 <span className="text-sm font-semibold text-pink-700">Sabor Algodão Doce</span>
-                <span className="text-xs text-pink-500 bg-pink-100 rounded-full px-2 py-0.5">Delicioso!</span>
+                <span className="text-xs text-pink-500 bg-pink-100 rounded-full px-2 py-0.5">Toma direto na boca!</span>
+              </div>
+              <div className="mt-2 flex flex-wrap gap-2 text-xs text-gray-500">
+                <span className="bg-gray-100 rounded-full px-3 py-1">pH equilibrado</span>
+                <span className="bg-gray-100 rounded-full px-3 py-1">Elimina odores</span>
+                <span className="bg-gray-100 rounded-full px-3 py-1">Sabor íntimo suave</span>
+                <span className="bg-gray-100 rounded-full px-3 py-1">Resultado em 7 dias</span>
+                <span className="bg-gray-100 rounded-full px-3 py-1">10 bilhões UFC</span>
+                <span className="bg-gray-100 rounded-full px-3 py-1">Prebiótico FOS</span>
               </div>
             </div>
 
@@ -334,7 +342,7 @@ export default function GreemyHero() {
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4 text-orange-600 animate-pulse" />
                 <span className="text-sm font-semibold text-orange-900">
-                  Últimas unidades com frete grátis — faltam {timeLeft.days} dias
+                Oferta por tempo limitado — faltam {timeLeft.days} dias
                 </span>
               </div>
               <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden mt-2 relative">
@@ -485,7 +493,7 @@ export default function GreemyHero() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 lg:gap-2 flex-wrap">
                     <p className="font-semibold text-green-900 text-xs lg:text-base">
-                      Chegará Grátis entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
+                      Chegará entre {formatDate(minDeliveryDate)} e {formatDate(maxDeliveryDate)}
                     </p>
                     {selectedSize === '3 Unidades' && (
                       <Badge className="bg-green-600 hover:bg-green-700 text-white text-[10px] lg:text-xs whitespace-nowrap">
@@ -528,7 +536,7 @@ export default function GreemyHero() {
                 'Regula pH Vaginal',
                 'Elimina Odores Indesejados',
                 'Previne Candidíase',
-                'Restaura Flora Natural'
+                'Restaura Flora e Reduz Inchaço Abdominal'
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-xs lg:text-sm text-gray-600">
                   <Check className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-pink-600 flex-shrink-0" />
