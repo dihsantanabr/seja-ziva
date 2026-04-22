@@ -356,6 +356,11 @@ export default function SimbioticoLP1() {
             </div>
           </div>
 
+          {/* IMAGE before offer box */}
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <img src={PRODUCT_IMG_2} alt="Simbiótico Íntimo Ziva" style={{ maxHeight: '360px', margin: '0 auto', objectFit: 'contain', filter: 'drop-shadow(0 16px 40px rgba(212,138,144,0.3))' }} />
+          </div>
+
           {/* KIT SELECTOR */}
           <div style={{ background: '#F7F1E8', borderRadius: '24px', padding: '8px', marginBottom: '24px', display: 'flex', gap: '8px' }}>
             {[
@@ -387,11 +392,6 @@ export default function SimbioticoLP1() {
                 </div>
               </button>
             ))}
-          </div>
-
-          {/* IMAGE in offer */}
-          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <img src={PRODUCT_IMG_2} alt="Simbiótico Íntimo Ziva" style={{ maxHeight: '200px', margin: '0 auto', objectFit: 'contain' }} />
           </div>
 
           <div style={{ background: '#F7F1E8', borderRadius: '16px', padding: '20px 24px', marginBottom: '24px', fontSize: '14px', color: '#3A342E' }}>
