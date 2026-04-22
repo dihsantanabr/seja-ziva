@@ -360,41 +360,7 @@ export default function SimbioticoLP6() {
         </div>
       </section>
 
-      {/* FIRST WAVE */}
-      <section id="wave" style={{ background: '#FFFCF6', padding: '100px 0' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '72px 56px', textAlign: 'center', background: 'linear-gradient(135deg,#EFE6D6 0%,#F3DADD 100%)', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', letterSpacing: '.24em', textTransform: 'uppercase', color: '#8C6534', fontWeight: '700', marginBottom: '22px', display: 'inline-flex', alignItems: 'center', gap: '14px' }}>
-              <span style={{ width: '30px', height: '1px', background: '#B8864B' }}></span>
-              V · First Wave List
-              <span style={{ width: '30px', height: '1px', background: '#B8864B' }}></span>
-            </div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px,4.5vw,52px)', fontWeight: '300', color: '#141210', lineHeight: '1.05', letterSpacing: '-.025em', marginBottom: '20px' }}>
-              Entre na lista dos <em style={{ color: '#B26770', fontStyle: 'italic' }}>próximos lançamentos.</em>
-            </h2>
-            <p style={{ fontFamily: "'Fraunces', serif", fontSize: '17px', fontStyle: 'italic', color: '#34302B', maxWidth: '560px', margin: '0 auto 36px', lineHeight: '1.55', fontWeight: '300' }}>
-              A First Wave é nossa comunidade de beta testers e early adopters. Membros recebem acesso antecipado a cada novo lançamento, participam de testes fechados e ganham edições exclusivas.
-            </p>
-
-            <div style={{ display: 'flex', gap: '12px', maxWidth: '500px', margin: '0 auto 20px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <input type="email" placeholder="seu melhor e-mail" style={{ flex: 1, minWidth: '240px', padding: '16px 22px', background: '#FFFCF6', border: '1px solid #E3D9C6', fontFamily: "'Fraunces', serif", fontSize: '15px', color: '#141210' }} />
-              <button style={{ padding: '16px 30px', background: '#141210', color: '#F7F1E8', fontFamily: "'Fraunces', serif", fontSize: '11px', letterSpacing: '.22em', textTransform: 'uppercase', fontWeight: '500', border: 'none', cursor: 'pointer' }}>
-                Entrar na lista →
-              </button>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap', marginTop: '26px', paddingTop: '26px', borderTop: '1px solid rgba(20,18,16,.1)' }}>
-              {['Acesso antecipado', 'Edições exclusivas', 'Bastidores internos', 'Cancele quando quiser'].map((perk, i) => (
-                <span key={i} style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: '#34302B', letterSpacing: '.1em', textTransform: 'uppercase', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ color: '#B26770', fontWeight: '700' }}>✓</span>{perk}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OFFER */}
+{/* OFFER */}
       <section id="offer" style={{ background: '#141210', color: '#F7F1E8', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
