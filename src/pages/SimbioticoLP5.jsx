@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const PRODUCT_IMG_2 = 'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_04.png?v=1764950605';
 
@@ -6,6 +7,13 @@ const reviews = [
   { stars: 5, title: 'Experiência impecável', text: 'Chegou num pacote tão bonito, lacrado com fita. A carta da Beatriz me tocou. O produto é excelente, mas a experiência é o diferencial.', author: 'Mariana S.' },
   { stars: 5, title: 'Investimento vale cada real', text: 'Não é barato, mas entendi quando recebi. Qualidade do sachê, da embalagem, do atendimento — tudo premium. Renovei a compra.', author: 'Isabela R.' },
   { stars: 5, title: 'Tratamento VIP do início ao fim', text: 'Desde a compra até o suporte — tudo é pensado com cuidado. Me senti acolhida. Claro que o produto funciona, mas é o cuidado que diferencia.', author: 'Carolina M.' },
+];
+
+const faqs = [
+  { q: 'Vale a pena investir em uma edição premium?', a: 'A Edição 2026 Premium é para quem entende que cuidado íntimo merece sofisticação — tanto no produto quanto na experiência. A concentração e fórmula são idênticas às outras versões, mas você recebe embalagem premium, atendimento consultivo dedicado e uma experiência pensada como um ritual. Se a qualidade da experiência importa para você, vale absolutamente.' },
+  { q: 'Qual é a diferença entre a edição premium e as outras?', a: 'A fórmula é a mesma (10 bi UFC + FOS), mas a edição premium vem em embalagem texturizada com fita de cetim, sachês numerados à mão, e você recebe uma carta pessoal da fundadora na primeira encomenda. Além disso, você terá acesso a um canal VIP de atendimento consultivo dedicado durante todo o seu ritual.' },
+  { q: 'Como funciona o atendimento consultivo VIP?', a: 'Você recebe um WhatsApp dedicado com nossa equipe especializada, disponível para responder suas dúvidas ao longo de todo o mês do seu ritual. Desde orientações sobre o uso até acompanhamento dos resultados — é um suporte pessoalizado.' },
+  { q: 'Os sachês numerados são apenas decoração?', a: 'Não. A numeração à mão reforça o cuidado manual em cada etapa da produção. É um sinal visual de que você está usando um produto feito com atenção aos detalhes — do ingrediente à embalagem.' },
 ];
 
 export default function SimbioticoLP5() {
@@ -16,7 +24,7 @@ export default function SimbioticoLP5() {
       <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
 
       {/* TOP META */}
-      <div style={{ background: '#F7F1E8', borderBottom: '1px solid #EFE6D6', padding: '12px 20px', display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '13px', color: '#6E665C', fontWeight: '500' }}>
+      <div style={{ background: '#F7F1E8', borderBottom: '1px solid #EFE6D6', padding: '12px 20px', display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '12px', color: '#6E665C', fontWeight: '500' }}>
         <span>Edição numerada · 2026</span>
         <span>·</span>
         <span>Anvisa · Vegano · Cruelty-free</span>
@@ -45,17 +53,17 @@ export default function SimbioticoLP5() {
               Um <em style={{ fontStyle: 'italic' }}>ritual íntimo</em>. Uma <em style={{ fontStyle: 'italic' }}>experiência</em> inesquecível.
             </h1>
 
-            <p style={{ fontSize: '17px', lineHeight: '1.7', color: '#3A342E', marginBottom: '32px' }}>
+            <p style={{ fontSize: '17px', lineHeight: '1.7', color: '#3A342E', marginBottom: '28px' }}>
               O Simbiótico Íntimo Ziva é ciência, natureza e sofisticação em um cuidado pensado para mulheres que escolhem o extraordinário.
             </p>
 
             {/* Rating */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px' }}>
-              <span style={{ color: '#D48A90', fontSize: '18px' }}>★★★★★</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
+              <span style={{ color: '#D48A90', fontSize: '16px', letterSpacing: '2px' }}>★★★★★</span>
               <span style={{ fontSize: '14px', color: '#3A342E' }}><strong>4,8/5</strong> · avaliações verificadas</span>
             </div>
 
-            {/* Benefits list */}
+            {/* Benefits */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '32px' }}>
               {[
                 '10 bilhões de Lactobacillus rhamnosus GG + Prebiótico FOS por dose',
@@ -63,20 +71,20 @@ export default function SimbioticoLP5() {
                 'Atendimento consultivo VIP durante todo o seu ritual',
               ].map((b, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '15px', color: '#3A342E' }}>
-                  <span style={{ color: '#D48A90', fontWeight: '700', flexShrink: 0 }}>✓</span>
-                  <span><strong>{b.substring(0, 40)}...</strong> {b.substring(40)}</span>
+                  <span style={{ color: '#D48A90', fontWeight: '700', flexShrink: 0, marginTop: '2px' }}>✓</span>
+                  <span><strong>{b.split(' ')[0] === '10' || b.split(' ')[0] === 'Edição' || b.split(' ')[0] === 'Atendimento' ? b.substring(0, 45) : b.substring(0, 45)}</strong>{b.length > 45 ? '...' : ''}</span>
                 </div>
               ))}
             </div>
 
             {/* Price card */}
-            <div style={{ background: '#F7F1E8', borderRadius: '16px', padding: '24px', marginBottom: '32px', border: '1px solid #EFE6D6' }}>
+            <div style={{ background: '#F7F1E8', borderRadius: '16px', padding: '24px', marginBottom: '28px', border: '1px solid #EFE6D6' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                 <div>
                   <div style={{ fontSize: '12px', color: '#6E665C', fontWeight: '600', marginBottom: '8px' }}>Edição 2026 · a partir de</div>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px' }}>
                     <span style={{ textDecoration: 'line-through', color: '#6E665C', fontSize: '14px' }}>R$ 299</span>
-                    <span style={{ fontFamily: "'Fraunces', serif", fontSize: '36px', fontWeight: '700', color: '#1A1613' }}>R$ 227</span>
+                    <span style={{ fontFamily: "'Fraunces', serif", fontSize: '40px', fontWeight: '400', color: '#1A1613' }}>R$ <em style={{ fontStyle: 'italic' }}>227</em></span>
                   </div>
                 </div>
                 <div style={{ background: '#D48A90', color: '#fff', borderRadius: '8px', padding: '8px 14px', fontSize: '12px', fontWeight: '700' }}>Economize R$ 72</div>
@@ -87,7 +95,7 @@ export default function SimbioticoLP5() {
             {/* CTAs */}
             <div style={{ display: 'flex', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
               <a href="#offer" style={{ background: '#D48A90', color: '#fff', borderRadius: '100px', padding: '16px 32px', fontWeight: '700', fontSize: '16px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                Adquirir agora →
+                Adquirir agora <span>→</span>
               </a>
               <a href="#craft" style={{ background: 'transparent', color: '#3A342E', border: '1.5px solid #D4C9BC', borderRadius: '100px', padding: '16px 32px', fontWeight: '600', fontSize: '16px', textDecoration: 'none' }}>
                 Ver a ciência
@@ -95,7 +103,7 @@ export default function SimbioticoLP5() {
             </div>
 
             {/* Trust badges with icons */}
-            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', fontSize: '12px', color: '#6E665C', fontWeight: '500' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '12px', color: '#6E665C', fontWeight: '500' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
                 Anvisa
@@ -129,11 +137,11 @@ export default function SimbioticoLP5() {
               <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Éd. 2026</div>
               <div style={{ fontFamily: "'Fraunces', serif", fontSize: '24px', fontWeight: '300', color: '#1A1613', marginBottom: '2px' }}>Ziva <em style={{ fontStyle: 'italic', fontWeight: '400' }}>health</em></div>
               <div style={{ height: '2px', background: '#D48A90', width: '30px', margin: '12px auto' }} />
-              <div style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: '400', color: '#1A1613', marginBottom: '16px' }}>Simbiótico<br />Íntimo</div>
+              <div style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: '400', color: '#1A1613', marginBottom: '16px', lineHeight: '1.3' }}>Simbiótico<br />Íntimo</div>
               <div style={{ fontSize: '12px', color: '#6E665C', fontWeight: '600', marginBottom: '6px' }}>Numerada à mão</div>
-              <div style={{ fontSize: '13px', color: '#D48A90', fontWeight: '700', fontFamily: "'Instrument Sans', monospace" }}>n.º 0247 / 2026</div>
+              <div style={{ fontSize: '13px', color: '#D48A90', fontWeight: '700', fontFamily: "'Instrument Sans', monospace", marginBottom: '24px' }}>n.º 0247 / 2026</div>
 
-              <div style={{ marginTop: '24px', padding: '16px', background: '#fff', borderRadius: '12px' }}>
+              <div style={{ padding: '16px', background: '#fff', borderRadius: '12px' }}>
                 <img src={PRODUCT_IMG_2} alt="Simbiótico Íntimo Ziva" style={{ height: '160px', objectFit: 'contain' }} />
               </div>
             </div>
@@ -146,7 +154,7 @@ export default function SimbioticoLP5() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>I · O que você recebe</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}>Mais do que um produto. <em style={{ color: '#D48A90', fontStyle: 'italic' }}>Uma entrega completa.</em></h2>
+            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400', marginBottom: '16px' }}>Mais do que um produto. <em style={{ color: '#D48A90', fontStyle: 'italic', fontWeight: '400' }}>Uma entrega completa.</em></h2>
             <p style={{ color: '#3A342E', fontSize: '15px', lineHeight: '1.7', marginTop: '12px', maxWidth: '600px', margin: '12px auto 0' }}>
               Cada encomenda Ziva é pensada como uma assinatura de qualidade — no conteúdo, na forma e na experiência.
             </p>
@@ -154,19 +162,17 @@ export default function SimbioticoLP5() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {[
-              { num: 'i.', icon: '▢', title: '30 doses completas', text: 'Um mês integral de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
-              { num: 'ii.', icon: '◆', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.' },
-              { num: 'iii.', icon: '✓', title: 'Garantia de satisfação', text: 'Use por 30 dias. Se não sentir diferença, devolvemos 100% do seu valor, sem burocracia ou questionamentos.' },
-              { num: 'iv.', icon: '💬', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
+              { num: 'i.', title: '30 sachês numerados', text: 'Um mês de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
+              { num: 'ii.', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.' },
+              { num: 'iii.', title: 'Carta da fundadora', text: 'Na primeira encomenda, uma nota pessoal assinada por Beatriz. Da nossa casa para a sua.' },
+              { num: 'iv.', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
             ].map((b, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6' }}>
                 <div style={{ fontSize: '18px', color: '#D48A90', marginBottom: '12px', opacity: 0.6 }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                    {i === 0 && <rect x="3" y="3" width="18" height="18" rx="2" />}
-                    {i === 0 && <path d="M3 9h18M9 3v18" />}
+                    {i === 0 && <><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 3v18" /></>}
                     {i === 1 && <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />}
-                    {i === 2 && <path d="M4 4h16v16H4z" />}
-                    {i === 2 && <path d="M4 4l8 8 8-8" />}
+                    {i === 2 && <><path d="M4 4h16v16H4z" /><path d="M4 4l8 8 8-8" /></>}
                     {i === 3 && <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />}
                   </svg>
                 </div>
@@ -184,8 +190,8 @@ export default function SimbioticoLP5() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>II · O que ele faz por você</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}>Quatro <em style={{ color: '#D48A90', fontStyle: 'italic' }}>gestos</em>, em um sachê por dia.</h2>
-            <p style={{ color: '#3A342E', fontSize: '15px', lineHeight: '1.7', marginTop: '12px', maxWidth: '600px' }}>
+            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400', marginBottom: '16px' }}>Quatro <em style={{ color: '#D48A90', fontStyle: 'italic', fontWeight: '400' }}>gestos</em>, em um sachê por dia.</h2>
+            <p style={{ color: '#3A342E', fontSize: '15px', lineHeight: '1.7', marginTop: '12px', maxWidth: '650px' }}>
               Equilíbrio interno, conforto diário, proteção duradoura e bem-estar que se sente no corpo inteiro.
             </p>
           </div>
@@ -219,7 +225,7 @@ export default function SimbioticoLP5() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>III · A Ciência</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}>O padrão <em style={{ color: '#D48A90', fontStyle: 'italic' }}>por trás</em> de cada dose.</h2>
+            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400', marginBottom: '16px' }}>O padrão <em style={{ color: '#D48A90', fontStyle: 'italic', fontWeight: '400' }}>por trás</em> de cada dose.</h2>
             <p style={{ color: '#3A342E', fontSize: '15px', lineHeight: '1.7', marginTop: '12px', maxWidth: '650px' }}>
               Não é sobre prometer — é sobre honrar um padrão. Do ingrediente escolhido ao lote numerado que chega em suas mãos.
             </p>
@@ -239,7 +245,7 @@ export default function SimbioticoLP5() {
                     <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textAlign: 'right', maxWidth: '160px' }}>{c.metric}</div>
                   </div>
                 </div>
-                <h4 style={{ fontWeight: '600', fontSize: '15px', marginBottom: '8px', color: '#1A1613' }}><em style={{ fontStyle: 'italic' }}>{c.title}</em></h4>
+                <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '8px', color: '#1A1613' }}><em style={{ fontStyle: 'italic', fontWeight: '400' }}>{c.title}</em></h4>
                 <p style={{ color: '#6E665C', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>{c.text}</p>
               </div>
             ))}
@@ -252,13 +258,13 @@ export default function SimbioticoLP5() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>Quem já escolheu</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)' }}>Experiências que <em style={{ color: '#D48A90', fontStyle: 'italic' }}>falam.</em></h2>
+            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400' }}>Experiências que <em style={{ color: '#D48A90', fontStyle: 'italic', fontWeight: '400' }}>falam.</em></h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
             {reviews.map((r, i) => (
               <div key={i} style={{ background: '#F7F1E8', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6' }}>
-                <div style={{ display: 'flex', marginBottom: '10px', color: '#D48A90', fontSize: '14px' }}>{'★'.repeat(r.stars)}</div>
+                <div style={{ display: 'flex', marginBottom: '10px', color: '#D48A90', fontSize: '14px', letterSpacing: '2px' }}>{'★'.repeat(r.stars)}</div>
                 <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px', color: '#1A1613' }}>{r.title}</h4>
                 <p style={{ color: '#6E665C', fontSize: '13px', lineHeight: '1.6', marginBottom: '12px' }}>{r.text}</p>
                 <div style={{ fontSize: '12px', fontWeight: '700', color: '#3A342E' }}>{r.author}</div>
@@ -272,7 +278,7 @@ export default function SimbioticoLP5() {
       <section style={{ background: '#F7F1E8', padding: '60px 20px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px' }}>Segurança integral</div>
-          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '16px' }}>30 dias de <em style={{ fontStyle: 'italic' }}>garantia integral</em></h2>
+          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: '400', marginBottom: '16px' }}>30 dias de <em style={{ fontStyle: 'italic', fontWeight: '400' }}>garantia integral</em></h2>
           <p style={{ color: '#3A342E', lineHeight: '1.7', fontSize: '15px' }}>
             Use por 30 dias. Se não sentir diferença, devolvemos 100% do valor. Sem burocracia. Você merece sentir-se segura com sua escolha.
           </p>
@@ -282,16 +288,15 @@ export default function SimbioticoLP5() {
       {/* OFERTA */}
       <section id="offer" style={{ background: '#1A1613', padding: '80px 20px' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#F7F1E8', marginBottom: '24px' }}>Sua edição espera.</h2>
+          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400', color: '#F7F1E8', marginBottom: '24px' }}>Sua edição espera.</h2>
 
-          {/* Product image */}
           <div style={{ marginBottom: '32px' }}>
             <img src={PRODUCT_IMG_2} alt="Simbiótico Íntimo Ziva" style={{ maxHeight: '240px', margin: '0 auto', objectFit: 'contain', filter: 'drop-shadow(0 16px 40px rgba(212,138,144,0.3))' }} />
           </div>
 
           <div style={{ marginBottom: '32px' }}>
             <div style={{ fontSize: '13px', color: '#D48A90', fontWeight: '700', marginBottom: '8px' }}>Edição 2026</div>
-            <div style={{ fontFamily: "'Fraunces', serif", fontSize: '32px', fontWeight: '700', color: '#D48A90', lineHeight: 1, marginBottom: '8px' }}>R$ 227</div>
+            <div style={{ fontFamily: "'Fraunces', serif", fontSize: '40px', fontWeight: '400', color: '#D48A90', lineHeight: 1, marginBottom: '8px' }}>R$ 227</div>
             <div style={{ fontSize: '12px', color: '#D48A90' }}>ou 3x sem juros · Pix com 5% OFF</div>
           </div>
 
@@ -304,6 +309,37 @@ export default function SimbioticoLP5() {
             Adquirir agora →
           </a>
           <div style={{ color: '#6E665C', fontSize: '12px' }}>🔒 Compra 100% Segura · 30 dias de garantia integral · Frete grátis acima de R$ 249</div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ background: '#fff', padding: '80px 20px' }}>
+        <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>Dúvidas sobre a edição premium?</div>
+            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '400' }}>Respondidas <em style={{ color: '#D48A90', fontStyle: 'italic', fontWeight: '400' }}>aqui.</em></h2>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {faqs.map((faq, i) => (
+              <div key={i} style={{ background: '#F7F1E8', borderRadius: '16px', overflow: 'hidden', border: '1px solid #EFE6D6' }}>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  style={{ width: '100%', padding: '20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: '600', fontSize: '15px', color: '#1A1613', gap: '12px' }}
+                >
+                  {faq.q}
+                  <span style={{ color: '#D48A90', flexShrink: 0 }}>
+                    <ChevronDown size={18} style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} />
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <div style={{ padding: '0 24px 20px', color: '#3A342E', lineHeight: '1.7', fontSize: '14px', borderTop: '1px solid #EFE6D6', paddingTop: '16px' }}>
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
