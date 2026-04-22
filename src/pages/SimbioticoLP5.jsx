@@ -154,9 +154,9 @@ export default function SimbioticoLP5() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {[
-              { num: 'i.', icon: '▢', title: '30 sachês numerados', text: 'Um mês de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
+              { num: 'i.', icon: '▢', title: '30 doses completas', text: 'Um mês integral de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
               { num: 'ii.', icon: '◆', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.' },
-              { num: 'iii.', icon: '✉', title: 'Carta da fundadora', text: 'Na primeira encomenda, uma nota pessoal assinada por Beatriz. Da nossa casa para a sua.' },
+              { num: 'iii.', icon: '✓', title: 'Garantia de satisfação', text: 'Use por 30 dias. Se não sentir diferença, devolvemos 100% do seu valor, sem burocracia ou questionamentos.' },
               { num: 'iv.', icon: '💬', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
             ].map((b, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6' }}>
