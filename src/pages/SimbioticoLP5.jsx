@@ -94,12 +94,24 @@ export default function SimbioticoLP5() {
               </a>
             </div>
 
-            {/* Trust badges */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '12px', color: '#6E665C', fontWeight: '500' }}>
-              <span>✓ Anvisa</span>
-              <span>✓ Vegano</span>
-              <span>✓ Cruelty-free</span>
-              <span>✓ 30 dias de garantia</span>
+            {/* Trust badges with icons */}
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', fontSize: '12px', color: '#6E665C', fontWeight: '500' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Anvisa
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"></path></svg>
+                Vegano
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.8 4.6a5.4 5.4 0 00-8.8 2.5 5.4 5.4 0 00-8.8 6.3l8.8 8 8.8-8a5.4 5.4 0 000-8.8z"></path></svg>
+                Cruelty-free
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                30 dias de garantia
+              </div>
             </div>
           </div>
 
@@ -140,15 +152,25 @@ export default function SimbioticoLP5() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {[
-              { num: 'i.', title: '30 sachês numerados', text: 'Um mês de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
-              { num: 'ii.', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.' },
-              { num: 'iii.', title: 'Carta da fundadora', text: 'Na primeira encomenda, uma nota pessoal assinada por Beatriz. Da nossa casa para a sua.' },
-              { num: 'iv.', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
+              { num: 'i.', icon: '▢', title: '30 sachês numerados', text: 'Um mês de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.' },
+              { num: 'ii.', icon: '◆', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.' },
+              { num: 'iii.', icon: '✉', title: 'Carta da fundadora', text: 'Na primeira encomenda, uma nota pessoal assinada por Beatriz. Da nossa casa para a sua.' },
+              { num: 'iv.', icon: '💬', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
             ].map((b, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6', textAlign: 'center' }}>
-                <div style={{ fontSize: '14px', fontWeight: '700', color: '#D48A90', marginBottom: '8px' }}>{b.num}</div>
+              <div key={i} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6' }}>
+                <div style={{ fontSize: '18px', color: '#D48A90', marginBottom: '12px', opacity: 0.6 }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    {i === 0 && <rect x="3" y="3" width="18" height="18" rx="2" />}
+                    {i === 0 && <path d="M3 9h18M9 3v18" />}
+                    {i === 1 && <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />}
+                    {i === 2 && <path d="M4 4h16v16H4z" />}
+                    {i === 2 && <path d="M4 4l8 8 8-8" />}
+                    {i === 3 && <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />}
+                  </svg>
+                </div>
+                <div style={{ fontSize: '13px', color: '#D48A90', fontWeight: '700', marginBottom: '6px' }}>{b.num}</div>
                 <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px', color: '#1A1613' }}>{b.title}</h4>
                 <p style={{ color: '#6E665C', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>{b.text}</p>
               </div>
@@ -168,21 +190,26 @@ export default function SimbioticoLP5() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {[
-              { num: 'i.', title: 'Equilíbrio do pH íntimo', text: 'A cepa L. rhamnosus GG produz ácido lático continuamente, estabilizando o pH vaginal na faixa saudável.' },
-              { num: 'ii.', title: 'Prevenção de infecções recorrentes', text: 'Uma microbiota reconstruída forma barreira natural contra candidíase, vaginose e infecções urinárias.' },
-              { num: 'iii.', title: 'Intestino regulado e leve', text: 'O Prebiótico FOS alimenta a microbiota intestinal, reduzindo inchaço e melhorando o trânsito.' },
-              { num: 'iv.', title: 'Imunidade fortalecida', text: '70% do sistema imunológico vive no intestino. Uma flora equilibrada é uma defesa natural reforçada.' },
-            ].map((p, i) => (
-              <div key={i} style={{ display: 'flex', gap: '16px', padding: '20px', background: '#F7F1E8', borderRadius: '16px', border: '1px solid #EFE6D6' }}>
-                <div style={{ fontSize: '14px', fontWeight: '700', color: '#D48A90', flexShrink: 0 }}>{p.num}</div>
-                <div>
-                  <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '6px', color: '#1A1613' }}>{p.title}</h4>
-                  <p style={{ color: '#6E665C', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{p.text}</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }} className="pains-section">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {[
+                { num: 'i.', title: 'Equilíbrio do pH íntimo', text: 'A cepa L. rhamnosus GG produz ácido lático continuamente, estabilizando o pH vaginal na faixa saudável.' },
+                { num: 'ii.', title: 'Prevenção de infecções recorrentes', text: 'Uma microbiota reconstruída forma barreira natural contra candidíase, vaginose e infecções urinárias.' },
+                { num: 'iii.', title: 'Intestino regulado e leve', text: 'O Prebiótico FOS alimenta a microbiota intestinal, reduzindo inchaço e melhorando o trânsito.' },
+                { num: 'iv.', title: 'Imunidade fortalecida', text: '70% do sistema imunológico vive no intestino. Uma flora equilibrada é uma defesa natural reforçada.' },
+              ].map((p, i) => (
+                <div key={i} style={{ display: 'flex', gap: '16px' }}>
+                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#D48A90', flexShrink: 0 }}>{p.num}</div>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '6px', color: '#1A1613' }}>{p.title}</h4>
+                    <p style={{ color: '#6E665C', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{p.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div style={{ background: '#F7F1E8', borderRadius: '16px', padding: '40px', border: '1px solid #EFE6D6', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px', textAlign: 'center' }}>
+              <div style={{ fontSize: '18px', color: '#D48A90', fontWeight: '700', lineHeight: '1.4' }}>i. + ii.<br />iii. + iv.</div>
+            </div>
           </div>
         </div>
       </section>
@@ -198,19 +225,21 @@ export default function SimbioticoLP5() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
             {[
-              { num: 'i.', metric: '+800 estudos científicos', title: 'Lactobacillus Rhamnosus GG', text: 'A cepa probiótica mais estudada do mundo desde 1985. 10 bilhões de UFC viáveis por dose — garantidos até a validade.' },
-              { num: 'ii.', metric: '6,1g de fibras funcionais', title: 'Prebiótico FOS', text: 'Frutooligossacarídeos extraídos de raízes selecionadas — a fibra que alimenta seletivamente as bactérias boas.' },
+              { num: 'i.', metric: '+800 estudos científicos', title: 'Lactobacillus Rhamnosus GG', text: 'A cepa probiótica mais estudada do mundo desde 1985. 10 bilhões de UFC viáveis por dose — garantidos até a validade. Não aceitamos menos que o padrão ouro.' },
+              { num: 'ii.', metric: '6,1g de fibras funcionais', title: 'Prebiótico FOS', text: 'Frutooligossacarídeos extraídos de raízes selecionadas — a fibra que alimenta seletivamente as bactérias boas. Resultado: probiótico mais ativo.' },
               { num: 'iii.', metric: '100% estável até validade', title: 'Tecnologia de viabilidade', text: 'Sachês protegidos com dessecante e selagem de precisão — garantindo viabilidade integral até o último dia de uso.' },
               { num: 'iv.', metric: 'Testado clinicamente', title: 'Rigor de qualidade', text: 'Cada lote passa por testes de concentração, pureza e viabilidade em laboratório independente certificado.' },
             ].map((c, i) => (
               <div key={i} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #EFE6D6' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                  <div style={{ fontSize: '12px', color: '#D48A90', fontWeight: '700', fontFamily: "'Instrument Sans', monospace" }}>{c.num}</div>
-                  <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textAlign: 'right' }}>{c.metric}</div>
+                <div style={{ marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}>
+                    <div style={{ fontSize: '11px', color: '#D48A90', fontWeight: '700', fontFamily: "'IBM Plex Mono', monospace" }}>{c.num}</div>
+                    <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textAlign: 'right', maxWidth: '160px' }}>{c.metric}</div>
+                  </div>
                 </div>
-                <h4 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '8px', color: '#1A1613' }}>{c.title}</h4>
+                <h4 style={{ fontWeight: '600', fontSize: '15px', marginBottom: '8px', color: '#1A1613' }}><em style={{ fontStyle: 'italic' }}>{c.title}</em></h4>
                 <p style={{ color: '#6E665C', fontSize: '13px', lineHeight: '1.6', margin: 0 }}>{c.text}</p>
               </div>
             ))}
@@ -281,6 +310,7 @@ export default function SimbioticoLP5() {
       <style>{`
         @media (max-width: 768px) {
           .hero-grid-bp5 { grid-template-columns: 1fr !important; }
+          .pains-section { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>
