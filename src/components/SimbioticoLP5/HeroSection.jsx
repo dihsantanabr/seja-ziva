@@ -1,4 +1,4 @@
-const PRODUCT_IMG = 'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_04.png?v=1764950605';
+const PRODUCT_IMG = 'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png?v=1764950605';
 
 export default function HeroSection() {
   return (
@@ -90,18 +90,13 @@ export default function HeroSection() {
             <div style={{ fontSize: '10px', fontWeight: '600', marginTop: '2px', opacity: 0.9 }}>Garantia</div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
-            <div style={{ background: '#F7F1E8', borderRadius: '20px', padding: '40px 32px', border: '1px solid #EFE6D6', textAlign: 'center', maxWidth: '380px' }}>
-              <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Éd. 2026</div>
-              <div style={{ fontFamily: "'Fraunces', serif", fontSize: '24px', fontWeight: '300', color: '#1A1613', marginBottom: '2px' }}>Ziva <em style={{ fontStyle: 'italic', fontWeight: '400' }}>health</em></div>
-              <div style={{ height: '2px', background: '#D48A90', width: '30px', margin: '12px auto' }} />
-              <div style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: '400', color: '#1A1613', marginBottom: '24px', lineHeight: '1.3' }}>Simbiótico<br />Íntimo</div>
-              <div style={{ padding: '16px', background: '#fff', borderRadius: '12px' }}>
-                <img src={PRODUCT_IMG} alt="Simbiótico Íntimo Ziva" style={{ height: '160px', objectFit: 'contain' }} />
-              </div>
-            </div>
-            <div style={{ maxWidth: '320px' }}>
-              <img src={PRODUCT_IMG} alt="Simbiótico Íntimo Ziva - Produto" style={{ maxHeight: '280px', objectFit: 'contain', filter: 'drop-shadow(0 16px 40px rgba(212,138,144,0.2))' }} />
+          <div style={{ background: '#F7F1E8', borderRadius: '20px', padding: '40px 32px', border: '1px solid #EFE6D6', textAlign: 'center', maxWidth: '380px' }}>
+            <div style={{ fontSize: '11px', color: '#6E665C', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px' }}>Éd. 2026</div>
+            <div style={{ fontFamily: "'Fraunces', serif", fontSize: '24px', fontWeight: '300', color: '#1A1613', marginBottom: '2px' }}>Ziva <em style={{ fontStyle: 'italic', fontWeight: '400' }}>health</em></div>
+            <div style={{ height: '2px', background: '#D48A90', width: '30px', margin: '12px auto' }} />
+            <div style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: '400', color: '#1A1613', marginBottom: '24px', lineHeight: '1.3' }}>Simbiótico<br />Íntimo</div>
+            <div style={{ padding: '16px', background: '#fff', borderRadius: '12px' }}>
+              <img src={PRODUCT_IMG} alt="Simbiótico Íntimo Ziva" style={{ height: '160px', objectFit: 'contain' }} />
             </div>
           </div>
         </div>
