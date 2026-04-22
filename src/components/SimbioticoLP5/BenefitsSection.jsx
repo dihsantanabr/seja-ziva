@@ -1,15 +1,11 @@
 export default function BenefitsSection() {
   const benefits = [
-    { num: 'i.', title: '30 sachês numerados', text: 'Um mês de ritual. Cada dose com 10 bilhões de UFC viáveis + FOS, em formato que dispensa diluição.', svgPath1: '<rect x="3" y="3" width="18" height="18" rx="2" />', svgPath2: '<path d="M3 9h18M9 3v18" />' },
-    { num: 'ii.', title: 'Embalagem signature', text: 'Caixa em papel texturizado com fita de cetim, selada à mão. Um gesto silencioso de cuidado.', svgPath1: '<path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />' },
-    { num: 'iii.', title: 'Carta da fundadora', text: 'Na primeira encomenda, uma nota pessoal assinada por Beatriz. Da nossa casa para a sua.', svgPath1: '<path d="M4 4h16v16H4z" />', svgPath2: '<path d="M4 4l8 8 8-8" />' },
-    { num: 'iv.', title: 'Atendimento consultivo', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.', svgPath1: '<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />' },
+    { num: 'i.', title: 'Fórmula potente', text: '10 bilhões de Lactobacillus rhamnosus GG + Prebiótico FOS por dose, em formato que dispensa diluição.' },
+    { num: 'ii.', title: 'Atendimento consultivo VIP', text: 'Um canal direto no WhatsApp com nossa equipe, disponível ao longo de todo o seu ritual.' },
   ];
 
   const svgIcons = [
     [<rect key="1" x="3" y="3" width="18" height="18" rx="2" />, <path key="2" d="M3 9h18M9 3v18" />],
-    [<path key="1" d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />],
-    [<path key="1" d="M4 4h16v16H4z" />, <path key="2" d="M4 4l8 8 8-8" />],
     [<path key="1" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />],
   ];
 
