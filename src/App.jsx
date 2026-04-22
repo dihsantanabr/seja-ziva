@@ -14,6 +14,7 @@ import SimbioticoLP2 from './pages/SimbioticoLP2';
 import SimbioticoLP3 from './pages/SimbioticoLP3';
 import SimbioticoLP4 from './pages/SimbioticoLP4';
 import SimbioticoLP5 from './pages/SimbioticoLP5';
+import SimbioticoLP6 from './pages/SimbioticoLP6';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -70,6 +71,7 @@ const AuthenticatedApp = () => {
       <Route path="/simbiotico-bp3" element={<SimbioticoLP3 />} />
       <Route path="/simbiotico-bp4" element={<SimbioticoLP4 />} />
       <Route path="/simbiotico-bp5" element={<SimbioticoLP5 />} />
+      <Route path="/simbiotico-bp6" element={<SimbioticoLP6 />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
