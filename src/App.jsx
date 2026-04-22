@@ -10,6 +10,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import SimbioticoLP1 from './pages/SimbioticoLP1';
+import SimbioticoLP2 from './pages/SimbioticoLP2';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -62,6 +63,7 @@ const AuthenticatedApp = () => {
         />
       ))}
       <Route path="/simbiotico-bp1" element={<SimbioticoLP1 />} />
+      <Route path="/simbiotico-bp2" element={<SimbioticoLP2 />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
