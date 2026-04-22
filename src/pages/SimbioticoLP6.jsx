@@ -236,11 +236,10 @@ export default function SimbioticoLP6() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '28px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '28px' }}>
             {[
               { tag: 'First in Brazil', num: '10', suf: 'bi', title: 'L. rhamnosus GG na maior concentração do mercado', text: 'A cepa mais estudada do mundo (+800 publicações científicas) em dose padronizada internacionalmente — algo raro no probiótico vaginal brasileiro.', detail: 'Padrão ouro · viabilidade garantida até validade' },
               { tag: 'New Format', num: '30', suf: 'dias', title: 'Sachê individual, sabor algodão-doce', text: 'Chega de cápsula. O formato sachê pode ser tomado direto na boca, sem água — uma experiência sensorial premium, não um medicamento.', detail: 'Formulação limpa · vegano · sem lactose' },
-              { tag: 'Limited Edition', num: 'n.º', suf: '0248', title: 'Edição numerada com brinde de lançamento', text: 'Cada unidade da Edição Inaugural é numerada à mão, acompanha carta da fundadora e ganha uma necessaire exclusiva de lançamento.', detail: 'Exclusivo da Edição Inaugural · não será reposto' },
             ].map((card, i) => (
               <div key={i} style={{ background: '#FFFCF6', border: '1px solid #E3D9C6', padding: '36px 30px', position: 'relative', transition: 'all .4s' }}>
                 <span style={{ alignSelf: 'flex-start', background: '#B26770', color: '#F7F1E8', padding: '4px 10px', borderRadius: '3px', fontFamily: "'IBM Plex Mono', monospace", fontSize: '9px', letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: '700', display: 'inline-block', marginBottom: '16px' }}>
