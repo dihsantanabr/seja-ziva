@@ -1,3 +1,5 @@
+const PRODUCT_IMG = 'https://sejaziva.com.br/cdn/shop/files/PROBIOTICO_-_04.png?v=1764950605';
+
 export default function PainsSection() {
   const pains = [
     { num: 'i.', title: 'Equilíbrio do pH íntimo', text: 'A cepa L. rhamnosus GG produz ácido lático continuamente, estabilizando o pH vaginal na faixa saudável.' },
@@ -29,8 +31,8 @@ export default function PainsSection() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#F7F1E8', borderRadius: '16px', padding: '40px', border: '1px solid #EFE6D6', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px', textAlign: 'center' }}>
-            <div style={{ fontSize: '18px', color: '#D48A90', fontWeight: '700', lineHeight: '1.4' }}>i. + ii.<br />iii. + iv.</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '320px' }}>
+            <img src={PRODUCT_IMG} alt="Simbiótico Íntimo Ziva" style={{ maxHeight: '300px', objectFit: 'contain', filter: 'drop-shadow(0 16px 40px rgba(212,138,144,0.2))' }} />
           </div>
         </div>
       </div>
