@@ -145,22 +145,7 @@ export default function SimbioticoLP6() {
               <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '8px', letterSpacing: '.15em', textTransform: 'uppercase', fontWeight: '500', opacity: '0.85' }}>Inaugural</div>
             </div>
 
-            <div style={{ aspectRatio: '4/5', background: 'linear-gradient(135deg,#F3DADD 0%,#EFE6D6 100%)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 30% 30%,rgba(255,252,246,.6),transparent 60%)' }} />
-              <div style={{ position: 'absolute', top: '26px', right: '26px', bottom: '26px', left: '26px', border: '1px solid rgba(232,213,176,.45)', pointerEvents: 'none', opacity: '0.7' }} />
-              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '56%', aspectRatio: '2/3', background: 'linear-gradient(180deg,#141210 0%,#2B2520 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '50px 30px', textAlign: 'center', boxShadow: '0 40px 80px rgba(20,18,16,.3)', zIndex: 1 }}>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '10px', letterSpacing: '.28em', textTransform: 'uppercase', color: '#B8864B', fontWeight: '700', marginBottom: '18px' }}>ED. INAUGURAL · NOVO</div>
-                <div style={{ fontFamily: "'Fraunces', serif", fontSize: '36px', fontWeight: '400', color: '#F7F1E8', letterSpacing: '.08em', lineHeight: '1', marginBottom: '4px' }}>
-                  Ziva <em style={{ color: '#D48A90', fontStyle: 'italic', letterSpacing: '0' }}>health</em>
-                </div>
-                <div style={{ width: '40px', height: '1px', background: '#B8864B', margin: '20px auto' }} />
-                <div style={{ fontFamily: "'Fraunces', serif", fontSize: '13px', fontStyle: 'italic', color: 'rgba(247,241,232,.85)', letterSpacing: '.02em', fontWeight: '300', lineHeight: '1.3', marginBottom: 'auto' }}>
-                  Simbiótico<br />Íntimo
-                </div>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '10px', letterSpacing: '.28em', textTransform: 'uppercase', color: '#B8864B', fontWeight: '700', marginTop: '28px' }}>ACESSO ANTECIPADO</div>
-                <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '10px', color: 'rgba(247,241,232,.55)', letterSpacing: '.06em', marginTop: '4px', fontWeight: '500' }}>n.º 0248 / 500</div>
-              </div>
-            </div>
+            <img src="https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png?v=1764950605" alt="Simbiótico Íntimo Ziva" style={{ maxHeight: '500px', objectFit: 'contain', filter: 'drop-shadow(0 20px 60px rgba(212,138,144,0.25))' }} />
           </div>
         </div>
       </section>
