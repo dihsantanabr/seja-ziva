@@ -70,6 +70,28 @@ export default function LinkBio() {
           </div>
         </motion.a>
 
+        {/* Card Espuma Íntima Ozonizada */}
+        <motion.a
+          href="https://sejaziva.com.br/products/espuma-intima-ozonizada"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileTap={{ scale: 0.97 }}
+          className="block relative overflow-hidden rounded-2xl shadow-md"
+        >
+          <img
+            src="https://sejaziva.com.br/cdn/shop/files/ESPUMA_-_04.png?v=1764703529"
+            className="w-full h-44 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+            <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Novo</span>
+            <h2 className="text-white font-bold text-lg leading-tight">Espuma Íntima Ozonizada</h2>
+            <p className="text-white/80 text-sm mt-0.5">Limpeza delicada com ação ozonizada.</p>
+            <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
+              Ver produto <ChevronRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
+        </motion.a>
+
         {/* Card Conheça Nossa História */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
