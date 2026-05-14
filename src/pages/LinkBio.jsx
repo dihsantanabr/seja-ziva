@@ -38,7 +38,7 @@ export default function LinkBio() {
             src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/4dba1c9be_generated_image.png"
           className="w-full h-44 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
             <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Mais Vendido</span>
             <h2 className="text-white font-bold text-lg leading-tight">Simbiótico Íntimo Ziva</h2>
             <p className="text-white/80 text-sm mt-0.5">pH saudável, sem odor, sem candidíase.</p>
@@ -60,7 +60,7 @@ export default function LinkBio() {
             src="https://sejaziva.com.br/cdn/shop/files/Serum_Rosa.png?v=1764703506"
             className="w-full h-44 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
             <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Novo</span>
             <h2 className="text-white font-bold text-lg leading-tight">Sérum Íntimo Ozonizado</h2>
             <p className="text-white/80 text-sm mt-0.5">Hidratação profunda e regeneração celular.</p>
