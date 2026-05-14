@@ -61,7 +61,6 @@ export default function LinkBio() {
             className="w-full h-44 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
-            <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Novo</span>
             <h2 className="text-white font-bold text-lg leading-tight">Sérum Íntimo Ozonizado</h2>
             <p className="text-white/80 text-sm mt-0.5">Hidratação profunda e regeneração celular.</p>
             <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
@@ -83,7 +82,6 @@ export default function LinkBio() {
             className="w-full h-44 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
-            <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Novo</span>
             <h2 className="text-white font-bold text-lg leading-tight">Espuma Íntima Ozonizada</h2>
             <p className="text-white/80 text-sm mt-0.5">Limpeza delicada com ação ozonizada.</p>
             <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
