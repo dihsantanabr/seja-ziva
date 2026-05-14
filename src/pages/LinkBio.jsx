@@ -48,6 +48,28 @@ export default function LinkBio() {
           </div>
         </motion.a>
 
+        {/* Card Sérum Íntimo Ozonizado */}
+        <motion.a
+          href="https://sejaziva.com.br/products/serum-intimo-ozonizado"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileTap={{ scale: 0.97 }}
+          className="block relative overflow-hidden rounded-2xl shadow-md"
+        >
+          <img
+            src="https://sejaziva.com.br/cdn/shop/files/Serum_Rosa.png?v=1764703506"
+            className="w-full h-44 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col justify-end">
+            <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Novo</span>
+            <h2 className="text-white font-bold text-lg leading-tight">Sérum Íntimo Ozonizado</h2>
+            <p className="text-white/80 text-sm mt-0.5">Hidratação profunda e regeneração celular.</p>
+            <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
+              Ver produto <ChevronRight className="w-3.5 h-3.5" />
+            </span>
+          </div>
+        </motion.a>
+
         {/* Card Conheça Nossa História */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
