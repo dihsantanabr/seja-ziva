@@ -39,7 +39,7 @@ const PRODUCTS = {
     headline: 'Seu perfil é complexo e merece a solução mais completa da Ziva.',
     body: 'O Box Equilibrium 360° reúne tudo que você precisa: Sérum para tratar externamente e Simbiótico para restaurar por dentro. Um protocolo completo para quem quer resultados definitivos.',
     checks: ['Tratamento externo + interno', 'Protocolo completo e integrado', 'Resultado definitivo, não temporário', 'Melhor custo-benefício da linha'],
-    color: '#7B5EA7', colorLight: '#F5F0FB',
+    color: '#A8405A', colorLight: '#FAF0F2',
     badge: '⭐ Mais recomendado para você',
     url: 'https://sejaziva.com.br/products/kit-bem-estar-completo',
     ctaText: 'Quero o Box Equilibrium 360° →',
