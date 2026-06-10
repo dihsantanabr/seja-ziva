@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const PRODUCTS = {
   serum: {
     id: 'serum',
-    image: '',
+    image: 'https://sejaziva.com.br/cdn/shop/files/2_ef7a6779-789b-4749-84b2-893761bc28f1.png?v=1764703506',
     name: 'Sérum Íntimo Ozonizado',
     price: 'R$ 187,00',
     tagline: 'Para sintomas externos: coceira, odor, ressecamento e manchas',
@@ -18,7 +18,7 @@ const PRODUCTS = {
   },
   simbiotico: {
     id: 'simbiotico',
-    image: '',
+    image: 'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png?v=1764950605',
     name: 'Simbiótico Íntimo',
     price: 'A partir de R$ 187,00/mês',
     tagline: 'Para tratar a flora vaginal por dentro, de forma duradoura',
@@ -32,7 +32,7 @@ const PRODUCTS = {
   },
   box: {
     id: 'box',
-    image: '',
+    image: 'https://sejaziva.com.br/cdn/shop/files/Box_Equilibrium.png?v=1764628626',
     name: 'Box Equilibrium 360°',
     price: 'R$ 477,00',
     tagline: 'Solução completa: por dentro e por fora',
@@ -289,7 +289,10 @@ function PersuasiveStep({ scores, onNext }) {
           clinicamente pesquisados para o seu caso específico.
         </p>
         <div className="persuasive-product" style={{ borderColor: product.color }}>
-          <div className="pp-image-placeholder">{icons[result]}</div>
+          {product.image
+            ? <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+            : <div className="pp-image-placeholder">{icons[result]}</div>
+          }
           <div className="pp-body">
             <span className="pp-badge">{product.badge}</span>
             <div className="pp-name">{product.name}</div>
@@ -707,6 +710,9 @@ function ResultScreen({ scores, answers }) {
           <h1 className="result-headline" style={{ color: product.color }}>{product.headline}</h1>
           <p className="result-body">{product.body}</p>
           <div className="result-product-card">
+            {product.image && (
+              <img src={product.image} alt={product.name} style={{ width: '100%', maxHeight: 260, objectFit: 'cover', display: 'block' }} />
+            )}
             <div className="result-product-header" style={{ background: product.colorLight }}>
               <div className="result-product-name" style={{ color: product.color }}>{product.name}</div>
               <div className="result-product-tagline" style={{ color: product.color }}>{product.price} · {product.tagline}</div>
