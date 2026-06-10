@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { base44 } from '@/api/base44Client';
 
 // ── PRODUTOS ────────────────────────────────────────────────
 const PRODUCTS = {
@@ -851,7 +852,17 @@ export default function QuizZiva() {
     if (currentStep > 1) goToStep(currentStep - 1);
   };
 
-  const handleLeadSubmit = (leadData) => {
+  const handleLeadSubmit = async (leadData) => {
+    const result = getResult(scores);
+    base44.entities.QuizLead.create({
+      email: leadData.email || null,
+      whatsapp: leadData.whatsapp || null,
+      recommended_product: result,
+      score_serum: scores.serum,
+      score_simbiotico: scores.simbiotico,
+      score_box: scores.box,
+      answers: JSON.stringify(answers),
+    }).catch(() => {}); // salva em background, não bloqueia o fluxo
     setPhase('loading');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

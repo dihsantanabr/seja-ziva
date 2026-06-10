@@ -2,49 +2,41 @@
   "name": "QuizLead",
   "type": "object",
   "properties": {
-    "name": {
-      "type": "string",
-      "description": "Nome do lead"
-    },
     "email": {
       "type": "string",
-      "format": "email",
-      "description": "Email do lead"
+      "description": "Email do lead (se informado)"
     },
-    "objective": {
+    "whatsapp": {
+      "type": "string",
+      "description": "WhatsApp do lead (se informado)"
+    },
+    "recommended_product": {
       "type": "string",
       "enum": [
-        "aparencia",
-        "firmeza",
-        "forca",
-        "multiplo"
-      ],
-      "description": "Objetivo principal selecionado no quiz"
-    },
-    "symptom": {
-      "type": "string",
-      "description": "Sintoma ou contexto selecionado"
-    },
-    "routine": {
-      "type": "string",
-      "description": "Tipo de rotina selecionada"
-    },
-    "recommendedProduct": {
-      "type": "string",
-      "enum": [
-        "colageno",
-        "lift",
-        "creatina"
+        "serum",
+        "simbiotico",
+        "box"
       ],
       "description": "Produto recomendado com base nas respostas"
+    },
+    "score_serum": {
+      "type": "number",
+      "description": "Score do S\u00e9rum"
+    },
+    "score_simbiotico": {
+      "type": "number",
+      "description": "Score do Simbi\u00f3tico"
+    },
+    "score_box": {
+      "type": "number",
+      "description": "Score do Box"
+    },
+    "answers": {
+      "type": "string",
+      "description": "Respostas do quiz em JSON"
     }
   },
   "required": [
-    "name",
-    "email",
-    "objective",
-    "symptom",
-    "routine",
-    "recommendedProduct"
+    "recommended_product"
   ]
 }
