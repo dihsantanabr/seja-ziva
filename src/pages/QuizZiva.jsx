@@ -215,19 +215,28 @@ function Option({ option, selected, onSelect, multi, hasIcon }) {
   return (
     <div
       onClick={onSelect}
-      className={`option ${selected ? 'selected' : ''} ${hasIcon ? 'has-icon' : ''}`}
+      className={`option ${selected ? 'selected' : ''} ${hasIcon ? 'has-icon' : 'no-icon'}`}
     >
+      {!hasIcon && (
+        <span className={`option-check ${multi ? 'square' : ''}`}>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+            <path d="M1 5L4.5 8.5L11 1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </span>
+      )}
       {hasIcon && IconComponent && (
         <div className="opt-icon">
           <IconComponent size={24} color="#C4566A" strokeWidth={2} />
         </div>
       )}
       <span className="option-text">{option.text}</span>
-      <span className={`option-check ${multi ? 'square' : ''}`}>
-        <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-          <path d="M1 5L4.5 8.5L11 1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      </span>
+      {hasIcon && (
+        <span className={`option-check ${multi ? 'square' : ''}`}>
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+            <path d="M1 5L4.5 8.5L11 1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </span>
+      )}
     </div>
   );
 }
