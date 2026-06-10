@@ -301,7 +301,6 @@ function PersuasiveStep({ scores, onNext }) {
             <ul className="pp-checks">
               {product.checks.map((c, i) => <li key={i}>✓ {c}</li>)}
             </ul>
-            <div className="pp-price">{product.price}</div>
           </div>
         </div>
         <button className="btn btn-primary" onClick={onNext}>
