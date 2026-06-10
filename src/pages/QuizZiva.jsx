@@ -726,12 +726,7 @@ function ResultScreen({ scores, answers }) {
                   </div>
                 ))}
               </div>
-              <a
-                href={product.url}
-                className="result-cta btn"
-                style={{ background: product.color, color: '#fff', boxShadow: `0 4px 16px ${product.color}44` }}
-                target="_blank" rel="noopener noreferrer"
-              >{product.ctaText}</a>
+
             </div>
           </div>
           <button className="btn-continuar-sec" onClick={() => goNext(4)}>Ver o que outras mulheres dizem →</button>
