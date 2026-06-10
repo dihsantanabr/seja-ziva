@@ -771,7 +771,6 @@ function ResultScreen({ scores, answers }) {
                   <a key={id} href={p.url} className="also-product" target="_blank" rel="noopener noreferrer">
                     <div>
                       <div className="also-product-name">{p.name}</div>
-                      <div className="also-product-desc">{p.price}</div>
                     </div>
                     <span className="also-product-arrow">→</span>
                   </a>
