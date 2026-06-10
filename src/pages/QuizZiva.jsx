@@ -797,7 +797,7 @@ export default function QuizZiva() {
   const [currentStep, setCurrentStep] = useState(1);
   const [answers, setAnswers] = useState({});
   const [scores, setScores] = useState({ serum: 0, simbiotico: 0, box: 0 });
-  const [showMidLoading, setShowMidLoading] = useState(false);
+
   const [phase, setPhase] = useState('quiz'); // quiz | lead | loading | result
 
   const getProgressPct = () => {
@@ -832,11 +832,10 @@ export default function QuizZiva() {
   };
 
   const handleNext = () => {
-    if (currentStep === 7) {
-      // Show mid loading before step 8 (persuasive)
-      setShowMidLoading(true);
-    } else if (currentStep === 11) {
+    if (currentStep === 11) {
       goToStep(12);
+    } else if (currentStep === 7) {
+      goToStep(8);
     } else {
       goToStep(currentStep + 1);
     }
@@ -844,11 +843,6 @@ export default function QuizZiva() {
 
   const handleBack = () => {
     if (currentStep > 1) goToStep(currentStep - 1);
-  };
-
-  const handleMidLoadingDone = () => {
-    setShowMidLoading(false);
-    goToStep(8);
   };
 
   const handleLeadSubmit = (leadData) => {
@@ -1007,8 +1001,6 @@ export default function QuizZiva() {
       `}</style>
 
       <div className="quiz-page">
-        {showMidLoading && <MidLoading onDone={handleMidLoadingDone} />}
-
         {/* Header */}
         <header className="quiz-header">
           <a href="https://sejaziva.com.br" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
