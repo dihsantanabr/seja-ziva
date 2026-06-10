@@ -1,5 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
+import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
+
+// ── ÍCONES DO QUIZ ───────────────────────────────────────────
+const ICON_MAP = {
+  corrimento: Droplets,
+  coceira: Flame,
+  ressecamento: Thermometer,
+  infeccoes: Bug,
+  manchas: Circle,
+  depilacao: Scissors,
+  relacao: Heart,
+  urinar: Waves,
+  prevencao: Shield,
+};
 
 // ── PRODUTOS ────────────────────────────────────────────────
 const PRODUCTS = {
@@ -196,14 +210,16 @@ function getResult(scores) {
 
 // ── COMPONENT: Option ────────────────────────────────────────
 function Option({ option, selected, onSelect, multi, hasIcon }) {
+  const IconComponent = hasIcon ? ICON_MAP[option.value] : null;
+  
   return (
     <div
       onClick={onSelect}
       className={`option ${selected ? 'selected' : ''} ${hasIcon ? 'has-icon' : ''}`}
     >
-      {hasIcon && (
+      {hasIcon && IconComponent && (
         <div className="opt-icon">
-          <span style={{ fontSize: 20 }}>{option.icon}</span>
+          <IconComponent size={24} color="#C4566A" strokeWidth={2} />
         </div>
       )}
       <span className="option-text">{option.text}</span>
