@@ -316,7 +316,7 @@ function PersuasiveStep({ scores, onNext }) {
         </p>
         <div className="persuasive-product" style={{ borderColor: product.color }}>
           {product.image
-            ? <img src={product.image} alt={product.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+            ? <img src={product.image} alt={product.name} style={{ width: '100%', maxHeight: 360, objectFit: 'contain', background: 'linear-gradient(135deg,#FAF0F2 0%,#F5EDEF 100%)' }} />
             : <div className="pp-image-placeholder">{icons[result]}</div>
           }
           <div className="pp-body">
