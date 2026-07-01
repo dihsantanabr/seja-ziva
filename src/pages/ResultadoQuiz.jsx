@@ -20,14 +20,14 @@ const PLANS = [
     title: 'Kit com 3 Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 189,00', perBottle: 'por caixa',
     servings: '90 sachês', perDay: 'R$ 6,30 por dia', bottles: '3 caixas enviadas', total: 'Total: R$ 567,00',
-    save: 'ECONOMIZE 24%', tag: 'Mais popular', popular: true,
+    save: 'ECONOMIZE 24%', tag: 'Mais popular', popular: true, freeShipping: true,
   },
   {
     id: 'box', image: BOX_IMAGE, url: BOX_URL, alt: 'Box Equilibrium 360° Ziva',
     title: 'Box Equilibrium 360°', duration: 'Kit completo', subtitle: 'Solução completa: por dentro e por fora',
     was: 'R$ 664,00', now: 'R$ 477,00', perBottle: 'kit completo',
     servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo e interno', bottles: 'Protocolo completo enviado', total: null,
-    save: null, tag: 'Rotina Completa', popular: false,
+    save: null, tag: 'Rotina Completa', popular: false, freeShipping: true,
   },
 ];
 
@@ -59,6 +59,7 @@ function PlanCard({ plan, mode }) {
         <p className="plan-subtitle">{plan.subtitle}</p>
         <div className="plan-img-wrap">
           <img src={plan.image} alt={plan.alt} />
+          {plan.freeShipping && <span className="plan-free-ship">🚚 Frete grátis</span>}
         </div>
         <div className="plan-price">
           <span className="plan-was">{plan.was}</span>
@@ -179,6 +180,7 @@ export default function ResultadoQuiz() {
         .rec-desc { font-size:14px; color:var(--grey); line-height:1.5; }
         .rq-final-cta { display:block; max-width:420px; margin:0 auto; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; text-decoration:none; text-align:center; padding:18px; border-radius:50px; font-weight:800; font-size:18px; box-shadow:0 6px 24px rgba(196,86,106,.35); transition:transform .2s; }
         .rq-final-cta:hover { transform:translateY(-2px); }
+        .plan-free-ship { position:absolute; top:10px; right:10px; background:var(--green); color:#fff; font-size:11px; font-weight:800; padding:5px 12px; border-radius:50px; box-shadow:0 2px 8px rgba(0,0,0,.15); z-index:2; }
         .plans-grid-sub { display:flex; justify-content:center; }
         .plans-grid-sub .plan-card { max-width:380px; }
         .plan-sub-benefit { color:var(--green) !important; font-weight:700 !important; font-size:13px !important; }
