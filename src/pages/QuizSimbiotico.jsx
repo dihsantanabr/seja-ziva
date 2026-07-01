@@ -152,7 +152,6 @@ const STEPS_CONFIG = [
       { value: 'estresse_f',      text: 'Lido com muito estresse no dia a dia',          score: { serum:0,simbiotico:2,box:1 } },
       { value: 'perfumado',       text: 'Uso produtos de higiene íntima perfumados',    score: { serum:1,simbiotico:0,box:1 } },
       { value: 'clima',           text: 'Moro em região de clima quente e úmido',       score: { serum:0,simbiotico:0,box:0 } },
-      { value: 'depilacao_f',     text: 'Faço depilação com frequência',                score: { serum:1,simbiotico:0,box:0 } },
       { value: 'sem_protecao',    text: 'Tive relações sexuais sem proteção',           score: { serum:0,simbiotico:2,box:2 } },
       { value: 'nenhum_f',        text: 'Nenhum desses fatores se aplica',              score: { serum:0,simbiotico:0,box:0 } },
     ],
