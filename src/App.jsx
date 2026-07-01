@@ -16,6 +16,7 @@ import SimbioticoLP4 from './pages/SimbioticoLP4';
 import SimbioticoLP5 from './pages/SimbioticoLP5';
 import SimbioticoLP6 from './pages/SimbioticoLP6';
 import QuizZiva from './pages/QuizZiva';
+import ResultadoQuiz from './pages/ResultadoQuiz';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -74,6 +75,7 @@ const AuthenticatedApp = () => {
       <Route path="/simbiotico-bp5" element={<SimbioticoLP5 />} />
       <Route path="/simbiotico-bp6" element={<SimbioticoLP6 />} />
       <Route path="/quiz-ziva" element={<QuizZiva />} />
+      <Route path="/resultado-quiz" element={<ResultadoQuiz />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
