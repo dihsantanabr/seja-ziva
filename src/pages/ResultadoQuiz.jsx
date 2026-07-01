@@ -11,22 +11,22 @@ const PLANS = [
   {
     id: '1m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
     title: 'Simbiótico Íntimo', duration: '1 mês de tratamento', subtitle: 'Ideal para experimentar',
-    was: 'R$ 249,00', now: 'R$ 187,00',     perBottle: 'por caixa',
-    servings: '30 doses diárias', perDay: 'R$ 6,23 por dia', bottles: '1 caixa enviada',
+    was: 'R$ 249,00', now: 'R$ 227,00', perBottle: 'por caixa',
+    servings: '30 doses diárias', perDay: 'R$ 7,57 por dia', bottles: '1 caixa enviada', total: null,
     save: null, tag: null, popular: false,
   },
   {
     id: '3m', image: 'https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/205c85e6e_image.png', url: SIMBIOTICO_URL, alt: 'Kit 2 (3 meses) Ziva',
     title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
-    was: 'R$ 249,00', now: 'R$ 149,00',     perBottle: 'por caixa',
-    servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 caixas enviadas',
+    was: 'R$ 249,00', now: 'R$ 189,00', perBottle: 'por caixa',
+    servings: '90 doses diárias', perDay: 'R$ 6,30 por dia', bottles: '3 caixas enviadas', total: 'Total: R$ 567,00',
     save: 'ECONOMIZE 40%', tag: 'Mais popular', popular: true,
   },
   {
     id: 'box', image: BOX_IMAGE, url: BOX_URL, alt: 'Box Equilibrium 360° Ziva',
     title: 'Box Equilibrium 360°', duration: 'Kit completo', subtitle: 'Solução completa: por dentro e por fora',
     was: 'R$ 664,00', now: 'R$ 477,00', perBottle: 'kit completo',
-    servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo e interno', bottles: 'Protocolo completo enviado',
+    servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo e interno', bottles: 'Protocolo completo enviado', total: null,
     save: 'MELHOR VALOR', tag: 'Melhor valor', popular: false,
   },
 ];
@@ -64,6 +64,7 @@ function PlanCard({ plan, mode }) {
           <span className="plan-was">{plan.was}</span>
           <span className="plan-now">{plan.now}</span>
           <span className="plan-per">{plan.perBottle}</span>
+          {plan.total && <span className="plan-total">{plan.total}</span>}
         </div>
         <ul className="plan-specs">
           <li>{plan.servings}</li>
@@ -139,6 +140,7 @@ export default function ResultadoQuiz() {
         .plan-was { display:block; font-size:14px; color:var(--lgrey); text-decoration:line-through; }
         .plan-now { display:block; font-size:30px; font-weight:900; color:var(--dark); line-height:1.1; }
         .plan-per { font-size:12px; color:var(--lgrey); }
+        .plan-total { display:block; font-size:13px; font-weight:700; color:var(--rose); margin-top:4px; }
         .plan-specs { list-style:none; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:12px 0; margin-bottom:16px; display:flex; flex-direction:column; gap:5px; }
         .plan-specs li { font-size:12.5px; color:var(--grey); }
         .plan-specs strong { color:var(--rose); font-weight:800; }
