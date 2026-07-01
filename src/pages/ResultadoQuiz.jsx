@@ -273,9 +273,8 @@ export default function ResultadoQuiz() {
           <div className="checkout-safe">
             <div className="checkout-safe-title">Compra 100% segura e protegida</div>
             <div className="pay-badges">
-              {['VISA', 'Mastercard', 'Pix', 'Boleto', 'Elo', 'American Express'].map(b => (
-                <span key={b} className="pay-badge">{b}</span>
-              ))}
+              <span className="pay-badge">🔒 Pagamento criptografado</span>
+              <span className="pay-badge">✓ Compra protegida</span>
             </div>
           </div>
 
