@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
+import InfoStep from '@/components/quiz/InfoStep';
 
 // ── ÍCONES DO QUIZ ───────────────────────────────────────────
 const ICON_MAP = {
@@ -861,13 +862,23 @@ export default function QuizZiva() {
       goToStep(12);
     } else if (currentStep === 7) {
       goToStep(8);
+    } else if (currentStep === 3) {
+      goToStep(3.5);
+    } else if (currentStep === 3.5) {
+      goToStep(4);
     } else {
       goToStep(currentStep + 1);
     }
   };
 
   const handleBack = () => {
-    if (currentStep > 1) goToStep(currentStep - 1);
+    if (currentStep === 3.5) {
+      goToStep(3);
+    } else if (currentStep === 4) {
+      goToStep(3.5);
+    } else if (currentStep > 1) {
+      goToStep(currentStep - 1);
+    }
   };
 
   const handleLeadSubmit = async (leadData) => {
@@ -1064,6 +1075,11 @@ export default function QuizZiva() {
                   onBack={handleBack}
                   isFirst={currentStep === 1}
                 />
+              )}
+
+              {/* Info step 3.5 — Simbiótico Íntimo */}
+              {currentStep === 3.5 && (
+                <InfoStep onBack={handleBack} onNext={handleNext} />
               )}
 
               {/* Persuasive step 8 */}
