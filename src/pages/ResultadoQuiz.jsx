@@ -53,13 +53,13 @@ function PlanCard({ plan, mode }) {
           {plan.tag} {plan.save && <strong>{plan.save}</strong>}
         </div>
       )}
+      {plan.freeShipping && <div className="plan-free-ship">🚚 Frete grátis</div>}
       <div className="plan-body">
         <h3 className="plan-title">{plan.title}</h3>
         <span className="plan-duration">{plan.duration}</span>
         <p className="plan-subtitle">{plan.subtitle}</p>
         <div className="plan-img-wrap">
           <img src={plan.image} alt={plan.alt} />
-          {plan.freeShipping && <span className="plan-free-ship">🚚 Frete grátis</span>}
         </div>
         <div className="plan-price">
           <span className="plan-was">{plan.was}</span>
@@ -180,7 +180,7 @@ export default function ResultadoQuiz() {
         .rec-desc { font-size:14px; color:var(--grey); line-height:1.5; }
         .rq-final-cta { display:block; max-width:420px; margin:0 auto; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; text-decoration:none; text-align:center; padding:18px; border-radius:50px; font-weight:800; font-size:18px; box-shadow:0 6px 24px rgba(196,86,106,.35); transition:transform .2s; }
         .rq-final-cta:hover { transform:translateY(-2px); }
-        .plan-free-ship { position:absolute; top:10px; right:10px; background:var(--green); color:#fff; font-size:11px; font-weight:800; padding:5px 12px; border-radius:50px; box-shadow:0 2px 8px rgba(0,0,0,.15); z-index:2; }
+        .plan-free-ship { background:var(--green); color:#fff; font-size:12px; font-weight:800; padding:6px 0; text-align:center; }
         .plans-grid-sub { display:flex; justify-content:center; }
         .plans-grid-sub .plan-card { max-width:380px; }
         .plan-sub-benefit { color:var(--green) !important; font-weight:700 !important; font-size:13px !important; }
