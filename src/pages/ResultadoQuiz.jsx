@@ -280,8 +280,8 @@ export default function ResultadoQuiz() {
 
           {/* Guarantees */}
           <div className="guarantees">
-            <div className="guar"><span className="guar-ic">🛡️</span><span className="guar-txt">Garantia de 30 dias ou seu dinheiro de volta</span></div>
-            <div className="guar"><span className="guar-ic">🚚</span><span className="guar-txt">Frete grátis para todo o Brasil</span></div>
+            <div className="guar"><span className="guar-ic">👩‍⚕️</span><span className="guar-txt">Recomendado por Especialistas</span></div>
+            <div className="guar"><span className="guar-ic">🚚</span><span className="guar-txt">Enviamos para todo Brasil</span></div>
             <div className="guar"><span className="guar-ic">🇧🇷</span><span className="guar-txt">Fabricado no Brasil com registro Anvisa</span></div>
             <div className="guar"><span className="guar-ic">🔬</span><span className="guar-txt">Fórmula com respaldo científico</span></div>
           </div>
