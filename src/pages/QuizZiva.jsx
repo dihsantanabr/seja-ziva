@@ -817,13 +817,13 @@ function ResultScreen({ scores, answers }) {
             </div>
           </div>
           <video
-            src="https://cdn.shopify.com/videos/c/vp/30c967b74afc472d8de80100ad9b4ecc/30c967b74afc472d8de80100ad9b4ecc.m3u8#t=0,3"
+            src="https://cdn.shopify.com/videos/c/vp/30c967b74afc472d8de80100ad9b4ecc/30c967b74afc472d8de80100ad9b4ecc.m3u8"
             autoPlay
             muted
             loop
             playsInline
             controls
-            style={{ width: '100%', borderRadius: 16, marginTop: 20, display: 'block' }}
+            style={{ width: '60%', borderRadius: 12, marginTop: 16, display: 'block', margin: '16px auto 0' }}
           />
           <button
             onClick={() => navigate('/resultado-quiz')}
