@@ -85,7 +85,7 @@ function PlanCard({ plan, mode }) {
 // ── MAIN ─────────────────────────────────────────────────────
 export default function ResultadoQuiz() {
   const timer = useCountdown(24 * 3600);
-  const [mode, setMode] = useState('sub'); // sub | once
+  const [mode, setMode] = useState('once'); // sub | once
 
   return (
     <>
