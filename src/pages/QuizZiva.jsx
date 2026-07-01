@@ -3,6 +3,7 @@ import { base44 } from '@/api/base44Client';
 import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
 import InfoStep from '@/components/quiz/InfoStep';
 import InfoStep2 from '@/components/quiz/InfoStep2';
+import { useNavigate } from 'react-router-dom';
 
 // ── ÍCONES DO QUIZ ───────────────────────────────────────────
 const ICON_MAP = {
@@ -537,6 +538,7 @@ function LoadingResult({ onDone }) {
 function ResultScreen({ scores, answers }) {
   const [rsStep, setRsStep] = useState(1);
   const chartAnimated = useRef(false);
+  const navigate = useNavigate();
 
   const result = getResult(scores);
   const product = PRODUCTS[result];
@@ -814,14 +816,13 @@ function ResultScreen({ scores, answers }) {
               ))}
             </div>
           </div>
-          <a
-            href={product.url}
+          <button
+            onClick={() => navigate('/resultado-quiz')}
             className="btn-continuar"
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, textDecoration: 'none', marginTop: 24 }}
-            target="_blank" rel="noopener noreferrer"
           >
             🛒 {product.ctaText}
-          </a>
+          </button>
         </div>
       )}
     </div>
