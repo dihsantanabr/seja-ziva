@@ -20,7 +20,7 @@ const PLANS = [
     title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 189,00', perBottle: 'por caixa',
     servings: '90 doses diárias', perDay: 'R$ 6,30 por dia', bottles: '3 caixas enviadas', total: 'Total: R$ 567,00',
-    save: 'ECONOMIZE 40%', tag: 'Mais popular', popular: true,
+    save: 'ECONOMIZE 24%', tag: 'Mais popular', popular: true,
   },
   {
     id: 'box', image: BOX_IMAGE, url: BOX_URL, alt: 'Box Equilibrium 360° Ziva',
