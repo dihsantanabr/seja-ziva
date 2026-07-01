@@ -10,7 +10,7 @@ const LOGO = 'https://sejaziva.com.br/cdn/shop/files/Logotipo_ZIVA_small_e1528dc
 const PLANS = [
   {
     id: '1m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
-    title: 'Simbiótico Íntimo', duration: '1 mês de tratamento', subtitle: 'Ideal para experimentar',
+    title: 'Simbiótico Íntimo', duration: '1 mês de tratamento', subtitle: 'Ideal para ter uma Rotina',
     was: 'R$ 249,00', now: 'R$ 227,00', perBottle: 'por caixa',
     servings: '30 sachês', perDay: 'R$ 7,57 por dia', bottles: '1 caixa enviada', total: null,
     save: null, tag: null, popular: false,
