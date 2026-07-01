@@ -70,9 +70,12 @@ function PlanCard({ plan, mode }) {
           <li>{plan.servings}</li>
           <li><strong>{plan.perDay}</strong></li>
           <li>{plan.bottles}</li>
+          {plan.subBenefits && plan.subBenefits.map((b, i) => (
+            <li key={i} className="plan-sub-benefit">✓ {b}</li>
+          ))}
         </ul>
         <a href={plan.url} target="_blank" rel="noopener noreferrer" className="plan-cta">
-          Pedir agora
+          {mode === 'sub' ? 'Assinar agora' : 'Pedir agora'}
         </a>
         <p className="plan-note">
           {mode === 'sub' ? 'Cancele quando quiser. Frete grátis.' : 'Pagamento único. Frete grátis.'}
@@ -176,6 +179,9 @@ export default function ResultadoQuiz() {
         .rec-desc { font-size:14px; color:var(--grey); line-height:1.5; }
         .rq-final-cta { display:block; max-width:420px; margin:0 auto; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; text-decoration:none; text-align:center; padding:18px; border-radius:50px; font-weight:800; font-size:18px; box-shadow:0 6px 24px rgba(196,86,106,.35); transition:transform .2s; }
         .rq-final-cta:hover { transform:translateY(-2px); }
+        .plans-grid-sub { display:flex; justify-content:center; }
+        .plans-grid-sub .plan-card { max-width:380px; }
+        .plan-sub-benefit { color:var(--green) !important; font-weight:700 !important; font-size:13px !important; }
         @media(max-width:820px) {
           .plans-grid { grid-template-columns:1fr; }
           .plan-card.popular { order:-1; }
@@ -249,10 +255,10 @@ export default function ResultadoQuiz() {
           </div>
 
           {/* Plans */}
-          <div className="plans-grid">
+          <div className={`plans-grid ${mode === 'sub' ? 'plans-grid-sub' : ''}`}>
             {PLANS.filter(p => mode === 'sub' ? p.id === '1m' : true).map(p => {
               const plan = mode === 'sub' && p.id === '1m'
-                ? { ...p, was: 'R$ 249,00', now: 'R$ 187,00', perBottle: '/ Mês', servings: '30 sachês por mês', perDay: 'R$ 6,23 por dia', bottles: '1 caixa por mês', total: null, save: null, tag: null }
+                ? { ...p, was: 'R$ 249,00', now: 'R$ 187,00', perBottle: '/ Mês', servings: '30 sachês por mês', perDay: 'R$ 6,23 por dia', bottles: '1 caixa enviada todo mês', total: null, save: 'ASSINATURA', tag: 'Plano recorrente', popular: true, subBenefits: ['Economize 25% em todo pedido', 'Frete grátis em todas as entregas', 'Cancele quando quiser', 'Gestão flexível pelo painel Ziva'] }
                 : p;
               return <PlanCard key={p.id} plan={plan} mode={mode} />;
             })}
