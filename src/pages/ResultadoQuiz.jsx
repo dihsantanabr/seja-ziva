@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
 // ── DADOS ────────────────────────────────────────────────────
-const PRODUCT_IMAGE = 'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png?v=1764950605';
-const PRODUCT_URL = 'https://sejaziva.com.br/products/simbiotico-intimo';
+const SIMBIOTICO_IMAGE = 'https://sejaziva.com.br/cdn/shop/files/Design_sem_nome_4_1.png?v=1764950605';
+const SIMBIOTICO_URL = 'https://sejaziva.com.br/products/simbiotico-intimo';
+const BOX_IMAGE = 'https://sejaziva.com.br/cdn/shop/files/Box_Equilibrium.png?v=1764628626';
+const BOX_URL = 'https://sejaziva.com.br/products/kit-bem-estar-completo';
 const LOGO = 'https://sejaziva.com.br/cdn/shop/files/Logotipo_ZIVA_small_e1528dc7-4a49-4df5-91e2-20ed765fa393.webp?v=1753190480&width=167';
 
 const PLANS = [
   {
-    id: '1m', months: 1, title: '1 mês de tratamento',
-    subtitle: 'Ideal para experimentar',
+    id: '1m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
+    title: 'Simbiótico Íntimo', subtitle: '1 mês de tratamento — ideal para experimentar',
     was: 'R$ 249,00', now: 'R$ 187,00', perBottle: 'por frasco',
     servings: '30 doses diárias', perDay: 'R$ 6,23 por dia', bottles: '1 frasco enviado',
     save: null, tag: null, popular: false,
   },
   {
-    id: '3m', months: 3, title: '3 meses de tratamento',
-    subtitle: 'Ótimo para criar novos hábitos',
+    id: '3m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
+    title: 'Simbiótico Íntimo', subtitle: '3 meses de tratamento — ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 149,00', perBottle: 'por frasco',
     servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 frascos enviados',
     save: 'ECONOMIZE 40%', tag: 'Mais popular', popular: true,
   },
   {
-    id: '6m', months: 6, title: '6 meses de tratamento',
-    subtitle: 'Para os resultados mais duradouros',
-    was: 'R$ 249,00', now: 'R$ 119,00', perBottle: 'por frasco',
-    servings: '180 doses diárias', perDay: 'R$ 3,97 por dia', bottles: '6 frascos enviados',
-    save: 'ECONOMIZE 52%', tag: 'Melhor valor', popular: false,
+    id: 'box', image: BOX_IMAGE, url: BOX_URL, alt: 'Box Equilibrium 360° Ziva',
+    title: 'Box Equilibrium 360°', subtitle: 'Solução completa: por dentro e por fora',
+    was: 'R$ 664,00', now: 'R$ 477,00', perBottle: 'kit completo',
+    servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo + interno', bottles: 'Protocolo completo enviado',
+    save: 'MELHOR VALOR', tag: 'Melhor valor', popular: false,
   },
 ];
 
@@ -55,7 +57,7 @@ function PlanCard({ plan, mode }) {
         <h3 className="plan-title">{plan.title}</h3>
         <p className="plan-subtitle">{plan.subtitle}</p>
         <div className="plan-img-wrap">
-          <img src={PRODUCT_IMAGE} alt="Simbiótico Íntimo Ziva" />
+          <img src={plan.image} alt={plan.alt} />
         </div>
         <div className="plan-price">
           <span className="plan-was">{plan.was}</span>
@@ -67,7 +69,7 @@ function PlanCard({ plan, mode }) {
           <li><strong>{plan.perDay}</strong></li>
           <li>{plan.bottles}</li>
         </ul>
-        <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="plan-cta">
+        <a href={plan.url} target="_blank" rel="noopener noreferrer" className="plan-cta">
           Pedir agora
         </a>
         <p className="plan-note">
@@ -308,7 +310,7 @@ export default function ResultadoQuiz() {
                 <div className="rec-desc">Para consolidar uma flora vaginal equilibrada e resultados duradouros.</div>
               </div>
             </div>
-            <a href={PRODUCT_URL} target="_blank" rel="noopener noreferrer" className="rq-final-cta">
+            <a href={SIMBIOTICO_URL} target="_blank" rel="noopener noreferrer" className="rq-final-cta">
               Quero a minha Ziva agora →
             </a>
           </div>
