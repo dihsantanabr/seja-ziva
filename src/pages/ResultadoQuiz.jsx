@@ -133,8 +133,8 @@ export default function ResultadoQuiz() {
         .plan-title { font-size:17px; font-weight:800; margin-bottom:8px; }
         .plan-duration { display:inline-block; background:var(--rose-lt); color:var(--rose-dk); border:1px solid var(--rose-mid); font-size:12px; font-weight:800; padding:5px 14px; border-radius:50px; margin-bottom:10px; letter-spacing:.3px; }
         .plan-subtitle { font-size:12.5px; color:var(--lgrey); margin-bottom:16px; min-height:34px; }
-        .plan-img-wrap { background:linear-gradient(135deg,#FAF0F2,#F5EDEF); border-radius:12px; padding:16px; margin-bottom:16px; }
-        .plan-img-wrap img { width:100%; max-height:180px; object-fit:contain; display:block; margin:0 auto; }
+        .plan-img-wrap { border-radius:12px; margin-bottom:16px; aspect-ratio:1; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.1); }
+        .plan-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
         .plan-price { margin-bottom:14px; }
         .plan-was { display:block; font-size:14px; color:var(--lgrey); text-decoration:line-through; }
         .plan-now { display:block; font-size:30px; font-weight:900; color:var(--dark); line-height:1.1; }
