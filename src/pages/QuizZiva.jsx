@@ -862,23 +862,13 @@ export default function QuizZiva() {
       goToStep(12);
     } else if (currentStep === 7) {
       goToStep(8);
-    } else if (currentStep === 3) {
-      goToStep(3.5);
-    } else if (currentStep === 3.5) {
-      goToStep(4);
     } else {
       goToStep(currentStep + 1);
     }
   };
 
   const handleBack = () => {
-    if (currentStep === 3.5) {
-      goToStep(3);
-    } else if (currentStep === 4) {
-      goToStep(3.5);
-    } else if (currentStep > 1) {
-      goToStep(currentStep - 1);
-    }
+    if (currentStep > 1) goToStep(currentStep - 1);
   };
 
   const handleLeadSubmit = async (leadData) => {
@@ -1077,14 +1067,9 @@ export default function QuizZiva() {
                 />
               )}
 
-              {/* Info step 3.5 — Simbiótico Íntimo */}
-              {currentStep === 3.5 && (
-                <InfoStep onBack={handleBack} onNext={handleNext} />
-              )}
-
-              {/* Persuasive step 8 */}
+              {/* Info step 8 — Simbiótico Íntimo (após coleta de dados) */}
               {currentStep === 8 && (
-                <PersuasiveStep scores={scores} onNext={() => goToStep(9)} />
+                <InfoStep onBack={handleBack} onNext={() => goToStep(9)} />
               )}
 
               {/* Question steps 9–11 */}

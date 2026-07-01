@@ -12,7 +12,7 @@ export default function InfoStep({ onBack, onNext }) {
         marginBottom: '24px',
       }}>
         <img
-          src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/b8a452333_image.png"
+          src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/6403fe329_47ec9686-1c7a-4ed5-ba60-c750d9278d66.png"
           alt="Simbiótico Íntimo ZIVA"
           style={{ width: '100%', display: 'block' }}
         />
