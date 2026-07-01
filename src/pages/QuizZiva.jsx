@@ -204,7 +204,7 @@ const ANSWER_STEPS = [1,2,3,4,5,6,7,9,10,11];
 const TOTAL_STEPS  = 13;
 
 function getResult(scores) {
-  return 'box';
+  return 'simbiotico';
 }
 
 // ── COMPONENT: Option ────────────────────────────────────────
@@ -767,7 +767,7 @@ function ResultScreen({ scores, answers }) {
             )}
             <div className="result-product-header" style={{ background: product.colorLight }}>
               <div className="result-product-name" style={{ color: product.color }}>{product.name}</div>
-              <div className="result-product-tagline" style={{ color: product.color }}>{product.price} · {product.tagline}</div>
+              <div className="result-product-tagline" style={{ color: product.color }}>{product.tagline}</div>
             </div>
             <div className="result-product-body">
               <div className="result-checkmarks">
