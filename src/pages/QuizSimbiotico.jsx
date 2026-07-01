@@ -556,8 +556,10 @@ function ResultScreen({ scores, answers }) {
   };
 
   const sintomas = answers.sintomas || [];
-  const symMap = { coceira: 'coceira e ardência', corrimento: 'corrimento com odor', ressecamento: 'ressecamento íntimo', infeccoes: 'infecções recorrentes', manchas: 'manchas íntimas', depilacao: 'irritação pós-depilação', relacao: 'desconforto nas relações', prevencao: 'prevenção e bem-estar' };
-  const mainSym = sintomas.length > 0 ? (symMap[sintomas[0]] || sintomas[0]) : 'seus sintomas';
+  const step1Config = STEPS_CONFIG.find(s => s.step === 1);
+  const mainSym = sintomas.length > 0
+    ? (step1Config?.options.find(o => o.value === sintomas[0])?.text || sintomas[0])
+    : 'seus sintomas';
 
   const [thumbLeft, setThumbLeft] = useState('5%');
   const [chartAnim, setChartAnim] = useState(false);
