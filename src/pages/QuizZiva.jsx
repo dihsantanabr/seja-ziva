@@ -77,8 +77,6 @@ const STEPS_CONFIG = [
       { value: 'coceira',    text: 'Coceira e ardência',               score: { serum:3,simbiotico:1,box:2 }, icon: '🔥' },
       { value: 'ressecamento', text: 'Ressecamento e sensação de atrito', score: { serum:3,simbiotico:0,box:2 }, icon: '🌵' },
       { value: 'infeccoes',  text: 'Infecções de repetição (candidíase, vaginose ou infecção urinária)', score: { serum:1,simbiotico:3,box:3 }, icon: '🦠' },
-      { value: 'manchas',    text: 'Manchas ou escurecimento na região íntima', score: { serum:3,simbiotico:0,box:1 }, icon: '🔵' },
-      { value: 'depilacao',  text: 'Irritação após depilação',         score: { serum:3,simbiotico:0,box:1 }, icon: '✂️' },
       { value: 'relacao',    text: 'Desconforto durante ou após a relação sexual', score: { serum:2,simbiotico:1,box:2 }, icon: '💗' },
       { value: 'urinar',     text: 'Vontade frequente de urinar',      score: { serum:0,simbiotico:2,box:2 }, icon: '💦' },
       { value: 'prevencao',  text: 'Não tenho sintomas, quero prevenção e cuidado diário', score: { serum:0,simbiotico:0,box:0 }, icon: '🛡️' },
