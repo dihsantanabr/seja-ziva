@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
 import InfoStep from '@/components/quiz/InfoStep';
+import InfoStep2 from '@/components/quiz/InfoStep2';
 
 // ── ÍCONES DO QUIZ ───────────────────────────────────────────
 const ICON_MAP = {
@@ -572,7 +573,12 @@ function ResultScreen({ scores, answers }) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    const next = current === 3.5 ? 4 : current + 1;
+    if (current === 3.5) {
+      setRsStep(3.6);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const next = current === 3.6 ? 4 : current + 1;
     setRsStep(next);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (next === 2) setTimeout(() => setThumbLeft(meta.riskPct + '%'), 350);
@@ -592,7 +598,7 @@ function ResultScreen({ scores, answers }) {
   return (
     <div style={{ animation: 'fadeUp 0.5s ease' }}>
       {/* Progress dots */}
-      {rsStep !== 3.5 && (
+      {rsStep !== 3.5 && rsStep !== 3.6 && (
         <div className="rs-progress">
           <div className="rs-progress-label">Etapa {rsStep} de {TOTAL_RS}</div>
           <div className="rs-dots">
@@ -741,6 +747,14 @@ function ResultScreen({ scores, answers }) {
         <InfoStep
           onBack={() => { setRsStep(3); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           onNext={() => goNext(3.5)}
+        />
+      )}
+
+      {/* Info step 2 (nutritional info & benefits) */}
+      {rsStep === 3.6 && (
+        <InfoStep2
+          onBack={() => { setRsStep(3.5); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onNext={() => goNext(3.6)}
         />
       )}
 
