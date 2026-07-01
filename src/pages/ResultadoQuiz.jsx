@@ -16,7 +16,7 @@ const PLANS = [
     save: null, tag: null, popular: false,
   },
   {
-    id: '3m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
+    id: '3m', image: 'https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/205c85e6e_image.png', url: SIMBIOTICO_URL, alt: 'Kit 2 (3 meses) Ziva',
     title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 149,00',     perBottle: 'por caixa',
     servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 caixas enviadas',
