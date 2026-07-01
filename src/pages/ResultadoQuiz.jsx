@@ -10,23 +10,23 @@ const LOGO = 'https://sejaziva.com.br/cdn/shop/files/Logotipo_ZIVA_small_e1528dc
 const PLANS = [
   {
     id: '1m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
-    title: 'Simbiótico Íntimo', subtitle: '1 mês de tratamento — ideal para experimentar',
+    title: 'Simbiótico Íntimo', duration: '1 mês de tratamento', subtitle: 'Ideal para experimentar',
     was: 'R$ 249,00', now: 'R$ 187,00', perBottle: 'por frasco',
     servings: '30 doses diárias', perDay: 'R$ 6,23 por dia', bottles: '1 frasco enviado',
     save: null, tag: null, popular: false,
   },
   {
     id: '3m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
-    title: 'Simbiótico Íntimo', subtitle: '3 meses de tratamento — ótimo para criar novos hábitos',
+    title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 149,00', perBottle: 'por frasco',
     servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 frascos enviados',
     save: 'ECONOMIZE 40%', tag: 'Mais popular', popular: true,
   },
   {
     id: 'box', image: BOX_IMAGE, url: BOX_URL, alt: 'Box Equilibrium 360° Ziva',
-    title: 'Box Equilibrium 360°', subtitle: 'Solução completa: por dentro e por fora',
+    title: 'Box Equilibrium 360°', duration: 'Kit completo', subtitle: 'Solução completa: por dentro e por fora',
     was: 'R$ 664,00', now: 'R$ 477,00', perBottle: 'kit completo',
-    servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo + interno', bottles: 'Protocolo completo enviado',
+    servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo e interno', bottles: 'Protocolo completo enviado',
     save: 'MELHOR VALOR', tag: 'Melhor valor', popular: false,
   },
 ];
@@ -55,6 +55,7 @@ function PlanCard({ plan, mode }) {
       )}
       <div className="plan-body">
         <h3 className="plan-title">{plan.title}</h3>
+        <span className="plan-duration">{plan.duration}</span>
         <p className="plan-subtitle">{plan.subtitle}</p>
         <div className="plan-img-wrap">
           <img src={plan.image} alt={plan.alt} />
@@ -129,7 +130,8 @@ export default function ResultadoQuiz() {
         .tag-value { background:var(--rose-mid); color:var(--rose-dk); }
         .plan-tag strong { font-weight:900; }
         .plan-body { padding:20px 20px 24px; text-align:center; }
-        .plan-title { font-size:17px; font-weight:800; margin-bottom:4px; }
+        .plan-title { font-size:17px; font-weight:800; margin-bottom:8px; }
+        .plan-duration { display:inline-block; background:var(--rose-lt); color:var(--rose-dk); border:1px solid var(--rose-mid); font-size:12px; font-weight:800; padding:5px 14px; border-radius:50px; margin-bottom:10px; letter-spacing:.3px; }
         .plan-subtitle { font-size:12.5px; color:var(--lgrey); margin-bottom:16px; min-height:34px; }
         .plan-img-wrap { background:linear-gradient(135deg,#FAF0F2,#F5EDEF); border-radius:12px; padding:16px; margin-bottom:16px; }
         .plan-img-wrap img { width:100%; max-height:180px; object-fit:contain; display:block; margin:0 auto; }
