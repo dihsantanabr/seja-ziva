@@ -17,7 +17,7 @@ const PLANS = [
   },
   {
     id: '3m', image: 'https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/205c85e6e_image.png', url: SIMBIOTICO_URL, alt: 'Kit 2 (3 meses) Ziva',
-    title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
+    title: 'Kit com 3 Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
     was: 'R$ 249,00', now: 'R$ 189,00', perBottle: 'por caixa',
     servings: '90 sachês', perDay: 'R$ 6,30 por dia', bottles: '3 caixas enviadas', total: 'Total: R$ 567,00',
     save: 'ECONOMIZE 24%', tag: 'Mais popular', popular: true,
@@ -86,6 +86,13 @@ function PlanCard({ plan, mode }) {
 export default function ResultadoQuiz() {
   const timer = useCountdown(24 * 3600);
   const [mode, setMode] = useState('once'); // sub | once
+  const [copied, setCopied] = useState(false);
+  const copyCode = () => {
+    navigator.clipboard?.writeText('ZIVA-QUIZ52').then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   return (
     <>
@@ -205,8 +212,8 @@ export default function ResultadoQuiz() {
             <div className="promo-code-row">
               <div>
                 <span className="promo-code-label">Código</span>
-                <div className="promo-code">
-                  <span>🏷️</span> ZIVA-QUIZ52
+                <div className="promo-code" onClick={copyCode} style={{ cursor: 'pointer', userSelect: 'none' }} title="Clique para copiar">
+                  <span>🏷️</span> ZIVA-QUIZ52 {copied && <span style={{ color: 'var(--green)', fontSize: 13 }}>✓ Copiado!</span>}
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -237,7 +244,7 @@ export default function ResultadoQuiz() {
             </div>
             <div className="trust-item">
               <span className="trust-ic">🌸</span>
-              <span><strong>Ginecologistas</strong> recomendam para manter o pH íntimo saudável</span>
+              <span><strong>Especialistas</strong> recomendam para manter o pH íntimo saudável</span>
             </div>
           </div>
 
