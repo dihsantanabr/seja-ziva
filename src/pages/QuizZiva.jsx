@@ -567,7 +567,12 @@ function ResultScreen({ scores, answers }) {
   const [chartAnim, setChartAnim] = useState(false);
 
   const goNext = (current) => {
-    const next = current + 1;
+    if (current === 3) {
+      setRsStep(3.5);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const next = current === 3.5 ? 4 : current + 1;
     setRsStep(next);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (next === 2) setTimeout(() => setThumbLeft(meta.riskPct + '%'), 350);
@@ -587,14 +592,16 @@ function ResultScreen({ scores, answers }) {
   return (
     <div style={{ animation: 'fadeUp 0.5s ease' }}>
       {/* Progress dots */}
-      <div className="rs-progress">
-        <div className="rs-progress-label">Etapa {rsStep} de {TOTAL_RS}</div>
-        <div className="rs-dots">
-          {[1,2,3,4,5].map(i => (
-            <div key={i} className={`rs-dot ${i < rsStep ? 'done' : i === rsStep ? 'current' : ''}`} />
-          ))}
+      {rsStep !== 3.5 && (
+        <div className="rs-progress">
+          <div className="rs-progress-label">Etapa {rsStep} de {TOTAL_RS}</div>
+          <div className="rs-dots">
+            {[1,2,3,4,5].map(i => (
+              <div key={i} className={`rs-dot ${i < rsStep ? 'done' : i === rsStep ? 'current' : ''}`} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* S1: Rating */}
       {rsStep === 1 && (
@@ -729,6 +736,14 @@ function ResultScreen({ scores, answers }) {
         </div>
       )}
 
+      {/* Info step after chart (Etapa 3) */}
+      {rsStep === 3.5 && (
+        <InfoStep
+          onBack={() => { setRsStep(3); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onNext={() => goNext(3.5)}
+        />
+      )}
+
       {/* S4: Product */}
       {rsStep === 4 && (
         <div style={{ animation: 'rsReveal 0.5s ease forwards' }}>
@@ -860,19 +875,13 @@ export default function QuizZiva() {
   const handleNext = () => {
     if (currentStep === 7) {
       goToStep(9);
-    } else if (currentStep === 11) {
-      goToStep(11.5);
-    } else if (currentStep === 11.5) {
-      goToStep(12);
     } else {
       goToStep(currentStep + 1);
     }
   };
 
   const handleBack = () => {
-    if (currentStep === 11.5) {
-      goToStep(11);
-    } else if (currentStep === 9) {
+    if (currentStep === 9) {
       goToStep(7);
     } else if (currentStep > 1) {
       goToStep(currentStep - 1);
@@ -1085,11 +1094,6 @@ export default function QuizZiva() {
                   onBack={handleBack}
                   isFirst={false}
                 />
-              )}
-
-              {/* Info step 11.5, Simbiótico Íntimo (após coletar todas as respostas) */}
-              {currentStep === 11.5 && (
-                <InfoStep onBack={handleBack} onNext={handleNext} />
               )}
 
               {/* Lead step 12 */}
