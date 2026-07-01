@@ -828,7 +828,7 @@ export default function QuizZiva() {
 
   const getProgressPct = () => {
     const s = currentStep;
-    const displayStep = s <= 7 ? s : s === 8 ? 7 : s === 9 ? 8 : s <= 11 ? s - 1 : 11;
+    const displayStep = s <= 7 ? s : s === 9 ? 8 : s <= 11 ? s - 1 : 11;
     return Math.round((displayStep / 11) * 100);
   };
 
@@ -858,7 +858,9 @@ export default function QuizZiva() {
   };
 
   const handleNext = () => {
-    if (currentStep === 11) {
+    if (currentStep === 7) {
+      goToStep(9);
+    } else if (currentStep === 11) {
       goToStep(11.5);
     } else if (currentStep === 11.5) {
       goToStep(12);
@@ -870,6 +872,8 @@ export default function QuizZiva() {
   const handleBack = () => {
     if (currentStep === 11.5) {
       goToStep(11);
+    } else if (currentStep === 9) {
+      goToStep(7);
     } else if (currentStep > 1) {
       goToStep(currentStep - 1);
     }
