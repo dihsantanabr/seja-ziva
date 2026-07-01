@@ -250,7 +250,12 @@ export default function ResultadoQuiz() {
 
           {/* Plans */}
           <div className="plans-grid">
-            {PLANS.map(p => <PlanCard key={p.id} plan={p} mode={mode} />)}
+            {PLANS.filter(p => mode === 'sub' ? p.id === '1m' : true).map(p => {
+              const plan = mode === 'sub' && p.id === '1m'
+                ? { ...p, was: 'R$ 249,00', now: 'R$ 187,00', perBottle: '/ Mês', servings: '30 sachês por mês', perDay: 'R$ 6,23 por dia', bottles: '1 caixa por mês', total: null, save: null, tag: null }
+                : p;
+              return <PlanCard key={p.id} plan={plan} mode={mode} />;
+            })}
           </div>
           <p className="plan-renew">
             {mode === 'sub' ? 'A assinatura é renovada automaticamente até o cancelamento.' : 'Pagamento único, sem renovação automática.'}
