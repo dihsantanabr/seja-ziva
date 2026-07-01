@@ -11,15 +11,15 @@ const PLANS = [
   {
     id: '1m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
     title: 'Simbiótico Íntimo', duration: '1 mês de tratamento', subtitle: 'Ideal para experimentar',
-    was: 'R$ 249,00', now: 'R$ 187,00', perBottle: 'por frasco',
-    servings: '30 doses diárias', perDay: 'R$ 6,23 por dia', bottles: '1 frasco enviado',
+    was: 'R$ 249,00', now: 'R$ 187,00',     perBottle: 'por caixa',
+    servings: '30 doses diárias', perDay: 'R$ 6,23 por dia', bottles: '1 caixa enviada',
     save: null, tag: null, popular: false,
   },
   {
     id: '3m', image: SIMBIOTICO_IMAGE, url: SIMBIOTICO_URL, alt: 'Simbiótico Íntimo Ziva',
     title: 'Simbiótico Íntimo', duration: '3 meses de tratamento', subtitle: 'Ótimo para criar novos hábitos',
-    was: 'R$ 249,00', now: 'R$ 149,00', perBottle: 'por frasco',
-    servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 frascos enviados',
+    was: 'R$ 249,00', now: 'R$ 149,00',     perBottle: 'por caixa',
+    servings: '90 doses diárias', perDay: 'R$ 4,97 por dia', bottles: '3 caixas enviadas',
     save: 'ECONOMIZE 40%', tag: 'Mais popular', popular: true,
   },
   {
