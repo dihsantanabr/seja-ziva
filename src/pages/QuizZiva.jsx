@@ -204,10 +204,7 @@ const ANSWER_STEPS = [1,2,3,4,5,6,7,9,10,11];
 const TOTAL_STEPS  = 13;
 
 function getResult(scores) {
-  const max = Math.max(scores.serum, scores.simbiotico, scores.box);
-  const winners = Object.keys(scores).filter(k => scores[k] === max);
-  if (winners.length > 1) return 'box';
-  return winners[0] || 'box';
+  return 'box';
 }
 
 // ── COMPONENT: Option ────────────────────────────────────────
@@ -815,22 +812,6 @@ function ResultScreen({ scores, answers }) {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-          <div className="also-section" style={{ marginTop: 28 }}>
-            <div className="also-title">Conheça também</div>
-            <div className="also-products">
-              {alsoIds.map(id => {
-                const p = PRODUCTS[id];
-                return (
-                  <a key={id} href={p.url} className="also-product" target="_blank" rel="noopener noreferrer">
-                    <div>
-                      <div className="also-product-name">{p.name}</div>
-                    </div>
-                    <span className="also-product-arrow">→</span>
-                  </a>
-                );
-              })}
             </div>
           </div>
           <a
