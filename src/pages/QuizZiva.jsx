@@ -736,7 +736,7 @@ function ResultScreen({ scores, answers }) {
           <p className="result-body">{product.body}</p>
           <div className="result-product-card">
             {product.image && (
-              <img src={product.image} alt={product.name} style={{ width: '100%', maxHeight: 260, objectFit: 'cover', display: 'block' }} />
+              <img src={product.image} alt={product.name} style={{ width: '100%', maxHeight: 380, objectFit: 'contain', display: 'block', background: product.colorLight }} />
             )}
             <div className="result-product-header" style={{ background: product.colorLight }}>
               <div className="result-product-name" style={{ color: product.color }}>{product.name}</div>
