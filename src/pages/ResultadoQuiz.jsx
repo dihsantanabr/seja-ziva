@@ -27,7 +27,7 @@ const PLANS = [
     title: 'Box Equilibrium 360°', duration: 'Kit completo', subtitle: 'Solução completa: por dentro e por fora',
     was: 'R$ 664,00', now: 'R$ 477,00', perBottle: 'kit completo',
     servings: 'Sérum + Simbiótico', perDay: 'Tratamento externo e interno', bottles: 'Protocolo completo enviado', total: null,
-    save: 'MELHOR VALOR', tag: 'Melhor valor', popular: false,
+    save: null, tag: 'Rotina Completa', popular: false,
   },
 ];
 
