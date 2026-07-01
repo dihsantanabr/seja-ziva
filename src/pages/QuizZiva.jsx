@@ -38,7 +38,7 @@ const PRODUCTS = {
     name: 'Simbiótico Íntimo',
     price: 'A partir de R$ 187,00/mês',
     tagline: 'Para tratar a flora vaginal por dentro, de forma duradoura',
-    headline: 'A raiz do seu problema está na flora vaginal — e a solução precisa vir de dentro.',
+    headline: 'A raiz do seu problema está na flora vaginal, e a solução precisa vir de dentro.',
     body: 'O Simbiótico Íntimo Ziva combina 10 bilhões de probióticos L. Rhamnosus com prebiótico FOS para repovoar e nutrir sua flora vaginal, regulando o pH de dentro para fora e prevenindo novas infecções.',
     checks: ['Flora vaginal restaurada', 'Proteção contra infecções recorrentes', 'pH equilibrado naturalmente', 'Resultados duradouros, não temporários'],
     color: '#8B6914', colorLight: '#FBF5E6',
@@ -79,7 +79,7 @@ const STEPS_CONFIG = [
       { value: 'depilacao',  text: 'Irritação após depilação',         score: { serum:3,simbiotico:0,box:1 }, icon: '✂️' },
       { value: 'relacao',    text: 'Desconforto durante ou após a relação sexual', score: { serum:2,simbiotico:1,box:2 }, icon: '💗' },
       { value: 'urinar',     text: 'Vontade frequente de urinar',      score: { serum:0,simbiotico:2,box:2 }, icon: '💦' },
-      { value: 'prevencao',  text: 'Não tenho sintomas — quero prevenção e cuidado diário', score: { serum:0,simbiotico:0,box:0 }, icon: '🛡️' },
+      { value: 'prevencao',  text: 'Não tenho sintomas, quero prevenção e cuidado diário', score: { serum:0,simbiotico:0,box:0 }, icon: '🛡️' },
     ],
   },
   {
@@ -88,8 +88,8 @@ const STEPS_CONFIG = [
     sub: 'Selecione uma opção',
     options: [
       { value: 'nao',            text: 'Não',                                           score: { serum:0,simbiotico:0,box:0 } },
-      { value: 'antibiotico_1',  text: 'Sim, antibióticos — uma vez',                  score: { serum:0,simbiotico:2,box:1 } },
-      { value: 'antibiotico_mais', text: 'Sim, antibióticos — mais de uma vez',        score: { serum:0,simbiotico:3,box:2 } },
+      { value: 'antibiotico_1',  text: 'Sim, antibióticos, uma vez',                  score: { serum:0,simbiotico:2,box:1 } },
+      { value: 'antibiotico_mais', text: 'Sim, antibióticos, mais de uma vez',        score: { serum:0,simbiotico:3,box:2 } },
       { value: 'antifungico',    text: 'Sim, pomadas ou cremes antifúngicos',           score: { serum:1,simbiotico:3,box:2 } },
       { value: 'ambos',          text: 'Sim, os dois (antibióticos e antifúngicos)',    score: { serum:1,simbiotico:3,box:3 } },
     ],
@@ -117,7 +117,7 @@ const STEPS_CONFIG = [
       { value: 'comum',        text: 'Uso sabonete comum (não específico para área íntima)',    score: { serum:1,simbiotico:0,box:1 } },
       { value: 'convencional', text: 'Uso sabonete íntimo convencional com fragrância',          score: { serum:1,simbiotico:0,box:0 } },
       { value: 'natural',      text: 'Uso sabonete íntimo natural ou ozonizado',                 score: { serum:0,simbiotico:0,box:0 } },
-      { value: 'agua',         text: 'Não uso produto específico — apenas água',                  score: { serum:0,simbiotico:0,box:0 } },
+      { value: 'agua',         text: 'Não uso produto específico, apenas água',                  score: { serum:0,simbiotico:0,box:0 } },
       { value: 'lencos',       text: 'Uso lenços umedecidos ou ducha íntima',                    score: { serum:1,simbiotico:0,box:1 } },
     ],
   },
@@ -126,10 +126,10 @@ const STEPS_CONFIG = [
     title: 'Como você descreveria a hidratação da sua região íntima?',
     sub: 'Selecione uma opção',
     options: [
-      { value: 'boa',        text: 'Bem hidratada — sem queixas',                              score: { serum:0,simbiotico:0,box:0 } },
+      { value: 'boa',        text: 'Bem hidratada, sem queixas',                              score: { serum:0,simbiotico:0,box:0 } },
       { value: 'leve',       text: 'Levemente ressecada em alguns momentos',                   score: { serum:1,simbiotico:0,box:0 } },
       { value: 'frequente_r', text: 'Frequentemente ressecada, com desconforto no dia a dia', score: { serum:2,simbiotico:0,box:1 } },
-      { value: 'muito_r',    text: 'Muito ressecada — sinto dor, atrito ou pequenas fissuras', score: { serum:3,simbiotico:0,box:2 } },
+      { value: 'muito_r',    text: 'Muito ressecada, sinto dor, atrito ou pequenas fissuras', score: { serum:3,simbiotico:0,box:2 } },
     ],
   },
   {
@@ -182,7 +182,7 @@ const STEPS_CONFIG = [
       { value: 'probiotico', text: 'Probióticos ou suplementos orais',                            score: { serum:0,simbiotico:2,box:1 } },
       { value: 'natural',    text: 'Produtos naturais e fitoterápicos',                           score: { serum:0,simbiotico:1,box:0 } },
       { value: 'farmacia',   text: 'Remédios sem receita comprados em farmácia',                  score: { serum:1,simbiotico:0,box:1 } },
-      { value: 'nenhum_t',   text: 'Nenhum tratamento ainda — estou buscando a primeira solução', score: { serum:0,simbiotico:0,box:0 } },
+      { value: 'nenhum_t',   text: 'Nenhum tratamento ainda, estou buscando a primeira solução', score: { serum:0,simbiotico:0,box:0 } },
     ],
   },
   {
@@ -192,7 +192,7 @@ const STEPS_CONFIG = [
     options: [
       { value: 'resolveu',       text: 'Sim, resolvi de vez',                     score: { serum:0,simbiotico:0,box:0 } },
       { value: 'voltou',         text: 'Sim, mas o problema voltou depois',        score: { serum:1,simbiotico:3,box:3 } },
-      { value: 'nao_ajudou',     text: 'Não — não ajudaram nada',                  score: { serum:1,simbiotico:2,box:3 } },
+      { value: 'nao_ajudou',     text: 'Não, não ajudaram nada',                  score: { serum:1,simbiotico:2,box:3 } },
       { value: 'piorou',         text: 'Pioraram a minha situação',                score: { serum:0,simbiotico:2,box:3 } },
       { value: 'sem_tratamento', text: 'Ainda não tentei nenhum tratamento',       score: { serum:0,simbiotico:0,box:0 } },
     ],
@@ -312,7 +312,7 @@ function PersuasiveStep({ scores, onNext }) {
         <h2 className="persuasive-title">Nós te entendemos!</h2>
         <p className="persuasive-body">
           Com base nas suas respostas, já identificamos o produto ideal para o seu perfil.
-          Conheça a solução que pode transformar sua saúde íntima — formulada com ingredientes
+          Conheça a solução que pode transformar sua saúde íntima, formulada com ingredientes
           clinicamente pesquisados para o seu caso específico.
         </p>
         <div className="persuasive-product" style={{ borderColor: product.color }}>
@@ -664,7 +664,7 @@ function ResultScreen({ scores, answers }) {
             <p className="risk-body-text">
               Os fatores que você selecionou sugerem que seus incômodos —{' '}
               <strong style={{ color: meta.riskColor }}>{mainSym}</strong>{' '}
-              — podem continuar se agravando sem o cuidado adequado.
+             , podem continuar se agravando sem o cuidado adequado.
             </p>
             <button className="btn-continuar" onClick={() => goNext(2)}>Continuar →</button>
           </div>
@@ -1087,7 +1087,7 @@ export default function QuizZiva() {
                 />
               )}
 
-              {/* Info step 11.5 — Simbiótico Íntimo (após coletar todas as respostas) */}
+              {/* Info step 11.5, Simbiótico Íntimo (após coletar todas as respostas) */}
               {currentStep === 11.5 && (
                 <InfoStep onBack={handleBack} onNext={handleNext} />
               )}
