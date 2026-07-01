@@ -180,6 +180,7 @@ export default function ResultadoQuiz() {
         .rec-desc { font-size:14px; color:var(--grey); line-height:1.5; }
         .rq-final-cta { display:block; max-width:420px; margin:0 auto; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; text-decoration:none; text-align:center; padding:18px; border-radius:50px; font-weight:800; font-size:18px; box-shadow:0 6px 24px rgba(196,86,106,.35); transition:transform .2s; }
         .rq-final-cta:hover { transform:translateY(-2px); }
+        .rec-img { width:100%; max-height:200px; object-fit:contain; margin-bottom:12px; }
         .plan-free-ship { background:var(--green); color:#fff; font-size:12px; font-weight:800; padding:6px 0; text-align:center; }
         .plans-grid-sub { display:flex; justify-content:center; }
         .plans-grid-sub .plan-card { max-width:380px; }
@@ -325,11 +326,13 @@ export default function ResultadoQuiz() {
             <h2 className="rec-title">Com base nas suas respostas, recomendamos</h2>
             <div className="rec-cards">
               <div className="rec-card">
-                <div className="rec-plan">Plano de 3 meses</div>
+                <img src={SIMBIOTICO_IMAGE} alt="Kit com 3 Simbiótico Íntimo" className="rec-img" />
+                <div className="rec-plan">Kit com 3</div>
                 <div className="rec-desc">Para alcançar resultados efetivos e criar uma nova rotina de cuidado íntimo.</div>
               </div>
               <div className="rec-card">
-                <div className="rec-plan">Plano de 6 meses</div>
+                <img src={BOX_IMAGE} alt="Box Equilibrium" className="rec-img" />
+                <div className="rec-plan">Box Equilibrium</div>
                 <div className="rec-desc">Para consolidar uma flora vaginal equilibrada e resultados duradouros.</div>
               </div>
             </div>
