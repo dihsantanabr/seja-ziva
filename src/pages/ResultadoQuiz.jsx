@@ -175,9 +175,11 @@ export default function ResultadoQuiz() {
         .rec-section { text-align:center; margin-bottom:36px; }
         .rec-title { font-size:clamp(20px,4vw,28px); font-weight:800; margin-bottom:24px; }
         .rec-cards { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:32px; }
-        .rec-card { background:#fff; border:2px solid var(--rose-mid); border-radius:16px; padding:24px; max-width:260px; flex:1; min-width:220px; }
+        .rec-card { background:#fff; border:2px solid var(--rose-mid); border-radius:16px; padding:24px; max-width:260px; flex:1; min-width:220px; text-decoration:none; color:var(--dark); display:flex; flex-direction:column; transition:transform .2s, box-shadow .2s; }
+        .rec-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(196,86,106,.18); border-color:var(--rose); }
         .rec-plan { font-size:20px; font-weight:900; color:var(--rose); margin-bottom:8px; }
         .rec-desc { font-size:14px; color:var(--grey); line-height:1.5; }
+        .rec-cta { display:block; margin-top:16px; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; padding:12px; border-radius:50px; font-weight:800; font-size:14px; text-align:center; }
         .rq-final-cta { display:block; max-width:420px; margin:0 auto; background:linear-gradient(135deg,var(--rose),var(--rose-dk)); color:#fff; text-decoration:none; text-align:center; padding:18px; border-radius:50px; font-weight:800; font-size:18px; box-shadow:0 6px 24px rgba(196,86,106,.35); transition:transform .2s; }
         .rq-final-cta:hover { transform:translateY(-2px); }
         .rec-img { width:100%; max-height:200px; object-fit:contain; margin-bottom:12px; }
@@ -234,6 +236,25 @@ export default function ResultadoQuiz() {
 
           {/* Title */}
           <h1 className="rq-title">Deixe a sua flora íntima<br />trabalhar por você</h1>
+
+          {/* Personalized recommendation */}
+          <div className="rec-section">
+            <h2 className="rec-title">Com base nas suas respostas, recomendamos</h2>
+            <div className="rec-cards">
+              <a href={SIMBIOTICO_URL} target="_blank" rel="noopener noreferrer" className="rec-card">
+                <img src={SIMBIOTICO_IMAGE} alt="Kit com 3 Simbiótico Íntimo" className="rec-img" />
+                <div className="rec-plan">Kit com 3</div>
+                <div className="rec-desc">Para alcançar resultados efetivos e criar uma nova rotina de cuidado íntimo.</div>
+                <span className="rec-cta">Quero este →</span>
+              </a>
+              <a href={BOX_URL} target="_blank" rel="noopener noreferrer" className="rec-card">
+                <img src={BOX_IMAGE} alt="Box Equilibrium" className="rec-img" />
+                <div className="rec-plan">Box Equilibrium</div>
+                <div className="rec-desc">Para consolidar uma flora vaginal equilibrada e resultados duradouros.</div>
+                <span className="rec-cta">Quero este →</span>
+              </a>
+            </div>
+          </div>
 
           {/* Mode toggle */}
           <div className="mode-toggle">
@@ -321,21 +342,8 @@ export default function ResultadoQuiz() {
             </div>
           </div>
 
-          {/* Recommendation */}
+          {/* Final CTA */}
           <div className="rec-section">
-            <h2 className="rec-title">Com base nas suas respostas, recomendamos</h2>
-            <div className="rec-cards">
-              <div className="rec-card">
-                <img src={SIMBIOTICO_IMAGE} alt="Kit com 3 Simbiótico Íntimo" className="rec-img" />
-                <div className="rec-plan">Kit com 3</div>
-                <div className="rec-desc">Para alcançar resultados efetivos e criar uma nova rotina de cuidado íntimo.</div>
-              </div>
-              <div className="rec-card">
-                <img src={BOX_IMAGE} alt="Box Equilibrium" className="rec-img" />
-                <div className="rec-plan">Box Equilibrium</div>
-                <div className="rec-desc">Para consolidar uma flora vaginal equilibrada e resultados duradouros.</div>
-              </div>
-            </div>
             <a href={SIMBIOTICO_URL} target="_blank" rel="noopener noreferrer" className="rq-final-cta">
               Quero a minha Ziva agora →
             </a>
