@@ -745,7 +745,7 @@ function ResultScreen({ scores, answers }) {
       {rsStep === 4 && (
         <div style={{ animation: 'rsReveal 0.5s ease forwards' }}>
           <img
-            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/2a4c23600_Generatedimage116.png"
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/18ec203a4_Generatedimage119.png"
             alt="Simbiótico Íntimo ZIVA - equilíbrio da flora para sua saúde íntima"
             style={{ width: '100%', display: 'block', borderRadius: 12 }}
           />
