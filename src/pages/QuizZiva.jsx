@@ -860,7 +860,7 @@ export default function QuizZiva() {
       score_simbiotico: scores.simbiotico,
       score_box: scores.box,
       answers: JSON.stringify(answers),
-    }).catch(() => {}); // salva em background, não bloqueia o fluxo
+    }).catch(err => console.error('Erro ao salvar lead do quiz:', err)); // salva em background, não bloqueia o fluxo
     setPhase('loading');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
