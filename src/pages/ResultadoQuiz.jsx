@@ -88,11 +88,11 @@ function PlanCard({ plan, mode }) {
 
 // ── MAIN ─────────────────────────────────────────────────────
 export default function ResultadoQuiz() {
-  const timer = useCountdown(24 * 3600);
+  const timer = useCountdown(3 * 60);
   const [mode, setMode] = useState('once'); // sub | once
   const [copied, setCopied] = useState(false);
   const copyCode = () => {
-    navigator.clipboard?.writeText('ZIVA-QUIZ52').then(() => {
+    navigator.clipboard?.writeText('QUIZ').then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -222,7 +222,7 @@ export default function ResultadoQuiz() {
               <div>
                 <span className="promo-code-label">Código</span>
                 <div className="promo-code" onClick={copyCode} style={{ cursor: 'pointer', userSelect: 'none' }} title="Clique para copiar">
-                  <span>🏷️</span> ZIVA-QUIZ52 {copied && <span style={{ color: 'var(--green)', fontSize: 13 }}>✓ Copiado!</span>}
+                  <span>🏷️</span> QUIZ {copied && <span style={{ color: 'var(--green)', fontSize: 13 }}>✓ Copiado!</span>}
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
