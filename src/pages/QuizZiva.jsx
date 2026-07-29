@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
 import InfoStep2 from '@/components/quiz/InfoStep2';
+import TestimonialVideoCarousel from '@/components/quiz/TestimonialVideoCarousel';
 import { useNavigate } from 'react-router-dom';
 
 // ── ÍCONES DO QUIZ ───────────────────────────────────────────
@@ -781,6 +782,14 @@ function ResultScreen({ scores, answers }) {
                 </div>
               ))}
             </div>
+            <TestimonialVideoCarousel
+              title="Veja as histórias reais em vídeo:"
+              videos={[
+                'https://cdn.shopify.com/videos/c/vp/62fccb63127f40dea49cd861cf921f95/62fccb63127f40dea49cd861cf921f95.m3u8',
+                'https://cdn.shopify.com/videos/c/vp/30c967b74afc472d8de80100ad9b4ecc/30c967b74afc472d8de80100ad9b4ecc.m3u8',
+                'https://cdn.shopify.com/videos/c/vp/d6e45c1dad704208ba699542467318c2/d6e45c1dad704208ba699542467318c2.m3u8',
+              ]}
+            />
           </div>
           <button
             onClick={() => navigate('/resultado-quiz')}
