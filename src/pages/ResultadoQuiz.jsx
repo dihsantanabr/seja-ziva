@@ -199,7 +199,7 @@ export default function ResultadoQuiz() {
         {/* Banner */}
         <div className="rq-banner">
           <span className="rq-banner-title">OFERTA ESPECIAL ZIVA</span>
-          <span className="rq-banner-save">ATÉ 52% OFF</span>
+          <span className="rq-banner-save">ATÉ 28% OFF</span>
           <span className="rq-banner-time">{timer}</span>
         </div>
 
@@ -214,7 +214,7 @@ export default function ResultadoQuiz() {
           {/* Promo code card */}
           <div className="promo-card">
             <div className="promo-top">
-              <span className="promo-off">Até 52% off</span>
+              <span className="promo-off">Até 28% off</span>
               <span className="promo-sub">Seu código promocional especial foi aplicado!</span>
             </div>
             <hr className="promo-divider" />
