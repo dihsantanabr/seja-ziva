@@ -758,29 +758,11 @@ function ResultScreen({ scores, answers }) {
       {/* S4: Product */}
       {rsStep === 4 && (
         <div style={{ animation: 'rsReveal 0.5s ease forwards' }}>
-          <div className="result-badge" style={{ background: product.colorLight, color: product.color }}>{product.badge}</div>
-          <h1 className="result-headline" style={{ color: product.color }}>{product.headline}</h1>
-          <p className="result-body">{product.body}</p>
-          <div className="result-product-card">
-            {product.image && (
-              <img src={product.image} alt={product.name} style={{ width: '100%', maxHeight: 380, objectFit: 'contain', display: 'block', background: '#FFFFFF' }} />
-            )}
-            <div className="result-product-header" style={{ background: '#FFFFFF' }}>
-              <div className="result-product-name" style={{ color: product.color }}>{product.name}</div>
-              <div className="result-product-tagline" style={{ color: product.color }}>{product.tagline}</div>
-            </div>
-            <div className="result-product-body">
-              <div className="result-checkmarks">
-                {product.checks.map((c, i) => (
-                  <div key={i} className="result-check">
-                    <span className="ck" style={{ color: product.color }}>✓</span>
-                    <span>{c}</span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
+          <img
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/2a4c23600_Generatedimage116.png"
+            alt="Simbiótico Íntimo ZIVA - equilíbrio da flora para sua saúde íntima"
+            style={{ width: '100%', display: 'block', borderRadius: 12 }}
+          />
           <button className="btn-continuar-sec" onClick={() => goNext(4)}>Ver o que outras mulheres dizem →</button>
         </div>
       )}
