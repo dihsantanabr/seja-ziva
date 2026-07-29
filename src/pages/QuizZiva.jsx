@@ -1129,6 +1129,21 @@ export default function QuizZiva() {
           .result-check { font-size: 13px; gap: 9px; }
           .also-products { gap: 10px; }
           .also-product { padding: 14px 14px; gap: 12px; }
+          /* ── Sticky action buttons on mobile ── */
+          .btn-primary, .btn-continuar, .btn-unlock {
+            position: sticky;
+            bottom: 14px;
+            z-index: 50;
+            box-shadow: 0 -6px 18px -6px rgba(0,0,0,0.12), 0 4px 16px rgba(196,86,106,0.3);
+          }
+          .btn-continuar-sec {
+            position: sticky;
+            bottom: 14px;
+            z-index: 50;
+            background: white;
+            box-shadow: 0 -6px 18px -6px rgba(0,0,0,0.12);
+          }
+          .quiz-wrap { padding-bottom: 20px; }
         }
       `}</style>
 
