@@ -222,7 +222,7 @@ export default function ResultadoQuiz() {
               <div>
                 <span className="promo-code-label">Código</span>
                 <div className="promo-code" onClick={copyCode} style={{ cursor: 'pointer', userSelect: 'none' }} title="Clique para copiar">
-                  <span>🏷️</span> QUIZ {copied && <span style={{ color: 'var(--green)', fontSize: 13 }}>✓ Copiado!</span>}
+                  <span>🏷️</span> QUIZ <span style={{ fontSize: 14, color: 'var(--lgrey)' }}>📋</span> {!copied && <span style={{ fontSize: 11, color: 'var(--lgrey)' }}>toque para copiar</span>} {copied && <span style={{ color: 'var(--green)', fontSize: 13 }}>✓ Copiado!</span>}
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
