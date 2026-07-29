@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Droplets, Flame, Thermometer, Bug, Circle, Scissors, Heart, Waves, Shield } from 'lucide-react';
-import InfoStep from '@/components/quiz/InfoStep';
 import InfoStep2 from '@/components/quiz/InfoStep2';
 import { useNavigate } from 'react-router-dom';
 
@@ -566,11 +565,6 @@ function ResultScreen({ scores, answers }) {
 
   const goNext = (current) => {
     if (current === 3) {
-      setRsStep(3.5);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    if (current === 3.5) {
       setRsStep(3.6);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -590,9 +584,9 @@ function ResultScreen({ scores, answers }) {
     ['Flora desequilibrada', 'Flora vaginal saudável'],
   ];
 
-  const DISPLAY_STEP = { 1: 1, 2: 2, 3: 3, 3.5: 4, 3.6: 5, 4: 6, 5: 7 };
+  const DISPLAY_STEP = { 1: 1, 2: 2, 3: 3, 3.6: 4, 4: 5, 5: 6 };
   const currentDisplay = DISPLAY_STEP[rsStep];
-  const TOTAL_RS = 7;
+  const TOTAL_RS = 6;
 
   return (
     <div style={{ animation: 'fadeUp 0.5s ease' }}>
@@ -600,7 +594,7 @@ function ResultScreen({ scores, answers }) {
       <div className="rs-progress">
         <div className="rs-progress-label">Etapa {currentDisplay} de {TOTAL_RS}</div>
         <div className="rs-dots">
-          {[1,2,3,4,5,6,7].map(i => (
+          {[1,2,3,4,5,6].map(i => (
             <div key={i} className={`rs-dot ${i < currentDisplay ? 'done' : i === currentDisplay ? 'current' : ''}`} />
           ))}
         </div>
@@ -739,18 +733,10 @@ function ResultScreen({ scores, answers }) {
         </div>
       )}
 
-      {/* Info step after chart (Etapa 3) */}
-      {rsStep === 3.5 && (
-        <InfoStep
-          onBack={() => { setRsStep(3); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          onNext={() => goNext(3.5)}
-        />
-      )}
-
       {/* Info step 2 (nutritional info & benefits) */}
       {rsStep === 3.6 && (
         <InfoStep2
-          onBack={() => { setRsStep(3.5); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+          onBack={() => { setRsStep(3); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           onNext={() => goNext(3.6)}
         />
       )}
@@ -767,14 +753,35 @@ function ResultScreen({ scores, answers }) {
         </div>
       )}
 
-      {/* S5: Social proof */}
+      {/* S5: Social proof / Depoimentos */}
       {rsStep === 5 && (
         <div style={{ animation: 'rsReveal 0.5s ease forwards' }}>
-          <img
-            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/f99f063cb_Generatedimage117.png"
-            alt="Resultados em 7 dias - Informação nutricional e benefícios ZIVA"
-            style={{ width: '100%', display: 'block', borderRadius: 12 }}
-          />
+          <div className="social-card">
+            <h3 className="social-title">Não acredite só em nós.<br />Veja o que outras mulheres dizem sobre a Ziva:</h3>
+            <div className="stars-row">
+              <span className="stars">★★★★★</span>
+              <strong style={{ fontSize: 15 }}>4,8</strong>
+              <span style={{ fontSize: 13, color: '#888' }}>· +2.300 mulheres atendidas</span>
+            </div>
+            <div className="testimonials-list">
+              {[
+                { name: 'Amanda R.', color: '#C4566A', text: '"Estava no segundo frasco e minha vida mudou. Sem coceira, sem odor, sem infecções. Finalmente sinto meu corpo em equilíbrio de verdade."' },
+                { name: 'Carla M.', color: '#3B7A7A', text: '"Tinha candidíase todo mês há 3 anos. Com a Ziva, completei 4 meses sem nenhuma ocorrência. Não sabia mais como era me sentir normal."' },
+                { name: 'Patrícia S.', color: '#8B6914', text: '"O ressecamento era tão intenso que dificultava minha vida íntima. Depois de 2 semanas já senti diferença. Agora sinto prazer de novo."' },
+              ].map((t, i) => (
+                <div key={i} className="testi">
+                  <div className="testi-av" style={{ background: t.color }}>{t.name[0]}</div>
+                  <div className="testi-body">
+                    <div className="testi-top">
+                      <span className="testi-name">{t.name}</span>
+                      <span className="testi-check">✓ Verificado</span>
+                    </div>
+                    <p className="testi-text">{t.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
           <button
             onClick={() => navigate('/resultado-quiz')}
             className="btn-continuar"
