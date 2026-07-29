@@ -821,7 +821,7 @@ function ResultScreen({ scores, answers }) {
             loop
             playsInline
             controls
-            style={{ width: '60%', borderRadius: 12, marginTop: 16, display: 'block', margin: '16px auto 0' }}
+            style={{ width: '100%', maxWidth: 400, borderRadius: 12, display: 'block', margin: '16px auto 0' }}
           />
           <button
             onClick={() => navigate('/resultado-quiz')}
@@ -1053,7 +1053,83 @@ export default function QuizZiva() {
         .also-product-name { font-size:14px; font-weight:700; }
         .also-product-desc { font-size:13px; color:var(--lgrey); }
         .also-product-arrow { margin-left:auto; color:var(--rose); font-size:18px; }
-        @media(max-width:480px) { .quiz-wrap{padding:20px 14px 48px;} .persuasive-card,.lead-card{padding:28px 20px;} .result-product-header,.result-product-body{padding:20px;} }
+        /* ── MOBILE RESPONSIVE ───────────────────────────────────── */
+        @media(max-width:640px) {
+          .quiz-header { padding: 12px 16px; }
+          .quiz-header img { height: 38px !important; }
+          .quiz-wrap { padding: 22px 14px 48px; }
+          .step-label { font-size: 11px; margin-bottom: 4px; }
+          .question-title { font-size: 19px; line-height: 1.35; margin-bottom: 6px; }
+          .question-sub { font-size: 12px; margin-bottom: 20px; }
+          .options { gap: 9px; margin-bottom: 24px; }
+          .option { padding: 14px 14px; gap: 10px; border-radius: 11px; }
+          .option.has-icon { padding: 10px 12px; gap: 11px; }
+          .option.has-icon .option-text { font-size: 13.5px; line-height: 1.4; }
+          .option-text { font-size: 14px; line-height: 1.42; }
+          .opt-icon { width: 40px; height: 40px; }
+          .opt-icon svg { width: 20px; height: 20px; }
+          .option-check { width: 20px; height: 20px; }
+          .back-btn { font-size: 12px; margin-bottom: 16px; }
+          .btn { padding: 15px 24px; font-size: 15px; }
+          .persuasive-card { padding: 26px 18px; border-radius: 16px; margin-bottom: 22px; }
+          .persuasive-icon { font-size: 42px; margin-bottom: 12px; }
+          .persuasive-title { font-size: 22px; margin-bottom: 12px; }
+          .persuasive-body { font-size: 14px; margin-bottom: 22px; }
+          .pp-body { padding: 16px 16px; }
+          .pp-name { font-size: 16px; }
+          .pp-tagline { font-size: 12.5px; }
+          .pp-checks li { font-size: 12.5px; }
+          .lead-card { padding: 28px 20px; border-radius: 16px; margin-bottom: 22px; }
+          .lead-icon { font-size: 42px; margin-bottom: 12px; }
+          .lead-title { font-size: 22px; margin-bottom: 10px; }
+          .lead-body { font-size: 14px; margin-bottom: 22px; }
+          .lead-tab { padding: 9px 6px; font-size: 13px; }
+          .lead-input { padding: 14px 14px 14px 44px; font-size: 15px; }
+          .lead-input-icon { left: 14px; font-size: 16px; }
+          .lead-privacy { font-size: 11.5px; }
+          .btn-unlock { padding: 16px 24px; font-size: 16px; }
+          .rs-progress { margin-bottom: 16px; }
+          .rs-progress-label { font-size: 11px; }
+          .rs-dot { width: 7px; height: 7px; }
+          .btn-continuar { padding: 15px 20px; font-size: 15px; margin-top: 18px; border-radius: 50px; }
+          .btn-continuar-sec { padding: 13px 20px; font-size: 14px; }
+          .rating-card { padding: 22px 16px; border-radius: 16px; }
+          .rating-title { font-size: 14px; }
+          .rating-value { font-size: 21px; line-height: 1.25; }
+          .rating-sub { font-size: 13px; margin-bottom: 16px; }
+          .gauge-svg-wrap { max-width: 100%; margin: 0 auto 16px; }
+          .compare-grid { grid-template-columns: 1fr 26px 1fr; font-size: 11px; }
+          .cg-head-bad, .cg-head-good { padding: 8px 8px; font-size: 11px; }
+          .cg-bad, .cg-good { padding: 7px 8px; font-size: 11px; }
+          .risk-card { padding: 22px 16px; border-radius: 16px; }
+          .risk-title { font-size: 16px; margin-bottom: 14px; }
+          .risk-box { padding: 14px 14px; margin-bottom: 14px; }
+          .risk-box-val { font-size: 21px; }
+          .risk-box-desc { font-size: 12.5px; }
+          .risk-body-text { font-size: 13px; }
+          .chart-card { padding: 22px 14px; border-radius: 16px; }
+          .chart-title { font-size: 16px; margin-bottom: 16px; }
+          .chart-legend { gap: 16px; margin-top: 10px; }
+          .legend-item { font-size: 12px; }
+          .social-card { padding: 22px 16px; border-radius: 16px; }
+          .social-title { font-size: 16px; margin-bottom: 10px; }
+          .stars { font-size: 16px; letter-spacing: 1px; }
+          .testi { padding: 12px; gap: 10px; }
+          .testi-av { width: 38px; height: 38px; font-size: 15px; }
+          .testi-name { font-size: 13px; }
+          .testi-text { font-size: 12.5px; line-height: 1.55; }
+          .result-badge { padding: 7px 14px; font-size: 11px; margin-bottom: 16px; }
+          .result-headline { font-size: 21px; margin-bottom: 12px; }
+          .result-body { font-size: 14px; margin-bottom: 22px; }
+          .result-product-card { border-radius: 16px; margin-bottom: 22px; }
+          .result-product-header { padding: 20px 18px 14px; }
+          .result-product-name { font-size: 19px; }
+          .result-product-tagline { font-size: 13px; }
+          .result-product-body { padding: 18px 18px; }
+          .result-check { font-size: 13px; gap: 9px; }
+          .also-products { gap: 10px; }
+          .also-product { padding: 14px 14px; gap: 12px; }
+        }
       `}</style>
 
       <div className="quiz-page">
