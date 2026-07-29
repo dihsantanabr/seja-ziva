@@ -590,21 +590,21 @@ function ResultScreen({ scores, answers }) {
     ['Flora desequilibrada', 'Flora vaginal saudável'],
   ];
 
-  const TOTAL_RS = 5;
+  const DISPLAY_STEP = { 1: 1, 2: 2, 3: 3, 3.5: 4, 3.6: 5, 4: 6, 5: 7 };
+  const currentDisplay = DISPLAY_STEP[rsStep];
+  const TOTAL_RS = 7;
 
   return (
     <div style={{ animation: 'fadeUp 0.5s ease' }}>
       {/* Progress dots */}
-      {rsStep !== 3.5 && rsStep !== 3.6 && (
-        <div className="rs-progress">
-          <div className="rs-progress-label">Etapa {rsStep} de {TOTAL_RS}</div>
-          <div className="rs-dots">
-            {[1,2,3,4,5].map(i => (
-              <div key={i} className={`rs-dot ${i < rsStep ? 'done' : i === rsStep ? 'current' : ''}`} />
-            ))}
-          </div>
+      <div className="rs-progress">
+        <div className="rs-progress-label">Etapa {currentDisplay} de {TOTAL_RS}</div>
+        <div className="rs-dots">
+          {[1,2,3,4,5,6,7].map(i => (
+            <div key={i} className={`rs-dot ${i < currentDisplay ? 'done' : i === currentDisplay ? 'current' : ''}`} />
+          ))}
         </div>
-      )}
+      </div>
 
       {/* S1: Rating */}
       {rsStep === 1 && (
