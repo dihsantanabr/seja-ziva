@@ -12,7 +12,7 @@ export default function InfoStep2({ onBack, onNext }) {
         marginBottom: '24px',
       }}>
         <img
-          src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/f833229d2_Generatedimage117.png"
+          src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/caa3ba104_Generatedimage118.png"
           alt="Informações nutricionais e benefícios ZIVA"
           style={{ width: '100%', display: 'block' }}
         />
