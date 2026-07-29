@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 
 const HLS_CDN = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js';
 
@@ -24,7 +23,6 @@ function HlsVideo({ src, active }) {
     let cancelled = false;
 
     if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      // Native HLS (Safari/iOS)
       video.src = src;
       if (active) video.play().catch(() => {});
     } else {
@@ -71,11 +69,9 @@ function HlsVideo({ src, active }) {
 }
 
 export default function TestimonialVideoCarousel({ videos = [], title }) {
-  const [index, setIndex] = useState(0);
   const count = videos.length;
   if (count === 0) return null;
-
-  const go = (n) => setIndex((i) => (n < 0 ? count - 1 : n >= count ? 0 : n));
+  const mid = Math.floor(count / 2);
 
   return (
     <div style={{ marginTop: 20 }}>
@@ -84,55 +80,45 @@ export default function TestimonialVideoCarousel({ videos = [], title }) {
           {title}
         </h4>
       )}
-      <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 18px rgba(0,0,0,0.12)', background: '#000' }}>
-        <div style={{ aspectRatio: '9 / 16', maxHeight: 420, width: '100%' }}>
-          <HlsVideo src={videos[index]} active />
-        </div>
-
-        <button
-          type="button"
-          onClick={() => go(index - 1)}
-          aria-label="Anterior"
-          style={{
-            position: 'absolute', top: '50%', left: 8, transform: 'translateY(-50%)',
-            width: 36, height: 36, borderRadius: '50%', border: 'none',
-            background: 'rgba(0,0,0,0.45)', color: '#fff', display: 'flex',
-            alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-            backdropFilter: 'blur(2px)',
-          }}
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          type="button"
-          onClick={() => go(index + 1)}
-          aria-label="Próximo"
-          style={{
-            position: 'absolute', top: '50%', right: 8, transform: 'translateY(-50%)',
-            width: 36, height: 36, borderRadius: '50%', border: 'none',
-            background: 'rgba(0,0,0,0.45)', color: '#fff', display: 'flex',
-            alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
-            backdropFilter: 'blur(2px)',
-          }}
-        >
-          <ChevronRight size={20} />
-        </button>
-
-        <div style={{
-          position: 'absolute', bottom: 10, left: 0, right: 0, display: 'flex',
-          justifyContent: 'center', gap: 7, pointerEvents: 'none',
-        }}>
-          {videos.map((_, i) => (
-            <span
+      <div style={{
+        display: 'flex',
+        gap: 10,
+        justifyContent: 'center',
+        alignItems: 'stretch',
+      }}>
+        {videos.map((src, i) => {
+          const active = i === mid;
+          return (
+            <div
               key={i}
               style={{
-                width: i === index ? 18 : 6, height: 6, borderRadius: 3,
-                background: i === index ? '#C4566A' : 'rgba(255,255,255,0.7)',
+                position: 'relative',
+                borderRadius: 16,
+                overflow: 'hidden',
+                background: '#000',
+                flex: 1,
+                aspectRatio: '9 / 16',
+                maxHeight: 460,
+                boxShadow: active ? '0 6px 22px rgba(196,86,106,0.35)' : '0 2px 10px rgba(0,0,0,0.12)',
+                border: active ? '2px solid #C4566A' : '2px solid transparent',
                 transition: 'all 0.25s ease',
+                opacity: active ? 1 : 0.62,
               }}
-            />
-          ))}
-        </div>
+            >
+              <HlsVideo src={src} active={active} />
+              {active && (
+                <div style={{
+                  position: 'absolute', top: 8, left: 8,
+                  background: 'rgba(196,86,106,0.92)', color: '#fff',
+                  fontSize: 10, fontWeight: 800, padding: '3px 8px',
+                  borderRadius: 50, letterSpacing: 0.3,
+                }}>
+                  ▶ EM REPRODUÇÃO
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
