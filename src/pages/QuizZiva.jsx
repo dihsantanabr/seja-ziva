@@ -770,40 +770,10 @@ function ResultScreen({ scores, answers }) {
       {/* S5: Social proof */}
       {rsStep === 5 && (
         <div style={{ animation: 'rsReveal 0.5s ease forwards' }}>
-          <div className="social-card">
-            <h3 className="social-title">Não acredite só em nós.<br />Veja o que outras mulheres dizem sobre a Ziva:</h3>
-            <div className="stars-row">
-              <span className="stars">★★★★★</span>
-              <strong style={{ fontSize: 15 }}>4,8</strong>
-              <span style={{ fontSize: 13, color: '#888' }}>· +2.300 mulheres atendidas</span>
-            </div>
-            <div className="testimonials-list">
-              {[
-                { name: 'Amanda R.', color: '#C4566A', text: '"Estava no segundo frasco e minha vida mudou. Sem coceira, sem odor, sem infecções. Finalmente sinto meu corpo em equilíbrio de verdade."' },
-                { name: 'Carla M.', color: '#3B7A7A', text: '"Tinha candidíase todo mês há 3 anos. Com a Ziva, completei 4 meses sem nenhuma ocorrência. Não sabia mais como era me sentir normal."' },
-                { name: 'Patrícia S.', color: '#8B6914', text: '"O ressecamento era tão intenso que dificultava minha vida íntima. Depois de 2 semanas já senti diferença. Agora sinto prazer de novo."' },
-              ].map((t, i) => (
-                <div key={i} className="testi">
-                  <div className="testi-av" style={{ background: t.color }}>{t.name[0]}</div>
-                  <div className="testi-body">
-                    <div className="testi-top">
-                      <span className="testi-name">{t.name}</span>
-                      <span className="testi-check">✓ Verificado</span>
-                    </div>
-                    <p className="testi-text">{t.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <video
-            src="https://cdn.shopify.com/videos/c/vp/30c967b74afc472d8de80100ad9b4ecc/30c967b74afc472d8de80100ad9b4ecc.m3u8"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            style={{ width: '100%', maxWidth: 400, borderRadius: 12, display: 'block', margin: '16px auto 0' }}
+          <img
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/f99f063cb_Generatedimage117.png"
+            alt="Resultados em 7 dias - Informação nutricional e benefícios ZIVA"
+            style={{ width: '100%', display: 'block', borderRadius: 12 }}
           />
           <button
             onClick={() => navigate('/resultado-quiz')}
