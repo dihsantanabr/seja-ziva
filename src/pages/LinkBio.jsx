@@ -35,8 +35,8 @@ export default function LinkBio() {
           className="block relative overflow-hidden rounded-2xl shadow-md"
         >
           <img
-            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/4dba1c9be_generated_image.png"
-          className="w-full h-44 object-cover"
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/18d25e002_WhatsAppImage2026-08-05at1050551.jpeg"
+            className="w-full h-44 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
             <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Mais Vendido</span>
@@ -57,7 +57,7 @@ export default function LinkBio() {
           className="block relative overflow-hidden rounded-2xl shadow-md"
         >
           <img
-            src="https://sejaziva.com.br/cdn/shop/files/Serum_Rosa.png?v=1764703506"
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/2b35c143d_WhatsAppImage2026-08-05at105055.jpeg"
             className="w-full h-44 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
@@ -78,7 +78,7 @@ export default function LinkBio() {
           className="block relative overflow-hidden rounded-2xl shadow-md"
         >
           <img
-            src="https://sejaziva.com.br/cdn/shop/files/ESPUMA_-_04.png?v=1764703529"
+            src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/e9f116170_WhatsAppImage2026-08-05at105056.jpeg"
             className="w-full h-44 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
