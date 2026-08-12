@@ -38,7 +38,7 @@ export default function LinkBio() {
             src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/18d25e002_WhatsAppImage2026-08-05at1050551.jpeg"
             className="w-full h-44 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 p-4 flex flex-col justify-end">
             <span className="text-xs text-pink-300 font-semibold uppercase tracking-wide mb-1">✨ Mais Vendido</span>
             <h2 className="text-white font-bold text-lg leading-tight">Simbiótico Íntimo Ziva</h2>
             <p className="text-white/80 text-sm mt-0.5">pH saudável, sem odor, sem candidíase.</p>
@@ -60,7 +60,7 @@ export default function LinkBio() {
             src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/2b35c143d_WhatsAppImage2026-08-05at105055.jpeg"
             className="w-full h-44 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 p-4 flex flex-col justify-end">
             <h2 className="text-white font-bold text-lg leading-tight">Sérum Íntimo Ozonizado</h2>
             <p className="text-white/80 text-sm mt-0.5">Hidratação profunda e regeneração celular.</p>
             <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
@@ -81,7 +81,7 @@ export default function LinkBio() {
             src="https://media.base44.com/images/public/698f17e9124bfe3a6f9a6198/e9f116170_WhatsAppImage2026-08-05at105056.jpeg"
             className="w-full h-44 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 p-4 flex flex-col justify-end">
             <h2 className="text-white font-bold text-lg leading-tight">Espuma Íntima Ozonizada</h2>
             <p className="text-white/80 text-sm mt-0.5">Limpeza delicada com ação ozonizada.</p>
             <span className="mt-2 inline-flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full px-3 py-1 w-fit">
