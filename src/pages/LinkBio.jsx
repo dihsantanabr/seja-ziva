@@ -10,7 +10,7 @@ const links = [
 
 export default function LinkBio() {
   return (
-    <div className="min-h-screen bg-pink-50 flex flex-col items-center py-10 px-4">
+    <div className="min-h-screen bg-white flex flex-col items-center py-10 px-4">
       <div className="w-full max-w-sm space-y-4">
 
         {/* Logo / Marca */}
